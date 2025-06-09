@@ -1570,7 +1570,7 @@ html, body {
 }
 @media (max-width: 600px) {
   .campo-cantidad input[type="number"] {
-    width: 60px !important;
+    width: 20px !important;
     min-width: 45px !important;
     max-width: 80px !important;
     padding: 6px !important;
