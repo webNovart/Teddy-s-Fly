@@ -1450,3 +1450,27 @@ html, body {
     padding-right: 20px !important;
   }
 }
+@media (max-width: 600px) {
+
+
+
+  /* Evita que los textos se corten o desborden */
+  .contacto-formulario,
+  .contacto-formulario * {
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Los campos del formulario no se desbordan */
+  .contacto-formulario input,
+  .contacto-formulario textarea,
+  .contacto-formulario select,
+  .contacto-formulario button {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
