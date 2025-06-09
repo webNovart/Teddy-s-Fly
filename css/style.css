@@ -1254,3 +1254,46 @@ html, body {
     overflow-x: hidden;
   }
 }
+@media (max-width: 600px) {
+  .contacto-main,
+  .contacto-form,
+  form,
+  input,
+  textarea {
+    width: 100% !important;
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+    margin: 0 auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .contacto-main {
+    padding: 12px 2vw !important;
+  }
+  .contacto-form {
+    padding: 10px 2vw !important;
+  }
+  .contacto-form input,
+  .contacto-form textarea {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    font-size: 1rem;
+    margin-bottom: 12px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-sizing: border-box !important;
+  }
+  .contacto-form button {
+    width: 100%;
+    font-size: 1.1rem;
+    margin-top: 6px;
+    padding: 10px;
+  }
+  /* Evita scroll horizontal */
+  html, body {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+}
