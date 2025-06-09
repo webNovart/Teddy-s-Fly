@@ -45,3 +45,30 @@ document.querySelectorAll('.bubble').forEach(bubble => {
         bubble.style.boxShadow = "0 6px 24px rgba(51,204,255,0.20)";
     });
 });
+document.addEventListener('DOMContentLoaded', function() {
+  const searchForm = document.querySelector('.search-form');
+  const searchInput = document.querySelector('#busqueda-productos');
+  const productos = document.querySelectorAll('.producto-card');
+
+  if (searchForm && searchInput) {
+    searchForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      filtrarProductos();
+    });
+
+    // Si quieres buscar mientras se escribe, descomenta la siguiente línea:
+    // searchInput.addEventListener('input', filtrarProductos);
+
+    function filtrarProductos() {
+      const texto = searchInput.value.trim().toLowerCase();
+      productos.forEach(producto => {
+        const nombre = producto.querySelector('h3').textContent.toLowerCase();
+        if (nombre.includes(texto)) {
+          producto.style.display = '';
+        } else {
+          producto.style.display = 'none';
+        }
+      });
+    }
+  }
+});
