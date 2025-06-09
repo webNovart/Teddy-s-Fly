@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Carrito | Teddy's Fly</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Incluye aquí tu cabecera igual a las otras páginas -->
+    <header>
+        <div class="logo-nav">
+            <img src="assets/img/logo.png" alt="Teddy's Fly Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="tienda.html">Tienda</a></li>
+                    <li><a href="novedades.html">Novedades</a></li>
+                    <li><a href="acerca.html">Acerca de Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-icons">
+            <form class="search-form">
+                <input type="text" placeholder="Buscar...">
+                <button type="submit"><img src="assets/icons/search.svg" alt="Buscar"></button>
+            </form>
+            <a href="carrito.html" class="cart-icon" title="Carrito">
+                <img src="assets/icons/cart.svg" alt="Carrito">
+                <span class="cart-count">0</span>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="carrito-container padders">
+            <h1>Mi Carrito de Compras</h1>
+            <div id="carrito-vacio" style="display:none;">
+                <p>Tu carrito está vacío. <a href="tienda.html">Descubre nuestros peluches aquí.</a></p>
+            </div>
+            <table id="tabla-carrito">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Total</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí se insertarán los productos del carrito -->
+                </tbody>
+            </table>
+            <div class="carrito-resumen">
+                <span id="carrito-total">Total: $0</span>
+                <button id="btn-vaciar" class="btn-secondary">Vaciar Carrito</button>
+                <a href="pagos.html" class="btn-primary">Proceder al Pago</a>
+            </div>
+        </section>
+    </main>
+    <div class="floating-bubbles">
+        <a href="https://wa.me/573001234567" class="bubble bubble-whatsapp" title="Chatea por WhatsApp" target="_blank">
+            <img src="assets/icons/whatsapp.svg" alt="WhatsApp">
+        </a>
+        <a href="https://instagram.com/PELUCHES.VARIEDADESTEDDY" class="bubble bubble-ig" title="Instagram" target="_blank">
+            <img src="assets/icons/instagram.svg" alt="Instagram">
+        </a>
+    </div>
+    <footer>
+        <div class="footer-links">
+            <a href="privacidad.html">Políticas de Privacidad</a>
+            <a href="terminos.html">Términos y Condiciones</a>
+            <a href="pagos.html">Métodos de Pago</a>
+        </div>
+        <div class="footer-copy">
+            <p>&copy; 2025 Teddy's Fly. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+    <script src="js/carrito.js"></script>
+</body>
+</html>
