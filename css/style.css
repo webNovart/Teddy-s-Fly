@@ -1372,12 +1372,14 @@ html, body {
     width: 100vw !important;
     max-width: 100vw !important;
     box-sizing: border-box !important;
-    padding: 0 !important;
+    padding-left: 4vw !important;
+    padding-right: 4vw !important;
     margin: 0 auto !important;
     overflow-x: hidden;
   }
   .contacto-formulario {
-    padding: 10px 2vw !important;
+     padding-top: 10px !important;
+    padding-bottom: 10px !important;
   }
   .contacto-form {
     padding: 0 !important;
@@ -1394,13 +1396,13 @@ html, body {
   }
   .contacto-form input,
   .contacto-form textarea {
-    width: 100% !important;
+   width: 100% !important;
+    box-sizing: border-box !important;
     font-size: 1rem;
     margin-bottom: 12px;
     padding: 10px;
     border-radius: 6px;
     border: 1px solid #ccc;
-    box-sizing: border-box !important;
     display: block;
   }
   .contacto-form button {
