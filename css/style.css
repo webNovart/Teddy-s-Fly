@@ -1027,3 +1027,77 @@ footer {
     .slider-caption { left: 10px; bottom: 12px; padding: 0.5em 1em; font-size: 0.95em; }
     .slider-btn { width: 28px; height: 28px; font-size: 1.2em; }
 }
+/* --- ESTILOS RESPONSIVOS BÁSICOS PARA MÓVIL --- */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+  }
+  header, main, footer {
+    padding: 10px !important;
+  }
+  .logo-nav,
+  .header-icons {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 10px;
+  }
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+  }
+  nav ul li {
+    width: 100%;
+    margin: 5px 0;
+  }
+  .productos-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 20px;
+  }
+  .producto-card {
+    width: 100% !important;
+    max-width: 350px;
+    box-sizing: border-box;
+  }
+  .producto-card img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100%;
+    display: block;
+  }
+  .filtros,
+  .tienda-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    width: 100%;
+  }
+  .search-form {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+  }
+  .search-form input[type="text"] {
+    width: 100%;
+    min-width: 0;
+    flex: 1;
+  }
+  /* Ajusta los botones y textos */
+  .btn-cart, .btn-secondary {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 8px;
+  }
+  /* Footer links en columna */
+  .footer-links {
+    flex-direction: column !important;
+    gap: 7px;
+    align-items: center;
+  }
+}
