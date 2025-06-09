@@ -19,11 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Buscador (sólo efecto visual demo)
-    document.querySelector('.search-form').addEventListener('submit', (e) => {
-        e.preventDefault();
-        alert('Función de búsqueda en desarrollo');
-    });
+
 
     // Galería de producto (cambia imagen principal)
     const mainImg = document.querySelector('.galeria img');
