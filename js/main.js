@@ -34,3 +34,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+// ...código anterior...
+
+// Animación burbujas flotantes (ejemplo sutil)
+document.querySelectorAll('.bubble').forEach(bubble => {
+    bubble.addEventListener('mouseenter', () => {
+        bubble.style.boxShadow = "0 8px 32px rgba(51,204,255,0.22)";
+    });
+    bubble.addEventListener('mouseleave', () => {
+        bubble.style.boxShadow = "0 6px 24px rgba(51,204,255,0.20)";
+    });
+});
