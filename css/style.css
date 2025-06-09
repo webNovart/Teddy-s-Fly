@@ -500,8 +500,9 @@ footer {
 @media (max-width: 800px) {
     header, .logo-nav {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         gap: 0.5em;
+        justify-content: center !important;
     }
     .hero-content {
         padding: 1.2em;
@@ -1473,4 +1474,14 @@ html, body {
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
+}
+/* Centrar el logo en el header */
+.logo-nav {
+    flex: 1;
+    justify-content: center;
+}
+
+.logo {
+    margin: 0 auto;
+    display: block;
 }
