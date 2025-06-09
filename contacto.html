@@ -2,10 +2,11 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Acerca de Nosotros | Teddy's Fly</title>
+    <title>Contacto | Teddy's Fly</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- CABECERA igual a index.html -->
     <header>
         <div class="logo-nav">
             <img src="assets/img/logo.png" alt="Teddy's Fly Logo" class="logo">
@@ -14,8 +15,8 @@
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="tienda.html">Tienda</a></li>
                     <li><a href="novedades.html">Novedades</a></li>
-                    <li><a href="acerca.html" class="active">Acerca de Nosotros</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="acerca.html">Acerca de Nosotros</a></li>
+                    <li><a href="contacto.html" class="active">Contacto</a></li>
                 </ul>
             </nav>
         </div>
@@ -31,19 +32,98 @@
         </div>
     </header>
     <main>
-        <section class="acerca">
-            <h1>Sobre Teddy's Fly</h1>
-            <p>Somos una tienda dedicada a traer ternura y felicidad a través de peluches y regalos originales. Nuestro objetivo es ofrecer productos de la mejor calidad, con diseños únicos y un servicio al cliente que te haga sentir parte de nuestra familia.</p>
-            <ul>
-                <li>Peluches de todos los tamaños, personajes y estilos</li>
-                <li>Materiales seguros y lavables</li>
-                <li>Atención personalizada vía WhatsApp</li>
-                <li>Envíos a toda Colombia</li>
-            </ul>
-            <h3>¿Por qué elegir Teddy's Fly?</h3>
-            <p>¡Porque cada peluche cuenta una historia y alegra corazones!</p>
+        <section class="contacto-formulario padders">
+            <h1>¡Hablemos!</h1>
+            <p class="intro">¿Tienes dudas, sugerencias o deseas hacer un pedido especial? Estamos aquí para ayudarte. Puedes contactarnos usando el formulario, por WhatsApp o a través de nuestras redes sociales. ¡Queremos que tu experiencia en Teddy's Fly sea mágica desde el primer clic!</p>
+            <div class="contacto-cols">
+                <div class="contacto-info">
+                    <h2>Atención personalizada</h2>
+                    <p>Ofrecemos atención directa y rápida por WhatsApp y redes sociales. Nuestro horario de respuesta es de lunes a sábado, de 9:00 a.m. a 7:00 p.m.</p>
+                    <ul class="contacto-lista">
+                        <li>
+                            <img src="assets/icons/whatsapp.svg" alt="WhatsApp" class="icono-mini">
+                            <strong>WhatsApp:</strong>
+                            <a href="https://wa.me/573001234567" target="_blank">+57 300 123 4567</a>
+                        </li>
+                        <li>
+                            <img src="assets/icons/instagram.svg" alt="Instagram" class="icono-mini">
+                            <strong>Instagram:</strong>
+                            <a href="https://instagram.com/PELUCHES.VARIEDADESTEDDY" target="_blank">@PELUCHES.VARIEDADESTEDDY</a>
+                        </li>
+                        <li>
+                            <img src="assets/icons/mail.svg" alt="Mail" class="icono-mini">
+                            <strong>Email:</strong>
+                            <a href="mailto:contacto@teddysfly.com">contacto@teddysfly.com</a>
+                        </li>
+                    </ul>
+                    <div class="contacto-cards">
+                        <div class="contacto-card" onclick="window.open('https://wa.me/573001234567','_blank')">
+                            <img src="assets/icons/whatsapp.svg" alt="WhatsApp">
+                            <p>¡Chatea con nosotros por WhatsApp!</p>
+                        </div>
+                        <div class="contacto-card" onclick="window.open('https://instagram.com/PELUCHES.VARIEDADESTEDDY','_blank')">
+                            <img src="assets/icons/instagram.svg" alt="Instagram">
+                            <p>Envíanos un DM en Instagram</p>
+                        </div>
+                        <div class="contacto-card" onclick="window.open('mailto:contacto@teddysfly.com','_blank')">
+                            <img src="assets/icons/mail.svg" alt="Email">
+                            <p>Envíanos un correo electrónico</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contacto-form">
+                    <h2>Formulario de contacto</h2>
+                    <form>
+                        <label for="nombre">Nombre completo:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                        <label for="correo">Correo electrónico:</label>
+                        <input type="email" id="correo" name="correo" required>
+                        <label for="telefono">Teléfono / WhatsApp (opcional):</label>
+                        <input type="tel" id="telefono" name="telefono">
+                        <label for="asunto">Asunto:</label>
+                        <select id="asunto" name="asunto">
+                            <option value="consulta">Consulta general</option>
+                            <option value="pedido">Pedido especial</option>
+                            <option value="soporte">Soporte postventa</option>
+                            <option value="sugerencia">Sugerencia</option>
+                        </select>
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                        <button type="submit" class="btn-primary">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+            <div class="preguntas-frecuentes">
+                <h2>¿Necesitas una respuesta rápida?</h2>
+                <details>
+                    <summary>¿En cuánto tiempo responden?</summary>
+                    <p>Respondemos la mayoría de consultas en menos de 2 horas durante horario laboral.</p>
+                </details>
+                <details>
+                    <summary>¿Puedo pedir un peluche personalizado?</summary>
+                    <p>¡Sí! Escríbenos por WhatsApp y te asesoramos con las opciones disponibles.</p>
+                </details>
+                <details>
+                    <summary>¿Cómo puedo hacer seguimiento a mi pedido?</summary>
+                    <p>Te enviamos el número de guía por WhatsApp o correo apenas tu pedido sea despachado.</p>
+                </details>
+            </div>
+            <div class="contacto-mapa">
+                <h2>¿Dónde estamos?</h2>
+                <p>Atendemos desde Medellín, pero realizamos envíos seguros a toda Colombia.</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." width="100%" height="180" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
         </section>
     </main>
+    <!-- BURBUJAS FLotantes -->
+    <div class="floating-bubbles">
+        <a href="https://wa.me/573001234567" class="bubble bubble-whatsapp" title="Chatea por WhatsApp" target="_blank">
+            <img src="assets/icons/whatsapp.svg" alt="WhatsApp">
+        </a>
+        <a href="https://instagram.com/PELUCHES.VARIEDADESTEDDY" class="bubble bubble-ig" title="Instagram" target="_blank">
+            <img src="assets/icons/instagram.svg" alt="Instagram">
+        </a>
+    </div>
     <footer>
         <div class="footer-links">
             <a href="privacidad.html">Políticas de Privacidad</a>
