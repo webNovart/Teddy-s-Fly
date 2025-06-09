@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teddy's Fly: Donde los sueños suaves toman vuelo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- CABECERA -->
+    <header>
+        <div class="logo-nav">
+            <img src="assets/img/logo.png" alt="Teddy's Fly Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Inicio</a></li>
+                    <li><a href="tienda.html">Tienda</a></li>
+                    <li><a href="novedades.html">Novedades</a></li>
+                    <li><a href="acerca.html">Acerca de Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-icons">
+            <form class="search-form">
+                <input type="text" placeholder="Buscar...">
+                <button type="submit"><img src="assets/icons/search.svg" alt="Buscar"></button>
+            </form>
+            <a href="carrito.html" class="cart-icon" title="Carrito">
+                <img src="assets/icons/cart.svg" alt="Carrito">
+                <span class="cart-count">0</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- BANNER PRINCIPAL -->
+    <section class="hero">
+        <img src="assets/img/banner.jpg" alt="Banner Teddy's Fly">
+        <div class="hero-content">
+            <h1>Teddy's Fly: Donde los sueños suaves toman vuelo</h1>
+            <p>Descubre peluches adorables y variedad de regalos para cada ocasión.</p>
+            <a href="tienda.html" class="btn-primary">Ver Peluches</a>
+        </div>
+    </section>
+
+    <!-- CATEGORÍAS DESTACADAS -->
+    <section class="categorias">
+        <h2>Categorías</h2>
+        <div class="categorias-grid">
+            <a href="tienda.html?cat=grandes" class="categoria-card">
+                <img src="assets/img/categoria-1.jpg" alt="Peluches Grandes">
+                <span>Peluches Grandes</span>
+            </a>
+            <a href="tienda.html?cat=mini" class="categoria-card">
+                <img src="assets/img/categoria-2.jpg" alt="Mini Peluches">
+                <span>Mini Peluches</span>
+            </a>
+            <a href="tienda.html?cat=personajes" class="categoria-card">
+                <img src="assets/img/categoria-3.jpg" alt="Personajes">
+                <span>Personajes</span>
+            </a>
+            <a href="tienda.html?cat=musicales" class="categoria-card">
+                <img src="assets/img/categoria-4.jpg" alt="Peluches Musicales">
+                <span>Peluches Musicales</span>
+            </a>
+            <a href="tienda.html?cat=regalos" class="categoria-card">
+                <img src="assets/img/categoria-5.jpg" alt="Regalos Originales">
+                <span>Regalos Originales</span>
+            </a>
+            <a href="tienda.html?cat=variedades" class="categoria-card">
+                <img src="assets/img/categoria-6.jpg" alt="Variedades">
+                <span>Variedades</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- NOVEDADES O MÁS VENDIDOS -->
+    <section class="novedades">
+        <h2>Novedades</h2>
+        <div class="productos-grid">
+            <div class="producto-card">
+                <img src="assets/img/peluche-nuevo.jpg" alt="Peluche Novedad">
+                <span class="tag-nuevo">Nuevo</span>
+                <h3>Peluche Osito Viajero</h3>
+                <p class="precio">$29.900</p>
+                <a href="producto.html?id=1" class="btn-secondary">Ver Detalles</a>
+                <button class="btn-cart" title="Añadir al carrito">
+                    <img src="assets/icons/cart.svg" alt="Añadir al carrito">
+                </button>
+            </div>
+            <div class="producto-card">
+                <img src="assets/img/peluche-pikachu.jpg" alt="Peluche Pikachu">
+                <span class="tag-nuevo" style="background:#FFD900; color:#333;">Más vendido</span>
+                <h3>Peluche Pikachu</h3>
+                <p class="precio">$34.900</p>
+                <a href="producto.html?id=2" class="btn-secondary">Ver Detalles</a>
+                <button class="btn-cart" title="Añadir al carrito">
+                    <img src="assets/icons/cart.svg" alt="Añadir al carrito">
+                </button>
+            </div>
+            <!-- Más productos... -->
+        </div>
+    </section>
+
+    <!-- CONTACTO DESTACADO -->
+    <section class="contacto-cta">
+        <h2>¿Tienes dudas o quieres hacer un pedido?</h2>
+        <a href="https://wa.me/573001234567" class="btn-whatsapp" target="_blank">
+            <img src="assets/icons/whatsapp.svg" alt="WhatsApp"> Chatear por WhatsApp
+        </a>
+        <a href="https://instagram.com/PELUCHES.VARIEDADESTEDDY" target="_blank" class="btn-instagram">
+            <img src="assets/icons/instagram.svg" alt="Instagram"> Síguenos en Instagram
+        </a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-links">
+            <a href="privacidad.html">Políticas de Privacidad</a>
+            <a href="terminos.html">Términos y Condiciones</a>
+            <a href="pagos.html">Métodos de Pago</a>
+        </div>
+        <div class="footer-copy">
+            <p>&copy; 2025 Teddy's Fly. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
