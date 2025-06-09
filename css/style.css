@@ -713,3 +713,154 @@ footer {
     .acerca-cols { flex-direction: column; gap: 1em; }
     .cards-container { flex-direction: column; gap: 1.2em; align-items: center;}
 }
+/* ... Todo el CSS anterior ... */
+
+/* Contacto sección estructurada */
+.padders {
+    padding: 3em 2em 3em 2em;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.contacto-formulario .intro {
+    font-size: 1.18em;
+    margin-bottom: 2em;
+    color: #555;
+}
+.contacto-cols {
+    display: flex;
+    gap: 2em;
+    flex-wrap: wrap;
+    margin-bottom: 2.5em;
+}
+.contacto-info, .contacto-form {
+    flex: 1 1 320px;
+    min-width: 260px;
+}
+.contacto-lista {
+    list-style: none;
+    margin: 1em 0 1.5em 0;
+    padding: 0;
+}
+.contacto-lista li {
+    display: flex;
+    align-items: center;
+    gap: 0.7em;
+    margin-bottom: 0.6em;
+    font-size: 1.06em;
+}
+.icono-mini {
+    width: 22px;
+    height: 22px;
+}
+.contacto-cards {
+    display: flex;
+    gap: 1em;
+    margin-top: 1.5em;
+}
+.contacto-card {
+    background: var(--color-blanco);
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(51,204,255,0.09);
+    padding: 1em 0.7em;
+    width: 110px;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform .15s, border .15s;
+}
+.contacto-card:hover {
+    transform: scale(1.05);
+    border: 2px solid var(--color-secundario);
+    box-shadow: 0 4px 18px rgba(51,204,255,0.18);
+}
+.contacto-card img {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 0.4em;
+}
+.contacto-form label {
+    margin-top: 1em;
+    display: block;
+    font-weight: 600;
+    color: var(--color-primario);
+}
+.contacto-form input,
+.contacto-form textarea,
+.contacto-form select {
+    width: 100%;
+    margin-bottom: 1em;
+    padding: 0.5em;
+    border-radius: 8px;
+    border: 1px solid var(--color-primario);
+    font-size: 1em;
+}
+.contacto-form button {
+    margin-top: 0.7em;
+}
+.preguntas-frecuentes details {
+    margin-bottom: 1em;
+    background: var(--color-terciario);
+    border-radius: 8px;
+    padding: 0.8em 1em;
+}
+.preguntas-frecuentes summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--color-primario);
+}
+.contacto-mapa {
+    margin-top: 2em;
+    background: var(--color-terciario);
+    padding: 1em;
+    border-radius: 12px;
+    text-align: center;
+}
+.contacto-mapa h2 {
+    margin-bottom: 0.5em;
+    color: var(--color-primario);
+}
+
+/* Burbujas flotantes WhatsApp/IG */
+.floating-bubbles {
+    position: fixed;
+    bottom: 24px;
+    right: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    z-index: 999;
+}
+.bubble {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 24px rgba(51,204,255,0.20);
+    background: var(--color-blanco);
+    border: 2px solid var(--color-primario);
+    cursor: pointer;
+    transition: transform .18s, box-shadow .12s;
+}
+.bubble img {
+    width: 36px;
+    height: 36px;
+}
+.bubble-whatsapp {
+    border-color: #25D366;
+}
+.bubble-ig {
+    border-color: #E1306C;
+}
+.bubble:hover {
+    transform: scale(1.13);
+    box-shadow: 0 2px 24px rgba(255,217,0,0.24);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .padders { padding: 1.5em 0.5em; }
+    .contacto-cols { flex-direction: column; gap: 1.5em; }
+    .contacto-cards { flex-direction: column; gap: 1em; }
+}
