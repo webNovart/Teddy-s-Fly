@@ -45,9 +45,16 @@
                 <form class="compra-form">
                     <label for="cantidad">Cantidad:</label>
                     <input type="number" id="cantidad" name="cantidad" min="1" value="1">
-                    <button class="btn-primary" type="submit">
-                        <img src="assets/icons/cart.svg" alt="Carrito"> Añadir al carrito
-                    </button>
+                    <button
+                    type="button"
+                    class="btn-cart"
+                    data-id="1"
+                    data-nombre="Peluche Osito Viajero"
+                    data-precio="29900"
+                    data-imagen="assets/img/peluche-nuevo.jpg"
+                    >
+                    <img src="assets/icons/cart.svg" alt="Carrito"> Añadir al carrito
+                </button>
                 </form>
                 <div class="descripcion">
                     <h3>Descripción</h3>
@@ -95,5 +102,6 @@
         <img src="assets/icons/instagram.svg" alt="Instagram">
     </a>
 </div>
+    <script src="js/agregar-carrito.js"></script>
 </body>
 </html>
