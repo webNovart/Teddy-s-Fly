@@ -31,17 +31,103 @@
         </div>
     </header>
     <main>
-        <section class="acerca">
-            <h1>Sobre Teddy's Fly</h1>
-            <p>Somos una tienda dedicada a traer ternura y felicidad a través de peluches y regalos originales. Nuestro objetivo es ofrecer productos de la mejor calidad, con diseños únicos y un servicio al cliente que te haga sentir parte de nuestra familia.</p>
-            <ul>
-                <li>Peluches de todos los tamaños, personajes y estilos</li>
-                <li>Materiales seguros y lavables</li>
-                <li>Atención personalizada vía WhatsApp</li>
-                <li>Envíos a toda Colombia</li>
-            </ul>
-            <h3>¿Por qué elegir Teddy's Fly?</h3>
-            <p>¡Porque cada peluche cuenta una historia y alegra corazones!</p>
+        <section class="acerca padders">
+            <h1>¡Bienvenido a Teddy's Fly!</h1>
+            <p class="intro">En Teddy's Fly creemos que cada peluche tiene una historia por contar y que cada regalo es una oportunidad para regalar ternura, alegría y recuerdos imborrables. Somos más que una tienda: somos un equipo apasionado por la magia de los detalles, la calidez de los abrazos y la felicidad que solo un peluche puede brindar.</p>
+            
+            <div class="acerca-cols">
+                <div>
+                    <h2>Nuestra Misión</h2>
+                    <p>Conectar corazones a través de productos suaves, seguros y llenos de personalidad. Nuestra misión es acompañar a chicos y grandes en momentos especiales, generando sonrisas y recuerdos con cada entrega.</p>
+                </div>
+                <div>
+                    <h2>Visión</h2>
+                    <p>Ser la tienda de peluches y regalos más querida de Colombia, reconocida por la calidad, originalidad y el excelente servicio. Queremos llegar a cada rincón donde un abrazo suave sea necesario.</p>
+                </div>
+            </div>
+            
+            <div class="acerca-cols">
+                <div>
+                    <h2>Valores</h2>
+                    <ul class="valores-list">
+                        <li>Calidez y cercanía</li>
+                        <li>Calidad y seguridad</li>
+                        <li>Diversidad y creatividad</li>
+                        <li>Compromiso con la felicidad del cliente</li>
+                        <li>Innovación y pasión por los detalles</li>
+                    </ul>
+                </div>
+                <div class="acerca-img">
+                    <img src="assets/img/team.jpg" alt="Nuestro equipo Teddy's Fly">
+                </div>
+            </div>
+
+            <h2 class="timeline-title">Nuestra Historia</h2>
+            <div class="timeline-container">
+                <div class="timeline">
+                    <div class="timeline-event left">
+                        <div class="content">
+                            <h3>2018</h3>
+                            <p>Nació Teddy's Fly como un sueño familiar en Medellín, con apenas 10 modelos de peluches y muchas ganas de sorprender.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-event right">
+                        <div class="content">
+                            <h3>2020</h3>
+                            <p>Incorporamos personajes y peluches musicales, creciendo en variedad y llegando a más hogares gracias a redes sociales.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-event left">
+                        <div class="content">
+                            <h3>2022</h3>
+                            <p>¡Primeros envíos nacionales! Lanzamos nuestra tienda online y mejoramos nuestro empaque para que cada peluche llegue con magia.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-event right">
+                        <div class="content">
+                            <h3>2024</h3>
+                            <p>Ampliamos nuestro equipo y nuestras líneas de productos, incluyendo regalos originales y colecciones exclusivas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="acerca-interactiva">
+                <h2>¡Interactúa con nosotros!</h2>
+                <div class="cards-container">
+                    <div class="acerca-card" onclick="window.open('https://wa.me/573001234567','_blank')">
+                        <img src="assets/icons/whatsapp.svg" alt="WhatsApp">
+                        <h3>Chat en vivo</h3>
+                        <p>¿Tienes dudas? ¡Háblanos por WhatsApp!</p>
+                    </div>
+                    <div class="acerca-card" onclick="window.open('https://instagram.com/PELUCHES.VARIEDADESTEDDY','_blank')">
+                        <img src="assets/icons/instagram.svg" alt="Instagram">
+                        <h3>Síguenos</h3>
+                        <p>Descubre lanzamientos y sorteos en Instagram.</p>
+                    </div>
+                    <div class="acerca-card" onclick="document.getElementById('acerca-faq').scrollIntoView({behavior:'smooth'})">
+                        <img src="assets/icons/faq.svg" alt="FAQ">
+                        <h3>Preguntas frecuentes</h3>
+                        <p>Resuelve tus dudas al instante.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq" id="acerca-faq">
+                <h2>Preguntas Frecuentes</h2>
+                <details>
+                    <summary>¿Hacen envíos a todo el país?</summary>
+                    <p>Sí, realizamos envíos a toda Colombia mediante transportadoras reconocidas.</p>
+                </details>
+                <details>
+                    <summary>¿Puedo personalizar mi pedido?</summary>
+                    <p>Algunos de nuestros peluches y regalos pueden personalizarse. ¡Consúltanos por WhatsApp para más información!</p>
+                </details>
+                <details>
+                    <summary>¿Qué métodos de pago aceptan?</summary>
+                    <p>Transferencia bancaria, pago en línea, contra entrega en Medellín y apps como Nequi o Daviplata. <a href="pagos.html">Ver más detalles aquí.</a></p>
+                </details>
+            </div>
         </section>
     </main>
     <footer>
