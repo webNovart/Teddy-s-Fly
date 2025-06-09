@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tienda | Teddy's Fly</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- CABECERA igual a index.html -->
+    <header>
+        <div class="logo-nav">
+            <img src="assets/img/logo.png" alt="Teddy's Fly Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="tienda.html" class="active">Tienda</a></li>
+                    <li><a href="novedades.html">Novedades</a></li>
+                    <li><a href="acerca.html">Acerca de Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-icons">
+            <form class="search-form">
+                <input type="text" placeholder="Buscar...">
+                <button type="submit"><img src="assets/icons/search.svg" alt="Buscar"></button>
+            </form>
+            <a href="carrito.html" class="cart-icon" title="Carrito">
+                <img src="assets/icons/cart.svg" alt="Carrito">
+                <span class="cart-count">0</span>
+            </a>
+        </div>
+    </header>
+    <main class="tienda-main">
+        <div class="tienda-header">
+            <h1>Tienda de Peluches</h1>
+            <div class="filtros">
+                <form>
+                    <select name="categoria">
+                        <option value="">Todas las categorías</option>
+                        <option value="grande">Peluches Grandes</option>
+                        <option value="mini">Mini Peluches</option>
+                        <option value="personaje">Personajes</option>
+                        <option value="musical">Peluches Musicales</option>
+                        <option value="regalo">Regalos Originales</option>
+                        <option value="variedad">Variedades</option>
+                    </select>
+                    <select name="ordenar">
+                        <option value="">Ordenar por</option>
+                        <option value="precio-asc">Precio: menor a mayor</option>
+                        <option value="precio-desc">Precio: mayor a menor</option>
+                        <option value="novedades">Novedades</option>
+                    </select>
+                    <input type="range" min="10000" max="100000" step="1000" name="precio" id="filtro-precio">
+                    <label for="filtro-precio">Filtrar por precio</label>
+                    <button type="submit" class="btn-secondary">Filtrar</button>
+                </form>
+            </div>
+        </div>
+        <section class="productos-grid">
+            <div class="producto-card">
+                <img src="assets/img/peluche-nuevo.jpg" alt="Peluche Novedad">
+                <span class="tag-nuevo">Nuevo</span>
+                <h3>Peluche Osito Viajero</h3>
+                <p class="precio">$29.900</p>
+                <a href="producto.html?id=1" class="btn-secondary">Ver Detalles</a>
+                <button class="btn-cart" title="Añadir al carrito">
+                    <img src="assets/icons/cart.svg" alt="Añadir al carrito">
+                </button>
+            </div>
+            <div class="producto-card">
+                <img src="assets/img/peluche-pikachu.jpg" alt="Peluche Pikachu">
+                <h3>Peluche Pikachu</h3>
+                <p class="precio">$34.900</p>
+                <a href="producto.html?id=2" class="btn-secondary">Ver Detalles</a>
+                <button class="btn-cart" title="Añadir al carrito">
+                    <img src="assets/icons/cart.svg" alt="Añadir al carrito">
+                </button>
+            </div>
+            <!-- Más productos... -->
+        </section>
+    </main>
+    <footer>
+        <div class="footer-links">
+            <a href="privacidad.html">Políticas de Privacidad</a>
+            <a href="terminos.html">Términos y Condiciones</a>
+            <a href="pagos.html">Métodos de Pago</a>
+        </div>
+        <div class="footer-copy">
+            <p>&copy; 2025 Teddy's Fly. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
