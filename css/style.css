@@ -1491,12 +1491,14 @@ html, body {
     align-items: center !important;
     gap: 12px !important;
   }
-  .producto-card {
-    width: 96vw !important;
-    max-width: 450px !important;
-    min-width: 0 !important;
-    margin: 0 auto !important;
+   .producto-card .btn-cart {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* Opcional: para que no ocupe todo el ancho */
+    width: max-content;
   }
+
   .producto-card img {
     width: 100% !important;
     max-width: 100% !important;
