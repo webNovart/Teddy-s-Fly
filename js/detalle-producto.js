@@ -55,9 +55,7 @@ const productos = [
         nombre: "Peluche Minion Kevin",
         precio: 32000,
         imagen: "assets/img/peluche-minion-kevin.jpg",
-        miniaturas: [
-            "assets/img/peluche-minion-kevin.jpg"
-        ],
+       
         descripcion: `
             <h3>Descripción</h3>
             <p>El Peluche Minion Kevin es el compañero perfecto para los fans de Mi Villano Favorito. Suave, divertido y con detalles bordados, ideal para juegos y decoración.</p>
