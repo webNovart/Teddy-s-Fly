@@ -534,6 +534,10 @@ const productos = [
 }
   
 ];
+document.addEventListener("DOMContentLoaded", function() {
+  renderProductos(soloPersonajes, "grid-personajes");
+  renderProductos(soloPeluches, "grid-peluches");
+});
 // Renderiza tarjetas de productos en el contenedor con id="productos-grid"
 
 function renderProductos(lista = productos) {
