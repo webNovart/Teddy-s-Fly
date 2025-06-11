@@ -1,973 +1,889 @@
 // Datos de ejemplo, puedes cargarlos desde un JSON o backend en un futuro
 const productos = [
-    {
-        id: "1",
-        nombre: "Peluche Osito Viajero",
-        precio: 29900,
-        imagen: "assets/img/peluche-nuevo.jpg",
-        miniaturas: [
-            "assets/img/peluche-nuevo.jpg",
-            "assets/img/peluche-nuevo2.jpg",
-            "assets/img/peluche-nuevo3.jpg"
-        ],
-        descripcion: `
-            <h3>Descripción</h3>
-            <p>El Peluche Osito Viajero es suave, lavable y perfecto para acompañar a grandes y pequeños en cada aventura. Material antialérgico, tamaño 30cm, disponible en varios colores.</p>
-            <ul>
-                <li>Material: Felpa antialérgica</li>
-                <li>Tamaño: 30cm</li>
-                <li>Lavable: Sí</li>
-                <li>Recomendado desde 3 años</li>
-            </ul>
-            <div class="valoraciones">
-                <h3>Valoraciones</h3>
-                <p>⭐⭐⭐⭐⭐ (4.8/5 basado en 25 opiniones)</p>
-            </div>
-        `
-    },
-    {
-        id: "2",
-        nombre: "Peluche Pikachu",
-        precio: 34900,
-        imagen: "assets/img/peluche-pikachu.jpg",
-        miniaturas: [
-            "assets/img/peluche-pikachu.jpg"
-        ],
-        descripcion: `
-            <h3>Descripción</h3>
-            <p>¡El Pikachu más adorable! Suave, tamaño 25cm, ideal para fans de todas las edades.</p>
-            <ul>
-                <li>Material: Felpa premium</li>
-                <li>Tamaño: 25cm</li>
-                <li>Lavable: Sí</li>
-                <li>Producto Licenciado</li>
-            </ul>
-            <div class="valoraciones">
-                <h3>Valoraciones</h3>
-                <p>⭐⭐⭐⭐ (4.5/5 basado en 12 opiniones)</p>
-            </div>
-        `
-    },
-   
+   // Bloque 1
+  {
+    id: "FP1226",
+    nombre: "Llavero Burro 12cm Azul",
+    precio: 10500,
+    imagen: "imagenes/FP1226-3.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Un llavero peluche con diseño de burro en color azul, compacto y divertido. Perfecto para decorar tus llaves, mochila o regalar como detalle especial.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 12 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color azul, costuras reforzadas</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.6/5 basado en 9 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "LLA-Mat-MORADO",
+    nombre: "Llavero Matera Dino 10cm Morado",
+    precio: 11500,
+    imagen: "imagenes/LLA-Mat-3-1.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Llavero peluche matera con forma de dinosaurio en color morado. Ideal para regalar o coleccionar, pequeño y práctico para llevar a todos lados.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 10 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color morado, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (4.7/5 basado en 12 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "LLA-Mat-VERDE",
+    nombre: "Llavero Matera Dino 10cm Verde",
+    precio: 11500,
+    imagen: "imagenes/LLA-Mat-2.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Divertido llavero de dinosaurio, pequeño y suave, en color verde. Perfecto para personalizar tus pertenencias y llevar contigo a todas partes.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 10 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color verde, costuras de calidad</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.5/5 basado en 8 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "LLA-Mat-AZUL-OSCURO",
+    nombre: "Llavero Matera Dino 10cm Azul Oscuro",
+    precio: 11500,
+    imagen: "imagenes/LLA-Mat-3-1.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Llavero de felpa con forma de dinosaurio en azul oscuro. Ideal para niños y adultos que buscan un accesorio original y suave.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 10 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color azul oscuro, detalles en costura</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (4.9/5 basado en 11 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "LLA-Mat-AZUL-CLARO",
+    nombre: "Llavero Matera Dino 10cm Azul Claro",
+    precio: 11500,
+    imagen: "imagenes/LLA-Mat-1.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Llavero matera con diseño de dinosaurio en azul claro. Tamaño perfecto para mochilas, estuches o llaves. Suave y resistente.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 10 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color azul claro, texturas agradables</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.5/5 basado en 7 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "LLA-Din-NARANJA",
+    nombre: "Llavero Dinosaurio 12cm Naranja",
+    precio: 12500,
+    imagen: "imagenes/LLA-Din-1.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Llavero peluche de dinosaurio color naranja. Alegre y llamativo, perfecto para niños o amantes de los dinosaurios.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 12 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color naranja, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (4.8/5 basado en 10 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "LLA-Din-MORADO",
+    nombre: "Llavero Dinosaurio 12cm Morado",
+    precio: 12500,
+    imagen: "imagenes/LLA-Din-2.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Llavero peluche con diseño de dinosaurio en color morado. Suave, seguro y muy original como regalo o accesorio para tus llaves.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 12 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color morado, costura reforzada</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.6/5 basado en 9 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "LLA-Din-VERDE",
+    nombre: "Llavero Dinosaurio 12cm Verde",
+    precio: 12500,
+    imagen: "imagenes/LLA-Din-3.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Llavero pequeño con forma de dinosaurio en color verde, perfecto para llevar en la mochila o regalar a niños y niñas.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 12 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color verde, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (4.8/5 basado en 11 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "LLA-Din-COLORES",
+    nombre: "Llavero Dinosaurio 12cm Colores",
+    precio: 12500,
+    imagen: "imagenes/LLA-Din-4.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Llavero de dinosaurio en colores surtidos, ideal para fans de los peluches pequeños y coleccionistas de accesorios originales.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 12 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Colores variados, costura de calidad</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.5/5 basado en 8 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "Eco-Sur-PANDA",
+    nombre: "Peluche económico pequeño 15cm Panda",
+    precio: 13000,
+    imagen: "imagenes/WhatsApp-Image-2025-05-16-at-5.13.13-PM.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche económico pequeño con diseño de panda. Suave, tierno y perfecto para niños pequeños o para decorar escritorios y habitaciones.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 15 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color blanco y negro, textura agradable</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.6/5 basado en 10 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "1030-17-MEL",
+    nombre: "Perro Pets Mel 25cm",
+    precio: 15000,
+    imagen: "imagenes/1030-17.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche de perro "Pets Mel", de tamaño mediano. Suave y amigable, ideal para abrazar y acompañar el descanso de los más pequeños.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 25 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Colores vivos y textura agradable</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.7/5 basado en 13 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "j300-21-OSO",
+    nombre: "Osos Peludos Pequeños 20cm",
+    precio: 16500,
+    imagen: "imagenes/WhatsApp-Image-2025-05-08-at-5.29.43-PM.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluches osos peludos pequeños, tiernos y suaves. Perfecto para niños o como detalle especial en cualquier ocasión.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 20 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Colores diferentes, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (4.9/5 basado en 14 opiniones)</p>
+      </div>
+    `
+  },
 
+  // BLOQUE 2
+  {
+    id: "FLOS-1523-GRIS",
+    nombre: "Osos Corazón y Rosa 20cm Gris",
+    precio: 17500,
+    imagen: "imagenes/flos-1523-1.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche oso con corazón y rosa en color gris, ideal para regalar en ocasiones especiales. Su tamaño compacto lo hace perfecto para decorar cualquier espacio o como detalle romántico.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 20 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color gris, detalles bordados y costura resistente</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (4.9/5 basado en 14 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "FLOS-1523-BEIGE",
+    nombre: "Osos Corazón y Rosa 20cm Beige",
+    precio: 17500,
+    imagen: "imagenes/flos-1523-3.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche oso en color beige con corazón y rosa. Un detalle tierno y suave, perfecto para regalar y expresar cariño en cualquier momento especial.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 20 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color beige, acabados de alta calidad</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.7/5 basado en 11 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "FLOS-1523-CAFE",
+    nombre: "Osos Corazón y Rosa 20cm Café",
+    precio: 17500,
+    imagen: "imagenes/flos-1523-2.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Oso de peluche en color café con corazón y rosa. Suave, adorable y con detalles delicados. Ideal para regalar, decorar o coleccionar.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 20 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color café, costuras reforzadas</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (4.8/5 basado en 13 opiniones)</p>
+      </div>
+    `
+  },
+     {
+    id: "uni-2023-ROSA",
+    nombre: "Unicornio Estrellitas 22cm ROSA",
+    precio: 19000,
+    imagen: "imagenes/uni-2023-1.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche unicornio color rosa con estrellitas bordadas, suave y adorable. Ideal para regalar a niños y amantes de los unicornios.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 22 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color rosa, detalles de estrellas</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (4.8/5 basado en 10 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "uni-2023-BLANCO",
+    nombre: "Unicornio Estrellitas 22cm BLANCO",
+    precio: 19000,
+    imagen: "imagenes/uni-2023-3.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Unicornio de peluche color blanco con estrellitas, pequeño y tierno. Perfecto para decorar habitaciones o regalar como detalle especial.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 22 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color blanco, detalles de estrellas</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.7/5 basado en 8 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "uni-2023-MORADO",
+    nombre: "Unicornio Estrellitas 22cm MORADO",
+    precio: 19000,
+    imagen: "imagenes/uni-2023-3.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Unicornio de peluche color morado con estrellitas bordadas. Suave y colorido, especial para coleccionistas y niños pequeños.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 22 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color morado, detalles de estrellas</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.6/5 basado en 7 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "Leon-p",
+    nombre: "Leon mechudo pequeño",
+    precio: 20000,
+    imagen: "imagenes/leon-p-1536x1536.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche león pequeño con melena mechuda, suave y divertido. Ideal para niños y para decorar espacios infantiles.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 15 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color amarillo y marrón, melena esponjosa</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (4.8/5 basado en 9 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "A019-COCODRILO",
+    nombre: "Zoologico cabezon 20cm COCODRILO",
+    precio: 20500,
+    imagen: "imagenes/A019-2.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche cabezón de cocodrilo, divertido y suave. Perfecto para juegos, colecciones o como regalo especial para los niños.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 20 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color verde, diseño simpático</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (4.9/5 basado en 8 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "A019-OVEJA",
+    nombre: "Zoológico cabezón 20cm OVEJA",
+    precio: 20500,
+    imagen: "imagenes/A019-3.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche cabezón de oveja, tierno y esponjoso. Un detalle encantador para regalar o para decorar habitaciones infantiles.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 20 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color blanco, detalles en rosa</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.7/5 basado en 7 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "2591-ROSA",
+    nombre: "Cerdo disfrazado ROSA 25cm",
+    precio: 23500,
+    imagen: "imagenes/2591-ROSA.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche de cerdo disfrazado color rosa, tierno y gracioso. Ideal para regalar, coleccionar o decorar espacios infantiles.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 25 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color rosa, detalles de disfraz</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.6/5 basado en 6 opiniones)</p>
+      </div>
+    `
+  },
+    // BLOQUE 3
+  {
+    id: "bg9-20-BLANCO",
+    nombre: "Gato Corazón 25cm Blanco",
+    precio: 27000,
+    imagen: "imagenes/WhatsApp-Image-2025-04-21-at-4.31.41-PM.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche de gato blanco con corazón, suave y tierno. Ideal para acompañar a los más pequeños en sus juegos o para regalar como muestra de cariño.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 25 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color blanco, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.8/5 basado en 13 opiniones)</p>
+      </div>
+    `
+  },
     {
-        id: "13",
-        nombre: "Peluche Minion Kevin",
-        precio: 32000,
-        imagen: "assets/img/peluche-minion-kevin.jpg",
-       
-        descripcion: `
-            <h3>Descripción</h3>
-            <p>El Peluche Minion Kevin es el compañero perfecto para los fans de Mi Villano Favorito. Suave, divertido y con detalles bordados, ideal para juegos y decoración.</p>
-            <ul>
-                <li>Material: Felpa antialérgica</li>
-                <li>Tamaño: 28cm</li>
-                <li>Lavable: Sí, a mano</li>
-                <li>Incluye: Overol azul y gafas suaves</li>
-            </ul>
-            <div class="valoraciones">
-                <h3>Valoraciones</h3>
-                <p>⭐⭐⭐⭐⭐ (4.9/5 basado en 32 opiniones)</p>
-            </div>
-        `
-    },
-    {
-        id: "14",
-        nombre: "Peluche Minion Stuart",
-        precio: 32000,
-        imagen: "assets/img/peluche-minion-stuart.jpg",
-        miniaturas: [
-            "assets/img/peluche-minion-stuart.jpg"
-        ],
-        descripcion: `
-            <h3>Descripción</h3>
-            <p>Stuart, el Minion travieso, te acompañará en todas tus aventuras. Perfecto para regalar y coleccionar por su ternura y colores vibrantes.</p>
-            <ul>
-                <li>Material: Felpa de alta calidad</li>
-                <li>Tamaño: 28cm</li>
-                <li>Lavable: Sí</li>
-                <li>Detalles bordados</li>
-            </ul>
-            <div class="valoraciones">
-                <h3>Valoraciones</h3>
-                <p>⭐⭐⭐⭐ (4.7/5 basado en 26 opiniones)</p>
-            </div>
-        `
-    },
-    {
-        id: "15",
-        nombre: "Peluche Minion Bob",
-        precio: 32000,
-        imagen: "assets/img/peluche-minion-bob.jpg",
-        miniaturas: [
-            "assets/img/peluche-minion-bob.jpg"
-        ],
-        descripcion: `
-            <h3>Descripción</h3>
-            <p>El Peluche Minion Bob es el más adorable de todos. Ideal para pequeños y grandes, es suave y seguro para dormir y jugar.</p>
-            <ul>
-                <li>Material: Felpa hipoalergénica</li>
-                <li>Tamaño: 28cm</li>
-                <li>Lavable: Sí, fácil de limpiar</li>
-                <li>Incluye: Osito de peluche miniatura</li>
-            </ul>
-            <div class="valoraciones">
-                <h3>Valoraciones</h3>
-                <p>⭐⭐⭐⭐⭐ (5/5 basado en 44 opiniones)</p>
-            </div>
-        `
-    },
-    {
-        id: "16",
-        nombre: "Peluche Stitch Azul",
-        precio: 34000,
-        imagen: "assets/img/peluche-stitch-azul.jpg",
-        miniaturas: [
-            "assets/img/peluche-stitch-azul.jpg"
-        ],
-        descripcion: `
-            <h3>Descripción</h3>
-            <p>Stitch azul original, perfecto para fans de Lilo & Stitch. Suave, abrazable y con detalles auténticos para disfrutar en todo momento.</p>
-            <ul>
-                <li>Material: Felpa premium hipoalergénica</li>
-                <li>Tamaño: 25cm</li>
-                <li>Lavable: Sí, ciclo suave</li>
-                <li>Orejas grandes y ojos bordados</li>
-            </ul>
-            <div class="valoraciones">
-                <h3>Valoraciones</h3>
-                <p>⭐⭐⭐⭐⭐ (4.8/5 basado en 21 opiniones)</p>
-            </div>
-        `
-    },
-    {
-        id: "17",
-        nombre: "Peluche Stitch Rosa",
-        precio: 34000,
-        imagen: "assets/img/peluche-stitch-rosa.jpg",
-        miniaturas: [
-            "assets/img/peluche-stitch-rosa.jpg"
-        ],
-        descripcion: `
-            <h3>Descripción</h3>
-            <p>Stitch en su versión rosa, tierno y suave, ideal para regalar a quienes aman los peluches únicos y coloridos.</p>
-            <ul>
-                <li>Material: Felpa de alta calidad</li>
-                <li>Tamaño: 25cm</li>
-                <li>Lavable: Sí, a mano</li>
-                <li>Detalles bordados y orejas flexibles</li>
-            </ul>
-            <div class="valoraciones">
-                <h3>Valoraciones</h3>
-                <p>⭐⭐⭐⭐ (4.7/5 basado en 16 opiniones)</p>
-            </div>
-        `
-    },
-    {
-        id: "18",
-        nombre: "Peluche Stitch Morado",
-        precio: 34000,
-        imagen: "assets/img/peluche-stitch-morado.jpg",
-        miniaturas: [
-            "assets/img/peluche-stitch-morado.jpg"
-        ],
-        descripcion: `
-            <h3>Descripción</h3>
-            <p>Edición especial de Stitch en color morado, ideal para coleccionistas y fans de lo original.</p>
-            <ul>
-                <li>Material: Felpa antialérgica</li>
-                <li>Tamaño: 25cm</li>
-                <li>Lavable: Sí</li>
-                <li>Ojos y nariz bordados</li>
-            </ul>
-            <div class="valoraciones">
-                <h3>Valoraciones</h3>
-                <p>⭐⭐⭐⭐⭐ (4.9/5 basado en 12 opiniones)</p>
-            </div>
-        `
-    },
-    {
-        id: "19",
-        nombre: "Peluche Carl Fredricksen (Up)",
-        precio: 37000,
-        imagen: "assets/img/peluche-carl-up.jpg",
-        miniaturas: [
-            "assets/img/peluche-carl-up.jpg"
-        ],
-        descripcion: `
-            <h3>Descripción</h3>
-            <p>Carl de Up en versión peluche, con su icónica chaqueta y gafas, ideal para fans de Pixar y coleccionistas.</p>
-            <ul>
-                <li>Material: Felpa suave y detalles textiles</li>
-                <li>Tamaño: 27cm</li>
-                <li>Lavable: Sí, a mano</li>
-                <li>Incluye bastón de tela y gafas plásticas</li>
-            </ul>
-            <div class="valoraciones">
-                <h3>Valoraciones</h3>
-                <p>⭐⭐⭐⭐ (4.6/5 basado en 14 opiniones)</p>
-            </div>
-        `
-    },
-    {
-        id: "20",
-        nombre: "Peluche Russell (Up)",
-        precio: 37000,
-        imagen: "assets/img/peluche-russell-up.jpg",
-        miniaturas: [
-            "assets/img/peluche-russell-up.jpg"
-        ],
-        descripcion: `
-            <h3>Descripción</h3>
-            <p>Russell, el explorador de Up, ahora en peluche. Detalles de uniforme y mochila, perfecto para aventuras en casa.</p>
-            <ul>
-                <li>Material: Felpa y tela sintética</li>
-                <li>Tamaño: 26cm</li>
-                <li>Lavable: Sí</li>
-                <li>Uniforme y accesorios cosidos</li>
-            </ul>
-            <div class="valoraciones">
-                <h3>Valoraciones</h3>
-                <p>⭐⭐⭐⭐⭐ (4.8/5 basado en 15 opiniones)</p>
-            </div>
-        `
-    },
-    {
-        id: "21",
-        nombre: "Peluche Chimuelo",
-        precio: 35000,
-        imagen: "assets/img/peluche-chimuelo.jpg",
-        miniaturas: [
-            "assets/img/peluche-chimuelo.jpg"
-        ],
-        descripcion: `
-            <h3>Descripción</h3>
-            <p>Dragón Chimuelo ultra suave, con alas y detalles bordados. Perfecto para dormir, decorar o jugar.</p>
-            <ul>
-                <li>Material: Felpa hipoalergénica</li>
-                <li>Tamaño: 32cm</li>
-                <li>Lavable: Sí, a mano</li>
-                <li>Alas y cola articuladas</li>
-            </ul>
-            <div class="valoraciones">
-                <h3>Valoraciones</h3>
-                <p>⭐⭐⭐⭐⭐ (4.7/5 basado en 18 opiniones)</p>
-            </div>
-        `
-    },
-    {
-        id: "22",
-        nombre: "Peluche Tom (Tom y Jerry)",
-        precio: 32000,
-        imagen: "assets/img/peluche-tom.jpg",
-        miniaturas: [
-            "assets/img/peluche-tom.jpg"
-        ],
-        descripcion: `
-            <h3>Descripción</h3>
-            <p>El travieso Tom, de Tom y Jerry, en un peluche suave y abrazable. Diseño fiel al personaje clásico.</p>
-            <ul>
-                <li>Material: Felpa de alta calidad</li>
-                <li>Tamaño: 28cm</li>
-                <li>Lavable: Sí</li>
-                <li>Cola y bigotes flexibles</li>
-            </ul>
-            <div class="valoraciones">
-                <h3>Valoraciones</h3>
-                <p>⭐⭐⭐⭐⭐ (4.8/5 basado en 23 opiniones)</p>
-            </div>
-        `
-    },
-    {
-        id: "23",
-        nombre: "Peluche Jerry (Tom y Jerry)",
-        precio: 32000,
-        imagen: "assets/img/peluche-jerry.jpg",
-        miniaturas: [
-            "assets/img/peluche-jerry.jpg"
-        ],
-        descripcion: `
-            <h3>Descripción</h3>
-            <p>Jerry, el ratoncito más escurridizo, en versión peluche para los amantes de las caricaturas clásicas.</p>
-            <ul>
-                <li>Material: Felpa suave</li>
-                <li>Tamaño: 25cm</li>
-                <li>Lavable: Sí</li>
-                <li>Orejas y cola bordadas</li>
-            </ul>
-            <div class="valoraciones">
-                <h3>Valoraciones</h3>
-                <p>⭐⭐⭐⭐⭐ (5/5 basado en 19 opiniones)</p>
-            </div>
-        `
-    },
-    {
-        id: "24",
-        nombre: "Peluche Pantera Rosa",
-        precio: 33000,
-        imagen: "assets/img/peluche-pantera-rosa.jpg",
-        miniaturas: [
-            "assets/img/peluche-pantera-rosa.jpg"
-        ],
-        descripcion: `
-            <h3>Descripción</h3>
-            <p>El clásico de la animación, con diseño alargado y textura suave, ideal para abrazar o decorar tu espacio.</p>
-            <ul>
-                <li>Material: Felpa rosada de alta densidad</li>
-                <li>Tamaño: 35cm</li>
-                <li>Lavable: Sí</li>
-                <li>Ojos y hocico bordados</li>
-            </ul>
-            <div class="valoraciones">
-                <h3>Valoraciones</h3>
-                <p>⭐⭐⭐⭐ (4.6/5 basado en 14 opiniones)</p>
-            </div>
-        `
-    },
-    {
-        id: "25",
-        nombre: "Peluche Elefante Azul",
-        precio: 31000,
-        imagen: "assets/img/peluche-elefante-azul.jpg",
-        miniaturas: [
-            "assets/img/peluche-elefante-azul.jpg"
-        ],
-        descripcion: `
-            <h3>Descripción</h3>
-            <p>Elefante azul, suave y tierno, ideal para bebés y niños pequeños. Perfecto para abrazar y acompañar el sueño.</p>
-            <ul>
-                <li>Material: Felpa antialérgica</li>
-                <li>Tamaño: 30cm</li>
-                <li>Lavable: Sí, ciclo delicado</li>
-                <li>Orejas grandes y trompa flexible</li>
-            </ul>
-            <div class="valoraciones">
-                <h3>Valoraciones</h3>
-                <p>⭐⭐⭐⭐⭐ (4.9/5 basado en 17 opiniones)</p>
-            </div>
-        `
-    },
-    {
-        id: "26",
-        nombre: "Peluche Elefante Rosa",
-        precio: 31000,
-        imagen: "assets/img/peluche-elefante-rosa.jpg",
-        miniaturas: [
-            "assets/img/peluche-elefante-rosa.jpg"
-        ],
-        descripcion: `
-            <h3>Descripción</h3>
-            <p>Elefante color rosa pastel, suave y seguro para los más pequeños. Ideal para regalos de nacimiento o cumpleaños.</p>
-            <ul>
-                <li>Material: Felpa hipoalergénica</li>
-                <li>Tamaño: 30cm</li>
-                <li>Lavable: Sí</li>
-                <li>Colores resistentes al lavado</li>
-            </ul>
-            <div class="valoraciones">
-                <h3>Valoraciones</h3>
-                <p>⭐⭐⭐⭐ (4.7/5 basado en 13 opiniones)</p>
-            </div>
-        `
-    },
-    {
-        id: "27",
-        nombre: "Peluche Elefante Amarillo",
-        precio: 31000,
-        imagen: "assets/img/peluche-elefante-amarillo.jpg",
-        miniaturas: [
-            "assets/img/peluche-elefante-amarillo.jpg"
-        ],
-        descripcion: `
-            <h3>Descripción</h3>
-            <p>Elefante color amarillo, con detalles bordados y textura extra suave. Perfecto para acompañar juegos y siestas.</p>
-            <ul>
-                <li>Material: Felpa antialérgica</li>
-                <li>Tamaño: 30cm</li>
-                <li>Lavable: Sí</li>
-                <li>Relleno suave y seguro</li>
-            </ul>
-            <div class="valoraciones">
-                <h3>Valoraciones</h3>
-                <p>⭐⭐⭐⭐⭐ (5/5 basado en 8 opiniones)</p>
-            </div>
-        `
-    },
-    {
-        id: "28",
-        nombre: "Peluche Chase (Paw Patrol)",
-        precio: 33500,
-        imagen: "assets/img/peluche-chase.jpg",
-        miniaturas: [
-            "assets/img/peluche-chase.jpg"
-        ],
-        descripcion: `
-            <h3>Descripción</h3>
-            <p>Chase, el líder de Paw Patrol, en peluche con uniforme azul y gorra. Perfecto para aventuras de rescate en casa.</p>
-            <ul>
-                <li>Material: Felpa antialérgica</li>
-                <li>Tamaño: 27cm</li>
-                <li>Lavable: Sí, a máquina</li>
-                <li>Uniforme cosido con detalles</li>
-            </ul>
-            <div class="valoraciones">
-                <h3>Valoraciones</h3>
-                <p>⭐⭐⭐⭐⭐ (4.9/5 basado en 19 opiniones)</p>
-            </div>
-        `
-    },
-    {
-        id: "29",
-        nombre: "Peluche Marshall (Paw Patrol)",
-        precio: 33500,
-        imagen: "assets/img/peluche-marshall.jpg",
-        miniaturas: [
-            "assets/img/peluche-marshall.jpg"
-        ],
-        descripcion: `
-            <h3>Descripción</h3>
-            <p>Marshall, el bombero más valiente de Paw Patrol, suave y abrazable. Uniforme y casco incluidos.</p>
-            <ul>
-                <li>Material: Felpa suave</li>
-                <li>Tamaño: 27cm</li>
-                <li>Lavable: Sí</li>
-                <li>Casco de tela y uniforme cosido</li>
-            </ul>
-            <div class="valoraciones">
-                <h3>Valoraciones</h3>
-                <p>⭐⭐⭐⭐ (4.7/5 basado en 14 opiniones)</p>
-            </div>
-        `
-    },
-    {
-        id: "30",
-        nombre: "Peluche Skye (Paw Patrol)",
-        precio: 33500,
-        imagen: "assets/img/peluche-skye.jpg",
-        miniaturas: [
-            "assets/img/peluche-skye.jpg"
-        ],
-        descripcion: `
-            <h3>Descripción</h3>
-            <p>Skye, la piloto favorita de Paw Patrol, lista para volar en cada aventura. Ala y gafas incluidas.</p>
-            <ul>
-                <li>Material: Felpa premium</li>
-                <li>Tamaño: 26cm</li>
-                <li>Lavable: Sí</li>
-                <li>Gafas y alas de tela</li>
-            </ul>
-            <div class="valoraciones">
-                <h3>Valoraciones</h3>
-                <p>⭐⭐⭐⭐⭐ (4.8/5 basado en 17 opiniones)</p>
-            </div>
-        `
-    },
-    {
-        id: "31",
-        nombre: "Peluche Hello Kitty Clásica",
-        precio: 35000,
-        imagen: "assets/img/peluche-hello-kitty.jpg",
-        miniaturas: [
-            "assets/img/peluche-hello-kitty.jpg"
-        ],
-        descripcion: `
-            <h3>Descripción</h3>
-            <p>La icónica Hello Kitty con su lazo rojo. Suavidad y ternura en un solo peluche, ideal para fans de todas las edades.</p>
-            <ul>
-                <li>Material: Felpa hipoalergénica</li>
-                <li>Tamaño: 28cm</li>
-                <li>Lavable: Sí</li>
-                <li>Detalles bordados y vestido rojo</li>
-            </ul>
-            <div class="valoraciones">
-                <h3>Valoraciones</h3>
-                <p>⭐⭐⭐⭐⭐ (4.8/5 basado en 27 opiniones)</p>
-            </div>
-        `
-    },
-    {
-        id: "32",
-        nombre: "Peluche Hello Kitty Rosa",
-        precio: 35000,
-        imagen: "assets/img/peluche-hello-kitty-rosa.jpg",
-        miniaturas: [
-            "assets/img/peluche-hello-kitty-rosa.jpg"
-        ],
-        descripcion: `
-            <h3>Descripción</h3>
-            <p>Hello Kitty en versión rosa pastel, con vestido y lazo a juego. Ideal para decorar o regalar.</p>
-            <ul>
-                <li>Material: Felpa hipoalergénica</li>
-                <li>Tamaño: 28cm</li>
-                <li>Lavable: Sí</li>
-                <li>Lazo y vestido rosa incluidos</li>
-            </ul>
-            <div class="valoraciones">
-                <h3>Valoraciones</h3>
-                <p>⭐⭐⭐⭐⭐ (4.9/5 basado en 18 opiniones)</p>
-            </div>
-        `
-    },
-    {
-        id: "33",
-        nombre: "Peluche Mario",
-        precio: 37000,
-        imagen: "assets/img/peluche-mario.jpg",
-        miniaturas: [
-            "assets/img/peluche-mario.jpg"
-        ],
-        descripcion: `
-            <h3>Descripción</h3>
-            <p>El fontanero favorito de todos, Mario, ahora en peluche. Perfecto para fans de Nintendo y coleccionistas.</p>
-            <ul>
-                <li>Material: Felpa de alta calidad</li>
-                <li>Tamaño: 30cm</li>
-                <li>Lavable: Sí, a máquina</li>
-                <li>Detalles bordados y ropa cosida</li>
-            </ul>
-            <div class="valoraciones">
-                <h3>Valoraciones</h3>
-                <p>⭐⭐⭐⭐⭐ (4.9/5 basado en 34 opiniones)</p>
-            </div>
-        `
-    },
-    {
-        id: "34",
-        nombre: "Peluche Luigi",
-        precio: 37000,
-        imagen: "assets/img/peluche-luigi.jpg",
-        miniaturas: [
-            "assets/img/peluche-luigi.jpg"
-        ],
-        descripcion: `
-            <h3>Descripción</h3>
-            <p>Luigi, el inseparable hermano de Mario, listo para vivir grandes aventuras contigo.</p>
-            <ul>
-                <li>Material: Felpa de alta calidad</li>
-                <li>Tamaño: 30cm</li>
-                <li>Lavable: Sí</li>
-                <li>Detalles bordados</li>
-            </ul>
-            <div class="valoraciones">
-                <h3>Valoraciones</h3>
-                <p>⭐⭐⭐⭐ (4.8/5 basado en 24 opiniones)</p>
-            </div>
-        `
-    },
-    {
-        id: "35",
-        nombre: "Peluche Tigre Naranja",
-        precio: 32000,
-        imagen: "assets/img/peluche-tigre-naranja.jpg",
-        miniaturas: [
-            "assets/img/peluche-tigre-naranja.jpg"
-        ],
-        descripcion: `
-            <h3>Descripción</h3>
-            <p>Tigre de peluche en color naranja brillante, con rayas bordadas y cola larga. Suave y perfecto para abrazar.</p>
-            <ul>
-                <li>Material: Felpa antialérgica</li>
-                <li>Tamaño: 32cm</li>
-                <li>Lavable: Sí, a mano</li>
-                <li>Cola y rayas realistas</li>
-            </ul>
-            <div class="valoraciones">
-                <h3>Valoraciones</h3>
-                <p>⭐⭐⭐⭐ (4.7/5 basado en 16 opiniones)</p>
-            </div>
-        `
-    },
-    {
-        id: "36",
-        nombre: "Peluche Tigre Blanco",
-        precio: 32000,
-        imagen: "assets/img/peluche-tigre-blanco.jpg",
-        miniaturas: [
-            "assets/img/peluche-tigre-blanco.jpg"
-        ],
-        descripcion: `
-            <h3>Descripción</h3>
-            <p>Tigre blanco, elegante y suave, ideal para regalar o decorar habitaciones infantiles.</p>
-            <ul>
-                <li>Material: Felpa hipoalergénica</li>
-                <li>Tamaño: 32cm</li>
-                <li>Lavable: Sí</li>
-                <li>Rayas negras bordadas</li>
-            </ul>
-            <div class="valoraciones">
-                <h3>Valoraciones</h3>
-                <p>⭐⭐⭐⭐⭐ (5/5 basado en 11 opiniones)</p>
-            </div>
-        `
-    },
-    {
-        id: "37",
-        nombre: "Peluche Sonic",
-        precio: 36000,
-        imagen: "assets/img/peluche-sonic.jpg",
-        miniaturas: [
-            "assets/img/peluche-sonic.jpg"
-        ],
-        descripcion: `
-            <h3>Descripción</h3>
-            <p>El erizo azul más veloz, Sonic, ahora en peluche ultra suave para fans de videojuegos.</p>
-            <ul>
-                <li>Material: Felpa azul de alta calidad</li>
-                <li>Tamaño: 28cm</li>
-                <li>Lavable: Sí</li>
-                <li>Ojos y detalles bordados</li>
-            </ul>
-            <div class="valoraciones">
-                <h3>Valoraciones</h3>
-                <p>⭐⭐⭐⭐⭐ (4.9/5 basado en 22 opiniones)</p>
-            </div>
-        `
-    },
-    {
-        id: "38",
-        nombre: "Peluche Tails",
-        precio: 34000,
-        imagen: "assets/img/peluche-tails.jpg",
-        miniaturas: [
-            "assets/img/peluche-tails.jpg"
-        ],
-        descripcion: `
-            <h3>Descripción</h3>
-            <p>Tails, el inseparable amigo de Sonic, con dos colas suaves y detalles bordados.</p>
-            <ul>
-                <li>Material: Felpa naranja y blanca</li>
-                <li>Tamaño: 27cm</li>
-                <li>Lavable: Sí</li>
-                <li>Colas flexibles</li>
-            </ul>
-            <div class="valoraciones">
-                <h3>Valoraciones</h3>
-                <p>⭐⭐⭐⭐ (4.8/5 basado en 14 opiniones)</p>
-            </div>
-        `
-    },
-    {
-        id: "39",
-        nombre: "Peluche Peppa Pig",
-        precio: 32000,
-        imagen: "assets/img/peluche-peppa.jpg",
-        miniaturas: [
-            "assets/img/peluche-peppa.jpg"
-        ],
-        descripcion: `
-            <h3>Descripción</h3>
-            <p>Peppa Pig, la cerdita favorita de los niños, ahora en peluche hipoalergénico y lavable.</p>
-            <ul>
-                <li>Material: Felpa rosa</li>
-                <li>Tamaño: 26cm</li>
-                <li>Lavable: Sí, ciclo suave</li>
-                <li>Vestido rojo incluido</li>
-            </ul>
-            <div class="valoraciones">
-                <h3>Valoraciones</h3>
-                <p>⭐⭐⭐⭐⭐ (4.9/5 basado en 30 opiniones)</p>
-            </div>
-        `
-    },
-    {
-        id: "40",
-        nombre: "Peluche George Pig",
-        precio: 32000,
-        imagen: "assets/img/peluche-george.jpg",
-        miniaturas: [
-            "assets/img/peluche-george.jpg"
-        ],
-        descripcion: `
-            <h3>Descripción</h3>
-            <p>George Pig, con su dinosaurio, en versión peluche ultra suave, seguro y fácil de lavar.</p>
-            <ul>
-                <li>Material: Felpa hipoalergénica</li>
-                <li>Tamaño: 25cm</li>
-                <li>Lavable: Sí</li>
-                <li>Dinosaurio de tela incluido</li>
-            </ul>
-            <div class="valoraciones">
-                <h3>Valoraciones</h3>
-                <p>⭐⭐⭐⭐⭐ (4.8/5 basado en 17 opiniones)</p>
-            </div>
-        `
-    },
-    {
-        id: "41",
-        nombre: "Peluche Scooby Doo",
-        precio: 34000,
-        imagen: "assets/img/peluche-scooby.jpg",
-        miniaturas: [
-            "assets/img/peluche-scooby.jpg"
-        ],
-        descripcion: `
-            <h3>Descripción</h3>
-            <p>Scooby Doo, el perro más famoso, en versión peluche suave con su collar azul y placa bordada.</p>
-            <ul>
-                <li>Material: Felpa marrón</li>
-                <li>Tamaño: 30cm</li>
-                <li>Lavable: Sí</li>
-                <li>Collar incluido</li>
-            </ul>
-            <div class="valoraciones">
-                <h3>Valoraciones</h3>
-                <p>⭐⭐⭐⭐ (4.7/5 basado en 15 opiniones)</p>
-            </div>
-        `
-    },
-    {
-        id: "42",
-        nombre: "Peluche Garfield",
-        precio: 35000,
-        imagen: "assets/img/peluche-garfield.jpg",
-        miniaturas: [
-            "assets/img/peluche-garfield.jpg"
-        ],
-        descripcion: `
-            <h3>Descripción</h3>
-            <p>Garfield, el gato más perezoso y adorable, ideal para fans del cómic y la televisión.</p>
-            <ul>
-                <li>Material: Felpa naranja de alta calidad</li>
-                <li>Tamaño: 28cm</li>
-                <li>Lavable: Sí, a mano</li>
-                <li>Ojos y sonrisa bordados</li>
-            </ul>
-            <div class="valoraciones">
-                <h3>Valoraciones</h3>
-                <p>⭐⭐⭐⭐ (4.8/5 basado en 13 opiniones)</p>
-            </div>
-        `
-    },
-    {
-        id: "43",
-        nombre: "Peluche Snoopy",
-        precio: 34000,
-        imagen: "assets/img/peluche-snoopy.jpg",
-        miniaturas: [
-            "assets/img/peluche-snoopy.jpg"
-        ],
-        descripcion: `
-            <h3>Descripción</h3>
-            <p>Snoopy, el clásico de Peanuts, con orejas largas y cuerpo abrazable. Perfecto para dormir o decorar.</p>
-            <ul>
-                <li>Material: Felpa blanca y negra hipoalergénica</li>
-                <li>Tamaño: 28cm</li>
-                <li>Lavable: Sí</li>
-                <li>Ojos bordados</li>
-            </ul>
-            <div class="valoraciones">
-                <h3>Valoraciones</h3>
-                <p>⭐⭐⭐⭐⭐ (4.8/5 basado en 20 opiniones)</p>
-            </div>
-        `
-    },
-    {
-        id: "44",
-        nombre: "Peluche Charlie Brown",
-        precio: 34000,
-        imagen: "assets/img/peluche-charliebrown.jpg",
-        miniaturas: [
-            "assets/img/peluche-charliebrown.jpg"
-        ],
-        descripcion: `
-            <h3>Descripción</h3>
-            <p>Charlie Brown, el niño más optimista, en peluche suave con su característica camiseta amarilla.</p>
-            <ul>
-                <li>Material: Felpa y algodón</li>
-                <li>Tamaño: 27cm</li>
-                <li>Lavable: Sí</li>
-                <li>Camiseta bordada</li>
-            </ul>
-            <div class="valoraciones">
-                <h3>Valoraciones</h3>
-                <p>⭐⭐⭐⭐ (4.6/5 basado en 10 opiniones)</p>
-            </div>
-        `
-    },
-    {
-        id: "45",
-        nombre: "Peluche Patricio (Bob Esponja)",
-        precio: 34000,
-        imagen: "assets/img/peluche-patricio.jpg",
-        miniaturas: [
-            "assets/img/peluche-patricio.jpg"
-        ],
-        descripcion: `
-            <h3>Descripción</h3>
-            <p>Patricio, el mejor amigo de Bob Esponja, siempre listo para una siesta o una aventura submarina.</p>
-            <ul>
-                <li>Material: Felpa rosa</li>
-                <li>Tamaño: 27cm</li>
-                <li>Lavable: Sí</li>
-                <li>Pantalón corto verde bordado</li>
-            </ul>
-            <div class="valoraciones">
-                <h3>Valoraciones</h3>
-                <p>⭐⭐⭐⭐ (4.8/5 basado en 12 opiniones)</p>
-            </div>
-        `
-    },
-    {
-        id: "46",
-        nombre: "Peluche Bob Esponja",
-        precio: 34000,
-        imagen: "assets/img/peluche-bobesponja.jpg",
-        miniaturas: [
-            "assets/img/peluche-bobesponja.jpg"
-        ],
-        descripcion: `
-            <h3>Descripción</h3>
-            <p>Bob Esponja, directo desde Fondo de Bikini, ahora en peluche para acompañar tus días.</p>
-            <ul>
-                <li>Material: Felpa amarilla</li>
-                <li>Tamaño: 28cm</li>
-                <li>Lavable: Sí, a mano</li>
-                <li>Corbata y pantalón incluidos</li>
-            </ul>
-            <div class="valoraciones">
-                <h3>Valoraciones</h3>
-                <p>⭐⭐⭐⭐⭐ (5/5 basado en 21 opiniones)</p>
-            </div>
-        `
-    },
-    {
-        id: "47",
-        nombre: "Peluche Pato Lucas",
-        precio: 32000,
-        imagen: "assets/img/peluche-lucas.jpg",
-        miniaturas: [
-            "assets/img/peluche-lucas.jpg"
-        ],
-        descripcion: `
-            <h3>Descripción</h3>
-            <p>El Pato Lucas, de los Looney Tunes, en peluche suave y divertido. Perfecto para coleccionistas.</p>
-            <ul>
-                <li>Material: Felpa negra y naranja</li>
-                <li>Tamaño: 26cm</li>
-                <li>Lavable: Sí</li>
-                <li>Pico y patas bordadas</li>
-            </ul>
-            <div class="valoraciones">
-                <h3>Valoraciones</h3>
-                <p>⭐⭐⭐⭐ (4.7/5 basado en 12 opiniones)</p>
-            </div>
-        `
-    },
-    {
-        id: "48",
-        nombre: "Peluche Bugs Bunny",
-        precio: 34000,
-        imagen: "assets/img/peluche-bugs.jpg",
-        miniaturas: [
-            "assets/img/peluche-bugs.jpg"
-        ],
-        descripcion: `
-            <h3>Descripción</h3>
-            <p>Bugs Bunny, el conejo más famoso, ideal para regalar a fans de los clásicos animados.</p>
-            <ul>
-                <li>Material: Felpa gris y blanca</li>
-                <li>Tamaño: 28cm</li>
-                <li>Lavable: Sí</li>
-                <li>Orejas largas y detalles bordados</li>
-            </ul>
-            <div class="valoraciones">
-                <h3>Valoraciones</h3>
-                <p>⭐⭐⭐⭐ (4.8/5 basado en 18 opiniones)</p>
-            </div>
-        `
-    },
-    {
-        id: "49",
-        nombre: "Peluche Lola Bunny",
-        precio: 34000,
-        imagen: "assets/img/peluche-lola.jpg",
-        miniaturas: [
-            "assets/img/peluche-lola.jpg"
-        ],
-        descripcion: `
-            <h3>Descripción</h3>
-            <p>Lola Bunny, la más coqueta de los Looney Tunes, ideal para coleccionar o decorar.</p>
-            <ul>
-                <li>Material: Felpa blanca y beige</li>
-                <li>Tamaño: 27cm</li>
-                <li>Lavable: Sí</li>
-                <li>Vestido rosa incluido</li>
-            </ul>
-            <div class="valoraciones">
-                <h3>Valoraciones</h3>
-                <p>⭐⭐⭐⭐ (4.7/5 basado en 10 opiniones)</p>
-            </div>
-        `
-    },
-    {
-        id: "50",
-        nombre: "Peluche Woody (Toy Story)",
-        precio: 36000,
-        imagen: "assets/img/peluche-woody.jpg",
-        miniaturas: [
-            "assets/img/peluche-woody.jpg"
-        ],
-        descripcion: `
-            <h3>Descripción</h3>
-            <p>Woody, el vaquero preferido de Toy Story, con sombrero y chaleco incluidos.</p>
-            <ul>
-                <li>Material: Felpa y tela vaquera</li>
-                <li>Tamaño: 30cm</li>
-                <li>Lavable: Sí</li>
-                <li>Sombrero desmontable</li>
-            </ul>
-            <div class="valoraciones">
-                <h3>Valoraciones</h3>
-                <p>⭐⭐⭐⭐⭐ (5/5 basado en 14 opiniones)</p>
-            </div>
-        `
-    },
-    {
-        id: "51",
-        nombre: "Peluche Buzz Lightyear (Toy Story)",
-        precio: 36000,
-        imagen: "assets/img/peluche-buzz.jpg",
-        miniaturas: [
-            "assets/img/peluche-buzz.jpg"
-        ],
-        descripcion: `
-            <h3>Descripción</h3>
-            <p>Buzz Lightyear, el guardián espacial, listo para llegar al infinito y más allá.</p>
-            <ul>
-                <li>Material: Felpa blanca y verde</li>
-                <li>Tamaño: 30cm</li>
-                <li>Lavable: Sí</li>
-                <li>Detalles bordados y alas de tela</li>
-            </ul>
-            <div class="valoraciones">
-                <h3>Valoraciones</h3>
-                <p>⭐⭐⭐⭐⭐ (4.8/5 basado en 16 opiniones)</p>
-            </div>
-        `
-    },
-    {
-        id: "52",
-        nombre: "Peluche Olaf (Frozen)",
-        precio: 35000,
-        imagen: "assets/img/peluche-olaf.jpg",
-        miniaturas: [
-            "assets/img/peluche-olaf.jpg"
-        ],
-        descripcion: `
-            <h3>Descripción</h3>
-            <p>Olaf, el muñeco de nieve favorito de Frozen, con brazos y cabello de tela suave.</p>
-            <ul>
-                <li>Material: Felpa blanca premium</li>
-                <li>Tamaño: 30cm</li>
-                <li>Lavable: Sí, a mano</li>
-                <li>Brazos flexibles y nariz de fieltro</li>
-            </ul>
-            <div class="valoraciones">
-                <h3>Valoraciones</h3>
-                <p>⭐⭐⭐⭐⭐ (4.9/5 basado en 25 opiniones)</p>
-            </div>
-        `
-    }
+    id: "1896-CAFE",
+    nombre: "León pequeño melena CAFÉ 19cm",
+    precio: 28000,
+    imagen: "imagenes/1896-peque.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche de león pequeño con melena café, suave y tierno. Perfecto para niños y decoraciones temáticas de animales.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 19 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color café claro y oscuro</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (4.9/5 basado en 9 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "BDHSQ-20-AMARILLO",
+    nombre: "Siberiano Camisa 25cm AMARILLO",
+    precio: 28000,
+    imagen: "imagenes/BDHSQ-20-2.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche siberiano con camisa amarilla, elegante y suave. Ideal para obsequios y coleccionistas de peluches originales.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 25 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color blanco y amarillo, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.8/5 basado en 8 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "BDHSQ-20-ROSA",
+    nombre: "Siberiano Camisa 25cm ROSA",
+    precio: 28000,
+    imagen: "imagenes/BDHSQ-20-1.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche siberiano con camisa rosa, tierno y alegre. Ideal para decorar habitaciones infantiles y regalar en ocasiones especiales.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 25 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color blanco y rosa, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.7/5 basado en 7 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "BDHSQ-20-VERDE",
+    nombre: "Siberiano Camisa 25cm VERDE",
+    precio: 28000,
+    imagen: "imagenes/BDHSQ-20.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche siberiano con camisa verde, suave y original. Perfecto para amantes de los perros y coleccionistas de peluches.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 25 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color blanco y verde, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.8/5 basado en 8 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "1289-30",
+    nombre: "Panda Acostado 30cm",
+    precio: 28000,
+    imagen: "imagenes/1289-30.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche panda acostado, suave, esponjoso y de tamaño ideal para abrazar o decorar.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 30 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color blanco y negro</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 10 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "lxd-20",
+    nombre: "Oso Arlequín 25cm",
+    precio: 28500,
+    imagen: "imagenes/lxd-20.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche oso arlequín de 25 cm, colorido y alegre. Ideal para regalar y decorar ambientes infantiles.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 25 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Colores variados, diseño arlequín</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.7/5 basado en 6 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "1925-MINEGLO",
+    nombre: "Personajes curiosos MI NEGLO",
+    precio: 29000,
+    imagen: "imagenes/1925-MINEGLO.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche personaje curioso MI NEGLO, divertido y suave. Ideal para coleccionistas y como regalo original.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 25 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Diseño único, colores variados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 7 opiniones)</p>
+      </div>
+    `
+  },
+  // ... resto del Bloque 3 ...
+  {
+    id: "j129-22-NEGRO",
+    nombre: "Perro Gafas 25cm Negro",
+    precio: 29000,
+    imagen: "imagenes/J129-22-2.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche de perro con gafas, color negro. Divertido y suave, ideal para regalar o coleccionar.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 25 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color negro, gafas decorativas</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (4.9/5 basado en 14 opiniones)</p>
+      </div>
+    `
+  },
+
+  // BLOQUE 4
+  {
+    id: "j129-22-CAFE",
+    nombre: "Perro Gafas 25cm Café",
+    precio: 30000,
+    imagen: "imagenes/J129-22-1.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche de perro con gafas, color café. Suave, divertido y con un toque simpático gracias a sus gafas decorativas, perfecto para regalar o coleccionar.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 25 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color café, gafas de tela</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.7/5 basado en 11 opiniones)</p>
+      </div>
+    `
+  },
+  // ... resto del Bloque 4 ...
+  {
+    id: "Sur05-30-SURTIDOS",
+    nombre: "Peluche Elástico Mediano Animales Surtidos 30cm",
+    precio: 32000,
+    imagen: "imagenes/WhatsApp-Image-2025-04-21-at-3.07.28-PM.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche elástico mediano de animales surtidos. Excelente opción para quienes aman los peluches variados y coleccionables.</p>
+      <ul>
+        <li>Material: Felpa elástica antialérgica</li>
+        <li>Tamaño: 30 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Diferentes colores y diseños</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.8/5 basado en 12 opiniones)</p>
+      </div>
+    `
+  },
+
+  // BLOQUE 5
+  {
+    id: "ele-30-AZUL",
+    nombre: "Elefante Ojos Bordado 25cm Azul",
+    precio: 32500,
+    imagen: "imagenes/ELE0003-5.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche de elefante azul con ojos bordados, suave al tacto y de tamaño mediano. Perfecto para niños y para regalar a quienes aman los animales tiernos.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 25 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color azul, detalles bordados de alta calidad</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.8/5 basado en 12 opiniones)</p>
+      </div>
+    `
+  },
+  // ... resto del Bloque 5 ...
+  {
+    id: "YF1-40-AZUL",
+    nombre: "Elefante Almohada Colores 40cm Azul",
+    precio: 45500,
+    imagen: "imagenes/yf1-40.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Elefante almohada azul, suave y funcional como cojín. Perfecto para niños y para regalar en cualquier ocasión especial.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 40 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color azul claro, costuras reforzadas</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 14 opiniones)</p>
+      </div>
+    `
+  },
+
+  // BLOQUE 6
+  {
+    id: "2587",
+    nombre: "Vaca con Bolso 40cm",
+    precio: 46000,
+    imagen: "imagenes/2587.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche de vaca con bolso, de gran tamaño y detalles encantadores. Ideal para abrazar, decorar o regalar en ocasiones especiales.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 40 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color blanco y negro, bolso colorido incluido</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (4.9/5 basado en 14 opiniones)</p>
+      </div>
+    `
+  },
+  // ... resto del Bloque 6 ...
+  {
+    id: "2332-40",
+    nombre: "Panda Camisa Roja 45cm",
+    precio: 61000,
+    imagen: "imagenes/2332-40.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche de panda con camisa roja, adorable y esponjoso. Un detalle especial para decorar o regalar a los amantes de los pandas.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 45 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color blanco y negro, camisa roja</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 13 opiniones)</p>
+      </div>
+    `
+  },
+
+  // BLOQUE 7
+  {
+    id: "HUO-30-ROSA",
+    nombre: "Dino Huevo 33cm Rosa",
+    precio: 63000,
+    imagen: "imagenes/HUO-30-2.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche de dinosaurio saliendo del huevo, en color rosa. Un diseño original y divertido, ideal para regalar a los pequeños amantes de los dinosaurios.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 33 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color rosa, detalles bordados y diseño interactivo</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.8/5 basado en 11 opiniones)</p>
+      </div>
+    `
+  },
+  // ... resto del Bloque 7 ...
+  {
+    id: "GS282-60",
+    nombre: "Mico Buso Grande 60cm",
+    precio: 68500,
+    imagen: "imagenes/GS282-60.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche de mico (mono) con buso grande, suave y llamativo. Un regalo excelente para sorprender y abrazar.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 60 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color marrón, buso colorido</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 15 opiniones)</p>
+      </div>
+    `
+  },
+
+  // BLOQUE 8
+  {
+    id: "GS377-40-45CM",
+    nombre: "Mono Bolso Banana 45cm",
+    precio: 69500,
+    imagen: "imagenes/GS377-40 (1).jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche de mono con bolso en forma de banana, tamaño mediano. Divertido, suave y perfecto para regalar o decorar.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 45 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color marrón, bolso tipo banana</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.8/5 basado en 13 opiniones)</p>
+      </div>
+    `
+  },
+  // ... resto del Bloque 8 ...
+  {
+    id: "821-l",
+    nombre: "Elefante Luminosa con Cobija 60cm",
+    precio: 98000,
+    imagen: "imagenes/821-1.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche de elefante luminosa, incluye cobija. Brilla en la oscuridad y aporta calidez y ternura a cualquier espacio.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 60 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color rosado, luz suave y cobija incluida</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.8/5 basado en 13 opiniones)</p>
+      </div>
+    `
+  },
+
+  // BLOQUE 9
+  {
+    id: "JE-68",
+    nombre: "Oso Bufanda Love 75cm",
+    precio: 148000,
+    imagen: "imagenes/je-68.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche de oso gigante con bufanda "Love", tierno y espectacular para regalar en ocasiones especiales. Su tamaño lo hace ideal para abrazar y decorar grandes espacios.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 75 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color beige, bufanda decorativa con mensaje Love</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 16 opiniones)</p>
+      </div>
+    `
+  },
+  // ... resto del Bloque 9 ...
+  {
+    id: "JE-73-ROSA",
+    nombre: "Oso Gigantísimo 135cm Rosa",
+    precio: 416500,
+    imagen: "imagenes/Je-73-2.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche de oso gigante en color rosa, el más grande y espectacular de todos. Sorprende con este regalo inolvidable, ideal para ocasiones verdaderamente especiales.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 135 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color rosa, detalles premium y gran suavidad</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 20 opiniones)</p>
+      </div>
+    `
+  }
+    
 ];
     // ...agrega más productos aquí
 
