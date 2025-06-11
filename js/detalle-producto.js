@@ -1802,39 +1802,49 @@ document.addEventListener("DOMContentLoaded", function() {
     const id = getParameterByName("id");
     const producto = productos.find(p => p.id === id);
 
-    if (!producto) {
-        document.querySelector("main").innerHTML = "<h2>Producto no encontrado</h2>";
-        document.title = "Producto no encontrado | Teddy's Fly";
-        return;
-    }
+   // Manejo de error: producto no encontrado o sin id
+  if (!id || !producto) {
+    document.title = "Producto no encontrado | Teddy's Fly";
+    document.body.innerHTML = `
+      <main>
+        <h2>Producto no encontrado</h2>
+        <p>El producto solicitado no existe o no se especificó un ID válido.</p>
+        <a href="tienda.html">Volver a la tienda</a>
+      </main>`;
+    return;
+  }
 
-    // Llenar la información
-    document.getElementById("titulo-pagina").textContent = producto.nombre + " | Teddy's Fly";
-    document.getElementById("nombre-producto").textContent = producto.nombre;
-    document.getElementById("precio-producto").textContent = "$" + producto.precio.toLocaleString();
+
+     // Mostrar información del producto
+  document.title = `${producto.nombre} | Teddy's Fly`;
+  if (document.getElementById("nombre-producto")) document.getElementById("nombre-producto").textContent = producto.nombre;
+  if (document.getElementById("img-principal")) {
     document.getElementById("img-principal").src = producto.imagen;
     document.getElementById("img-principal").alt = producto.nombre;
-    document.getElementById("descripcion-producto").innerHTML = producto.descripcion;
+  }
+  if (document.getElementById("descripcion-producto")) document.getElementById("descripcion-producto").innerHTML = producto.descripcion;
+  if (document.getElementById("precio-producto")) document.getElementById("precio-producto").textContent = "$" + producto.precio.toLocaleString();
 
-    // Miniaturas
-    const miniaturasDiv = document.getElementById("miniaturas");
-    miniaturasDiv.innerHTML = "";
-    producto.miniaturas.forEach(img => {
-        const mini = document.createElement("img");
-        mini.src = img;
-        mini.alt = producto.nombre;
-        mini.width = 60;
-        mini.height = 60;
-        mini.addEventListener("click", () => {
-            document.getElementById("img-principal").src = img;
-        });
-        miniaturasDiv.appendChild(mini);
-    });
+  // Miniaturas (si tienes array de imágenes, acá lo puedes expandir)
+  if (document.getElementById("miniaturas")) {
+    document.getElementById("miniaturas").innerHTML = ""; // Limpia
+    // Si quieres agregar miniaturas, aquí puedes hacerlo (por ahora solo la imagen principal)
+    const mini = document.createElement("img");
+    mini.src = producto.imagen;
+    mini.alt = producto.nombre;
+    mini.width = 60;
+    mini.style.margin = "4px";
+    mini.onclick = () => {
+      document.getElementById("img-principal").src = producto.imagen;
+    };
+    document.getElementById("miniaturas").appendChild(mini);
+  }
 
-    // Botón añadir al carrito: poner los data-atributos necesarios
-    const btnCarrito = document.getElementById("btn-agregar-carrito");
-    btnCarrito.setAttribute("data-id", producto.id);
-    btnCarrito.setAttribute("data-nombre", producto.nombre);
-    btnCarrito.setAttribute("data-precio", producto.precio);
-    btnCarrito.setAttribute("data-imagen", producto.imagen);
+  // Botón agregar al carrito (puedes enlazar aquí tu lógica de carrito)
+  if (document.getElementById("btn-agregar-carrito")) {
+    document.getElementById("btn-agregar-carrito").onclick = () => {
+      alert("Producto agregado al carrito: " + producto.nombre);
+      // Aquí va tu lógica real de carrito
+    };
+  }
 });
