@@ -6,15 +6,27 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <h1>Tienda Teddy's Fly</h1>
-    <nav>
-      <!-- Aquí puedes poner tu navegación -->
-      <a href="index.html">Inicio</a>
-      <a href="tienda.html">Tienda</a>
-      <a href="carrito.html">Carrito <span class="cart-count"></span></a>
-    </nav>
-  </header>
+<header>
+        <div class="logo-nav">
+            <img src="imagenes/WhatsApp Image 2025-06-09 at 2.12.49 PM.jpeg" alt="Teddy's Fly Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Inicio</a></li>
+                    <li><a href="tienda.html">Tienda</a></li>
+                    <li><a href="novedades.html">Novedades</a></li>
+                    <li><a href="acerca.html">Acerca de Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-icons">
+            
+            <a href="carrito.html" class="cart-icon" title="Carrito">
+                <img src="assets/icons/cart.svg" alt="Carrito">
+                <span class="cart-count">0</span>
+            </a>
+        </div>
+    </header>
   <main>
     <!-- Sección de Personajes -->
     <section id="seccion-personajes">
@@ -35,18 +47,10 @@
   <footer>
     <p>&copy; 2025 Teddy's Fly</p>
   </footer>
+  <script src="js/main.js"></script>
   <script src="js/detalle-producto.js"></script>
-  <script>
-    // Cuando cargue la página, renderiza las secciones usando los arrays filtrados
-    document.addEventListener("DOMContentLoaded", function() {
-      renderProductos(soloPersonajes, "grid-personajes");
-      renderProductos(soloPeluches, "grid-peluches");
-      renderProductos(soloVariedades, "grid-variedades");
-      // Actualiza el contador del carrito si existe
-      const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-      const cartCount = document.querySelector('.cart-count');
-      if (cartCount) cartCount.textContent = carrito.length;
-    });
+  <script src="js/tienda.js"></script>
+    
   </script>
 </body>
 </html>
