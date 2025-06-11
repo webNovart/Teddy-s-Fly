@@ -3620,6 +3620,281 @@ const peluches = [
   }
     
 ];
+
+const variedades = [
+   {
+    id: "srb-135-lata-carino-17",
+    nombre: "SRB| 13.5 Simpson Roll Lata CON CARIÑO 17 cm",
+    precio: 22500,
+    imagen: "imagenes/variedades/srb-135-lata-carino-17.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Simpson Roll presentado en lata con el mensaje "CON CARIÑO". Tamaño: 17 cm. Ideal para regalar y sorprender.</p>
+      <ul>
+        <li>Presentación: Lata</li>
+        <li>Mensaje: CON CARIÑO</li>
+        <li>Tamaño: 17 cm</li>
+      </ul>
+    `,
+    categoria: "variedades"
+  },
+  {
+    id: "srb-135-lata-felizdia-17",
+    nombre: "SRB| 13.5 Simpson Roll Lata FELIZ DIA 17 cm",
+    precio: 22500,
+    imagen: "imagenes/variedades/srb-135-lata-felizdia-17.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Simpson Roll en lata con el mensaje "FELIZ DIA". Tamaño de 17 cm. Un detalle especial para ocasiones felices.</p>
+      <ul>
+        <li>Presentación: Lata</li>
+        <li>Mensaje: FELIZ DIA</li>
+        <li>Tamaño: 17 cm</li>
+      </ul>
+    `,
+    categoria: "variedades"
+  },
+  {
+    id: "srb-135-botella-parati-24",
+    nombre: "SRB| 13.5 Simpson Roll Botella PARA TI 24 cm",
+    precio: 22500,
+    imagen: "imagenes/variedades/srb-135-botella-parati-24.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Simpson Roll en botella con el mensaje "PARA TI". Tamaño: 24 cm. Perfecto para regalos personalizados.</p>
+      <ul>
+        <li>Presentación: Botella</li>
+        <li>Mensaje: PARA TI</li>
+        <li>Tamaño: 24 cm</li>
+      </ul>
+    `,
+    categoria: "variedades"
+  },
+  {
+    id: "srb-135-lata-felicidades-17",
+    nombre: "SRB| 13.5 Simpson Roll Lata FELICIDADES EN TU DIA 17 cm",
+    precio: 22500,
+    imagen: "imagenes/variedades/srb-135-lata-felicidadesentu-17.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Simpson Roll en lata con el mensaje "FELICIDADES EN TU DIA". Tamaño: 17 cm. Un regalo ideal para celebrar.</p>
+      <ul>
+        <li>Presentación: Lata</li>
+        <li>Mensaje: FELICIDADES EN TU DIA</li>
+        <li>Tamaño: 17 cm</li>
+      </ul>
+    `,
+    categoria: "variedades"
+  },
+  {
+    id: "srb-135-lata-parati-felizdia-17",
+    nombre: "SRB| 13.5 Simpson Roll Lata PARA TI FELIZ DIA 17 cm",
+    precio: 22500,
+    imagen: "imagenes/variedades/srb-135-lata-paratifelizdia-17.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Simpson Roll en lata con mensaje "PARA TI FELIZ DIA". Tamaño: 17 cm. Un detalle único.</p>
+      <ul>
+        <li>Presentación: Lata</li>
+        <li>Mensaje: PARA TI FELIZ DIA</li>
+        <li>Tamaño: 17 cm</li>
+      </ul>
+    `,
+    categoria: "variedades"
+  },
+  {
+    id: "srb-135-botella-felicidades-24",
+    nombre: "SRB| 13.5 Simpson Roll Botella FELICIDADES 24 cm",
+    precio: 22500,
+    imagen: "imagenes/variedades/srb-135-botella-felicidades-24.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Simpson Roll en botella con el mensaje "FELICIDADES". Tamaño: 24 cm. Perfecto para celebraciones.</p>
+      <ul>
+        <li>Presentación: Botella</li>
+        <li>Mensaje: FELICIDADES</li>
+        <li>Tamaño: 24 cm</li>
+      </ul>
+    `,
+    categoria: "variedades"
+  },
+  {
+    id: "srb-135-botella-milfelicidades-24",
+    nombre: "SRB| 13.5 Simpson Roll Botella MIL FELICIDADES 24 cm",
+    precio: 22500,
+    imagen: "imagenes/variedades/srb-135-botella-milfelicidades-24.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Simpson Roll en botella con el mensaje "MIL FELICIDADES". Tamaño: 24 cm. Regalo ideal para felicitar.</p>
+      <ul>
+        <li>Presentación: Botella</li>
+        <li>Mensaje: MIL FELICIDADES</li>
+        <li>Tamaño: 24 cm</li>
+      </ul>
+    `,
+    categoria: "variedades"
+  },
+  {
+    id: "srb-135-botella-entudia-24",
+    nombre: "SRB| 13.5 Simpson Roll Botella EN TU DIA 24 cm",
+    precio: 22500,
+    imagen: "imagenes/variedades/srb-135-botella-entudia-24.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Simpson Roll en botella con el mensaje "EN TU DIA". Tamaño: 24 cm. Perfecto para cualquier celebración.</p>
+      <ul>
+        <li>Presentación: Botella</li>
+        <li>Mensaje: EN TU DIA</li>
+        <li>Tamaño: 24 cm</li>
+      </ul>
+    `,
+    categoria: "variedades"
+  },
+  {
+    id: "bsb-89-beer-homero-29",
+    nombre: "BSB|8.9 Cerveza beer simpsons HOMERO FELIZ DIA 7.5x7x29 cms",
+    precio: 15000,
+    imagen: "imagenes/variedades/bsb-89-beer-homero-29.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Cerveza de peluche estilo Simpsons, personaje Homero con mensaje "FELIZ DIA". Tamaño: 7.5x7x29 cm.</p>
+      <ul>
+        <li>Personaje: Homero</li>
+        <li>Mensaje: FELIZ DIA</li>
+        <li>Tamaño: 7.5x7x29 cm</li>
+      </ul>
+    `,
+    categoria: "variedades"
+  },
+  {
+    id: "bsb-89-beer-duffman-29",
+    nombre: "BSB|8.9 Cerveza beer simpsons DUFFMAN ESPECIAMENTE PARA TI 7.5x7x29 cms",
+    precio: 15000,
+    imagen: "imagenes/variedades/bsb-89-beer-duffman-29.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Cerveza de peluche estilo Simpsons, personaje DuffMan con mensaje "ESPECIAMENTE PARA TI". Tamaño: 7.5x7x29 cm.</p>
+      <ul>
+        <li>Personaje: DuffMan</li>
+        <li>Mensaje: ESPECIAMENTE PARA TI</li>
+        <li>Tamaño: 7.5x7x29 cm</li>
+      </ul>
+    `,
+    categoria: "variedades"
+  },
+  {
+    id: "bsb-88-beer-bart-29",
+    nombre: "BSB|8.8 Cerveza beer simpsons BART: FELIZ CUMPLE 7.5x7x29 cms",
+    precio: 14500,
+    imagen: "imagenes/variedades/bsb-88-beer-bart-29.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Cerveza de peluche estilo Simpsons, personaje Bart con mensaje "FELIZ CUMPLE". Tamaño: 7.5x7x29 cm.</p>
+      <ul>
+        <li>Personaje: Bart</li>
+        <li>Mensaje: FELIZ CUMPLE</li>
+        <li>Tamaño: 7.5x7x29 cm</li>
+      </ul>
+    `,
+    categoria: "variedades"
+  },
+  {
+    id: "bsb-88-beer-nelson-29",
+    nombre: "BSB|8.8 Cerveza beer simpsons NELSON: CON CARIÑO PARA TI 7.5x7x29 cms",
+    precio: 14500,
+    imagen: "imagenes/variedades/bsb-88-beer-nelson-29.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Cerveza de peluche estilo Simpsons, personaje Nelson con mensaje "CON CARIÑO PARA TI". Tamaño: 7.5x7x29 cm.</p>
+      <ul>
+        <li>Personaje: Nelson</li>
+        <li>Mensaje: CON CARIÑO PARA TI</li>
+        <li>Tamaño: 7.5x7x29 cm</li>
+      </ul>
+    `,
+    categoria: "variedades"
+  },
+{
+    id: "5161-32-splash-vct-60ml",
+    nombre: "5161| 3.2 Splash 60ml Vct",
+    precio: 5500,
+    imagen: "imagenes/variedades/5161-32-splash-vct-60ml.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Splash Vct de 60ml, ideal para refrescarte en cualquier momento. Presentación pequeña y práctica.</p>
+      <ul>
+        <li>Contenido: 60ml</li>
+        <li>Tipo: Vct</li>
+        <li>Presentación: mini splash</li>
+      </ul>
+    `,
+    categoria: "variedades"
+  },
+  {
+    id: "1278-87-splash-vct-250ml-dorada",
+    nombre: "1278|8.7 Splash Vct tapa dorada 250ml SURTIDO",
+    precio: 14500,
+    imagen: "imagenes/variedades/1278-87-splash-vct-250ml-dorada.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Splash Vct de 250ml con tapa dorada. Fragancias surtidas para todos los gustos.</p>
+      <ul>
+        <li>Contenido: 250ml</li>
+        <li>Tipo: Vct</li>
+        <li>Presentación: tapa dorada, surtido</li>
+      </ul>
+    `,
+    categoria: "variedades"
+  },
+  {
+    id: "1819-47-splash-vct-125ml",
+    nombre: "1819|4.7 Splash Vct 125ml SURTIDO",
+    precio: 7500,
+    imagen: "imagenes/variedades/1819-47-splash-vct-125ml.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Splash Vct de 125ml, fragancias surtidas. Una excelente opción para el día a día.</p>
+      <ul>
+        <li>Contenido: 125ml</li>
+        <li>Tipo: Vct</li>
+        <li>Presentación: surtido</li>
+      </ul>
+    `,
+    categoria: "variedades"
+  },
+  {
+    id: "1317-79-splash-pk-250ml",
+    nombre: "1317|7.9 Splash Pk 250ml SURTIDO",
+    precio: 13000,
+    imagen: "imagenes/variedades/1317-79-splash-pk-250ml.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Splash Pk de 250ml, fragancias surtidas. Disfruta de aromas frescos y duraderos.</p>
+      <ul>
+        <li>Contenido: 250ml</li>
+        <li>Tipo: Pk</li>
+        <li>Presentación: surtido</li>
+      </ul>
+    `,
+    categoria: "variedades"
+  },
+  {
+    id: "1186-47-splash-mini-pk-75ml",
+    nombre: "1186|4.7 Splash mini Pk 75ml SURTIDO",
+    precio: 7500,
+    imagen: "imagenes/variedades/1186-47-splash-mini-pk-75ml.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Splash mini Pk de 75ml, fragancias surtidas. Práctico para llevar en el bolso o mochila.</p>
+      <ul>
+        <li>Contenido: 75ml</li>
+        <li>Tipo: Pk mini</li>
+        <li>Presentación: surtido</li>
+      </ul>
+    `,
+    categoria: "variedades"
+  }
+   ];
     // ...agrega más productos aquí
 
 // 2. Unificación y asignación de categoría automáticamente:
@@ -3627,13 +3902,13 @@ const peluches = [
 const productos = [
   ...personajes.map(p => ({ ...p, categoria: "personajes" })),
   ...peluches.map(p => ({ ...p, categoria: "peluches" })),
-  //...variedades.map(p => ({ ...p, categoria: "variedades" }))
+  ...variedades.map(p => ({ ...p, categoria: "variedades" }))
 ];
 
 // 3. Ahora puedes filtrar por categoría en cualquier sección:
 const soloPeluches = productos.filter(p => p.categoria === "peluches");
 const soloPersonajes = productos.filter(p => p.categoria === "personajes");
-//const soloVariedades = productos.filter(p => p.categoria === "variedades");
+const soloVariedades = productos.filter(p => p.categoria === "variedades");
 
 // 4. Ejemplo de renderizado (simplificado):
 function renderProductos(array, contenedorId) {
