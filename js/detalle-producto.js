@@ -3633,7 +3633,7 @@ const productos = [
 // 3. Ahora puedes filtrar por categoría en cualquier sección:
 const soloPeluches = productos.filter(p => p.categoria === "peluches");
 const soloPersonajes = productos.filter(p => p.categoria === "personajes");
-const soloVariedades = productos.filter(p => p.categoria === "variedades");
+//const soloVariedades = productos.filter(p => p.categoria === "variedades");
 
 // 4. Ejemplo de renderizado (simplificado):
 function renderProductos(array, contenedorId) {
