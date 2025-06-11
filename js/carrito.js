@@ -90,10 +90,7 @@ function guardarCarrito() {
     if (cartCount) cartCount.textContent = productosEnCarrito.length;
 }
 
-// Al abrir la página
-document.addEventListener('DOMContentLoaded', cargarCarrito);
-
-// === FUNCIONES PARA OPCIONES DE PAGO ===
+// Opciones de pago y cuenta de ahorros
 function mostrarOpcionesPago() {
     var div = document.getElementById('opcionesPago');
     if (div.style.display === "none" || div.style.display === "") {
@@ -107,3 +104,32 @@ function mostrarInfoCuenta() {
     var div = document.getElementById('infoCuenta');
     div.style.display = "block";
 }
+
+// Función para armar el mensaje de WhatsApp con el carrito
+function armarMensajeWhatsApp() {
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    if (carrito.length === 0) {
+        alert("Tu carrito está vacío.");
+        return;
+    }
+    let mensaje = "¡Hola! Quiero comprar:\n";
+    let total = 0;
+    carrito.forEach(producto => {
+        mensaje += `• ${producto.nombre} x${producto.cantidad}\n`;
+        total += producto.precio * producto.cantidad;
+    });
+    mensaje += `\nTotal: $${total.toLocaleString()}\n`;
+    mensaje += "\nAdjunto el comprobante de la transferencia:";
+
+    let url = "https://wa.me/573001234567?text=" + encodeURIComponent(mensaje);
+    window.open(url, '_blank');
+}
+
+// Asociar el botón "Quiero comprar" al cargar la página
+document.addEventListener('DOMContentLoaded', function() {
+    cargarCarrito();
+    var btnWhatsapp = document.getElementById('btn-whatsapp-compra');
+    if (btnWhatsapp) {
+        btnWhatsapp.addEventListener('click', armarMensajeWhatsApp);
+    }
+});
