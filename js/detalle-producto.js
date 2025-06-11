@@ -935,7 +935,7 @@ const productos = [
     id: "ele-30-AZUL",
     nombre: "Elefante Ojos Bordado 25cm Azul",
     precio: 32500,
-    imagen: "imagenes/ELE0003-5.jpg",
+    imagen: "imagenes/yf1-40.jpg",
     descripcion: `
       <h3>Descripción</h3>
       <p>Peluche de elefante azul con ojos bordados, suave al tacto y de tamaño mediano. Perfecto para niños y para regalar a quienes aman los animales tiernos.</p>
@@ -953,10 +953,10 @@ const productos = [
   },
   // ... resto del Bloque 5 ...
   {
-    id: "YF1-40-AZUL",
+    id: "ele-30-GRIS",
     nombre: "Elefante Almohada Colores 40cm Azul",
     precio: 45500,
-    imagen: "imagenes/yf1-40.jpg",
+    imagen: "imagenes/ELE0003-5.jpg",
     descripcion: `
       <h3>Descripción</h3>
       <p>Elefante almohada azul, suave y funcional como cojín. Perfecto para niños y para regalar en cualquier ocasión especial.</p>
