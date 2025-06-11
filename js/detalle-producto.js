@@ -568,7 +568,7 @@ const productos = [
     id: "lxd-20",
     nombre: "Oso Arlequín 25cm",
     precio: 28500,
-    imagen: "imagenes/lxd-20.jpeg",
+    imagen: "imagenes/WhatsApp-Image-2025-05-14-at-11.54.40-AM.jpeg",
     descripcion: `
       <h3>Descripción</h3>
       <p>Peluche oso arlequín de 25 cm, colorido y alegre. Ideal para regalar y decorar ambientes infantiles.</p>
@@ -588,7 +588,7 @@ const productos = [
     id: "1925-MINEGLO",
     nombre: "Personajes curiosos MI NEGLO",
     precio: 29000,
-    imagen: "imagenes/1925-MINEGLO.jpeg",
+    imagen: "imagenes/PhotoRoom-20220816_103412.jpg",
     descripcion: `
       <h3>Descripción</h3>
       <p>Peluche personaje curioso MI NEGLO, divertido y suave. Ideal para coleccionistas y como regalo original.</p>
@@ -601,6 +601,86 @@ const productos = [
       <div class="valoraciones">
         <h3>Valoraciones</h3>
         <p>⭐⭐⭐⭐⭐ (5/5 basado en 7 opiniones)</p>
+      </div>
+    `
+  },
+   {
+    id: "1925-MAGO",
+    nombre: "Personajes curiosos MAGO 33cm",
+    precio: 29000,
+    imagen: "imagenes/1925-MAGO.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche personaje curioso MAGO de 33 cm, con outfit de mago y gorro. Perfecto para regalar y para coleccionistas de personajes especiales.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 33 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Colores vivos y diseño temático</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.8/5 basado en 8 opiniones)</p>
+      </div>
+    `
+  },
+   {
+    id: "2220A",
+    nombre: "Viejita mediana 30cm",
+    precio: 29500,
+    imagen: "imagenes/2220A.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche de viejita mediana de 30cm, simpática y tradicional. Perfecta para evocaciones tiernas y decoraciones nostálgicas.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 30 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Colores y vestimenta tradicional</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.7/5 basado en 9 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "1925-MUNECATRAPO",
+    nombre: "Personajes curiosos MUÑEQUITA DE TRAPO 33cm",
+    precio: 29000,
+    imagen: "imagenes/1925.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche personaje curioso MUÑEQUITA DE TRAPO de 33 cm, tradicional, suave y tierno. Perfecto para regalar o coleccionar.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 33 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Colores variados, vestimenta de tela</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.7/5 basado en 7 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "1925-MUNECATRAPOLISA",
+    nombre: "Personajes curiosos MUÑEQUITA TRAPO LISA 33cm",
+    precio: 29000,
+    imagen: "imagenes/PhotoRoom-20220816_103502.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche personaje curioso MUÑEQUITA TRAPO LISA de 33 cm, de diseño sencillo y tradicional. Ideal para decoración y como regalo clásico.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 33 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color liso, vestido de tela</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.6/5 basado en 6 opiniones)</p>
       </div>
     `
   },
@@ -622,6 +702,26 @@ const productos = [
       <div class="valoraciones">
         <h3>Valoraciones</h3>
         <p>⭐⭐⭐⭐⭐ (4.9/5 basado en 14 opiniones)</p>
+      </div>
+    `
+  },
+   {
+    id: "tzjd-20",
+    nombre: "Ratón con Queso Pequeño 25cm",
+    precio: 31000,
+    imagen: "imagenes/tzjd- (1).jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche ratón pequeño de 25cm con queso, tierno y gracioso. Ideal para regalar a niños y amantes de los animales de fantasía.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 25 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color gris y detalles de queso amarillo</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.8/5 basado en 8 opiniones)</p>
       </div>
     `
   },
@@ -668,6 +768,167 @@ const productos = [
       </div>
     `
   },
+    {
+    id: "1881-23-OSCURO",
+    nombre: "Gorila Pequeño OSCURO 25cm",
+    precio: 30000,
+    imagen: "imagenes/1881-23-2.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche gorila pequeño de 25cm en color oscuro, robusto y suave, ideal para niños y coleccionistas de animales exóticos.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 25 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color oscuro, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.8/5 basado en 10 opiniones)</p>
+      </div>
+    `
+  },
+   {
+    id: "ele-30-MORADO",
+    nombre: "Elefante Ojos bordado 25cm MORADO",
+    precio: 32500,
+    imagen: "imagenes/yf1-60-2.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche de elefante color morado con ojos bordados. Suave, tierno y perfecto para regalar o decorar habitaciones infantiles.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 25 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color morado, detalles bordados de alta calidad</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.8/5 basado en 9 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "J207-20-NEGRO",
+    nombre: "Dragon alas brillantes 25cm NEGRO",
+    precio: 33500,
+    imagen: "imagenes/j207-20-3.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche dragón de 25cm color negro con alas brillantes. Perfecto para niños y coleccionistas de criaturas fantásticas.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 25 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color negro, alas con brillo</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (4.9/5 basado en 7 opiniones)</p>
+      </div>
+    `
+  },
+    {
+    id: "J207-20-VERDE",
+    nombre: "Dragon alas brillantes 25cm VERDE",
+    precio: 35500,
+    imagen: "imagenes/j207-20-1.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche dragón verde de 25cm con alas brillantes. Suave y lleno de fantasía, ideal para niños y coleccionistas.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 25 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color verde, alas con brillo</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 8 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "J207-20-MORADO",
+    nombre: "Dragon alas brillantes 25cm MORADO",
+    precio: 35500,
+    imagen: "imagenes/j207-20-2.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche dragón morado de 25cm con alas brillantes. Tierno, original y perfecto para regalar a los amantes de la fantasía.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 25 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color morado, alas con brillo</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.9/5 basado en 7 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "FP1486-GRIS",
+    nombre: "Tiburón pequeño GRIS 30CM",
+    precio: 34000,
+    imagen: "imagenes/FP1486-1.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche tiburón pequeño color gris, suave y divertido. Ideal para regalar a niños aventureros y fanáticos del mar.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 30 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color gris, detalles realistas</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.7/5 basado en 8 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "FP1486-AZUL",
+    nombre: "Tiburón pequeño AZUL 30CM",
+    precio: 34000,
+    imagen: "imagenes/FP1486-2.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche tiburón pequeño color azul, suave y tierno. Perfecto para decorar, regalar o acompañar a los niños en sus aventuras.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 30 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color azul, detalles realistas</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.8/5 basado en 7 opiniones)</p>
+      </div>
+    `
+  },
+ 
+  {
+    id: "2584",
+    nombre: "Vaca Babero 35cm",
+    precio: 43000,
+    imagen: "imagenes/2584.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche vaca de 35cm con babero, adorable y esponjosa. Perfecta para decorar habitaciones infantiles y como regalo especial.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 35 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color blanco y negro, babero de tela</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 8 opiniones)</p>
+      </div>
+    `
+  },
 
   // BLOQUE 5
   {
@@ -711,6 +972,208 @@ const productos = [
       </div>
     `
   },
+   [
+  {
+    id: "YF1-40-ROSA",
+    nombre: "Elefante Almohada colores ROSA 40cm",
+    precio: 45500,
+    imagen: "imagenes/yf1-40-5.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Elefante almohada color rosa de 40cm. Suave, esponjoso y perfecto como cojín o peluche de compañía para niños y niñas.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 40 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color rosa, costuras reforzadas</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 12 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "xh-35-AZUL",
+    nombre: "Ratones pijama 35cm AZUL",
+    precio: 50000,
+    imagen: "imagenes/XH-25-1.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche ratón en pijama azul de 35cm. Muy suave, perfecto como regalo o para acompañar la hora de dormir de los pequeños.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 35 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color azul, detalles de pijama</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.8/5 basado en 8 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "8773-40-AZUL",
+    nombre: "Oso Ropa rayas 42cm AZUL",
+    precio: 52000,
+    imagen: "imagenes/8773-40-1.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche oso de 42cm con ropa de rayas azules. Elegante, suave y perfecto para decorar o regalar a grandes y pequeños.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 42 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color azul, ropa de rayas</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 9 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "8773-40-VERDE",
+    nombre: "Oso Ropa rayas 42cm VERDE",
+    precio: 52000,
+    imagen: "imagenes/8773-40-2.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche oso de 42cm con ropa de rayas verdes. Tierno, elegante y especial para decorar habitaciones infantiles.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 42 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color verde, ropa de rayas</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 10 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "1043-40",
+    nombre: "Panda Vestido 40cm",
+    precio: 59000,
+    imagen: "imagenes/1043-40.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche panda vestido de 40cm, suave y adorable. Ideal como regalo especial o para decorar espacios infantiles.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 40 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color blanco y negro, vestido de tela</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 11 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "2301-40",
+    nombre: "Panda Overol 40cm",
+    precio: 59000,
+    imagen: "imagenes/2301-40.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche panda con overol de 40cm, esponjoso y tierno. Perfecto para regalar, coleccionar o decorar.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 40 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color blanco y negro, overol de tela</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 10 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "JE-59-GRIS",
+    nombre: "Animalito que respira (No incluye pilas) 26cm GRIS",
+    precio: 65000,
+    imagen: "imagenes/JE-59-1.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche animalito que respira color gris de 26cm (no incluye pilas). Realista, suave y reconfortante para niños y adultos.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 26 cm</li>
+        <li>Función: Respira (pila no incluida)</li>
+        <li>Color gris</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 13 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "JE-59-AZUL",
+    nombre: "Animalito que respira (No incluye pilas) 26cm AZUL",
+    precio: 65000,
+    imagen: "imagenes/JE-59-4.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche animalito que respira color azul de 26cm (no incluye pilas). Suave, tierno y perfecto como compañía para niños pequeños.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 26 cm</li>
+        <li>Función: Respira (pila no incluida)</li>
+        <li>Color azul</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 12 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "JE-59-MARRON",
+    nombre: "Animalito que respira (No incluye pilas) 26cm MARRON",
+    precio: 65000,
+    imagen: "imagenes/JE-59-3.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche animalito que respira color marrón de 26cm (no incluye pilas). Especial para reconfortar y acompañar en la hora de dormir.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 26 cm</li>
+        <li>Función: Respira (pila no incluida)</li>
+        <li>Color marrón</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 11 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "JE-59-CAFE",
+    nombre: "Animalito que respira (No incluye pilas) 26cm CAFE",
+    precio: 65000,
+    imagen: "imagenes/JE-59-2.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche animalito que respira color café de 26cm (no incluye pilas). Realista, suave y adorable para acompañar a los más pequeños.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 26 cm</li>
+        <li>Función: Respira (pila no incluida)</li>
+        <li>Color café</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 12 opiniones)</p>
+      </div>
+    `
+  },
+
 
   // BLOQUE 6
   {
@@ -880,6 +1343,446 @@ const productos = [
       <div class="valoraciones">
         <h3>Valoraciones</h3>
         <p>⭐⭐⭐⭐⭐ (5/5 basado en 20 opiniones)</p>
+      </div>
+    `
+  },
+   {
+    id: "BL-389-43-MORADO",
+    nombre: "Unicornio Ojitos 40cm MORADO",
+    precio: 31500,
+    imagen: "imagenes/bl-398-43-1.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche unicornio de 40cm color morado, con ojitos grandes y brillantes. Encantador para decorar habitaciones infantiles.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 40 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color morado, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.9/5 basado en 7 opiniones)</p>
+      </div>
+    `
+  },
+    {
+    id: "BL-389-43-ROSA",
+    nombre: "Unicornio Ojitos 40cm ROSA",
+    precio: 31500,
+    imagen: "imagenes/bl-398-43-2.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche unicornio de 40cm color rosa, con ojitos grandes y brillantes. Perfecto para regalar o coleccionar.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 40 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color rosa, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.9/5 basado en 7 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "Sur05-30-GANZO",
+    nombre: "Peluche elástico mediano GANZO 30cm",
+    precio: 32000,
+    imagen: "imagenes/sur05-30-9.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche elástico mediano en forma de ganzo, divertido y suave. Ideal para juegos y decoración.</p>
+      <ul>
+        <li>Material: Felpa elástica antialérgica</li>
+        <li>Tamaño: 30 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color blanco, detalles naranjas</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.8/5 basado en 6 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "Sur05-30-UNICORNIO",
+    nombre: "Peluche elástico mediano 30cm UNICORNIO",
+    precio: 32000,
+    imagen: "imagenes/sur05-30-19.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche elástico mediano de unicornio de 30cm, colorido y suave, perfecto para inspirar la imaginación de los niños.</p>
+      <ul>
+        <li>Material: Felpa elástica antialérgica</li>
+        <li>Tamaño: 30 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Colores pastel, detalles de unicornio</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.7/5 basado en 7 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "Sur05-30-OJITOS",
+    nombre: "Peluche elástico mediano 30cm Cojín OJITOS",
+    precio: 32000,
+    imagen: "imagenes/sur05-30-8.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche elástico mediano en forma de cojín con ojitos de 30cm. Suave y perfecto para descansar o decorar la cama.</p>
+      <ul>
+        <li>Material: Felpa elástica antialérgica</li>
+        <li>Tamaño: 30 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Colores variados, detalles de ojitos</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.8/5 basado en 8 opiniones)</p>
+      </div>
+    `
+  },
+       {
+    id: "BLM-098",
+    nombre: "Oso con bordado 55cm",
+    precio: 68000,
+    imagen: "imagenes/BLM-098.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Oso de peluche con bordado, tamaño grande 55cm. Suave, elegante y especial para regalos importantes o decoración destacada.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 55 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Bordado personalizado, color café claro</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 8 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "J192-32-NARANJA",
+    nombre: "Leon Despeluque 35cm NARANJA",
+    precio: 68500,
+    imagen: "imagenes/j192-32-2.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>León despelucado naranja de 35cm. Muy divertido, original y de pelo esponjado. Ideal para destacar en tu colección.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 35 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color naranja, melena voluminosa</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.9/5 basado en 7 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "J192-32-ROSA",
+    nombre: "Leon Despeluque 35cm ROSA",
+    precio: 68500,
+    imagen: "imagenes/j192-32-3 (2).jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>León despelucado rosa de 35cm. Muy suave, llamativo y con peinado alocado. Perfecto para regalar o decorar el cuarto.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 35 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color rosa, melena desordenada</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.8/5 basado en 6 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "J192-32-CAFE",
+    nombre: "León Despeluque 35cm CAFE",
+    precio: 68500,
+    imagen: "imagenes/j192-32-1.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>León despelucado café de 35cm. Pelo esponjoso, muy suave y divertido. Perfecto para decorar y regalar.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 35 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color café, melena abundante</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.7/5 basado en 6 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "XTIG-50-LEONBLANCO",
+    nombre: "Tigre Acostado 50cm LEON BLANCO",
+    precio: 76000,
+    imagen: "imagenes/xtig-50-1.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Tigre acostado 50cm, versión león blanco. Grande, suave y de detalles realistas. Ideal para destacar en la decoración o para niños grandes.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 50 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color blanco, detalles de león</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 6 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "XTIG-50-PUMA",
+    nombre: "Tigre Acostado 50cm PUMA",
+    precio: 76000,
+    imagen: "imagenes/xtig-50-3.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Tigre acostado 50cm versión puma. Suave, grande y de diseño realista, perfecto para coleccionistas y niños grandes.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 50 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color puma, detalles realistas</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 6 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "2204-049",
+    nombre: "Panda Lentejuelas 40cm",
+    precio: 78500,
+    imagen: "imagenes/2204-049.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Panda de felpa con lentejuelas de 40cm. Brillante, sofisticado y muy tierno. Perfecto para regalos llamativos o colecciones especiales.</p>
+      <ul>
+        <li>Material: Felpa antialérgica con lentejuelas</li>
+        <li>Tamaño: 40 cm</li>
+        <li>Lavable: Superficialmente</li>
+        <li>Color blanco y negro, detalles brillantes</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 7 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "Ap3-6206",
+    nombre: "Cocodrilo 60cm Con Cobija 160cm*90",
+    precio: 82500,
+    imagen: "imagenes/ap3-6206.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Cocodrilo de peluche 60cm que incluye cobija de 160cm x 90cm. Práctico, divertido y útil para niños o adultos friolentos.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: Peluche 60 cm, cobija 160 x 90 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color verde, diseño funcional</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 5 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "JPE02-40-CAFEOSCURO",
+    nombre: "Osos mediano diseños CAFE OSCURO 55cm",
+    precio: 86500,
+    imagen: "imagenes/jpe02-60-2 (1).jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Oso mediano de 55cm, diseño café oscuro. Suave, esponjoso y de gran tamaño, ideal para regalos y decoración especial.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 55 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color café oscuro, detalles de diseño</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 7 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "JPE02-40-CAFECLARO",
+    nombre: "Osos mediano diseños 55cm CAFE CLARO",
+    precio: 86500,
+    imagen: "imagenes/jpe02-60-1.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Oso mediano de 55cm, diseño café claro. Muy suave y grande, perfecto para regalar en ocasiones importantes.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 55 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color café claro, detalles decorativos</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 7 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "cj-3179",
+    nombre: "King Kong Gigante 60cm",
+    precio: 89500,
+    imagen: "imagenes/cj-3179.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche King Kong gigante de 60cm. Impactante, divertido y para los que aman los animales icónicos de gran tamaño.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 60 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color negro, detalles de gorila</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 8 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "BLM-099",
+    nombre: "Oso con Moño Grande 100cm",
+    precio: 261000,
+    imagen: "imagenes/BLM-099.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Oso gigante de 1 metro con moño grande, el regalo perfecto para ocasiones inolvidables y decoración impactante.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 100 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color café claro, moño decorativo</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 12 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "BLL-016",
+    nombre: "Oso con Corazon Grande 110cm",
+    precio: 261000,
+    imagen: "imagenes/BLL-016.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Oso gigante con corazón de 110cm. Muy suave, tierno y perfecto para sorprender en fechas especiales como aniversarios y San Valentín.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 110 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color marrón claro, corazón rojo</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 9 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "2967-CAFE",
+    nombre: "Oso Carmel con Flor 100cm CAFE",
+    precio: 261000,
+    imagen: "imagenes/2967-2.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Oso carmel gigante de 1 metro, color café, con flor. Un detalle romántico, grande y memorable para regalar.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 100 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color café, flor decorativa</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 8 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "2967-BLANCO",
+    nombre: "Oso Carmel con Flor 100cm BLANCO",
+    precio: 261000,
+    imagen: "imagenes/2967.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Oso carmel gigante de 1 metro, color blanco, con flor. Tierno, elegante y perfecto para sorprender a lo grande.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 100 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color blanco, flor decorativa</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 8 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "BL22-01",
+    nombre: "Oso con Bufanda grande 120cm",
+    precio: 272000,
+    imagen: "imagenes/bl22-01.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Oso gigante de 120cm con bufanda. Súper suave, abrigador y perfecto para ser el centro de atención en cualquier regalo o celebración especial.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 120 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color marrón claro, bufanda de tela</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 7 opiniones)</p>
+      </div>
+    `
+  },
+  {
+    id: "2535",
+    nombre: "Oso moño Sonriente grande 110cm",
+    precio: 272000,
+    imagen: "imagenes/2535.jpeg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Oso gigante de 110cm con moño y sonrisa. Ideal para regalar, sorprender y llenar de alegría cualquier ambiente.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 110 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color café claro, moño decorativo</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 8 opiniones)</p>
       </div>
     `
   }
