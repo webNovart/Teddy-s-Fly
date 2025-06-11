@@ -1848,3 +1848,30 @@ document.addEventListener("DOMContentLoaded", function() {
     };
   }
 });
+document.addEventListener("DOMContentLoaded", function() {
+    const btnAgregar = document.getElementById("btn-agregar-carrito");
+    if (!btnAgregar) return;
+
+    // Supón que ya tienes info del producto actual en una variable "producto"
+    btnAgregar.addEventListener("click", function() {
+        // Obtén los datos del producto actual
+        // Por ejemplo, si tienes el producto cargado en una variable JS:
+        // const producto = {id, nombre, precio, imagen};
+
+        let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+        const item = carrito.find(p => p.id === producto.id);
+        if (item) {
+            item.cantidad += 1;
+        } else {
+            carrito.push({ 
+                id: producto.id, 
+                nombre: producto.nombre, 
+                precio: producto.precio, 
+                imagen: producto.imagen, 
+                cantidad: 1
+            });
+        }
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+        alert('Producto añadido al carrito');
+    });
+});
