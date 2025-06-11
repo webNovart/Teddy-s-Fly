@@ -1,5 +1,1836 @@
 // Datos de ejemplo, puedes cargarlos desde un JSON o backend en un futuro
-const productos = [
+const personajes = [
+
+   //personajes 
+   {
+    id: "226-pikachu",
+    nombre: "Llavero Pikachu 9×9 cms",
+    precio: 11000,
+    imagen: "imagenes/personajes/llavero-pikachu.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Llavero peluche de Pikachu en tamaño compacto de 9x9 cm. Ideal para fans de Pokémon y perfecto para llevar en llaves, mochila o regalar.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 9 x 9 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color amarillo vibrante, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (4.8/5 basado en 15 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "97-8-tom",
+    nombre: "Llavero TOM 7.3 cm",
+    precio: 12000,
+    imagen: "imagenes/personajes/llavero-tom.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Llavero peluche de Tom, el popular gato de caricaturas. Tamaño de 7.3 cm, perfecto para niños y coleccionistas.</p>
+      <ul>
+        <li>Material: Felpa suave</li>
+        <li>Tamaño: 7.3 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Incluye anillo metálico resistente</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.5/5 basado en 7 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "97-8-jerry",
+    nombre: "Llavero JERRY 7.3 cm",
+    precio: 12000,
+    imagen: "imagenes/personajes/llavero-jerry.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Llavero peluche de Jerry, el ratón travieso de las caricaturas. Tamaño 7.3 cm, excelente como adorno o regalo divertido.</p>
+      <ul>
+        <li>Material: Felpa ultra suave</li>
+        <li>Tamaño: 7.3 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Detalles bordados de alta calidad</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (4.7/5 basado en 10 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "5606-8.3-spiderman",
+    nombre: "Llavero Superhéroes SPIDERMAN 10 cms",
+    precio: 12500,
+    imagen: "imagenes/personajes/llavero-spiderman.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Llavero peluche de Spiderman, el héroe arácnido favorito. Tamaño 10 cm, ligero y práctico para llevar a todos lados.</p>
+      <ul>
+        <li>Material: Felpa premium</li>
+        <li>Tamaño: 10 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Colores vibrantes y costuras reforzadas</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.6/5 basado en 8 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "5606-8.3-capitan",
+    nombre: "Llavero Superhéroes CAPITAN AMERICA 10 cms",
+    precio: 12500,
+    imagen: "imagenes/personajes/llavero-capitan-america.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Llavero peluche de Capitán América. Lleva el escudo de la justicia contigo a donde vayas. Tamaño 10 cm.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 10 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Escudo bordado y colores patrióticos</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (4.9/5 basado en 12 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "5606-8.3-batman",
+    nombre: "Llavero Superhéroes BATMAN 10 cms",
+    precio: 12500,
+    imagen: "imagenes/personajes/llavero-batman.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Llavero peluche de Batman, el caballero oscuro. Un toque de héroe para tus llaves o mochila.</p>
+      <ul>
+        <li>Material: Felpa de alta calidad</li>
+        <li>Tamaño: 10 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color negro y amarillo con detalles únicos</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.4/5 basado en 6 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "5606-8.3-hulk",
+    nombre: "Llavero Superhéroes HULK 10 cms",
+    precio: 12500,
+    imagen: "imagenes/personajes/llavero-hulk.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Llavero peluche de Hulk, ¡fuerza en tamaño mini! Ideal para coleccionistas y fans de Marvel.</p>
+      <ul>
+        <li>Material: Felpa suave y resistente</li>
+        <li>Tamaño: 10 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color verde intenso, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (4.8/5 basado en 9 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+   {
+    id: "lla-papy-conejo",
+    nombre: "Llavero Circo Digital CONEJO 7.7 cm",
+    precio: 13000,
+    imagen: "imagenes/personajes/llavero-circo-conejo.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Llavero peluche de conejo del Circo Digital, tamaño compacto ideal para adornar llaves y mochilas. Diseño tierno y suave.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 7.7 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Detalles bordados, colores vivos</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.5/5 basado en 6 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "lla-papy-payasos",
+    nombre: "Llavero Circo Digital PAYASOS 7.7 cm",
+    precio: 13000,
+    imagen: "imagenes/personajes/llavero-circo-payasos.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Llavero peluche con diseño de payasos del Circo Digital. Ideal para niños y coleccionistas, añade alegría a tus llaves.</p>
+      <ul>
+        <li>Material: Felpa suave y lavable</li>
+        <li>Tamaño: 7.7 cm</li>
+        <li>Colores: Multicolor</li>
+        <li>Anillo metálico resistente</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (4.7/5 basado en 9 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "#0905-8.2",
+    nombre: "Raton Ancheta 15 cms",
+    precio: 13500,
+    imagen: "imagenes/personajes/raton-ancheta.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Raton Ancheta de peluche tamaño 15 cm, perfecto para acompañar regalos o decorar espacios infantiles.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 15 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Corte clásico, costuras reforzadas</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.4/5 basado en 8 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "CJ-3900-ironman",
+    nombre: "Llavero Super Heroes IRON MAN 13 cm",
+    precio: 13500,
+    imagen: "imagenes/personajes/llavero-ironman.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Llavero peluche de Iron Man, superhéroe favorito de Marvel. Tamaño 13 cm, ideal para fans y coleccionistas.</p>
+      <ul>
+        <li>Material: Felpa suave</li>
+        <li>Tamaño: 13 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Colores vivos y detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (4.8/5 basado en 12 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "5606-8.3-ironman",
+    nombre: "Llavero Superhéroes IRONMAN 10 cm",
+    precio: 14000,
+    imagen: "imagenes/personajes/llavero-ironman2.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Llavero peluche de Iron Man en presentación compacta de 10 cm. Lleva el poder de Tony Stark contigo.</p>
+      <ul>
+        <li>Material: Felpa premium</li>
+        <li>Tamaño: 10 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Anilla metálica incluida</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.6/5 basado en 7 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "JE-57-8.4-tristeza",
+    nombre: "Llaveros Intensamente TRISTEZA",
+    precio: 14000,
+    imagen: "imagenes/personajes/llavero-intensamente-tristeza.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Llavero peluche de Tristeza, personaje de Intensamente. Ideal para coleccionistas de emociones.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 8.4 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color azul con detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.5/5 basado en 7 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "JE-57-8.4-alegria",
+    nombre: "Llaveros Intensamente ALEGRIA",
+    precio: 14000,
+    imagen: "imagenes/personajes/llavero-intensamente-alegria.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Llavero peluche de Alegría, personaje de Intensamente. Aporta felicidad a tus llaves o bolsa.</p>
+      <ul>
+        <li>Material: Felpa ultra suave</li>
+        <li>Tamaño: 8.4 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Colores vivos y sonrisa bordada</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (4.8/5 basado en 10 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "JE-57-8.4-furia",
+    nombre: "Llaveros Intensamente FURIA",
+    precio: 14000,
+    imagen: "imagenes/personajes/llavero-intensamente-furia.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Llavero peluche de Furia, personaje de Intensamente. Perfecto para regalar y completar la colección de emociones.</p>
+      <ul>
+        <li>Material: Felpa resistente</li>
+        <li>Tamaño: 8.4 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Rojo intenso, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.7/5 basado en 8 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "JE-57-8.4-ansiedad",
+    nombre: "Llaveros Intensamente ANSIEDAD",
+    precio: 14000,
+    imagen: "imagenes/personajes/llavero-intensamente-ansiedad.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Llavero peluche de Ansiedad, personaje de Intensamente. Agrega emoción y ternura a tu llavero.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 8.4 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Detalles bordados, diseño original</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (4.9/5 basado en 11 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "JE-57-8.4-desagrado",
+    nombre: "Llaveros Intensamente DESAGRADO",
+    precio: 14000,
+    imagen: "imagenes/personajes/llavero-intensamente-desagrado.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Llavero peluche de Desagrado, personaje de Intensamente. ¡Completa tu set de emociones!</p>
+      <ul>
+        <li>Material: Felpa suave</li>
+        <li>Tamaño: 8.4 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Verde, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.6/5 basado en 7 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "JE-57-8.4-miedo",
+    nombre: "Llaveros Intensamente MIEDO",
+    precio: 14000,
+    imagen: "imagenes/personajes/llavero-intensamente-miedo.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Llavero peluche de Miedo, personaje de Intensamente. Expresa tu emoción favorita donde vayas.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 8.4 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Detalles bordados, color lila</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.5/5 basado en 6 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+   {
+    id: "JE-30-9-mike",
+    nombre: "Llavero Mike Wazowski 9 cm",
+    precio: 15000,
+    imagen: "imagenes/personajes/llavero-mike.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Llavero peluche de Mike Wazowski, el simpático monstruo verde. Ideal para fans de Monsters Inc. y Pixar.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 9 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color verde, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (4.9/5 basado en 18 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "je-32-9-arenita",
+    nombre: "Llavero Bob Esponja ARENITA 9 cm",
+    precio: 15000,
+    imagen: "imagenes/personajes/llavero-arenita.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Llavero peluche de Arenita, la ardilla aventurera de Fondo de Bikini. Adorno divertido para llaves o mochila.</p>
+      <ul>
+        <li>Material: Felpa suave</li>
+        <li>Tamaño: 9 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Incluye casco y traje bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.6/5 basado en 10 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "je-32-9-gary",
+    nombre: "Llavero Bob Esponja GARY 9 cm",
+    precio: 15000,
+    imagen: "imagenes/personajes/llavero-gary.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Llavero peluche de Gary, la mascota de Bob Esponja. Perfecto para fans de la serie y coleccionistas.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 9 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Colores pasteles, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (4.8/5 basado en 11 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "je-32-9-patricio",
+    nombre: "Llavero Bob Esponja PATRICIO 9 cm",
+    precio: 15000,
+    imagen: "imagenes/personajes/llavero-patricio.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Llavero peluche de Patricio, el mejor amigo de Bob Esponja. Súper suave y adorable para decorar tus llaves.</p>
+      <ul>
+        <li>Material: Felpa ultra suave</li>
+        <li>Tamaño: 9 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color rosado, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.7/5 basado en 13 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "JE-38-9.5-rosa",
+    nombre: "Llavero Patrulla Canina Sentada ROSA 9.5 cm",
+    precio: 15500,
+    imagen: "imagenes/personajes/llavero-patrulla-rosa.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Llavero peluche de Patrulla Canina, versión sentada color rosa. Ideal para los más pequeños y fans de la serie.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 9.5 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Detalles bordados, seguro para niños</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (4.8/5 basado en 9 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "JE-38-9.5-amarillo",
+    nombre: "Llavero Patrulla Canina Sentada AMARILLO 9.5 cm",
+    precio: 15500,
+    imagen: "imagenes/personajes/llavero-patrulla-amarillo.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Llavero peluche de Patrulla Canina, versión sentada color amarillo. Perfecto para mochilas y regalos infantiles.</p>
+      <ul>
+        <li>Material: Felpa suave y lavable</li>
+        <li>Tamaño: 9.5 cm</li>
+        <li>Detalles coloridos y bordados de calidad</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.5/5 basado en 8 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "JE-38-9.5-naranja",
+    nombre: "Llavero Patrulla Canina Sentada NARANJA 9.5 cm",
+    precio: 15500,
+    imagen: "imagenes/personajes/llavero-patrulla-naranja.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Llavero peluche de Patrulla Canina, versión sentada color naranja. Añade diversión y color a tus llaves.</p>
+      <ul>
+        <li>Material: Felpa resistente</li>
+        <li>Tamaño: 9.5 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Colores vibrantes y costuras reforzadas</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (4.9/5 basado en 7 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "JE-38-9.5-verde",
+    nombre: "Llavero Patrulla Canina Sentada VERDE 9.5 cm",
+    precio: 15500,
+    imagen: "imagenes/personajes/llavero-patrulla-verde.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Llavero peluche de Patrulla Canina, versión sentada color verde. Diseño original y divertido para niños.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 9.5 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Colores alegres y detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.6/5 basado en 6 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "JE-38-9.5-azul",
+    nombre: "Llavero Patrulla Canina Sentada AZUL 22 cm",
+    precio: 15500,
+    imagen: "imagenes/personajes/llavero-patrulla-azul.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Llavero peluche de Patrulla Canina, versión sentada color azul. Tamaño especial de 22 cm para los fans más grandes.</p>
+      <ul>
+        <li>Material: Felpa ultra suave</li>
+        <li>Tamaño: 22 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Detalles bordados y coloridos</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 5 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "BOBI-04-9.2-kirby",
+    nombre: "Llavero Kirby 10 cm",
+    precio: 15500,
+    imagen: "imagenes/personajes/llavero-kirby.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Llavero peluche de Kirby, el famoso personaje rosado de los videojuegos. Súper tierno y coleccionable.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 10 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color rosado, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (4.9/5 basado en 19 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "je-32-9-bob",
+    nombre: "Llavero Bob Esponja BOB 9 cm",
+    precio: 15500,
+    imagen: "imagenes/personajes/llavero-bob.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Llavero peluche de Bob Esponja, el personaje favorito de Fondo de Bikini. Ideal para regalar a niños y adultos.</p>
+      <ul>
+        <li>Material: Felpa suave</li>
+        <li>Tamaño: 9 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color amarillo, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.8/5 basado en 15 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "je-33-9.5-garfield",
+    nombre: "Llavero Garfield 9.5 cm",
+    precio: 15500,
+    imagen: "imagenes/personajes/llavero-garfield.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Llavero peluche de Garfield, el gato más famoso de las historietas. Perfecto para fans y coleccionistas.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 9.5 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color naranja, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (4.9/5 basado en 12 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+   {
+    id: "je-36-9.5-kuromi",
+    nombre: "Llavero KUROMI 9.5 cm",
+    precio: 15500,
+    imagen: "imagenes/personajes/llavero-kuromi.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Llavero peluche de Kuromi, personaje icónico y tierno. Ideal para fans de Sanrio y coleccionistas.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 9.5 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color lila y negro, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (4.9/5 basado en 11 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "je-37-9.5-gata",
+    nombre: "Llavero GATA 9.5 cm",
+    precio: 15500,
+    imagen: "imagenes/personajes/llavero-gata.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Llavero peluche de Gata, diseño dulce y clásico para adornar tus llaves con ternura.</p>
+      <ul>
+        <li>Material: Felpa suave</li>
+        <li>Tamaño: 9.5 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Detalles bordados de alta calidad</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.7/5 basado en 7 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "24043-9.5-cinnamaroll",
+    nombre: "Llavero Monedero CINNAMAROLL 20 cm",
+    precio: 16000,
+    imagen: "imagenes/personajes/llavero-cinnamaroll.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Llavero monedero de Cinnamaroll de 20 cm. Funcional y adorable para llevar monedas o pequeños objetos.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 20 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color blanco, diseño original Sanrio</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (4.8/5 basado en 14 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "8811-20-12.8-hongo-verde",
+    nombre: "Hongo de Mario VERDE 25 cm",
+    precio: 21500,
+    imagen: "imagenes/personajes/hongo-mario-verde.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche hongo verde de Mario Bros de 25 cm. Un clásico para coleccionistas y gamers.</p>
+      <ul>
+        <li>Material: Felpa suave</li>
+        <li>Tamaño: 25 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Colores vivos, base antideslizante</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 10 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "jo-144s-12.8-yoshi",
+    nombre: "Yoshi pequeño 23 cm",
+    precio: 21500,
+    imagen: "imagenes/personajes/yoshi.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche de Yoshi pequeño de 23 cm, el famoso dinosaurio de Nintendo. Perfecto para fans de Mario.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 23 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color verde, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.7/5 basado en 8 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "XZ1-25-12.8-ojo-verde",
+    nombre: "Ojo Verde pequeño 25 cm",
+    precio: 21500,
+    imagen: "imagenes/personajes/ojo-verde.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche Ojo Verde de 25 cm. Diseño divertido y original para decorar tu habitación o regalar.</p>
+      <ul>
+        <li>Material: Felpa suave</li>
+        <li>Tamaño: 25 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color verde, diseño único</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.6/5 basado en 6 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "AD474-20-14.87-huevito",
+    nombre: "Pokémon Huevito 15 cm",
+    precio: 23000,
+    imagen: "imagenes/personajes/pokemon-huevito.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche Pokémon Huevito de 15 cm. Ideal para fans de la saga y coleccionistas de pokémones curiosos.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 15 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color pastel, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (4.8/5 basado en 9 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "111910-14.2-unicornio",
+    nombre: "Unicornio sentado 25 cm",
+    precio: 24000,
+    imagen: "imagenes/personajes/unicornio-sentado.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche unicornio sentado de 25 cm, suave y colorido. Perfecto para habitaciones infantiles y regalar.</p>
+      <ul>
+        <li>Material: Felpa ultra suave</li>
+        <li>Tamaño: 25 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Colores pastel, cuerno dorado</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.7/5 basado en 10 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "1880-14.5-raton1",
+    nombre: "Raton #1 25 cm",
+    precio: 24500,
+    imagen: "imagenes/personajes/raton1.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche de ratón #1 de 25 cm. Diseño clásico y simpático para todas las edades.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 25 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color gris y rosa, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.5/5 basado en 7 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "433-23-15.9-minions-orejas",
+    nombre: "Minions Orejas 2 25 cm",
+    precio: 25000,
+    imagen: "imagenes/personajes/minions-orejas.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche Minions con orejas de 25 cm. ¡Divertido y original para fans y niños!</p>
+      <ul>
+        <li>Material: Felpa suave</li>
+        <li>Tamaño: 25 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color amarillo, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (4.9/5 basado en 12 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "JE-19-15.4-bobpequeno",
+    nombre: "Bob esponja pequeño 26 cm",
+    precio: 26000,
+    imagen: "imagenes/personajes/bobpequeno.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche de Bob Esponja pequeño de 26 cm. Suave, divertido y perfecto para fans de todas las edades.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 26 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color amarillo, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.7/5 basado en 9 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "233pm-15.4-minions-letrero",
+    nombre: "Minions guitarra LETRERO 25 cm",
+    precio: 26000,
+    imagen: "imagenes/personajes/minions-letrero.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche Minion guitarra con letrero de 25 cm. Alegre y musical para los fans de Gru y los Minions.</p>
+      <ul>
+        <li>Material: Felpa suave</li>
+        <li>Tamaño: 25 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color amarillo, detalles impresos y bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 8 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "233pm-15.4-minions-guitarra",
+    nombre: "Minions guitarra 25 cm",
+    precio: 26000,
+    imagen: "imagenes/personajes/minions-guitarra.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche Minion guitarra de 25 cm. Un personaje de película animada en versión musical y divertida.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 25 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color amarillo, detalles bordados y guitarra de tela</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.8/5 basado en 10 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "233pm-15.4-minions-oso",
+    nombre: "Minions guitarra OSO 25 cm",
+    precio: 26000,
+    imagen: "imagenes/personajes/minions-oso.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche Minion guitarra con oso de 25 cm. Un diseño tierno y original para grandes y chicos.</p>
+      <ul>
+        <li>Material: Felpa suave</li>
+        <li>Tamaño: 25 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color amarillo, detalles de oso en la guitarra</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (4.9/5 basado en 9 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+    {
+    id: "Cj-1455-15.6-carl",
+    nombre: "Viejitos ancheta Carl 20 cm",
+    precio: 26500,
+    imagen: "imagenes/personajes/viejitos-carl.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche Viejitos ancheta Carl de 20 cm, inspirado en personajes entrañables. Ideal para regalar y coleccionar.</p>
+      <ul>
+        <li>Material: Felpa premium</li>
+        <li>Tamaño: 20 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Detalles bordados y colores vibrantes</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.7/5 basado en 8 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "Mt03-3-15.9-unicornio-rosa",
+    nombre: "Unicornio Corazon 25cm ROSA",
+    precio: 27000,
+    imagen: "imagenes/personajes/unicornio-corazon-rosa.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche unicornio con corazón, color rosa, de 25cm. Un regalo mágico para cualquier ocasión especial.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 25 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Corazón bordado, crin colorida</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (4.9/5 basado en 12 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "Mt03-3-15.9-unicornio-blanco",
+    nombre: "Unicornio Corazon 25cm BLANCO",
+    precio: 27000,
+    imagen: "imagenes/personajes/unicornio-corazon-blanco.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche unicornio con corazón, color blanco, de 25cm. Perfecto para decoración infantil y como regalo.</p>
+      <ul>
+        <li>Material: Felpa suave</li>
+        <li>Tamaño: 25 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Crin colorida, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.8/5 basado en 10 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "JE-18-16.2-garfieldbebe",
+    nombre: "Garfield Bebe 20cm",
+    precio: 27500,
+    imagen: "imagenes/personajes/garfield-bebe.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche Garfield bebé de 20 cm, ideal para fans del gato más famoso y perezoso de las tiras cómicas.</p>
+      <ul>
+        <li>Material: Felpa premium</li>
+        <li>Tamaño: 20 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color naranja, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (4.9/5 basado en 9 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "22-57-17.9-cojin-mario",
+    nombre: "Cojin cara de MARIO 30x30 cm",
+    precio: 30000,
+    imagen: "imagenes/personajes/cojin-mario.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Cojín de peluche con la cara de Mario Bros, tamaño 30x30 cm. Ideal para cuartos infantiles y gamers.</p>
+      <ul>
+        <li>Material: Felpa suave</li>
+        <li>Tamaño: 30 x 30 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Colores vivos, diseño ergonómico</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.7/5 basado en 7 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "Sur05-30-18.9-buzz",
+    nombre: "Peluche elástico mediano 30cm BUZZ",
+    precio: 32000,
+    imagen: "imagenes/personajes/buzz.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche elástico de Buzz Lightyear, tamaño mediano de 30cm. ¡Hasta el infinito y más allá!</p>
+      <ul>
+        <li>Material: Felpa elástica</li>
+        <li>Tamaño: 30 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Detalles bordados, alas flexibles</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 13 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "Sur05-30-18.9-marciano",
+    nombre: "Peluche elástico mediano 30cm MARCIANO",
+    precio: 32000,
+    imagen: "imagenes/personajes/marciano.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche elástico de Marciano, tamaño mediano de 30cm, divertido y suave. Inspirado en Toy Story.</p>
+      <ul>
+        <li>Material: Felpa elástica</li>
+        <li>Tamaño: 30 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color verde, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.8/5 basado en 9 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "JE-03-20.2-circo-conejo",
+    nombre: "Circo Digital 28cm CONEJO",
+    precio: 34000,
+    imagen: "imagenes/personajes/circo-conejo.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche conejo del Circo Digital, tamaño 28 cm. Un personaje tierno para los más pequeños.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 28 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color blanco, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (4.9/5 basado en 10 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "JE-03-20.2-circo-payasos",
+    nombre: "Circo Digital 28cm PAYASO",
+    precio: 34000,
+    imagen: "imagenes/personajes/circo-payasos.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche payaso del Circo Digital, tamaño 28 cm. Colores vivos y diseño alegre para decorar o jugar.</p>
+      <ul>
+        <li>Material: Felpa suave</li>
+        <li>Tamaño: 28 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Colores multicolor, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.8/5 basado en 8 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "1879-20.8-virgencita-blanca",
+    nombre: "Virgencita 30 cm BLANCA",
+    precio: 35000,
+    imagen: "imagenes/personajes/virgencita-blanca.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche Virgencita color blanco, tamaño 30 cm. Un regalo espiritual y tierno para todas las edades.</p>
+      <ul>
+        <li>Material: Felpa premium</li>
+        <li>Tamaño: 30 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color blanco, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 7 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "1879-20.8-virgencita-azul",
+    nombre: "Virgencita 30 cm AZUL",
+    precio: 35000,
+    imagen: "imagenes/personajes/virgencita-azul.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche Virgencita color azul, tamaño 30 cm. Suave y especial para acompañar en momentos importantes.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 30 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color azul, detalles bordados y brillantes</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.9/5 basado en 8 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "Cj-3918-21-sonic-rosa",
+    nombre: "Sonic mediano y amigos 25 cm ROSA",
+    precio: 35500,
+    imagen: "imagenes/personajes/sonic-rosa.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche Sonic mediano y amigos, versión color rosa, tamaño 25 cm. Ideal para coleccionistas y fans de SEGA.</p>
+      <ul>
+        <li>Material: Felpa suave</li>
+        <li>Tamaño: 25 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color rosa, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 6 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "je-02-21.5-smiling-rosado",
+    nombre: "Smiling colores 25 cm ROSADO",
+    precio: 36000,
+    imagen: "imagenes/personajes/smiling-rosado.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche Smiling color rosado de 25 cm, diseño alegre y suave. Perfecto para regalar y coleccionar.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 25 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color rosado, sonrisa bordada</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.8/5 basado en 9 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "je-02-21.5-smiling-amarillo",
+    nombre: "Smiling colores 25 cm AMARILLO",
+    precio: 36000,
+    imagen: "imagenes/personajes/smiling-amarillo.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche Smiling color amarillo de 25 cm, brilla con alegría y suavidad en cualquier espacio.</p>
+      <ul>
+        <li>Material: Felpa suave</li>
+        <li>Tamaño: 25 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color amarillo, sonrisa bordada</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (4.9/5 basado en 10 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "10-11-21.5-sullivan",
+    nombre: "Sullivan Camisa 30 cm",
+    precio: 36000,
+    imagen: "imagenes/personajes/sullivan.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche Sullivan con camisa, tamaño 30 cm. Inspirado en Monsters Inc., suave y abrazable.</p>
+      <ul>
+        <li>Material: Felpa premium</li>
+        <li>Tamaño: 30 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color azul y violeta, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.8/5 basado en 7 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "JE-49-22.5-babyyoda",
+    nombre: "Baby Yoda 35 cm",
+    precio: 38000,
+    imagen: "imagenes/personajes/babyyoda.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche Baby Yoda de 35 cm, tierno y adorable. Imprescindible para fans de Star Wars y The Mandalorian.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 35 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Túnica marrón, orejas verdes</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 20 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "1881-22.9-raton2",
+    nombre: "Raton #2 30 cm",
+    precio: 38500,
+    imagen: "imagenes/personajes/raton2.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche Raton #2 de 30 cm, para acompañar a los niños en su día a día o decorar su espacio favorito.</p>
+      <ul>
+        <li>Material: Felpa premium</li>
+        <li>Tamaño: 30 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color gris, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.7/5 basado en 8 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "1934-25.9-kuromi-grande",
+    nombre: "Kuromi 20 cm",
+    precio: 44000,
+    imagen: "imagenes/personajes/kuromi-grande.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche Kuromi de 20 cm, la traviesa amiga de My Melody. Ideal para fans de Sanrio.</p>
+      <ul>
+        <li>Material: Felpa ultra suave</li>
+        <li>Tamaño: 20 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color lila y negro, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 9 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "1864-26.9-bob33",
+    nombre: "Bob Esponja 33 cm",
+    precio: 45500,
+    imagen: "imagenes/personajes/bob33.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche Bob Esponja de 33 cm, el personaje más divertido de Fondo de Bikini. Abrazable y suave.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 33 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color amarillo, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.8/5 basado en 11 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "2019p-26.9-mascota-nacional",
+    nombre: "Mascota Nacional 30 cm",
+    precio: 45500,
+    imagen: "imagenes/personajes/mascota-nacional.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche Mascota Nacional de 30 cm, símbolo de alegría y unión. Perfecto para regalar a cualquier edad.</p>
+      <ul>
+        <li>Material: Felpa suave</li>
+        <li>Tamaño: 30 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Detalles patrios, colores vivos</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 7 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "1864-26.9-patricio33",
+    nombre: "Patricio 33 cm",
+    precio: 45500,
+    imagen: "imagenes/personajes/patricio33.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche Patricio estrella de mar, amigo de Bob Esponja, tamaño 33 cm. Suave y divertido para todos.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 33 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color rosa, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.9/5 basado en 10 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "JE-56-28-zootopia-zorro",
+    nombre: "Zootopia 35cm ZORRO",
+    precio: 47000,
+    imagen: "imagenes/personajes/zootopia-zorro.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche Zorro de Zootopia, tamaño 35 cm. Ideal para aventuras y juegos imaginativos.</p>
+      <ul>
+        <li>Material: Felpa premium</li>
+        <li>Tamaño: 35 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color naranja, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 6 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "JE-56-28-zootopia-conejo",
+    nombre: "Zootopia 35cm CONEJO",
+    precio: 47000,
+    imagen: "imagenes/personajes/zootopia-conejo.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche Conejo de Zootopia, tamaño 35 cm. Suave, tierno y con detalles de gran calidad.</p>
+      <ul>
+        <li>Material: Felpa suave</li>
+        <li>Tamaño: 35 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color gris, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.8/5 basado en 7 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "xh-35-29.5-ratones-rosa",
+    nombre: "Ratones pijama 35cm ROSA",
+    precio: 50000,
+    imagen: "imagenes/personajes/ratones-pijama-rosa.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche ratón con pijama color rosa, tamaño 35 cm. Detalles adorables y perfecto para dormir acompañado.</p>
+      <ul>
+        <li>Material: Felpa ultra suave</li>
+        <li>Tamaño: 35 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color rosa, pijama de tela</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 8 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "1839-31.9-viejita-mediana",
+    nombre: "Viejita Cuerpo entero Mediana 28 cms",
+    precio: 54000,
+    imagen: "imagenes/personajes/viejita-mediana.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche Viejita cuerpo entero, tamaño mediana de 28 cm. Un personaje dulce y especial para regalar.</p>
+      <ul>
+        <li>Material: Felpa premium</li>
+        <li>Tamaño: 28 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Detalles bordados, vestido de tela</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.8/5 basado en 6 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "1940-31.9-luigi",
+    nombre: "Personajes LUIGI 30 Cms",
+    precio: 54000,
+    imagen: "imagenes/personajes/luigi.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche Luigi de 30 cm, el inseparable hermano de Mario Bros. Un clásico para gamers y coleccionistas.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 30 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color verde, bigote bordado</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 7 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "1940-31.9-peach",
+    nombre: "Personajes PRINCESA PEACH 30 Cms",
+    precio: 54000,
+    imagen: "imagenes/personajes/peach.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche Princesa Peach de 30 cm, la princesa favorita de los videojuegos. Suave y elegante.</p>
+      <ul>
+        <li>Material: Felpa premium</li>
+        <li>Tamaño: 30 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color rosa, corona bordada</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.9/5 basado en 8 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "1940-31.9-toad",
+    nombre: "Personajes TOAD 30 Cms",
+    precio: 54000,
+    imagen: "imagenes/personajes/toad.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche Toad de 30 cm, el amigo fiel de Mario y Luigi. Ideal para decorar o jugar.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 30 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color blanco y rojo, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 6 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "1882-32.5-raton3",
+    nombre: "Raton #3 40 cm",
+    precio: 55000,
+    imagen: "imagenes/personajes/raton3.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche Raton #3 de 40 cm, tamaño grande y suave. Ideal para abrazar y acompañar en el descanso.</p>
+      <ul>
+        <li>Material: Felpa premium</li>
+        <li>Tamaño: 40 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color gris, orejas rosas</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 8 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "JE-25-34.9-stitch-panda",
+    nombre: "Stitch disfraz panda 35cm",
+    precio: 59000,
+    imagen: "imagenes/personajes/stitch-panda.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche Stitch disfrazado de panda, tamaño 35 cm. Diseño adorable y divertido para fans de Disney.</p>
+      <ul>
+        <li>Material: Felpa suave</li>
+        <li>Tamaño: 35 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color azul y negro, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 5 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "1964-39.9-envidia",
+    nombre: "Personajes Intensamente ENVIDIA 30 cm",
+    precio: 62500,
+    imagen: "imagenes/personajes/envidia.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche Envidia de Intensamente, tamaño 30 cm. Completa tu colección de emociones con este personaje único.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 30 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color verde y azul, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.7/5 basado en 7 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "1840-37.9-viejito-mediano",
+    nombre: "Viejito Cuerpo entero Mediano 30 cm",
+    precio: 64000,
+    imagen: "imagenes/personajes/viejito-mediano.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche Viejito cuerpo entero mediano, tamaño 30 cm. Un personaje simpático y entrañable para regalar.</p>
+      <ul>
+        <li>Material: Felpa premium</li>
+        <li>Tamaño: 30 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Detalles bordados y vestimenta de tela</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 6 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "1980-39.8-lilo-stitch",
+    nombre: "Lilo Y Stitch 40cm",
+    precio: 67500,
+    imagen: "imagenes/personajes/lilo-stitch.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche Lilo y Stitch juntos, tamaño 40 cm. Un dúo inseparable para los fans de Disney.</p>
+      <ul>
+        <li>Material: Felpa ultra suave</li>
+        <li>Tamaño: 40 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Colores vivos, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.9/5 basado en 9 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "1974-42.5-kuromi-grande",
+    nombre: "Kuromi Grande 40cm",
+    precio: 70500,
+    imagen: "imagenes/personajes/kuromi-grande2.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche Kuromi grande de 40 cm, edición especial para fans de Sanrio. Suave y abrazable.</p>
+      <ul>
+        <li>Material: Felpa premium</li>
+        <li>Tamaño: 40 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color lila y negro, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 8 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "50PU-46.0-unicornio-estrellas",
+    nombre: "Unicornio Estrellas Bordado 45cm",
+    precio: 70500,
+    imagen: "imagenes/personajes/unicornio-estrellas.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche unicornio estrellas de 45 cm, bordado y brillante. Un regalo mágico para cualquier edad.</p>
+      <ul>
+        <li>Material: Felpa premium</li>
+        <li>Tamaño: 45 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Estrellas bordadas, crin colorida</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 7 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "MT-111-44.5-stitch-sonriente",
+    nombre: "Stitch Sonriente 40cm",
+    precio: 75500,
+    imagen: "imagenes/personajes/stitch-sonriente.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche Stitch sonriente de 40 cm. Perfecto para abrazar y sonreír junto a él.</p>
+      <ul>
+        <li>Material: Felpa antialérgica</li>
+        <li>Tamaño: 40 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color azul, sonrisa bordada</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 7 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "JE-16-45.0-gata-fresa",
+    nombre: "Gata con fresa 30cm",
+    precio: 76500,
+    imagen: "imagenes/personajes/gata-fresa.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche gata con fresa, tamaño 30 cm. Diseño original y tierno para todas las edades.</p>
+      <ul>
+        <li>Material: Felpa premium</li>
+        <li>Tamaño: 30 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color blanco, detalles de fresa</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.8/5 basado en 5 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "1883-51.4-raton4",
+    nombre: "Raton #4 50 cm",
+    precio: 87000,
+    imagen: "imagenes/personajes/raton4.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche Raton #4 tamaño gigante de 50 cm. Súper suave y abrazable para niños y adultos.</p>
+      <ul>
+        <li>Material: Felpa ultra suave</li>
+        <li>Tamaño: 50 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color gris y rosa, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 6 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "2502-53.9-stitch-audifonos",
+    nombre: "Stitch con audifonos 40cm",
+    precio: 91000,
+    imagen: "imagenes/personajes/stitch-audifonos.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche Stitch con audífonos, tamaño 40 cm. Para los fans de la música y el personaje más divertido.</p>
+      <ul>
+        <li>Material: Felpa premium</li>
+        <li>Tamaño: 40 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Audífonos de tela, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 5 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "1837-66.5-viejita-grande",
+    nombre: "Viejita cuerpo entero Grande 50 cms",
+    precio: 113500,
+    imagen: "imagenes/personajes/viejita-grande.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche Viejita cuerpo entero tamaño grande de 50 cm. Ideal para decorar o regalar en ocasiones especiales.</p>
+      <ul>
+        <li>Material: Felpa premium</li>
+        <li>Tamaño: 50 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Vestido de tela, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 4 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "1838-77.5-viejito-grande",
+    nombre: "Viejito Cuerpo entero Grande 50 cms v",
+    precio: 131500,
+    imagen: "imagenes/personajes/viejito-grande.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche Viejito cuerpo entero tamaño grande de 50 cm. Perfecto para acompañar o decorar con estilo.</p>
+      <ul>
+        <li>Material: Felpa premium</li>
+        <li>Tamaño: 50 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Detalles bordados, vestimenta de tela</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐ (4.9/5 basado en 4 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "1884-82.9-raton5",
+    nombre: "Ratón #5 95 cms",
+    precio: 140500,
+    imagen: "imagenes/personajes/raton5.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche Ratón #5 tamaño extra grande de 95 cm. El peluche más grande y abrazable de la colección.</p>
+      <ul>
+        <li>Material: Felpa ultra suave</li>
+        <li>Tamaño: 95 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Color gris y rosa, costuras reforzadas</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 3 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  },
+  {
+    id: "1878-122-ratona-extra",
+    nombre: "Ratona Extra Gigante #6 120 Cms",
+    precio: 207500,
+    imagen: "imagenes/personajes/ratona-extra.jpg",
+    descripcion: `
+      <h3>Descripción</h3>
+      <p>Peluche Ratona Extra Gigante #6 de 120 cm. Un peluche espectacular, perfecto para los más grandes abrazos.</p>
+      <ul>
+        <li>Material: Felpa premium</li>
+        <li>Tamaño: 120 cm</li>
+        <li>Lavable: Sí</li>
+        <li>Costuras reforzadas, detalles bordados</li>
+      </ul>
+      <div class="valoraciones">
+        <h3>Valoraciones</h3>
+        <p>⭐⭐⭐⭐⭐ (5/5 basado en 2 opiniones)</p>
+      </div>
+    `,
+    categoria: "personajes"
+  }
+  ];
+
+const peluches = [
    // Bloque 1
   {
     id: "FP1226",
@@ -19,7 +1850,8 @@ const productos = [
         <h3>Valoraciones</h3>
         <p>⭐⭐⭐⭐ (4.6/5 basado en 9 opiniones)</p>
       </div>
-    `
+    `,categoria: "peluches"
+     
   },
   {
     id: "LLA-Mat-MORADO",
@@ -39,7 +1871,7 @@ const productos = [
         <h3>Valoraciones</h3>
         <p>⭐⭐⭐⭐⭐ (4.7/5 basado en 12 opiniones)</p>
       </div>
-    `
+    `,categoria: "peluches"
   },
   {
     id: "LLA-Mat-VERDE",
@@ -59,7 +1891,7 @@ const productos = [
         <h3>Valoraciones</h3>
         <p>⭐⭐⭐⭐ (4.5/5 basado en 8 opiniones)</p>
       </div>
-    `
+    `,categoria: "peluches"
   },
   {
     id: "LLA-Mat-AZUL-OSCURO",
@@ -79,7 +1911,7 @@ const productos = [
         <h3>Valoraciones</h3>
         <p>⭐⭐⭐⭐⭐ (4.9/5 basado en 11 opiniones)</p>
       </div>
-    `
+    `,categoria: "peluches"
   },
   {
     id: "LLA-Mat-AZUL-CLARO",
@@ -99,7 +1931,7 @@ const productos = [
         <h3>Valoraciones</h3>
         <p>⭐⭐⭐⭐ (4.5/5 basado en 7 opiniones)</p>
       </div>
-    `
+    `,categoria: "peluches"
   },
   {
     id: "LLA-Din-NARANJA",
@@ -119,7 +1951,7 @@ const productos = [
         <h3>Valoraciones</h3>
         <p>⭐⭐⭐⭐⭐ (4.8/5 basado en 10 opiniones)</p>
       </div>
-    `
+    `,categoria: "peluches"
   },
   {
     id: "LLA-Din-MORADO",
@@ -139,7 +1971,7 @@ const productos = [
         <h3>Valoraciones</h3>
         <p>⭐⭐⭐⭐ (4.6/5 basado en 9 opiniones)</p>
       </div>
-    `
+    `,categoria: "peluches"
   },
   {
     id: "LLA-Din-VERDE",
@@ -159,7 +1991,7 @@ const productos = [
         <h3>Valoraciones</h3>
         <p>⭐⭐⭐⭐⭐ (4.8/5 basado en 11 opiniones)</p>
       </div>
-    `
+    `,categoria: "peluches"
   },
   {
     id: "LLA-Din-COLORES",
@@ -179,7 +2011,7 @@ const productos = [
         <h3>Valoraciones</h3>
         <p>⭐⭐⭐⭐ (4.5/5 basado en 8 opiniones)</p>
       </div>
-    `
+    `,categoria: "peluches"
   },
   {
     id: "Eco-Sur-PANDA",
@@ -199,7 +2031,7 @@ const productos = [
         <h3>Valoraciones</h3>
         <p>⭐⭐⭐⭐ (4.6/5 basado en 10 opiniones)</p>
       </div>
-    `
+    `,categoria: "peluches"
   },
   {
     id: "1030-17-MEL",
@@ -219,7 +2051,7 @@ const productos = [
         <h3>Valoraciones</h3>
         <p>⭐⭐⭐⭐ (4.7/5 basado en 13 opiniones)</p>
       </div>
-    `
+    `,categoria: "peluches"
   },
   {
     id: "j300-21-OSO",
@@ -239,7 +2071,7 @@ const productos = [
         <h3>Valoraciones</h3>
         <p>⭐⭐⭐⭐⭐ (4.9/5 basado en 14 opiniones)</p>
       </div>
-    `
+    `,categoria: "peluches"
   },
 
   // BLOQUE 2
@@ -261,7 +2093,7 @@ const productos = [
         <h3>Valoraciones</h3>
         <p>⭐⭐⭐⭐⭐ (4.9/5 basado en 14 opiniones)</p>
       </div>
-    `
+    `,categoria: "peluches"
   },
   {
     id: "FLOS-1523-BEIGE",
@@ -281,7 +2113,7 @@ const productos = [
         <h3>Valoraciones</h3>
         <p>⭐⭐⭐⭐ (4.7/5 basado en 11 opiniones)</p>
       </div>
-    `
+    `,categoria: "peluches"
   },
   {
     id: "FLOS-1523-CAFE",
@@ -301,7 +2133,7 @@ const productos = [
         <h3>Valoraciones</h3>
         <p>⭐⭐⭐⭐⭐ (4.8/5 basado en 13 opiniones)</p>
       </div>
-    `
+    `,categoria: "peluches"
   },
      {
     id: "uni-2023-ROSA",
@@ -321,7 +2153,7 @@ const productos = [
         <h3>Valoraciones</h3>
         <p>⭐⭐⭐⭐⭐ (4.8/5 basado en 10 opiniones)</p>
       </div>
-    `
+    `,categoria: "peluches"
   },
   {
     id: "uni-2023-BLANCO",
@@ -341,7 +2173,7 @@ const productos = [
         <h3>Valoraciones</h3>
         <p>⭐⭐⭐⭐ (4.7/5 basado en 8 opiniones)</p>
       </div>
-    `
+    `,categoria: "peluches"
   },
   {
     id: "uni-2023-MORADO",
@@ -361,7 +2193,7 @@ const productos = [
         <h3>Valoraciones</h3>
         <p>⭐⭐⭐⭐ (4.6/5 basado en 7 opiniones)</p>
       </div>
-    `
+    `,categoria: "peluches"
   },
   {
     id: "Leon-p",
@@ -381,7 +2213,7 @@ const productos = [
         <h3>Valoraciones</h3>
         <p>⭐⭐⭐⭐⭐ (4.8/5 basado en 9 opiniones)</p>
       </div>
-    `
+    `,categoria: "peluches"
   },
   {
     id: "A019-COCODRILO",
@@ -401,7 +2233,7 @@ const productos = [
         <h3>Valoraciones</h3>
         <p>⭐⭐⭐⭐⭐ (4.9/5 basado en 8 opiniones)</p>
       </div>
-    `
+    `,categoria: "peluches"
   },
   {
     id: "A019-OVEJA",
@@ -421,7 +2253,7 @@ const productos = [
         <h3>Valoraciones</h3>
         <p>⭐⭐⭐⭐ (4.7/5 basado en 7 opiniones)</p>
       </div>
-    `
+    `,categoria: "peluches"
   },
   {
     id: "2591-ROSA",
@@ -441,7 +2273,7 @@ const productos = [
         <h3>Valoraciones</h3>
         <p>⭐⭐⭐⭐ (4.6/5 basado en 6 opiniones)</p>
       </div>
-    `
+    `,categoria: "peluches"
   },
     // BLOQUE 3
   {
@@ -462,7 +2294,7 @@ const productos = [
         <h3>Valoraciones</h3>
         <p>⭐⭐⭐⭐ (4.8/5 basado en 13 opiniones)</p>
       </div>
-    `
+    `,categoria: "peluches"
   },
     {
     id: "1896-CAFE",
@@ -482,7 +2314,7 @@ const productos = [
         <h3>Valoraciones</h3>
         <p>⭐⭐⭐⭐⭐ (4.9/5 basado en 9 opiniones)</p>
       </div>
-    `
+    `,categoria: "peluches"
   },
   {
     id: "BDHSQ-20-AMARILLO",
@@ -502,7 +2334,7 @@ const productos = [
         <h3>Valoraciones</h3>
         <p>⭐⭐⭐⭐ (4.8/5 basado en 8 opiniones)</p>
       </div>
-    `
+    `,categoria: "peluches"
   },
   {
     id: "BDHSQ-20-ROSA",
@@ -522,7 +2354,7 @@ const productos = [
         <h3>Valoraciones</h3>
         <p>⭐⭐⭐⭐ (4.7/5 basado en 7 opiniones)</p>
       </div>
-    `
+    `,categoria: "peluches"
   },
   {
     id: "BDHSQ-20-VERDE",
@@ -542,7 +2374,7 @@ const productos = [
         <h3>Valoraciones</h3>
         <p>⭐⭐⭐⭐ (4.8/5 basado en 8 opiniones)</p>
       </div>
-    `
+    `,categoria: "peluches"
   },
   {
     id: "1289-30",
@@ -562,7 +2394,7 @@ const productos = [
         <h3>Valoraciones</h3>
         <p>⭐⭐⭐⭐⭐ (5/5 basado en 10 opiniones)</p>
       </div>
-    `
+    `,categoria: "peluches"
   },
   {
     id: "lxd-20",
@@ -582,7 +2414,7 @@ const productos = [
         <h3>Valoraciones</h3>
         <p>⭐⭐⭐⭐ (4.7/5 basado en 6 opiniones)</p>
       </div>
-    `
+    `,categoria: "peluches"
   },
   {
     id: "1925-MINEGLO",
@@ -602,7 +2434,7 @@ const productos = [
         <h3>Valoraciones</h3>
         <p>⭐⭐⭐⭐⭐ (5/5 basado en 7 opiniones)</p>
       </div>
-    `
+    `,categoria: "peluches"
   },
    {
     id: "1925-MAGO",
@@ -622,7 +2454,7 @@ const productos = [
         <h3>Valoraciones</h3>
         <p>⭐⭐⭐⭐ (4.8/5 basado en 8 opiniones)</p>
       </div>
-    `
+    `,categoria: "peluches"
   },
    {
     id: "2220A",
@@ -642,7 +2474,7 @@ const productos = [
         <h3>Valoraciones</h3>
         <p>⭐⭐⭐⭐ (4.7/5 basado en 9 opiniones)</p>
       </div>
-    `
+    `,categoria: "peluches"
   },
   {
     id: "1925-MUNECATRAPO",
@@ -662,7 +2494,7 @@ const productos = [
         <h3>Valoraciones</h3>
         <p>⭐⭐⭐⭐ (4.7/5 basado en 7 opiniones)</p>
       </div>
-    `
+    `,categoria: "peluches"
   },
   {
     id: "1925-MUNECATRAPOLISA",
@@ -682,7 +2514,7 @@ const productos = [
         <h3>Valoraciones</h3>
         <p>⭐⭐⭐⭐ (4.6/5 basado en 6 opiniones)</p>
       </div>
-    `
+    `,categoria: "peluches"
   },
   // ... resto del Bloque 3 ...
   {
@@ -703,7 +2535,7 @@ const productos = [
         <h3>Valoraciones</h3>
         <p>⭐⭐⭐⭐⭐ (4.9/5 basado en 14 opiniones)</p>
       </div>
-    `
+    `,categoria: "peluches"
   },
    {
     id: "tzjd-20",
@@ -723,7 +2555,7 @@ const productos = [
         <h3>Valoraciones</h3>
         <p>⭐⭐⭐⭐ (4.8/5 basado en 8 opiniones)</p>
       </div>
-    `
+    `,categoria: "peluches"
   },
 
   // BLOQUE 4
@@ -745,7 +2577,7 @@ const productos = [
         <h3>Valoraciones</h3>
         <p>⭐⭐⭐⭐ (4.7/5 basado en 11 opiniones)</p>
       </div>
-    `
+    `,categoria: "peluches"
   },
   // ... resto del Bloque 4 ...
   {
@@ -766,7 +2598,7 @@ const productos = [
         <h3>Valoraciones</h3>
         <p>⭐⭐⭐⭐ (4.8/5 basado en 12 opiniones)</p>
       </div>
-    `
+    `,categoria: "peluches"
   },
     {
     id: "1881-23-OSCURO",
@@ -786,7 +2618,7 @@ const productos = [
         <h3>Valoraciones</h3>
         <p>⭐⭐⭐⭐ (4.8/5 basado en 10 opiniones)</p>
       </div>
-    `
+    `,categoria: "peluches"
   },
    {
     id: "ele-30-MORADO",
@@ -1790,7 +3622,31 @@ const productos = [
 ];
     // ...agrega más productos aquí
 
+// 2. Unificación y asignación de categoría automáticamente:
 
+const productos = [
+  ...personajes.map(p => ({ ...p, categoria: "personajes" })),
+  ...peluches.map(p => ({ ...p, categoria: "peluches" })),
+  ...variedades.map(p => ({ ...p, categoria: "variedades" }))
+];
+
+// 3. Ahora puedes filtrar por categoría en cualquier sección:
+const soloPeluches = productos.filter(p => p.categoria === "peluches");
+const soloPersonajes = productos.filter(p => p.categoria === "personajes");
+const soloVariedades = productos.filter(p => p.categoria === "variedades");
+
+// 4. Ejemplo de renderizado (simplificado):
+function renderProductos(array, contenedorId) {
+  const contenedor = document.getElementById(contenedorId);
+  contenedor.innerHTML = array.map(p => `
+    <div class="producto">
+      <img src="${p.imagen}" alt="${p.nombre}">
+      <h3>${p.nombre}</h3>
+      <p>${p.descripcion}</p>
+      <span>$${p.precio}</span>
+    </div>
+  `).join('');
+}
 // Función para obtener el parámetro id de la URL
 function getParameterByName(name) {
     const url = window.location.search;
