@@ -1360,3 +1360,28 @@ document.addEventListener("DOMContentLoaded", function() {
         cartCount.textContent = totalUnidades;
     }
 });
+function getCategoriaURL() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get('cat');
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  const cat = getCategoriaURL();
+
+  if (cat === "personajes") {
+    renderProductos(personajes, "grid-personajes");
+    document.getElementById("seccion-personajes").scrollIntoView({behavior: "smooth"});
+    // Opcional: puedes ocultar las otras secciones si quieres
+  } else if (cat === "peluches") {
+    renderProductos(peluches, "grid-peluches");
+    document.getElementById("seccion-peluches").scrollIntoView({behavior: "smooth"});
+  } else if (cat === "variedades") {
+    renderProductos(variedades, "grid-variedades");
+    document.getElementById("seccion-variedades").scrollIntoView({behavior: "smooth"});
+  } else {
+    // Default: muestra todas las secciones
+    renderProductos(personajes, "grid-personajes");
+    renderProductos(peluches, "grid-peluches");
+    renderProductos(variedades, "grid-variedades");
+  }
+});
