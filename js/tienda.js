@@ -1,4 +1,4 @@
-const productos = [
+/*const productos = [
   {
     id: "FP1226",
     nombre: "Llavero Burro 12cm Azul",
@@ -533,7 +533,7 @@ const productos = [
   descripcion: "Oso gigante de 110cm con moño y sonrisa. Ideal para regalar, sorprender y llenar de alegría cualquier ambiente."
 }
   
-];
+];*/
 
 // Renderiza tarjetas de productos en el contenedor con id="productos-grid"
 
