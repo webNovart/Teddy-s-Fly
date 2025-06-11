@@ -57,7 +57,22 @@
             <div class="carrito-resumen">
                 <span id="carrito-total">Total: $0</span>
                 <button id="btn-vaciar" class="btn-secondary">Vaciar Carrito</button>
-                <a href="pagos.html" class="btn-primary">Proceder al Pago</a>
+                <!-- NUEVAS OPCIONES DE PAGO -->
+                <button onclick="mostrarOpcionesPago()" class="btn-primary">Proceder al Pago</button>
+                <div id="opcionesPago" style="display:none; margin-top:10px;">
+                    <button onclick="window.location.href='https://www.payu.com.co/pse/';" class="btn-pse">Pagar con PSE</button>
+                    <button onclick="mostrarInfoCuenta()" class="btn-ahorros">Transferir a cuenta de ahorros</button>
+                    <div id="infoCuenta" style="display:none; background:#f9f9f9; border:1px solid #ccc; padding:10px; margin-top:10px;">
+                        <p>Realiza tu transferencia o consignación a:</p>
+                        <ul>
+                            <li><strong>Bancolombia:</strong> Cuenta de ahorros No. 1234567890 a nombre de Teddy's Fly</li>
+                            <li><strong>Nequi:</strong> 3001234567</li>
+                            <li><strong>Daviplata:</strong> 3001234567</li>
+                        </ul>
+                        <p>Envía tu comprobante al WhatsApp <a href="https://wa.me/573001234567" target="_blank">+57 300 123 4567</a> para validar tu pago y agilizar el envío.</p>
+                    </div>
+                </div>
+                <!-- FIN OPCIONES DE PAGO -->
             </div>
         </section>
     </main>
