@@ -564,9 +564,8 @@ function renderProductos(lista = productos) {
 
 // Maneja el evento de añadir al carrito
 document.addEventListener("click", function(e) {
-  const btn = e.target.closest(".btn-cart");
-    if (e.target.closest(".btn-cart")) {
-        const btn = e.target.closest(".btn-cart");
+    const btn = e.target.closest(".btn-cart");
+    if (btn) {
         const id = btn.getAttribute("data-id");
         const nombre = btn.getAttribute("data-nombre");
         const precio = parseInt(btn.getAttribute("data-precio"));
@@ -579,6 +578,9 @@ document.addEventListener("click", function(e) {
             carrito.push({ id, nombre, precio, imagen, cantidad: 1 });
         }
         localStorage.setItem("carrito", JSON.stringify(carrito));
+        // Actualiza el contador visual si existe
+        const cartCount = document.querySelector('.cart-count');
+        if (cartCount) cartCount.textContent = carrito.length;
         alert('Producto añadido al carrito');
     }
 });
