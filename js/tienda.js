@@ -1,5 +1,4 @@
-// tienda.js
-// Usa el array productos definido en detalle-producto.js
+
 // Renderiza tarjetas de productos en el contenedor con id="productos-grid"
 
 function renderProductos() {
