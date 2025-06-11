@@ -1243,9 +1243,9 @@ const personajes = [
 
   ];
 
-// ---- Renderizado ----
-function renderProductos(lista = productos) {
-    const grid = document.getElementById("productos-grid");
+// ---- Renderizado por sección ----
+function renderProductos(lista, gridId) {
+    const grid = document.getElementById(gridId);
     grid.innerHTML = "";
     if (!lista.length) {
         grid.innerHTML = "<p>No se encontraron productos.</p>";
@@ -1287,10 +1287,9 @@ document.addEventListener("click", function(e) {
             carrito.push({ id, nombre, precio, imagen, cantidad: 1 });
         }
         localStorage.setItem("carrito", JSON.stringify(carrito));
-        // Actualiza el contador visual si existe
+        // Actualiza el contador visual (total unidades en el carrito)
         const cartCount = document.querySelector('.cart-count');
         if (cartCount) {
-            // Suma total de unidades (no solo referencias diferentes):
             let totalUnidades = carrito.reduce((sum, prod) => sum + prod.cantidad, 0);
             cartCount.textContent = totalUnidades;
         }
@@ -1298,30 +1297,66 @@ document.addEventListener("click", function(e) {
     }
 });
 
-// ---- Buscador ----
+// ---- Buscador Global ----
 const inputBusqueda = document.getElementById('busqueda-productos');
 const formBusqueda = document.querySelector('.search-form');
 
+// Si no existe alguna sección, que sea array vacío
+const personajesArray = typeof personajes !== "undefined" ? personajes : [];
+const peluchesArray = typeof peluches !== "undefined" ? peluches : [];
+const variedadesArray = typeof variedades !== "undefined" ? variedades : [];
+
+// Productos globales para filtrar
+const productosTotales = [
+    ...personajesArray.map(p => ({...p, __seccion: "personajes"})),
+    ...peluchesArray.map(p => ({...p, __seccion: "peluches"})),
+    ...variedadesArray.map(p => ({...p, __seccion: "variedades"}))
+];
+
 function filtrarProductos(texto) {
     texto = texto.trim().toLowerCase();
-    const filtrados = productos.filter(producto =>
+    // Filtra todos los productos y luego separa por sección
+    const filtrados = productosTotales.filter(producto =>
         producto.nombre.toLowerCase().includes(texto) ||
         (producto.descripcionCorta && producto.descripcionCorta.toLowerCase().includes(texto)) ||
         (producto.descripcion && typeof producto.descripcion === "string" && producto.descripcion.toLowerCase().includes(texto))
     );
-    renderProductos(filtrados);
+    // Separa
+    renderProductos(
+        filtrados.filter(p => p.__seccion === "personajes"), 
+        "grid-personajes"
+    );
+    renderProductos(
+        filtrados.filter(p => p.__seccion === "peluches"), 
+        "grid-peluches"
+    );
+    renderProductos(
+        filtrados.filter(p => p.__seccion === "variedades"), 
+        "grid-variedades"
+    );
 }
 
-formBusqueda.addEventListener('submit', function(e) {
-    e.preventDefault();
-    filtrarProductos(inputBusqueda.value);
-});
+if (formBusqueda && inputBusqueda) {
+    formBusqueda.addEventListener('submit', function(e) {
+        e.preventDefault();
+        filtrarProductos(inputBusqueda.value);
+    });
 
-inputBusqueda.addEventListener('input', function() {
-    filtrarProductos(this.value);
-});
+    inputBusqueda.addEventListener('input', function() {
+        filtrarProductos(this.value);
+    });
+}
 
 // ---- Inicializar ----
 document.addEventListener("DOMContentLoaded", function() {
-    renderProductos();
+    renderProductos(personajesArray, "grid-personajes");
+    renderProductos(peluchesArray, "grid-peluches");
+    renderProductos(variedadesArray, "grid-variedades");
+    // Actualiza contador carrito al cargar
+    const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    const cartCount = document.querySelector('.cart-count');
+    if (cartCount) {
+        let totalUnidades = carrito.reduce((sum, prod) => sum + prod.cantidad, 0);
+        cartCount.textContent = totalUnidades;
+    }
 });
