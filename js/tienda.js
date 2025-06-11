@@ -564,6 +564,7 @@ function renderProductos(lista = productos) {
 
 // Maneja el evento de añadir al carrito
 document.addEventListener("click", function(e) {
+  const btn = e.target.closest(".btn-cart");
     if (e.target.closest(".btn-cart")) {
         const btn = e.target.closest(".btn-cart");
         const id = btn.getAttribute("data-id");
