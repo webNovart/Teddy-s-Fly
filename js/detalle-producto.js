@@ -972,7 +972,7 @@ const productos = [
       </div>
     `
   },
-   [
+   
   {
     id: "YF1-40-ROSA",
     nombre: "Elefante Almohada colores ROSA 40cm",
