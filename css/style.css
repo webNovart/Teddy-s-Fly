@@ -172,7 +172,7 @@ nav a.active, nav a:hover {
 }
 
 .categorias h2 {
-    color: var(--color-primario);
+    color: var(#40E0D0);
     margin-bottom: 1em;
     font-size: 2em;
 }
