@@ -535,8 +535,7 @@
   
 ];*/
 
-// Renderiza tarjetas de productos en el contenedor con id="productos-grid"
-
+// ---- Renderizado ----
 function renderProductos(lista = productos) {
     const grid = document.getElementById("productos-grid");
     grid.innerHTML = "";
@@ -564,7 +563,7 @@ function renderProductos(lista = productos) {
     });
 }
 
-// Maneja el evento de añadir al carrito
+// ---- Carrito ----
 document.addEventListener("click", function(e) {
     const btn = e.target.closest(".btn-cart");
     if (btn) {
@@ -587,13 +586,10 @@ document.addEventListener("click", function(e) {
     }
 });
 
-// -------- BUSCADOR --------
-
-// 1. Referencias
+// ---- Buscador ----
 const inputBusqueda = document.getElementById('busqueda-productos');
 const formBusqueda = document.querySelector('.search-form');
 
-// 2. Buscar productos según texto
 function filtrarProductos(texto) {
     texto = texto.trim().toLowerCase();
     const filtrados = productos.filter(producto =>
@@ -603,22 +599,16 @@ function filtrarProductos(texto) {
     renderProductos(filtrados);
 }
 
-// 3. Prevenir recarga del form y buscar
 formBusqueda.addEventListener('submit', function(e) {
     e.preventDefault();
     filtrarProductos(inputBusqueda.value);
 });
 
-// 4. Buscar mientras escribe (opcional, UX moderna)
 inputBusqueda.addEventListener('input', function() {
     filtrarProductos(this.value);
 });
 
-// 5. Inicializar mostrando todos
+// ---- Inicializar ----
 document.addEventListener("DOMContentLoaded", function() {
     renderProductos();
-});
-document.addEventListener("DOMContentLoaded", function() {
-  renderProductos(soloPersonajes, "grid-personajes");
-  renderProductos(soloPeluches, "grid-peluches");
 });
