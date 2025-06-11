@@ -3627,7 +3627,7 @@ const peluches = [
 const productos = [
   ...personajes.map(p => ({ ...p, categoria: "personajes" })),
   ...peluches.map(p => ({ ...p, categoria: "peluches" })),
-  ...variedades.map(p => ({ ...p, categoria: "variedades" }))
+  //...variedades.map(p => ({ ...p, categoria: "variedades" }))
 ];
 
 // 3. Ahora puedes filtrar por categoría en cualquier sección:
