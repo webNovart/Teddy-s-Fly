@@ -10,7 +10,7 @@ const productos = [
     id: "LLA-Mat-MORADO",
     nombre: "Llavero Matera Dino 10cm Morado",
     precio: 11500,
-    imagen: "imagenes/LLA-Mat-3-1.jpeg",
+    imagen: "imagenes/LLA-Mat-4.jpeg",
     descripcion: "Llavero matera dino en color morado. Ideal para regalar."
   },
   {
@@ -26,6 +26,13 @@ const productos = [
     precio: 11500,
     imagen: "imagenes/LLA-Mat-3-1.jpeg",
     descripcion: "Llavero matera dino en azul oscuro, un accesorio único."
+  },
+  {
+    id: "LLA-Mat-AZUL-CLARO",
+    nombre: "Llavero Matera Dino 10cm Azul Claro",
+    precio: 11500,
+    imagen: "imagenes/LLA-Mat-1.jpeg",
+    descripcion: "Llavero matera dino en azul claro, un accesorio único."
   },
   {
     id: "LLA-Din-NARANJA",
@@ -115,7 +122,7 @@ const productos = [
     id: "uni-2023-MORADO",
     nombre: "Unicornio Estrellitas 22cm Morado",
     precio: 19000,
-    imagen: "imagenes/uni-2023-3.jpeg",
+    imagen: "imagenes/uni-2023-2.jpeg",
     descripcion: "Unicornio morado con estrellitas, perfecto para decorar."
   },
   {
@@ -143,7 +150,7 @@ const productos = [
     id: "2591-ROSA",
     nombre: "Cerdo Disfrazado ROSA 25cm",
     precio: 23500,
-    imagen: "imagenes/2591-ROSA.jpeg",
+    imagen: "imagenes/2591-1.jpeg",
     descripcion: "Cerdito disfrazado rosa de 25cm, divertido y suave."
   },
     {
@@ -157,7 +164,7 @@ const productos = [
     id: "1896-CAFE",
     nombre: "León Pequeño Melena CAFÉ 19cm",
     precio: 28000,
-    imagen: "imagenes/1896-peque.jpeg",
+    imagen: "imagenes/1896-peque.jpg",
     descripcion: "León de peluche pequeño con melena café, suave y tierno."
   },
   {
@@ -196,17 +203,17 @@ const productos = [
     descripcion: "Oso arlequín de peluche, colorido y divertido, tamaño 25cm."
   },
   {
-    id: "1925-MINEGATO",
-    nombre: "Personajes MI NEGO 33cm",
+    id: "1925-MINEGLO",
+    nombre: "Personajes MI NEGLO 33cm",
     precio: 29000,
-    imagen: "imagenes/1925.jpeg",
-    descripcion: "Peluche personaje MI NEGO, tamaño 33cm, suave y colorido."
+    imagen: "imagenes/PhotoRoom-20220816_103412.jpg",
+    descripcion: "Peluche personaje MI NEGLO, tamaño 33cm, suave y colorido."
   },
   {
     id: "1925-MAGO",
-    nombre: "Personajes MI NEGO MAGO 33cm",
+    nombre: "Personajes MAGO 33cm",
     precio: 29000,
-    imagen: "imagenes/1925-MAGO.jpeg",
+    imagen: "imagenes/61343765-3061-5663-b361-653730343337-300x300.png",
     descripcion: "Peluche personaje MI NEGO versión mago, tamaño 33cm."
   },
   {
@@ -217,11 +224,18 @@ const productos = [
     descripcion: "Peluche de viejita mediana, tamaño 30cm, simpática y tradicional."
   },
   {
-    id: "1925-MUNECA TRAPO",
-    nombre: "Personajes MI NEGO MUÑECA DE TRAPO 33cm",
+    id: "1925-MUNECATRAPO",
+    nombre: "Personajes MUÑECA DE TRAPO LISA 33cm",
     precio: 29000,
     imagen: "imagenes/1925.jpeg",
-    descripcion: "Peluche personaje MI NEGO tipo muñeca de trapo, tamaño 33cm."
+    descripcion: "Peluche personaje tipo muñeca de trapo, tamaño 33cm."
+  },
+  {
+    id: "1925-MUNECATRAPOLISA",
+    nombre: "Personajes MUÑECA DE TRAPO 33cm",
+    precio: 29000,
+    imagen: "imagenes/PhotoRoom-20220816_103502.jpg",
+    descripcion: "Peluche personaje de encanto tipo muñeca de trapo, tamaño 33cm."
   },
   {
     id: "SUR05-30-SURTIDOS",
@@ -241,44 +255,31 @@ const productos = [
     id: "ele-30-MORADO",
     nombre: "Elefante Ojos Bordados 25cm MORADO",
     precio: 32500,
-    imagen: "imagenes/yf1-60-2.jpeg",
+    imagen: "imagenes/yf1-60-2.jpg",
     descripcion: "Elefante de peluche color morado, ojos bordados, tamaño 25cm."
   },
   {
     id: "ele-30-AZUL",
     nombre: "Elefante Ojos Bordados 25cm AZUL",
     precio: 32500,
-    imagen: "imagenes/ELE0003-5.jpeg",
+    imagen: "imagenes/yf1-40.jpg",
     descripcion: "Elefante de peluche azul, ojos bordados, tamaño 25cm."
   },
   {
-    id: "ele-30-ROSA",
+    id: "YF1-40-ROSA",
     nombre: "Elefante Ojos Bordados 25cm ROSA",
     precio: 32500,
-    imagen: "imagenes/ELE0003-4.jpeg",
+    imagen: "imagenes/yf1-40-5.jpg",
     descripcion: "Elefante de peluche rosa, ojos bordados, tamaño 25cm."
   },
   {
-    id: "ele-30-AZUL",
-    nombre: "Elefante Ojos Bordados 25cm AZUL",
+    id: "ele-30-GRIS",
+    nombre: "Elefante Ojos Bordados 25cm GRIS",
     precio: 32500,
-    imagen: "imagenes/ELE0003-5.jpeg",
-    descripcion: "Elefante de peluche azul, ojos bordados, tamaño 25cm."
+    imagen: "imagenes/ELE0003-5.jpg",
+    descripcion: "Elefante de peluche GRIS, ojos bordados, tamaño 25cm."
   },
-  {
-    id: "ele-30-AMARILLO",
-    nombre: "Elefante Ojos Bordados 25cm AMARILLO",
-    precio: 32500,
-    imagen: "imagenes/ELE0003-3.jpeg",
-    descripcion: "Elefante de peluche amarillo, ojos bordados, tamaño 25cm."
-  },
-  {
-    id: "ele-30-VERDE",
-    nombre: "Elefante Ojos Bordados 25cm VERDE",
-    precio: 32500,
-    imagen: "imagenes/ELE0003-2.jpeg",
-    descripcion: "Elefante de peluche verde, ojos bordados, tamaño 25cm."
-  },
+ 
   {
     id: "1043-40",
     nombre: "Panda Vestido 40cm",
