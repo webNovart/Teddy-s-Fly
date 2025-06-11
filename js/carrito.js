@@ -121,7 +121,7 @@ function armarMensajeWhatsApp() {
     mensaje += `\nTotal: $${total.toLocaleString()}\n`;
     mensaje += "\nAdjunto el comprobante de la transferencia:";
 
-    let url = "https://wa.me/573001234567?text=" + encodeURIComponent(mensaje);
+    let url = "https://wa.me/573332654542?text=" + encodeURIComponent(mensaje);
     window.open(url, '_blank');
 }
 
