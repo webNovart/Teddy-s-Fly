@@ -1289,7 +1289,11 @@ document.addEventListener("click", function(e) {
         localStorage.setItem("carrito", JSON.stringify(carrito));
         // Actualiza el contador visual si existe
         const cartCount = document.querySelector('.cart-count');
-        if (cartCount) cartCount.textContent = carrito.length;
+        if (cartCount) {
+            // Suma total de unidades (no solo referencias diferentes):
+            let totalUnidades = carrito.reduce((sum, prod) => sum + prod.cantidad, 0);
+            cartCount.textContent = totalUnidades;
+        }
         alert('Producto añadido al carrito');
     }
 });
@@ -1302,7 +1306,8 @@ function filtrarProductos(texto) {
     texto = texto.trim().toLowerCase();
     const filtrados = productos.filter(producto =>
         producto.nombre.toLowerCase().includes(texto) ||
-        (producto.descripcion && producto.descripcion.toLowerCase().includes(texto))
+        (producto.descripcionCorta && producto.descripcionCorta.toLowerCase().includes(texto)) ||
+        (producto.descripcion && typeof producto.descripcion === "string" && producto.descripcion.toLowerCase().includes(texto))
     );
     renderProductos(filtrados);
 }
