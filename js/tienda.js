@@ -1347,11 +1347,13 @@ if (formBusqueda && inputBusqueda) {
     });
 }
 
-// ---- Inicializar ----
+// ---- Inicializar: MOSTRAR CATEGORÍA O TODO ----
+function getCategoriaURL() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get('cat');
+}
+
 document.addEventListener("DOMContentLoaded", function() {
-    renderProductos(personajesArray, "grid-personajes");
-    renderProductos(peluchesArray, "grid-peluches");
-    renderProductos(variedadesArray, "grid-variedades");
     // Actualiza contador carrito al cargar
     const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
     const cartCount = document.querySelector('.cart-count');
@@ -1359,29 +1361,36 @@ document.addEventListener("DOMContentLoaded", function() {
         let totalUnidades = carrito.reduce((sum, prod) => sum + prod.cantidad, 0);
         cartCount.textContent = totalUnidades;
     }
-});
-function getCategoriaURL() {
-  const params = new URLSearchParams(window.location.search);
-  return params.get('cat');
-}
 
-document.addEventListener("DOMContentLoaded", function() {
-  const cat = getCategoriaURL();
+    // Mostrar por categoría
+    const cat = getCategoriaURL();
 
-  if (cat === "personajes") {
-    renderProductos(personajes, "grid-personajes");
-    document.getElementById("seccion-personajes").scrollIntoView({behavior: "smooth"});
-    // Opcional: puedes ocultar las otras secciones si quieres
-  } else if (cat === "peluches") {
-    renderProductos(peluches, "grid-peluches");
-    document.getElementById("seccion-peluches").scrollIntoView({behavior: "smooth"});
-  } else if (cat === "variedades") {
-    renderProductos(variedades, "grid-variedades");
-    document.getElementById("seccion-variedades").scrollIntoView({behavior: "smooth"});
-  } else {
-    // Default: muestra todas las secciones
-    renderProductos(personajes, "grid-personajes");
-    renderProductos(peluches, "grid-peluches");
-    renderProductos(variedades, "grid-variedades");
-  }
+    // Oculta todas las secciones y muestra solo la elegida si hay filtro
+    if (cat === "personajes") {
+        renderProductos(personajesArray, "grid-personajes");
+        document.getElementById("seccion-personajes").style.display = "";
+        document.getElementById("seccion-peluches").style.display = "none";
+        document.getElementById("seccion-variedades").style.display = "none";
+        document.getElementById("seccion-personajes").scrollIntoView({behavior: "smooth"});
+    } else if (cat === "peluches") {
+        renderProductos(peluchesArray, "grid-peluches");
+        document.getElementById("seccion-personajes").style.display = "none";
+        document.getElementById("seccion-peluches").style.display = "";
+        document.getElementById("seccion-variedades").style.display = "none";
+        document.getElementById("seccion-peluches").scrollIntoView({behavior: "smooth"});
+    } else if (cat === "variedades") {
+        renderProductos(variedadesArray, "grid-variedades");
+        document.getElementById("seccion-personajes").style.display = "none";
+        document.getElementById("seccion-peluches").style.display = "none";
+        document.getElementById("seccion-variedades").style.display = "";
+        document.getElementById("seccion-variedades").scrollIntoView({behavior: "smooth"});
+    } else {
+        // Default: muestra todas las secciones
+        document.getElementById("seccion-personajes").style.display = "";
+        document.getElementById("seccion-peluches").style.display = "";
+        document.getElementById("seccion-variedades").style.display = "";
+        renderProductos(personajesArray, "grid-personajes");
+        renderProductos(peluchesArray, "grid-peluches");
+        renderProductos(variedadesArray, "grid-variedades");
+    }
 });
