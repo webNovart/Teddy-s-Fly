@@ -535,10 +535,14 @@ const productos = [
 ];
 // Renderiza tarjetas de productos en el contenedor con id="productos-grid"
 
-function renderProductos() {
+function renderProductos(lista = productos) {
     const grid = document.getElementById("productos-grid");
     grid.innerHTML = "";
-    productos.forEach(producto => {
+    if (!lista.length) {
+        grid.innerHTML = "<p>No se encontraron productos.</p>";
+        return;
+    }
+    lista.forEach(producto => {
         grid.innerHTML += `
         <div class="producto-card">
             <img src="${producto.imagen}" alt="${producto.nombre}">
@@ -578,4 +582,34 @@ document.addEventListener("click", function(e) {
     }
 });
 
-document.addEventListener("DOMContentLoaded", renderProductos);
+// -------- BUSCADOR --------
+
+// 1. Referencias
+const inputBusqueda = document.getElementById('busqueda-productos');
+const formBusqueda = document.querySelector('.search-form');
+
+// 2. Buscar productos según texto
+function filtrarProductos(texto) {
+    texto = texto.trim().toLowerCase();
+    const filtrados = productos.filter(producto =>
+        producto.nombre.toLowerCase().includes(texto) ||
+        (producto.descripcion && producto.descripcion.toLowerCase().includes(texto))
+    );
+    renderProductos(filtrados);
+}
+
+// 3. Prevenir recarga del form y buscar
+formBusqueda.addEventListener('submit', function(e) {
+    e.preventDefault();
+    filtrarProductos(inputBusqueda.value);
+});
+
+// 4. Buscar mientras escribe (opcional, UX moderna)
+inputBusqueda.addEventListener('input', function() {
+    filtrarProductos(this.value);
+});
+
+// 5. Inicializar mostrando todos
+document.addEventListener("DOMContentLoaded", function() {
+    renderProductos();
+});
