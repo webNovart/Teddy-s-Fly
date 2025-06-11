@@ -92,3 +92,18 @@ function guardarCarrito() {
 
 // Al abrir la página
 document.addEventListener('DOMContentLoaded', cargarCarrito);
+
+// === FUNCIONES PARA OPCIONES DE PAGO ===
+function mostrarOpcionesPago() {
+    var div = document.getElementById('opcionesPago');
+    if (div.style.display === "none" || div.style.display === "") {
+        div.style.display = "block";
+    } else {
+        div.style.display = "none";
+    }
+}
+
+function mostrarInfoCuenta() {
+    var div = document.getElementById('infoCuenta');
+    div.style.display = "block";
+}
