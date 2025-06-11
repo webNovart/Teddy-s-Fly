@@ -1,4 +1,4 @@
-/*const productos = [
+const peluches = [
   {
     id: "FP1226",
     nombre: "Llavero Burro 12cm Azul",
@@ -533,7 +533,715 @@
   descripcion: "Oso gigante de 110cm con moño y sonrisa. Ideal para regalar, sorprender y llenar de alegría cualquier ambiente."
 }
   
-];*/
+];
+
+const personajes = [ 
+  {
+    id: "226-pikachu",
+    nombre: "Llavero Pikachu 9×9 cms",
+    precio: 11000,
+    imagen: "imagenes/personajes/llavero-pikachu.jpg",
+    descripcionCorta: "Llavero peluche de Pikachu en tamaño compacto de 9x9 cm. Ideal para fans de Pokémon.",
+    categoria: "personajes"
+  },
+  {
+    id: "97-8-tom",
+    nombre: "Llavero TOM 7.3 cm",
+    precio: 12000,
+    imagen: "imagenes/personajes/llavero-tom.jpg",
+    descripcionCorta: "Llavero peluche de Tom, el popular gato de caricaturas. Tamaño de 7.3 cm.",
+    categoria: "personajes"
+  },
+  {
+    id: "97-8-jerry",
+    nombre: "Llavero JERRY 7.3 cm",
+    precio: 12000,
+    imagen: "imagenes/personajes/llavero-jerry.jpg",
+    descripcionCorta: "Llavero peluche de Jerry, el ratón travieso de las caricaturas. Tamaño 7.3 cm.",
+    categoria: "personajes"
+  },
+  {
+    id: "5606-8.3-spiderman",
+    nombre: "Llavero Superhéroes SPIDERMAN 10 cms",
+    precio: 12500,
+    imagen: "imagenes/personajes/llavero-spiderman.jpg",
+    descripcionCorta: "Llavero peluche de Spiderman, el héroe arácnido favorito. Tamaño 10 cm.",
+    categoria: "personajes"
+  },
+  {
+    id: "5606-8.3-capitan",
+    nombre: "Llavero Superhéroes CAPITAN AMERICA 10 cms",
+    precio: 12500,
+    imagen: "imagenes/personajes/llavero-capitan-america.jpg",
+    descripcionCorta: "Llavero peluche de Capitán América. Lleva el escudo de la justicia contigo.",
+    categoria: "personajes"
+  },
+  {
+    id: "5606-8.3-capitan",
+    nombre: "Llavero Superhéroes CAPITAN AMERICA 10 cms",
+    precio: 12500,
+    imagen: "imagenes/personajes/llavero-capitan-america.jpg",
+    descripcionCorta: "Llavero peluche de Capitán América. Lleva el escudo de la justicia contigo. Tamaño 10 cm.",
+    categoria: "personajes"
+  },
+  {
+    id: "5606-8.3-batman",
+    nombre: "Llavero Superhéroes BATMAN 10 cms",
+    precio: 12500,
+    imagen: "imagenes/personajes/llavero-batman.jpg",
+    descripcionCorta: "Llavero peluche de Batman, el caballero oscuro. Un toque de héroe para tus llaves o mochila.",
+    categoria: "personajes"
+  },
+  {
+    id: "5606-8.3-hulk",
+    nombre: "Llavero Superhéroes HULK 10 cms",
+    precio: 12500,
+    imagen: "imagenes/personajes/llavero-hulk.jpg",
+    descripcionCorta: "Llavero peluche de Hulk, ¡fuerza en tamaño mini! Ideal para fans de Marvel.",
+    categoria: "personajes"
+  },
+  {
+    id: "lla-papy-conejo",
+    nombre: "Llavero Circo Digital CONEJO 7.7 cm",
+    precio: 13000,
+    imagen: "imagenes/personajes/llavero-circo-conejo.jpg",
+    descripcionCorta: "Llavero peluche de conejo del Circo Digital, compacto y tierno para llaves y mochilas.",
+    categoria: "personajes"
+  },
+  {
+    id: "lla-papy-payasos",
+    nombre: "Llavero Circo Digital PAYASOS 7.7 cm",
+    precio: 13000,
+    imagen: "imagenes/personajes/llavero-circo-payasos.jpg",
+    descripcionCorta: "Llavero peluche de payasos del Circo Digital, añade alegría a tus llaves.",
+    categoria: "personajes"
+  },
+  {
+    id: "#0905-8.2",
+    nombre: "Raton Ancheta 15 cms",
+    precio: 13500,
+    imagen: "imagenes/personajes/raton-ancheta.jpg",
+    descripcionCorta: "Raton Ancheta de peluche tamaño 15 cm, ideal para regalos o decorar.",
+    categoria: "personajes"
+  },
+  {
+    id: "CJ-3900-ironman",
+    nombre: "Llavero Super Heroes IRON MAN 13 cm",
+    precio: 13500,
+    imagen: "imagenes/personajes/llavero-ironman.jpg",
+    descripcionCorta: "Llavero peluche de Iron Man, superhéroe favorito de Marvel. Tamaño 13 cm.",
+    categoria: "personajes"
+  },
+  {
+    id: "5606-8.3-ironman",
+    nombre: "Llavero Superhéroes IRONMAN 10 cm",
+    precio: 14000,
+    imagen: "imagenes/personajes/llavero-ironman2.jpg",
+    descripcionCorta: "Llavero peluche de Iron Man, compacto de 10 cm. Lleva el poder de Tony Stark.",
+    categoria: "personajes"
+  },
+  {
+    id: "JE-57-8.4-tristeza",
+    nombre: "Llaveros Intensamente TRISTEZA",
+    precio: 14000,
+    imagen: "imagenes/personajes/llavero-intensamente-tristeza.jpg",
+    descripcionCorta: "Llavero peluche de Tristeza, personaje de Intensamente. Ideal para coleccionistas.",
+    categoria: "personajes"
+  },
+  {
+    id: "JE-57-8.4-alegria",
+    nombre: "Llaveros Intensamente ALEGRIA",
+    precio: 14000,
+    imagen: "imagenes/personajes/llavero-intensamente-alegria.jpg",
+    descripcionCorta: "Llavero peluche de Alegría, personaje de Intensamente. Lleva felicidad contigo.",
+    categoria: "personajes"
+  },
+  {
+    id: "JE-57-8.4-furia",
+    nombre: "Llaveros Intensamente FURIA",
+    precio: 14000,
+    imagen: "imagenes/personajes/llavero-intensamente-furia.jpg",
+    descripcionCorta: "Llavero peluche de Furia, personaje de Intensamente. Completa tu colección.",
+    categoria: "personajes"
+  },
+  {
+    id: "JE-57-8.4-ansiedad",
+    nombre: "Llaveros Intensamente ANSIEDAD",
+    precio: 14000,
+    imagen: "imagenes/personajes/llavero-intensamente-ansiedad.jpg",
+    descripcionCorta: "Llavero peluche de Ansiedad, personaje de Intensamente. Agrega emoción a tu llavero.",
+    categoria: "personajes"
+  },
+  {
+    id: "JE-57-8.4-desagrado",
+    nombre: "Llaveros Intensamente DESAGRADO",
+    precio: 14000,
+    imagen: "imagenes/personajes/llavero-intensamente-desagrado.jpg",
+    descripcionCorta: "Llavero peluche de Desagrado, personaje de Intensamente. ¡Completa tu set!",
+    categoria: "personajes"
+  },
+  {
+    id: "JE-57-8.4-miedo",
+    nombre: "Llaveros Intensamente MIEDO",
+    precio: 14000,
+    imagen: "imagenes/personajes/llavero-intensamente-miedo.jpg",
+    descripcionCorta: "Llavero peluche de Miedo, personaje de Intensamente. Expresa tu emoción favorita.",
+    categoria: "personajes"
+  },
+  {
+    id: "JE-30-9-mike",
+    nombre: "Llavero Mike Wazowski 9 cm",
+    precio: 15000,
+    imagen: "imagenes/personajes/llavero-mike.jpg",
+    descripcionCorta: "Llavero peluche de Mike Wazowski, el simpático monstruo verde. Ideal para fans de Monsters Inc. y Pixar.",
+    categoria: "personajes"
+  },
+  {
+    id: "je-32-9-arenita",
+    nombre: "Llavero Bob Esponja ARENITA 9 cm",
+    precio: 15000,
+    imagen: "imagenes/personajes/llavero-arenita.jpg",
+    descripcionCorta: "Llavero peluche de Arenita, la ardilla aventurera de Fondo de Bikini. Adorno divertido para llaves o mochila.",
+    categoria: "personajes"
+  },
+  {
+    id: "je-32-9-gary",
+    nombre: "Llavero Bob Esponja GARY 9 cm",
+    precio: 15000,
+    imagen: "imagenes/personajes/llavero-gary.jpg",
+    descripcionCorta: "Llavero peluche de Gary, la mascota de Bob Esponja. Perfecto para fans y coleccionistas.",
+    categoria: "personajes"
+  },
+  {
+    id: "je-32-9-patricio",
+    nombre: "Llavero Bob Esponja PATRICIO 9 cm",
+    precio: 15000,
+    imagen: "imagenes/personajes/llavero-patricio.jpg",
+    descripcionCorta: "Llavero peluche de Patricio, el mejor amigo de Bob Esponja. Súper suave y adorable.",
+    categoria: "personajes"
+  },
+  {
+    id: "JE-38-9.5-rosa",
+    nombre: "Llavero Patrulla Canina Sentada ROSA 9.5 cm",
+    precio: 15500,
+    imagen: "imagenes/personajes/llavero-patrulla-rosa.jpg",
+    descripcionCorta: "Llavero peluche de Patrulla Canina, versión sentada color rosa. Ideal para los más pequeños.",
+    categoria: "personajes"
+  },
+  {
+    id: "JE-38-9.5-amarillo",
+    nombre: "Llavero Patrulla Canina Sentada AMARILLO 9.5 cm",
+    precio: 15500,
+    imagen: "imagenes/personajes/llavero-patrulla-amarillo.jpg",
+    descripcionCorta: "Llavero peluche de Patrulla Canina, versión sentada color amarillo. Perfecto para mochilas y regalos infantiles.",
+    categoria: "personajes"
+  },
+  {
+    id: "JE-38-9.5-naranja",
+    nombre: "Llavero Patrulla Canina Sentada NARANJA 9.5 cm",
+    precio: 15500,
+    imagen: "imagenes/personajes/llavero-patrulla-naranja.jpg",
+    descripcionCorta: "Llavero peluche de Patrulla Canina, versión sentada color naranja. Añade color a tus llaves.",
+    categoria: "personajes"
+  },
+  {
+    id: "JE-38-9.5-verde",
+    nombre: "Llavero Patrulla Canina Sentada VERDE 9.5 cm",
+    precio: 15500,
+    imagen: "imagenes/personajes/llavero-patrulla-verde.jpg",
+    descripcionCorta: "Llavero peluche de Patrulla Canina, versión sentada color verde. Diseño original para niños.",
+    categoria: "personajes"
+  },
+  {
+    id: "JE-38-9.5-azul",
+    nombre: "Llavero Patrulla Canina Sentada AZUL 22 cm",
+    precio: 15500,
+    imagen: "imagenes/personajes/llavero-patrulla-azul.jpg",
+    descripcionCorta: "Llavero peluche de Patrulla Canina, versión sentada color azul. Tamaño especial para fans.",
+    categoria: "personajes"
+  },
+  {
+    id: "BOBI-04-9.2-kirby",
+    nombre: "Llavero Kirby 10 cm",
+    precio: 15500,
+    imagen: "imagenes/personajes/llavero-kirby.jpg",
+    descripcionCorta: "Llavero peluche de Kirby, personaje rosado de videojuegos. Súper tierno y coleccionable.",
+    categoria: "personajes"
+  },
+  {
+    id: "je-32-9-bob",
+    nombre: "Llavero Bob Esponja BOB 9 cm",
+    precio: 15500,
+    imagen: "imagenes/personajes/llavero-bob.jpg",
+    descripcionCorta: "Llavero peluche de Bob Esponja, favorito de Fondo de Bikini. Ideal para niños y adultos.",
+    categoria: "personajes"
+  },
+  {
+    id: "je-33-9.5-garfield",
+    nombre: "Llavero Garfield 9.5 cm",
+    precio: 15500,
+    imagen: "imagenes/personajes/llavero-garfield.jpg",
+    descripcionCorta: "Llavero peluche de Garfield, el gato más famoso de las historietas. Perfecto para fans.",
+    categoria: "personajes"
+  },
+  {
+    id: "je-36-9.5-kuromi",
+    nombre: "Llavero KUROMI 9.5 cm",
+    precio: 15500,
+    imagen: "imagenes/personajes/llavero-kuromi.jpg",
+    descripcionCorta: "Llavero peluche de Kuromi, personaje icónico. Ideal para fans de Sanrio y coleccionistas.",
+    categoria: "personajes"
+  },
+  {
+    id: "je-37-9.5-gata",
+    nombre: "Llavero GATA 9.5 cm",
+    precio: 15500,
+    imagen: "imagenes/personajes/llavero-gata.jpg",
+    descripcionCorta: "Llavero peluche de Gata, diseño dulce y clásico para tus llaves.",
+    categoria: "personajes"
+  },
+  {
+    id: "24043-9.5-cinnamaroll",
+    nombre: "Llavero Monedero CINNAMAROLL 20 cm",
+    precio: 16000,
+    imagen: "imagenes/personajes/llavero-cinnamaroll.jpg",
+    descripcionCorta: "Llavero monedero de Cinnamaroll de 20 cm. Funcional y adorable.",
+    categoria: "personajes"
+  },
+  {
+    id: "8811-20-12.8-hongo-verde",
+    nombre: "Hongo de Mario VERDE 25 cm",
+    precio: 21500,
+    imagen: "imagenes/personajes/hongo-mario-verde.jpg",
+    descripcionCorta: "Peluche hongo verde de Mario Bros de 25 cm. Un clásico para coleccionistas.",
+    categoria: "personajes"
+  },
+  {
+    id: "jo-144s-12.8-yoshi",
+    nombre: "Yoshi pequeño 23 cm",
+    precio: 21500,
+    imagen: "imagenes/personajes/yoshi.jpg",
+    descripcionCorta: "Peluche de Yoshi pequeño de 23 cm, famoso dinosaurio de Nintendo.",
+    categoria: "personajes"
+  },
+  {
+    id: "XZ1-25-12.8-ojo-verde",
+    nombre: "Ojo Verde pequeño 25 cm",
+    precio: 21500,
+    imagen: "imagenes/personajes/ojo-verde.jpg",
+    descripcionCorta: "Peluche Ojo Verde de 25 cm. Diseño divertido y original.",
+    categoria: "personajes"
+  },
+  {
+    id: "AD474-20-14.87-huevito",
+    nombre: "Pokémon Huevito 15 cm",
+    precio: 23000,
+    imagen: "imagenes/personajes/pokemon-huevito.jpg",
+    descripcionCorta: "Peluche Pokémon Huevito de 15 cm. Ideal para fans y coleccionistas.",
+    categoria: "personajes"
+  },
+  {
+    id: "111910-14.2-unicornio",
+    nombre: "Unicornio sentado 25 cm",
+    precio: 24000,
+    imagen: "imagenes/personajes/unicornio-sentado.jpg",
+    descripcionCorta: "Peluche unicornio sentado de 25 cm, suave y colorido.",
+    categoria: "personajes"
+  },
+  {
+    id: "1880-14.5-raton1",
+    nombre: "Raton #1 25 cm",
+    precio: 24500,
+    imagen: "imagenes/personajes/raton1.jpg",
+    descripcionCorta: "Peluche de ratón #1 de 25 cm. Diseño clásico para todas las edades.",
+    categoria: "personajes"
+  },
+  {
+  id: "433-23-15.9-minions-orejas",
+  nombre: "Minions Orejas 2 25 cm",
+  precio: 25000,
+  imagen: "imagenes/personajes/minions-orejas.jpg",
+  descripcionCorta: "Peluche Minions con orejas de 25 cm. ¡Divertido y original para fans y niños!",
+  categoria: "personajes"
+},
+{
+  id: "JE-19-15.4-bobpequeno",
+  nombre: "Bob esponja pequeño 26 cm",
+  precio: 26000,
+  imagen: "imagenes/personajes/bobpequeno.jpg",
+  descripcionCorta: "Peluche de Bob Esponja pequeño de 26 cm. Suave, divertido y perfecto para fans de todas las edades.",
+  categoria: "personajes"
+},
+{
+  id: "233pm-15.4-minions-letrero",
+  nombre: "Minions guitarra LETRERO 25 cm",
+  precio: 26000,
+  imagen: "imagenes/personajes/minions-letrero.jpg",
+  descripcionCorta: "Peluche Minion guitarra con letrero de 25 cm. Alegre y musical para los fans de Gru y los Minions.",
+  categoria: "personajes"
+},
+{
+  id: "233pm-15.4-minions-guitarra",
+  nombre: "Minions guitarra 25 cm",
+  precio: 26000,
+  imagen: "imagenes/personajes/minions-guitarra.jpg",
+  descripcionCorta: "Peluche Minion guitarra de 25 cm. Un personaje en versión musical y divertida.",
+  categoria: "personajes"
+},
+{
+  id: "233pm-15.4-minions-oso",
+  nombre: "Minions guitarra OSO 25 cm",
+  precio: 26000,
+  imagen: "imagenes/personajes/minions-oso.jpg",
+  descripcionCorta: "Peluche Minion guitarra con oso de 25 cm. Un diseño tierno y original.",
+  categoria: "personajes"
+},
+{
+  id: "Cj-1455-15.6-carl",
+  nombre: "Viejitos ancheta Carl 20 cm",
+  precio: 26500,
+  imagen: "imagenes/personajes/viejitos-carl.jpg",
+  descripcionCorta: "Peluche Viejitos ancheta Carl de 20 cm, inspirado en personajes entrañables.",
+  categoria: "personajes"
+},
+{
+  id: "Mt03-3-15.9-unicornio-rosa",
+  nombre: "Unicornio Corazon 25cm ROSA",
+  precio: 27000,
+  imagen: "imagenes/personajes/unicornio-corazon-rosa.jpg",
+  descripcionCorta: "Peluche unicornio con corazón, color rosa, de 25cm. Un regalo mágico.",
+  categoria: "personajes"
+},
+{
+  id: "Mt03-3-15.9-unicornio-blanco",
+  nombre: "Unicornio Corazon 25cm BLANCO",
+  precio: 27000,
+  imagen: "imagenes/personajes/unicornio-corazon-blanco.jpg",
+  descripcionCorta: "Peluche unicornio con corazón, color blanco, de 25cm. Perfecto para regalar.",
+  categoria: "personajes"
+},
+{
+  id: "JE-18-16.2-garfieldbebe",
+  nombre: "Garfield Bebe 20cm",
+  precio: 27500,
+  imagen: "imagenes/personajes/garfield-bebe.jpg",
+  descripcionCorta: "Peluche Garfield bebé de 20 cm, ideal para fans del gato más famoso.",
+  categoria: "personajes"
+},
+{
+  id: "22-57-17.9-cojin-mario",
+  nombre: "Cojin cara de MARIO 30x30 cm",
+  precio: 30000,
+  imagen: "imagenes/personajes/cojin-mario.jpg",
+  descripcionCorta: "Cojín de peluche con la cara de Mario Bros, tamaño 30x30 cm. Ideal para gamers.",
+  categoria: "personajes"
+},
+{
+  id: "Sur05-30-18.9-buzz",
+  nombre: "Peluche elástico mediano 30cm BUZZ",
+  precio: 32000,
+  imagen: "imagenes/personajes/buzz.jpg",
+  descripcionCorta: "Peluche elástico de Buzz Lightyear, tamaño mediano de 30cm. ¡Hasta el infinito y más allá!",
+  categoria: "personajes"
+},
+{
+  id: "Sur05-30-18.9-marciano",
+  nombre: "Peluche elástico mediano 30cm MARCIANO",
+  precio: 32000,
+  imagen: "imagenes/personajes/marciano.jpg",
+  descripcionCorta: "Peluche elástico de Marciano, tamaño mediano de 30cm, divertido y suave. Inspirado en Toy Story.",
+  categoria: "personajes"
+},
+{
+  id: "JE-03-20.2-circo-conejo",
+  nombre: "Circo Digital 28cm CONEJO",
+  precio: 34000,
+  imagen: "imagenes/personajes/circo-conejo.jpg",
+  descripcionCorta: "Peluche conejo del Circo Digital, tamaño 28 cm. Un personaje tierno.",
+  categoria: "personajes"
+},
+{
+  id: "JE-03-20.2-circo-payasos",
+  nombre: "Circo Digital 28cm PAYASO",
+  precio: 34000,
+  imagen: "imagenes/personajes/circo-payasos.jpg",
+  descripcionCorta: "Peluche payaso del Circo Digital, tamaño 28 cm. Colores vivos y diseño alegre.",
+  categoria: "personajes"
+},
+{
+  id: "1879-20.8-virgencita-blanca",
+  nombre: "Virgencita 30 cm BLANCA",
+  precio: 35000,
+  imagen: "imagenes/personajes/virgencita-blanca.jpg",
+  descripcionCorta: "Peluche Virgencita color blanco, tamaño 30 cm. Un regalo espiritual y tierno.",
+  categoria: "personajes"
+},
+{
+  id: "1879-20.8-virgencita-azul",
+  nombre: "Virgencita 30 cm AZUL",
+  precio: 35000,
+  imagen: "imagenes/personajes/virgencita-azul.jpg",
+  descripcionCorta: "Peluche Virgencita color azul, tamaño 30 cm. Suave y especial.",
+  categoria: "personajes"
+},
+{
+  id: "Cj-3918-21-sonic-rosa",
+  nombre: "Sonic mediano y amigos 25 cm ROSA",
+  precio: 35500,
+  imagen: "imagenes/personajes/sonic-rosa.jpg",
+  descripcionCorta: "Peluche Sonic mediano y amigos, versión rosa, 25 cm. Ideal para coleccionistas.",
+  categoria: "personajes"
+},
+{
+  id: "je-02-21.5-smiling-rosado",
+  nombre: "Smiling colores 25 cm ROSADO",
+  precio: 36000,
+  imagen: "imagenes/personajes/smiling-rosado.jpg",
+  descripcionCorta: "Peluche Smiling color rosado de 25 cm, diseño alegre y suave.",
+  categoria: "personajes"
+},
+{
+  id: "je-02-21.5-smiling-amarillo",
+  nombre: "Smiling colores 25 cm AMARILLO",
+  precio: 36000,
+  imagen: "imagenes/personajes/smiling-amarillo.jpg",
+  descripcionCorta: "Peluche Smiling color amarillo de 25 cm, brilla con alegría.",
+  categoria: "personajes"
+},
+{
+  id: "10-11-21.5-sullivan",
+  nombre: "Sullivan Camisa 30 cm",
+  precio: 36000,
+  imagen: "imagenes/personajes/sullivan.jpg",
+  descripcionCorta: "Peluche Sullivan con camisa, tamaño 30 cm. Inspirado en Monsters Inc.",
+  categoria: "personajes"
+},
+{
+  id: "JE-49-22.5-babyyoda",
+  nombre: "Baby Yoda 35 cm",
+  precio: 38000,
+  imagen: "imagenes/personajes/babyyoda.jpg",
+  descripcionCorta: "Peluche Baby Yoda de 35 cm, tierno y adorable. Fans de Star Wars.",
+  categoria: "personajes"
+},
+{
+  id: "1881-22.9-raton2",
+  nombre: "Raton #2 30 cm",
+  precio: 38500,
+  imagen: "imagenes/personajes/raton2.jpg",
+  descripcionCorta: "Peluche Raton #2 de 30 cm, para niños o decorar su espacio favorito.",
+  categoria: "personajes"
+},
+{
+  id: "1934-25.9-kuromi-grande",
+  nombre: "Kuromi 20 cm",
+  precio: 44000,
+  imagen: "imagenes/personajes/kuromi-grande.jpg",
+  descripcionCorta: "Peluche Kuromi de 20 cm, la traviesa amiga de My Melody. Fans de Sanrio.",
+  categoria: "personajes"
+},
+{
+  id: "1864-26.9-bob33",
+  nombre: "Bob Esponja 33 cm",
+  precio: 45500,
+  imagen: "imagenes/personajes/bob33.jpg",
+  descripcionCorta: "Peluche Bob Esponja de 33 cm, el personaje más divertido de Fondo de Bikini. Abrazable y suave.",
+  categoria: "personajes"
+},
+{
+  id: "2019p-26.9-mascota-nacional",
+  nombre: "Mascota Nacional 30 cm",
+  precio: 45500,
+  imagen: "imagenes/personajes/mascota-nacional.jpg",
+  descripcionCorta: "Peluche Mascota Nacional de 30 cm, símbolo de alegría y unión. Perfecto para regalar a cualquier edad.",
+  categoria: "personajes"
+},
+{
+  id: "1864-26.9-patricio33",
+  nombre: "Patricio 33 cm",
+  precio: 45500,
+  imagen: "imagenes/personajes/patricio33.jpg",
+  descripcionCorta: "Peluche Patricio estrella de mar, amigo de Bob Esponja, tamaño 33 cm. Suave y divertido para todos.",
+  categoria: "personajes"
+},
+{
+  id: "JE-56-28-zootopia-zorro",
+  nombre: "Zootopia 35cm ZORRO",
+  precio: 47000,
+  imagen: "imagenes/personajes/zootopia-zorro.jpg",
+  descripcionCorta: "Peluche Zorro de Zootopia, tamaño 35 cm. Ideal para aventuras y juegos imaginativos.",
+  categoria: "personajes"
+},
+{
+  id: "JE-56-28-zootopia-conejo",
+  nombre: "Zootopia 35cm CONEJO",
+  precio: 47000,
+  imagen: "imagenes/personajes/zootopia-conejo.jpg",
+  descripcionCorta: "Peluche Conejo de Zootopia, tamaño 35 cm. Suave, tierno y con detalles de gran calidad.",
+  categoria: "personajes"
+},
+{
+  id: "xh-35-29.5-ratones-rosa",
+  nombre: "Ratones pijama 35cm ROSA",
+  precio: 50000,
+  imagen: "imagenes/personajes/ratones-pijama-rosa.jpg",
+  descripcionCorta: "Peluche ratón con pijama color rosa, tamaño 35 cm. Detalles adorables y perfecto para dormir acompañado.",
+  categoria: "personajes"
+},
+{
+  id: "1839-31.9-viejita-mediana",
+  nombre: "Viejita Cuerpo entero Mediana 28 cms",
+  precio: 54000,
+  imagen: "imagenes/personajes/viejita-mediana.jpg",
+  descripcionCorta: "Peluche Viejita cuerpo entero, tamaño mediana de 28 cm. Un personaje dulce y especial para regalar.",
+  categoria: "personajes"
+},
+{
+  id: "1940-31.9-luigi",
+  nombre: "Personajes LUIGI 30 Cms",
+  precio: 54000,
+  imagen: "imagenes/personajes/luigi.jpg",
+  descripcionCorta: "Peluche Luigi de 30 cm, el inseparable hermano de Mario Bros. Un clásico para gamers y coleccionistas.",
+  categoria: "personajes"
+},
+{
+  id: "1940-31.9-peach",
+  nombre: "Personajes PRINCESA PEACH 30 Cms",
+  precio: 54000,
+  imagen: "imagenes/personajes/peach.jpg",
+  descripcionCorta: "Peluche Princesa Peach de 30 cm, la princesa favorita de los videojuegos. Suave y elegante.",
+  categoria: "personajes"
+},
+{
+  id: "1940-31.9-toad",
+  nombre: "Personajes TOAD 30 Cms",
+  precio: 54000,
+  imagen: "imagenes/personajes/toad.jpg",
+  descripcionCorta: "Peluche Toad de 30 cm, el amigo fiel de Mario y Luigi. Ideal para decorar o jugar.",
+  categoria: "personajes"
+},
+{
+  id: "1882-32.5-raton3",
+  nombre: "Raton #3 40 cm",
+  precio: 55000,
+  imagen: "imagenes/personajes/raton3.jpg",
+  descripcionCorta: "Peluche Raton #3 de 40 cm, tamaño grande y suave. Ideal para abrazar y acompañar en el descanso.",
+  categoria: "personajes"
+},
+{
+  id: "JE-25-34.9-stitch-panda",
+  nombre: "Stitch disfraz panda 35cm",
+  precio: 59000,
+  imagen: "imagenes/personajes/stitch-panda.jpg",
+  descripcionCorta: "Peluche Stitch disfrazado de panda, tamaño 35 cm. Diseño adorable y divertido para fans de Disney.",
+  categoria: "personajes"
+},
+{
+  id: "1964-39.9-envidia",
+  nombre: "Personajes Intensamente ENVIDIA 30 cm",
+  precio: 62500,
+  imagen: "imagenes/personajes/envidia.jpg",
+  descripcionCorta: "Peluche Envidia de Intensamente, tamaño 30 cm. Completa tu colección de emociones.",
+  categoria: "personajes"
+},
+{
+  id: "1840-37.9-viejito-mediano",
+  nombre: "Viejito Cuerpo entero Mediano 30 cm",
+  precio: 64000,
+  imagen: "imagenes/personajes/viejito-mediano.jpg",
+  descripcionCorta: "Peluche Viejito cuerpo entero mediano, tamaño 30 cm. Un personaje simpático y entrañable.",
+  categoria: "personajes"
+},
+{
+  id: "1980-39.8-lilo-stitch",
+  nombre: "Lilo Y Stitch 40cm",
+  precio: 67500,
+  imagen: "imagenes/personajes/lilo-stitch.jpg",
+  descripcionCorta: "Peluche Lilo y Stitch juntos, tamaño 40 cm. Un dúo inseparable para los fans de Disney.",
+  categoria: "personajes"
+},
+{
+  id: "1974-42.5-kuromi-grande",
+  nombre: "Kuromi Grande 40cm",
+  precio: 70500,
+  imagen: "imagenes/personajes/kuromi-grande2.jpg",
+  descripcionCorta: "Peluche Kuromi grande de 40 cm, edición especial para fans de Sanrio.",
+  categoria: "personajes"
+},
+{
+  id: "50PU-46.0-unicornio-estrellas",
+  nombre: "Unicornio Estrellas Bordado 45cm",
+  precio: 70500,
+  imagen: "imagenes/personajes/unicornio-estrellas.jpg",
+  descripcionCorta: "Peluche unicornio estrellas de 45 cm, bordado y brillante. Un regalo mágico para cualquier edad.",
+  categoria: "personajes"
+},
+{
+  id: "MT-111-44.5-stitch-sonriente",
+  nombre: "Stitch Sonriente 40cm",
+  precio: 75500,
+  imagen: "imagenes/personajes/stitch-sonriente.jpg",
+  descripcionCorta: "Peluche Stitch sonriente de 40 cm. Perfecto para abrazar y sonreír junto a él.",
+  categoria: "personajes"
+},
+{
+  id: "JE-16-45.0-gata-fresa",
+  nombre: "Gata con fresa 30cm",
+  precio: 76500,
+  imagen: "imagenes/personajes/gata-fresa.jpg",
+  descripcionCorta: "Peluche gata con fresa, tamaño 30 cm. Diseño original y tierno.",
+  categoria: "personajes"
+},
+{
+  id: "1883-51.4-raton4",
+  nombre: "Raton #4 50 cm",
+  precio: 87000,
+  imagen: "imagenes/personajes/raton4.jpg",
+  descripcionCorta: "Peluche Raton #4 tamaño gigante de 50 cm. Súper suave y abrazable.",
+  categoria: "personajes"
+},
+{
+  id: "2502-53.9-stitch-audifonos",
+  nombre: "Stitch con audifonos 40cm",
+  precio: 91000,
+  imagen: "imagenes/personajes/stitch-audifonos.jpg",
+  descripcionCorta: "Peluche Stitch con audífonos, tamaño 40 cm. Para los fans de la música.",
+  categoria: "personajes"
+},
+{
+  id: "1837-66.5-viejita-grande",
+  nombre: "Viejita cuerpo entero Grande 50 cms",
+  precio: 113500,
+  imagen: "imagenes/personajes/viejita-grande.jpg",
+  descripcionCorta: "Peluche Viejita cuerpo entero tamaño grande de 50 cm. Ideal para decorar o regalar.",
+  categoria: "personajes"
+},
+{
+  id: "1838-77.5-viejito-grande",
+  nombre: "Viejito Cuerpo entero Grande 50 cms v",
+  precio: 131500,
+  imagen: "imagenes/personajes/viejito-grande.jpg",
+  descripcionCorta: "Peluche Viejito cuerpo entero tamaño grande de 50 cm. Perfecto para acompañar o decorar.",
+  categoria: "personajes"
+},
+{
+  id: "1884-82.9-raton5",
+  nombre: "Ratón #5 95 cms",
+  precio: 140500,
+  imagen: "imagenes/personajes/raton5.jpg",
+  descripcionCorta: "Peluche Ratón #5 tamaño extra grande de 95 cm. El peluche más grande y abrazable.",
+  categoria: "personajes"
+},
+{
+  id: "1878-122-ratona-extra",
+  nombre: "Ratona Extra Gigante #6 120 Cms",
+  precio: 207500,
+  imagen: "imagenes/personajes/ratona-extra.jpg",
+  descripcionCorta: "Peluche Ratona Extra Gigante #6 de 120 cm. Un peluche espectacular para abrazos gigantes.",
+  categoria: "personajes"
+}
+
+  ];
 
 // ---- Renderizado ----
 function renderProductos(lista = productos) {
