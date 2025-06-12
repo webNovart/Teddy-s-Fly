@@ -979,7 +979,7 @@ footer {
     background: rgba(255,255,255,0.81);
     padding: 1em 2em;
     border-radius: 14px;
-    color: var(--color-primario);
+    color: var(#ff7f50);
     box-shadow: 0 2px 12px rgba(51,204,255,0.06);
 }
 .slider-btn {
