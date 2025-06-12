@@ -3818,7 +3818,7 @@ const variedades = [
     id: "5161-32-splash-vct-60ml",
     nombre: "5161| 3.2 Splash 60ml Vct",
     precio: 5500,
-    imagen: "imagenes/variedades/5161-32-splash-vct-60ml.jpg",
+    imagen: "imagenes/5161-1536x1536.jpeg",
     descripcion: `
       <h3>Descripción</h3>
       <p>Splash Vct de 60ml, ideal para refrescarte en cualquier momento. Presentación pequeña y práctica.</p>
@@ -3834,7 +3834,7 @@ const variedades = [
     id: "1278-87-splash-vct-250ml-dorada",
     nombre: "1278|8.7 Splash Vct tapa dorada 250ml SURTIDO",
     precio: 14500,
-    imagen: "imagenes/variedades/1278-87-splash-vct-250ml-dorada.jpg",
+    imagen: "imagenes/tapa-dorada-.jpg",
     descripcion: `
       <h3>Descripción</h3>
       <p>Splash Vct de 250ml con tapa dorada. Fragancias surtidas para todos los gustos.</p>
@@ -3850,7 +3850,7 @@ const variedades = [
     id: "1819-47-splash-vct-125ml",
     nombre: "1819|4.7 Splash Vct 125ml SURTIDO",
     precio: 7500,
-    imagen: "imagenes/variedades/1819-47-splash-vct-125ml.jpg",
+    imagen: "imagenes/splash-250.jpg",
     descripcion: `
       <h3>Descripción</h3>
       <p>Splash Vct de 125ml, fragancias surtidas. Una excelente opción para el día a día.</p>
@@ -3866,7 +3866,7 @@ const variedades = [
     id: "1317-79-splash-pk-250ml",
     nombre: "1317|7.9 Splash Pk 250ml SURTIDO",
     precio: 13000,
-    imagen: "imagenes/variedades/1317-79-splash-pk-250ml.jpg",
+    imagen: "imagenes/pink-250.jpg",
     descripcion: `
       <h3>Descripción</h3>
       <p>Splash Pk de 250ml, fragancias surtidas. Disfruta de aromas frescos y duraderos.</p>
@@ -3882,7 +3882,7 @@ const variedades = [
     id: "1186-47-splash-mini-pk-75ml",
     nombre: "1186|4.7 Splash mini Pk 75ml SURTIDO",
     precio: 7500,
-    imagen: "imagenes/variedades/1186-47-splash-mini-pk-75ml.jpg",
+    imagen: "imagenes/mini-pink-75.jpg",
     descripcion: `
       <h3>Descripción</h3>
       <p>Splash mini Pk de 75ml, fragancias surtidas. Práctico para llevar en el bolso o mochila.</p>
