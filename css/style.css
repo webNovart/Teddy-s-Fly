@@ -1738,3 +1738,101 @@ html, body {
     padding-top: 5px;
   }
 }
+.categorias-inicio {
+    text-align: center;
+    padding: 2.5rem 1rem 2rem 1rem;
+    background: #fff8f0;
+    margin-bottom: 2rem;
+}
+
+.categorias-inicio h2 {
+    font-size: 2rem;
+    margin-bottom: 1.7rem;
+    font-weight: 800;
+    color: #ff7f50;
+    letter-spacing: 1px;
+}
+
+.categorias-grid-mejorada {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.categoria-mejorada-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 16px rgba(255, 127, 80, 0.10);
+    padding: 1.5rem 1rem 1.2rem 1rem;
+    text-decoration: none;
+    color: #444;
+    transition: transform 0.22s, box-shadow 0.22s, background 0.15s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border: 2.5px solid #fff8f0;
+}
+.categoria-mejorada-card:hover {
+    transform: translateY(-8px) scale(1.04);
+    box-shadow: 0 10px 36px rgba(255, 127, 80, 0.14);
+    background: #fffbe9;
+    border-color: #ffefd5;
+}
+
+.cat-img-bg {
+    background: linear-gradient(135deg, #ffe0c7 0%, #ffe9b5 100%);
+    border-radius: 50%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 86px;
+    height: 86px;
+    box-shadow: 0 2px 12px rgba(255, 127, 80, 0.09);
+    transition: background 0.2s;
+}
+.categoria-mejorada-card:hover .cat-img-bg {
+    background: linear-gradient(135deg, #ffecd2 0%, #ffe9b5 100%);
+}
+
+.categoria-mejorada-card img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #fff7f0;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(255, 127, 80, 0.10);
+}
+
+.categoria-mejorada-card span {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-top: 5px;
+    color: #ff7f50;
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 0 #fff;
+}
+
+/* Responsive para móviles */
+@media (max-width: 600px) {
+    .categorias-grid-mejorada {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.2rem;
+    }
+    .cat-img-bg {
+        width: 64px;
+        height: 64px;
+        padding: 0.6rem;
+    }
+    .categoria-mejorada-card img {
+        width: 40px;
+        height: 40px;
+    }
+}
