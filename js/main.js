@@ -68,3 +68,20 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 });
+// ------- FLECHITA SUBIR ARRIBA --------
+document.addEventListener('DOMContentLoaded', function() {
+  const btnScrollTop = document.getElementById("btnScrollTop");
+  if (!btnScrollTop) return; // Si no existe el botón, no hace nada
+
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 200) {
+      btnScrollTop.style.display = "flex";
+    } else {
+      btnScrollTop.style.display = "none";
+    }
+  });
+
+  btnScrollTop.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
