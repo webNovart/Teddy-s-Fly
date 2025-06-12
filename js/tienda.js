@@ -576,14 +576,7 @@ const personajes = [
     descripcionCorta: "Llavero peluche de Capitán América. Lleva el escudo de la justicia contigo.",
     categoria: "personajes"
   },
-  {
-    id: "5606-8.3-capitan",
-    nombre: "Llavero Superhéroes CAPITAN AMERICA 10 cms",
-    precio: 12500,
-    imagen: "imagenes/personajes/llavero-capitan-america.jpg",
-    descripcionCorta: "Llavero peluche de Capitán América. Lleva el escudo de la justicia contigo. Tamaño 10 cm.",
-    categoria: "personajes"
-  },
+ 
   {
     id: "5606-8.3-batman",
     nombre: "Llavero Superhéroes BATMAN 10 cms",
