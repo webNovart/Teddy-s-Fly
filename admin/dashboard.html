@@ -201,6 +201,11 @@
     <textarea id="newsDescription" rows="3" required></textarea>
     <label for="newsImage">Imagen</label>
     <input type="file" id="newsImage" accept="image/*" required>
+            <label for="newsProduct">Producto relacionado</label>
+    <select id="newsProduct" required>
+        <option value="">Elige un producto</option>
+        <!-- Opciones dinámicas -->
+    </select>
     <button type="submit">Agregar Novedad</button>
 </form>
 <div id="newsList"></div>
