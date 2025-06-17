@@ -6,30 +6,32 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h2>Panel de Administración</h2>
-    <button onclick="logout()">Cerrar sesión</button>
+    <div class="admin-container">
+        <h2>Panel de Administración</h2>
+        <button onclick="logout()" class="logout-btn" style="float:right; margin-top:-2.7em;">Cerrar sesión</button>
+        <div style="clear:both;"></div>
 
-    <section>
-        <h3>Agregar Producto</h3>
-        <form id="addProductForm">
-            <label>Nombre: <input type="text" id="productName" required></label><br>
-            <label>Detalle: <input type="text" id="productDetail" required></label><br>
-            <label>Imagen: <input type="file" id="productImage" accept="image/*" required></label><br>
-            <button type="submit">Agregar Producto</button>
-        </form>
-        <div id="productList"></div>
-    </section>
+        <section>
+            <h3>Agregar Producto</h3>
+            <form id="addProductForm">
+                <label>Nombre: <input type="text" id="productName" required></label>
+                <label>Detalle: <input type="text" id="productDetail" required></label>
+                <label>Imagen: <input type="file" id="productImage" accept="image/*" required></label>
+                <button type="submit">Agregar Producto</button>
+            </form>
+            <div id="productList"></div>
+        </section>
 
-    <section>
-        <h3>Agregar Novedad</h3>
-        <form id="addNewsForm">
-            <label>Título: <input type="text" id="newsTitle" required></label><br>
-            <label>Contenido: <input type="text" id="newsContent" required></label><br>
-            <button type="submit">Agregar Novedad</button>
-        </form>
-        <div id="newsList"></div>
-    </section>
-
+        <section>
+            <h3>Agregar Novedad</h3>
+            <form id="addNewsForm">
+                <label>Título: <input type="text" id="newsTitle" required></label>
+                <label>Contenido: <input type="text" id="newsContent" required></label>
+                <button type="submit">Agregar Novedad</button>
+            </form>
+            <div id="newsList"></div>
+        </section>
+    </div>
     <script src="scripts/dashboard.js"></script>
 </body>
 </html>
