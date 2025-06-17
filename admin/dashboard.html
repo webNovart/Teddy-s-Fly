@@ -2,53 +2,40 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Panel Administrador - Teddy's Fly</title>
+    <title>Panel de Administración - Teddy's Fly</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="admin-container">
-        <h2>Panel de Administración</h2>
-        <button onclick="logout()" class="logout-btn" style="float:right; margin-top:-2.7em;">Cerrar sesión</button>
-        <div style="clear:both;"></div>
+        <h1>Panel de Administración</h1>
+        <button onclick="logout()" class="logout-btn">Cerrar sesión</button>
+        
+        <h2>Agregar Producto</h2>
+        <form id="addProductForm" autocomplete="off">
+            <label>Nombre: <input type="text" id="productName" required></label>
+            <label>Detalle: <input type="text" id="productDetail" required></label>
+            <label>Precio: <input type="number" id="productPrice" min="0" required></label>
+            <label>Categoría:
+                <select id="productCategory" required>
+                    <option value="">Selecciona una categoría</option>
+                    <option value="personajes">Personajes</option>
+                    <option value="peluches">Peluches</option>
+                    <option value="variedades">Variedades</option>
+                </select>
+            </label>
+            <label>Imagen: <input type="file" id="productImage" accept="image/*" required></label>
+            <button type="submit">Agregar Producto</button>
+        </form>
+        <div id="productList"></div>
 
-        <section>
-           <h3>Agregar Producto</h3>
-    <form id="addProductForm">
-        <label>Nombre:
-            <input type="text" id="productName" required>
-        </label>
-        <label>Detalle:
-            <input type="text" id="productDetail" required>
-        </label>
-        <label>Precio:
-            <input type="number" id="productPrice" min="0" step="100" required>
-        </label>
-        <label>Categoría:
-            <select id="productCategory" required>
-                <option value="">Selecciona una categoría</option>
-                <option value="personajes">Personajes</option>
-                <option value="peluches">Peluches</option>
-                <option value="variedades">Variedades</option>
-            </select>
-        </label>
-        <label>Imagen:
-            <input type="file" id="productImage" accept="image/*" required>
-        </label>
-        <button type="submit">Agregar Producto</button>
-    </form>
-    <div id="productList"></div>
-</section>
-
-        <section>
-            <h3>Agregar Novedad</h3>
-            <form id="addNewsForm">
-                <label>Título: <input type="text" id="newsTitle" required></label>
-                <label>Contenido: <input type="text" id="newsContent" required></label>
-                <button type="submit">Agregar Novedad</button>
-            </form>
-            <div id="newsList"></div>
-        </section>
+        <h2>Agregar Novedad</h2>
+        <form id="addNewsForm" autocomplete="off">
+            <label>Título: <input type="text" id="newsTitle" required></label>
+            <label>Contenido: <input type="text" id="newsContent" required></label>
+            <button type="submit">Agregar Novedad</button>
+        </form>
+        <div id="newsList"></div>
     </div>
-    <script src="scripts/dashboard.js"></script>
+    <script src="js/dashboard.js"></script>
 </body>
 </html>
