@@ -85,6 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 });
+// Para index.html
 function mostrarNovedadesEnInicio() {
     const news = JSON.parse(localStorage.getItem("news")) || [];
     const contenedor = document.getElementById("inicio-novedades");
@@ -96,13 +97,16 @@ function mostrarNovedadesEnInicio() {
     }
     contenedor.innerHTML = news.map(n =>
         `<div class="producto-card">
+            <img src="${n.image}" alt="${n.title}">
             <span class="tag-nuevo" style="background:#FFD900; color:#333;">Novedad</span>
             <h3>${n.title}</h3>
-            <p>${n.content}</p>
+            <p>${n.description}</p>
         </div>`
     ).join("");
 }
 mostrarNovedadesEnInicio();
+
+// Para novedades.html (usa el id de la sección ahí, ej: 'novedades-listado')
 function mostrarNovedadesEnPagina() {
     const news = JSON.parse(localStorage.getItem("news")) || [];
     const contenedor = document.getElementById("novedades-listado");
@@ -114,9 +118,10 @@ function mostrarNovedadesEnPagina() {
     }
     contenedor.innerHTML = news.map(n =>
         `<div class="producto-card">
+            <img src="${n.image}" alt="${n.title}">
             <span class="tag-nuevo" style="background:#FFD900; color:#333;">Novedad</span>
             <h3>${n.title}</h3>
-            <p>${n.content}</p>
+            <p>${n.description}</p>
         </div>`
     ).join("");
 }
