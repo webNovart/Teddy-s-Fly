@@ -8,39 +8,16 @@ function logout() {
     window.location.href = "login.html";
 }
 
-// --- Unificación de productos (fijos y admin) ---
-const personajes = typeof window.personajes !== "undefined" ? window.personajes : [];
-const peluches = typeof window.peluches !== "undefined" ? window.peluches : [];
-const variedades = typeof window.variedades !== "undefined" ? window.variedades : [];
-let products = JSON.parse(localStorage.getItem("products")) || [];
-let productosOcultos = JSON.parse(localStorage.getItem("productosOcultos")) || [];
-
-// Adaptar admin:
-const productosAdminAdaptados = products.map((p, idx) => ({
-    ...p,
-    nombre: p.name || "",
-    imagen: p.image || "",
-    descripcion: p.detail || "",
-    precio: p.precio || 0,
-    id: p.id || "admin-" + idx,
-    categoria: p.categoria || "peluches",
-    origen: "admin"
-}));
-
-// Adaptar fijos:
-const productosFijos = [
-  ...personajes.map(p => ({ ...p, categoria: "personajes", origen: "fijo" })),
-  ...peluches.map(p => ({ ...p, categoria: "peluches", origen: "fijo" })),
-  ...variedades.map(p => ({ ...p, categoria: "variedades", origen: "fijo" }))
-];
-
-// Unir y filtrar ocultos
-const productosTotales = [...productosFijos, ...productosAdminAdaptados];
-const productosVisibles = productosTotales.filter(p => !productosOcultos.includes(p.id));
-
 // Productos - Agregar
 const addProductForm = document.getElementById("addProductForm");
 const productList = document.getElementById("productList");
+let products = JSON.parse(localStorage.getItem("products")) || [];
+let productosOcultos = JSON.parse(localStorage.getItem("productosOcultos")) || [];
+
+// Productos fijos: asegúrate de tener estas variables globales en tu HTML
+const personajes = typeof window.personajes !== "undefined" ? window.personajes : [];
+const peluches = typeof window.peluches !== "undefined" ? window.peluches : [];
+const variedades = typeof window.variedades !== "undefined" ? window.variedades : [];
 
 addProductForm.onsubmit = function(e) {
     e.preventDefault();
@@ -69,12 +46,36 @@ addProductForm.onsubmit = function(e) {
 };
 
 function renderProducts() {
+    // Recalcula siempre los arreglos, así SIEMPRE muestra productos nuevos y ocultos
+    products = JSON.parse(localStorage.getItem("products")) || [];
+    productosOcultos = JSON.parse(localStorage.getItem("productosOcultos")) || [];
+
+    const productosAdminAdaptados = products.map((p, idx) => ({
+        ...p,
+        nombre: p.name || "",
+        imagen: p.image || "",
+        descripcion: p.detail || "",
+        precio: p.precio || 0,
+        id: p.id || "admin-" + idx,
+        categoria: p.categoria || "peluches",
+        origen: "admin"
+    }));
+
+    const productosFijos = [
+        ...personajes.map(p => ({ ...p, categoria: "personajes", origen: "fijo" })),
+        ...peluches.map(p => ({ ...p, categoria: "peluches", origen: "fijo" })),
+        ...variedades.map(p => ({ ...p, categoria: "variedades", origen: "fijo" }))
+    ];
+
+    const productosTotales = [...productosFijos, ...productosAdminAdaptados];
+    const productosVisibles = productosTotales.filter(p => !productosOcultos.includes(p.id));
+
     if (productosVisibles.length === 0) {
         productList.innerHTML = "<p>No hay productos agregados.</p>";
         return;
     }
     productList.innerHTML = productosVisibles.map((p, i) =>
-       `<div>
+       `<div class="admin-item">
             <img src="${p.imagen}" alt="Producto" width="100"><br>
             <strong>${p.nombre}</strong><br>
             <span>Categoría: ${p.categoria}</span><br>
@@ -88,6 +89,8 @@ renderProducts();
 
 // Eliminar producto (admin o fijo)
 window.deleteProduct = function(id, origen) {
+    products = JSON.parse(localStorage.getItem("products")) || [];
+    productosOcultos = JSON.parse(localStorage.getItem("productosOcultos")) || [];
     if (!confirm("¿Seguro que quieres eliminar este producto?")) return;
     if (origen === "admin") {
         products = products.filter(p => p.id !== id && p.name !== id);
@@ -96,7 +99,7 @@ window.deleteProduct = function(id, origen) {
         if (!productosOcultos.includes(id)) productosOcultos.push(id);
         localStorage.setItem("productosOcultos", JSON.stringify(productosOcultos));
     }
-    location.reload();
+    renderProducts();
 }
 
 // Novedades
@@ -115,6 +118,7 @@ addNewsForm.onsubmit = function(e) {
 };
 
 function renderNews() {
+    news = JSON.parse(localStorage.getItem("news")) || [];
     newsList.innerHTML = news.map((n, i) =>
         `<div>
             <strong>${n.title}</strong><br>
