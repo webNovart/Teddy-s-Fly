@@ -3896,7 +3896,22 @@ const variedades = [
   }
    ];
     // ...agrega más productos aquí
+// 1. Unificación de productos de todas las fuentes (incluye admin/localStorage)
+const personajes = typeof window.personajes !== "undefined" ? window.personajes : [];
+const peluches = typeof window.peluches !== "undefined" ? window.peluches : [];
+const variedades = typeof window.variedades !== "undefined" ? window.variedades : [];
+const productosAdmin = JSON.parse(localStorage.getItem("products")) || [];
 
+// Adaptar productosAdmin a la estructura general
+const productosAdminAdaptados = productosAdmin.map((p, idx) => ({
+    ...p,
+    nombre: p.name || "",
+    imagen: p.image || "",
+    descripcion: p.detail || "",
+    precio: p.precio || 0,
+    id: p.id || "admin-" + idx,
+    categoria: p.categoria || "peluches"
+}));
 // 2. Unificación y asignación de categoría automáticamente:
 
 const productos = [
@@ -3918,7 +3933,7 @@ function renderProductos(array, contenedorId) {
       <img src="${p.imagen}" alt="${p.nombre}">
       <h3>${p.nombre}</h3>
       <p>${p.descripcion}</p>
-      <span>$${p.precio}</span>
+     <span>$${p.precio.toLocaleString('es-CO')}</span>
     </div>
   `).join('');
 }
