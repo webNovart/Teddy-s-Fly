@@ -1,3 +1,5 @@
+console.log("DASHBOARD.JS cargado");
+
 // --- IMPORTS FIREBASE ---
 import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-firestore.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
