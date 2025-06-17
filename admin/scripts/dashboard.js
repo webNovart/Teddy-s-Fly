@@ -24,14 +24,14 @@ addProductForm.onsubmit = function(e) {
     e.preventDefault();
     const name = document.getElementById("productName").value.trim();
     const detail = document.getElementById("productDetail").value.trim();
-      // === NUEVO: Descripción larga ===
+    // === NUEVO: Descripción larga ===
     const descriptionRaw = document.getElementById("productDescription").value.trim();
     // Convierte saltos de línea en párrafos HTML
     const descripcion = descriptionRaw
-      .split(/\n+/)
-      .filter(parrafo => parrafo.trim() !== "")
-      .map(parrafo => `<p>${parrafo.trim()}</p>`)
-      .join("\n");
+        .split(/\n+/)
+        .filter(parrafo => parrafo.trim() !== "")
+        .map(parrafo => `<p>${parrafo.trim()}</p>`)
+        .join("\n");
     const price = parseInt(document.getElementById("productPrice").value);
     const categoria = document.getElementById("productCategory").value;
     const imgInput = document.getElementById("productImage");
@@ -49,13 +49,13 @@ addProductForm.onsubmit = function(e) {
     const reader = new FileReader();
     reader.onload = function(event) {
         products.push({
+            id: "admin-" + Math.random().toString(36).slice(2, 10), // id único
             name,
             detail,
             descripcion,
             precio: price,
             categoria,
-            image: event.target.result,
-            id: "admin-" + Math.random().toString(36).slice(2, 10) // id único
+            image: event.target.result
         });
         localStorage.setItem("products", JSON.stringify(products));
         renderProducts();
@@ -124,17 +124,30 @@ window.deleteProduct = function(id, origen) {
     renderProducts();
 }
 
-// Novedades
+// -------- NOVEDADES con producto relacionado --------
 const addNewsForm = document.getElementById("addNewsForm");
 const newsList = document.getElementById("newsList");
+const newsProductSelect = document.getElementById("newsProduct");
 let news = JSON.parse(localStorage.getItem("news")) || [];
 
+// Llenar el select de productos
+function llenarSelectProductos() {
+    const products = JSON.parse(localStorage.getItem("products")) || [];
+    newsProductSelect.innerHTML = '<option value="">Elige un producto</option>';
+    products.forEach(p => {
+        newsProductSelect.innerHTML += `<option value="${p.id}">${p.name}</option>`;
+    });
+}
+llenarSelectProductos();
+
+// Agregar novedad
 addNewsForm.onsubmit = function(e) {
     e.preventDefault();
     const title = document.getElementById("newsTitle").value.trim();
     const description = document.getElementById("newsDescription").value.trim();
     const imgInput = document.getElementById("newsImage");
-    if (!title || !description) {
+    const productId = document.getElementById("newsProduct").value;
+    if (!title || !description || !productId) {
         alert("Completa todos los campos.");
         return;
     }
@@ -147,11 +160,13 @@ addNewsForm.onsubmit = function(e) {
         news.push({
             title,
             description,
-            image: event.target.result
+            image: event.target.result,
+            productId
         });
         localStorage.setItem("news", JSON.stringify(news));
         renderNews();
         addNewsForm.reset();
+        newsProductSelect.selectedIndex = 0;
     };
     reader.readAsDataURL(imgInput.files[0]);
 };
@@ -162,16 +177,21 @@ function renderNews() {
         newsList.innerHTML = "<p>No hay novedades aún.</p>";
         return;
     }
-    newsList.innerHTML = news.map((n, i) =>
-        `<div class="news-card" style="border-bottom:1px solid #eee;padding:8px 0;">
+    // Mostrar también el nombre del producto relacionado
+    const products = JSON.parse(localStorage.getItem("products")) || [];
+    newsList.innerHTML = news.map((n, i) => {
+        const prod = products.find(p => p.id === n.productId);
+        const prodName = prod ? prod.name : "Producto no encontrado";
+        return `
+        <div class="news-card" style="border-bottom:1px solid #eee;padding:8px 0;">
             <img src="${n.image}" alt="${n.title}" style="height:80px;object-fit:cover;border-radius:8px;">
             <strong>${n.title}</strong><br>
             ${n.description}<br>
+            <span style="font-size:12px;color:#888;">Relacionado: ${prodName}</span><br>
             <button onclick="deleteNews(${i})" style="background:#e74c3c;color:white;padding:2px 10px;border-radius:6px;border:none;cursor:pointer;margin-top:4px;">Eliminar</button>
-        </div>`
-    ).join("");
+        </div>`;
+    }).join("");
 }
-
 window.deleteNews = function(index) {
     if (!confirm("¿Seguro que quieres eliminar esta novedad?")) return;
     news.splice(index, 1);
@@ -180,13 +200,3 @@ window.deleteNews = function(index) {
 };
 
 renderNews();
-
-function llenarSelectProductos() {
-    const products = JSON.parse(localStorage.getItem("products")) || [];
-    const select = document.getElementById("newsProduct");
-    select.innerHTML = '<option value="">Elige un producto</option>';
-    products.forEach(p => {
-        select.innerHTML += `<option value="${p.id}">${p.name}</option>`;
-    });
-}
-llenarSelectProductos();
