@@ -1963,3 +1963,28 @@ button[type="submit"]:hover, .logout-btn:hover {
         height: 54px;
     }
 }
+.user-bolita {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #e3f6fc;
+    box-shadow: 0 2px 8px rgba(77,179,234,0.10);
+    margin-left: 8px;
+    margin-right: 4px;
+}
+.user-bolita svg {
+    display: block;
+}
+@media (max-width: 700px) {
+    .user-bolita {
+        width: 36px;
+        height: 36px;
+    }
+    .user-bolita svg {
+        width: 22px;
+        height: 22px;
+    }
+}
