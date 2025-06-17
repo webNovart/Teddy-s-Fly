@@ -85,3 +85,21 @@ document.addEventListener('DOMContentLoaded', function() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 });
+function mostrarNovedadesEnInicio() {
+    const news = JSON.parse(localStorage.getItem("news")) || [];
+    const contenedor = document.getElementById("inicio-novedades");
+    if (!contenedor) return;
+
+    if (news.length === 0) {
+        contenedor.innerHTML = "<div style='text-align:center; width:100%'><h3>PRÓXIMAMENTE</h3></div>";
+        return;
+    }
+    contenedor.innerHTML = news.map(n =>
+        `<div class="producto-card">
+            <span class="tag-nuevo" style="background:#FFD900; color:#333;">Novedad</span>
+            <h3>${n.title}</h3>
+            <p>${n.content}</p>
+        </div>`
+    ).join("");
+}
+mostrarNovedadesEnInicio();
