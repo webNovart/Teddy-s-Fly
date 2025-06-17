@@ -3905,7 +3905,7 @@ const productosAdminAdaptados = productosAdmin.map((p, idx) => ({
     ...p,
     nombre: p.name || "",
     imagen: p.image || "",
-    descripcion: p.detail || "",
+    descripcion: p.descripcion || p.detail || "",
     precio: p.precio || 0,
     id: p.id || "admin-" + idx,
     categoria: p.categoria || "peluches"
