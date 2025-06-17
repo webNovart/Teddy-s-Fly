@@ -103,7 +103,7 @@ function renderProducts() {
             <span>Categoría: ${p.categoria}</span><br>
             <span>Precio: $${p.precio.toLocaleString('es-CO')}</span><br>
             ${p.descripcion}<br>
-            <button class="btn-ocultar" data-id="${p.id}">Ocultar</button>
+            
             <button onclick="deleteProduct('${p.id}', '${p.origen}')" style="background:var(--color-corazon);color:white;padding:0.2em 1em;border-radius:10px;border:none;cursor:pointer;margin-top:8px;">Eliminar</button>
         </div>`
     ).join("");
