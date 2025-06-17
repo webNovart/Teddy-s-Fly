@@ -180,3 +180,13 @@ window.deleteNews = function(index) {
 };
 
 renderNews();
+
+function llenarSelectProductos() {
+    const products = JSON.parse(localStorage.getItem("products")) || [];
+    const select = document.getElementById("newsProduct");
+    select.innerHTML = '<option value="">Elige un producto</option>';
+    products.forEach(p => {
+        select.innerHTML += `<option value="${p.id}">${p.name}</option>`;
+    });
+}
+llenarSelectProductos();
