@@ -2004,3 +2004,24 @@ button[type="submit"]:hover, .logout-btn:hover {
 .volver-tienda-btn:hover {
     background: #2196c9;
 }
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #33ccff;
+  padding: 0 2em;
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 2em;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.2em;
+}
