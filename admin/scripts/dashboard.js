@@ -7,7 +7,7 @@ const firebaseConfig = {
   apiKey: "AIzaSyBEjldlAXo7-jJqSCHO4SH6mo3w4eoleNA",
   authDomain: "teddyfly-767e1.firebaseapp.com",
   projectId: "teddyfly-767e1",
-  storageBucket: "teddyfly-767e1.firebasestorage.app",
+  storageBucket: "teddyfly-767e1.appspot.com", // <--- CORREGIDO AQUÍ
   messagingSenderId: "951813933755",
   appId: "1:951813933755:web:9948887bd7abea96b0779e",
   measurementId: "G-2K2ZHVVYMY"
