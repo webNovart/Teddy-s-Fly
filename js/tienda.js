@@ -1561,3 +1561,13 @@ productosAdmin.forEach(p => {
         id: p.id || ("admin-" + Math.random().toString(36).slice(2,8))
     });
 });
+// --- Filtrar productos ocultos (eliminados desde el panel admin) ---
+let productosOcultos = JSON.parse(localStorage.getItem("productosOcultos")) || [];
+
+function filtraOcultos(arr) {
+    return arr.filter(p => !productosOcultos.includes(p.id));
+}
+
+const personajesArrayFiltrados = filtraOcultos(personajesArray);
+const peluchesArrayFiltrados = filtraOcultos(peluchesArray);
+const variedadesArrayFiltrados = filtraOcultos(variedadesArray);
