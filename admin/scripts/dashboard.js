@@ -3,6 +3,7 @@ if (localStorage.getItem("isAdmin") !== "true") {
     window.location.href = "login.html";
 }
 
+// Hacer logout disponible globalmente
 function logout() {
     localStorage.removeItem("isAdmin");
     window.location.href = "login.html";
@@ -14,20 +15,30 @@ const productList = document.getElementById("productList");
 let products = JSON.parse(localStorage.getItem("products")) || [];
 let productosOcultos = JSON.parse(localStorage.getItem("productosOcultos")) || [];
 
-// Productos fijos: asegúrate de tener estas variables globales en tu HTML
+// Productos fijos (debes definirlos en tu HTML como window.personajes, window.peluches, window.variedades)
 const personajes = typeof window.personajes !== "undefined" ? window.personajes : [];
 const peluches = typeof window.peluches !== "undefined" ? window.peluches : [];
 const variedades = typeof window.variedades !== "undefined" ? window.variedades : [];
 
 addProductForm.onsubmit = function(e) {
     e.preventDefault();
-    const name = document.getElementById("productName").value;
-    const detail = document.getElementById("productDetail").value;
+    const name = document.getElementById("productName").value.trim();
+    const detail = document.getElementById("productDetail").value.trim();
     const price = parseInt(document.getElementById("productPrice").value);
     const categoria = document.getElementById("productCategory").value;
     const imgInput = document.getElementById("productImage");
-    const reader = new FileReader();
 
+    // Validación de campos
+    if (!name || !detail || isNaN(price) || !categoria) {
+        alert("Por favor completa todos los campos.");
+        return;
+    }
+    if (!imgInput.files[0]) {
+        alert("Por favor selecciona una imagen para el producto.");
+        return;
+    }
+
+    const reader = new FileReader();
     reader.onload = function(event) {
         products.push({
             name,
@@ -41,8 +52,10 @@ addProductForm.onsubmit = function(e) {
         renderProducts();
         addProductForm.reset();
     };
-
-    if (imgInput.files[0]) reader.readAsDataURL(imgInput.files[0]);
+    reader.onerror = function() {
+        alert("Error leyendo la imagen. Prueba con otro archivo.");
+    }
+    reader.readAsDataURL(imgInput.files[0]);
 };
 
 function renderProducts() {
@@ -109,8 +122,12 @@ let news = JSON.parse(localStorage.getItem("news")) || [];
 
 addNewsForm.onsubmit = function(e) {
     e.preventDefault();
-    const title = document.getElementById("newsTitle").value;
-    const content = document.getElementById("newsContent").value;
+    const title = document.getElementById("newsTitle").value.trim();
+    const content = document.getElementById("newsContent").value.trim();
+    if (!title || !content) {
+        alert("Completa ambos campos de novedades.");
+        return;
+    }
     news.push({ title, content });
     localStorage.setItem("news", JSON.stringify(news));
     renderNews();
