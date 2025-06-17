@@ -1523,9 +1523,9 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("seccion-personajes").style.display = "";
         document.getElementById("seccion-peluches").style.display = "";
         document.getElementById("seccion-variedades").style.display = "";
-        renderProductos(personajesArray, "grid-personajes");
-        renderProductos(peluchesArray, "grid-peluches");
-        renderProductos(variedadesArray, "grid-variedades");
+        renderProductos(personajesArrayFiltrados, "grid-personajes");
+        renderProductos(peluchesArrayFiltrados, "grid-peluches");
+        renderProductos(variedadesArrayFiltrados, "grid-variedades");
     }
 });
 // Obtener productos de localStorage agregados por el admin
