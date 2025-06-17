@@ -195,13 +195,15 @@
 
         <h2 class="admin-form-title">Agregar Novedad</h2>
         <form id="addNewsForm" autocomplete="off">
-            <label for="newsTitle">Título</label>
-            <input type="text" id="newsTitle" required>
-            <label for="newsContent">Contenido</label>
-            <input type="text" id="newsContent" required>
-            <button type="submit">Agregar Novedad</button>
-        </form>
-        <div id="newsList"></div>
+    <label for="newsTitle">Nombre del peluche</label>
+    <input type="text" id="newsTitle" required>
+    <label for="newsDescription">Descripción</label>
+    <textarea id="newsDescription" rows="3" required></textarea>
+    <label for="newsImage">Imagen</label>
+    <input type="file" id="newsImage" accept="image/*" required>
+    <button type="submit">Agregar Novedad</button>
+</form>
+<div id="newsList"></div>
     </div>
     <script src="scripts/dashboard.js"></script>
 </body>
