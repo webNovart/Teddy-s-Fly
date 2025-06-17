@@ -1972,8 +1972,8 @@ button[type="submit"]:hover, .logout-btn:hover {
     border-radius: 50%;
     background: #e3f6fc;
     box-shadow: 0 2px 8px rgba(77,179,234,0.10);
-    margin-left: 8px;
-    margin-right: 4px;
+/*     margin-left: 8px;
+    margin-right: 4px; */
 }
 .user-bolita svg {
     display: block;
