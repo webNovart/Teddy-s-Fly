@@ -12,15 +12,32 @@
         <div style="clear:both;"></div>
 
         <section>
-            <h3>Agregar Producto</h3>
-            <form id="addProductForm">
-                <label>Nombre: <input type="text" id="productName" required></label>
-                <label>Detalle: <input type="text" id="productDetail" required></label>
-                <label>Imagen: <input type="file" id="productImage" accept="image/*" required></label>
-                <button type="submit">Agregar Producto</button>
-            </form>
-            <div id="productList"></div>
-        </section>
+           <h3>Agregar Producto</h3>
+    <form id="addProductForm">
+        <label>Nombre:
+            <input type="text" id="productName" required>
+        </label>
+        <label>Detalle:
+            <input type="text" id="productDetail" required>
+        </label>
+        <label>Precio:
+            <input type="number" id="productPrice" min="0" step="100" required>
+        </label>
+        <label>Categoría:
+            <select id="productCategory" required>
+                <option value="">Selecciona una categoría</option>
+                <option value="personajes">Personajes</option>
+                <option value="peluches">Peluches</option>
+                <option value="variedades">Variedades</option>
+            </select>
+        </label>
+        <label>Imagen:
+            <input type="file" id="productImage" accept="image/*" required>
+        </label>
+        <button type="submit">Agregar Producto</button>
+    </form>
+    <div id="productList"></div>
+</section>
 
         <section>
             <h3>Agregar Novedad</h3>
