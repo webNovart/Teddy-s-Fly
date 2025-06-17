@@ -4,13 +4,76 @@
     <meta charset="UTF-8">
     <title>Login Administrador - Teddy's Fly</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--color-primario, #33ccff) 0%, var(--color-terciario, #fff) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .login-card {
+            background: var(--color-blanco, #fff);
+            border-radius: 18px;
+            box-shadow: 0 6px 32px rgba(51,204,255,0.14);
+            padding: 2.5em 2em 2em 2em;
+            width: 350px;
+            transition: box-shadow 0.25s;
+            animation: popIn 0.7s cubic-bezier(.23,1.27,.42,1.01);
+        }
+        @keyframes popIn {
+            0% {transform: scale(0.95) translateY(40px); opacity:0;}
+            100% {transform: scale(1) translateY(0); opacity:1;}
+        }
+        .login-logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.5em;
+        }
+        .login-logo img {
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            box-shadow: 0 2px 12px rgba(51,204,255,0.15);
+        }
+        .login-card h2 {
+            text-align: center;
+            color: var(--color-primario, #33ccff);
+            font-size: 1.5em;
+            margin-bottom: 1em;
+        }
+        #loginForm label {
+            margin-top: 1.2em;
+            color: var(--color-primario, #33ccff);
+        }
+        #loginForm input[type="text"],
+        #loginForm input[type="password"] {
+            border: 1.5px solid var(--color-primario, #33ccff);
+            background: var(--color-blanco, #fff);
+            font-size: 1.11em;
+        }
+        #loginForm button[type="submit"] {
+            width: 100%;
+        }
+        #errorMsg {
+            margin-top: 0.8em;
+        }
+        @media (max-width:480px) {
+            .login-card { width: 97vw; padding: 1.3em 0.5em;}
+        }
+    </style>
 </head>
 <body>
-    <div class="admin-container">
-        <h2>Iniciar sesión como Administrador</h2>
+    <div class="login-card">
+        <div class="login-logo">
+            <img src="assets/logo.png" alt="Teddy's Fly Logo" loading="lazy">
+        </div>
+        <h2>Acceso Administrador</h2>
         <form id="loginForm" autocomplete="off">
-            <label>Usuario: <input type="text" id="username" required></label>
-            <label>Contraseña: <input type="password" id="password" required></label>
+            <label for="username">Usuario</label>
+            <input type="text" id="username" required autocomplete="username">
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" required autocomplete="current-password">
             <button type="submit">Ingresar</button>
             <p id="errorMsg" class="error" style="display:none;">Usuario o contraseña incorrectos</p>
         </form>
