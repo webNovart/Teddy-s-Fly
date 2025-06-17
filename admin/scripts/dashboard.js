@@ -51,6 +51,7 @@ addProductForm.onsubmit = function(e) {
         products.push({
             name,
             detail,
+            descripcion,
             precio: price,
             categoria,
             image: event.target.result,
