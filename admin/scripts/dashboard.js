@@ -31,15 +31,29 @@ addProductForm.onsubmit = function(e) {
 };
 
 function renderProducts() {
+    if (products.length === 0) {
+        productList.innerHTML = "<p>No hay productos agregados.</p>";
+        return;
+    }
     productList.innerHTML = products.map((p, i) =>
         `<div>
             <img src="${p.image}" alt="Producto" width="100"><br>
             <strong>${p.name}</strong><br>
-            ${p.detail}
+            ${p.detail}<br>
+            <button onclick="deleteProduct(${i})" style="background:var(--color-corazon);color:white;padding:0.2em 1em;border-radius:10px;border:none;cursor:pointer;margin-top:8px;">Eliminar</button>
         </div>`
     ).join("");
 }
 renderProducts();
+
+// Eliminar producto
+window.deleteProduct = function(index) {
+    if (confirm("¿Seguro que quieres eliminar este producto?")) {
+        products.splice(index, 1);
+        localStorage.setItem("products", JSON.stringify(products));
+        renderProducts();
+    }
+}
 
 // Novedades
 const addNewsForm = document.getElementById("addNewsForm");
