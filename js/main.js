@@ -101,6 +101,7 @@ function mostrarNovedadesEnInicio() {
             <span class="tag-nuevo" style="background:#FFD900; color:#333;">Novedad</span>
             <h3>${n.title}</h3>
             <p>${n.description}</p>
+            <a href="producto.html?id=${n.productId}" class="btn-secondary" style="margin-top:8px;display:inline-block;">Ver producto</a>
         </div>`
     ).join("");
 }
@@ -122,6 +123,7 @@ function mostrarNovedadesEnPagina() {
             <span class="tag-nuevo" style="background:#FFD900; color:#333;">Novedad</span>
             <h3>${n.title}</h3>
             <p>${n.description}</p>
+            <a href="producto.html?id=${n.productId}" class="btn-secondary" style="margin-top:8px;display:inline-block;">Ver producto</a>
         </div>`
     ).join("");
 }
