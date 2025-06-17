@@ -3908,7 +3908,8 @@ const productosAdminAdaptados = productosAdmin.map((p, idx) => ({
     descripcion: p.descripcion || p.detail || "",
     precio: p.precio || 0,
     id: p.id || "admin-" + idx,
-    categoria: p.categoria || "peluches"
+    categoria: p.categoria || "peluches",
+   origen: "admin"
 }));
 // 2. Unificación y asignación de categoría automáticamente:
 
