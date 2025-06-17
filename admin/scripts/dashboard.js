@@ -24,6 +24,14 @@ addProductForm.onsubmit = function(e) {
     e.preventDefault();
     const name = document.getElementById("productName").value.trim();
     const detail = document.getElementById("productDetail").value.trim();
+      // === NUEVO: Descripción larga ===
+    const descriptionRaw = document.getElementById("productDescription").value.trim();
+    // Convierte saltos de línea en párrafos HTML
+    const descripcion = descriptionRaw
+      .split(/\n+/)
+      .filter(parrafo => parrafo.trim() !== "")
+      .map(parrafo => `<p>${parrafo.trim()}</p>`)
+      .join("\n");
     const price = parseInt(document.getElementById("productPrice").value);
     const categoria = document.getElementById("productCategory").value;
     const imgInput = document.getElementById("productImage");
