@@ -1,3 +1,21 @@
+// --- IMPORTS FIREBASE ---
+import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-firestore.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+
+// Config y app compartidos con tu HTML
+const firebaseConfig = {
+  apiKey: "AIzaSyBEjldlAXo7-jJqSCHO4SH6mo3w4eoleNA",
+  authDomain: "teddyfly-767e1.firebaseapp.com",
+  projectId: "teddyfly-767e1",
+  storageBucket: "teddyfly-767e1.firebasestorage.app",
+  messagingSenderId: "951813933755",
+  appId: "1:951813933755:web:9948887bd7abea96b0779e",
+  measurementId: "G-2K2ZHVVYMY"
+};
+const app = initializeApp(firebaseConfig); // No pasa nada si ya está inicializado
+const db = getFirestore(app);
+// --- FIN IMPORTS FIREBASE ---
+
 // Proteger el panel
 if (localStorage.getItem("isAdmin") !== "true") {
     window.location.href = "login.html";
@@ -12,7 +30,6 @@ function logout() {
 // Productos - Agregar
 const addProductForm = document.getElementById("addProductForm");
 const productList = document.getElementById("productList");
-let products = JSON.parse(localStorage.getItem("products")) || [];
 let productosOcultos = JSON.parse(localStorage.getItem("productosOcultos")) || [];
 
 // Productos fijos (debes definirlos en tu HTML como window.personajes, window.peluches, window.variedades)
@@ -20,6 +37,22 @@ const personajes = typeof window.personajes !== "undefined" ? window.personajes 
 const peluches = typeof window.peluches !== "undefined" ? window.peluches : [];
 const variedades = typeof window.variedades !== "undefined" ? window.variedades : [];
 
+// Función para cargar productos desde Firestore
+async function getProductosFirestore() {
+    const productos = [];
+    const querySnapshot = await getDocs(collection(db, "productos"));
+    querySnapshot.forEach((docu) => {
+        const p = docu.data();
+        productos.push({
+            ...p,
+            id: docu.id,
+            origen: "firestore"
+        });
+    });
+    return productos;
+}
+
+// Agregar producto NUEVO a Firestore
 addProductForm.onsubmit = function(e) {
     e.preventDefault();
     const name = document.getElementById("productName").value.trim();
@@ -47,19 +80,22 @@ addProductForm.onsubmit = function(e) {
     }
 
     const reader = new FileReader();
-    reader.onload = function(event) {
-        products.push({
-            id: "admin-" + Math.random().toString(36).slice(2, 10), // id único
-            name,
-            detail,
-            descripcion,
-            precio: price,
-            categoria,
-            image: event.target.result
-        });
-        localStorage.setItem("products", JSON.stringify(products));
-        renderProducts();
-        addProductForm.reset();
+    reader.onload = async function(event) {
+        try {
+            await addDoc(collection(db, "productos"), {
+                name,
+                detail,
+                descripcion,
+                precio: price,
+                categoria,
+                image: event.target.result // base64
+            });
+            alert("Producto agregado correctamente y disponible para todos.");
+            addProductForm.reset();
+            renderProducts();
+        } catch (error) {
+            alert("Error al agregar producto a Firestore: " + error.message);
+        }
     };
     reader.onerror = function() {
         alert("Error leyendo la imagen. Prueba con otro archivo.");
@@ -67,20 +103,20 @@ addProductForm.onsubmit = function(e) {
     reader.readAsDataURL(imgInput.files[0]);
 };
 
-function renderProducts() {
-    // Recalcula siempre los arreglos, así SIEMPRE muestra productos nuevos y ocultos
-    products = JSON.parse(localStorage.getItem("products")) || [];
+// Renderizar productos
+async function renderProducts() {
     productosOcultos = JSON.parse(localStorage.getItem("productosOcultos")) || [];
+    const productosFirestore = await getProductosFirestore();
 
-    const productosAdminAdaptados = products.map((p, idx) => ({
+    const productosFirestoreAdaptados = productosFirestore.map((p) => ({
         ...p,
         nombre: p.name || "",
         imagen: p.image || "",
         descripcion: p.detail || "",
         precio: p.precio || 0,
-        id: p.id || "admin-" + idx,
+        id: p.id,
         categoria: p.categoria || "peluches",
-        origen: "admin"
+        origen: "firestore"
     }));
 
     const productosFijos = [
@@ -89,53 +125,56 @@ function renderProducts() {
         ...variedades.map(p => ({ ...p, categoria: "variedades", origen: "fijo" }))
     ];
 
-    const productosTotales = [...productosFijos, ...productosAdminAdaptados];
+    const productosTotales = [...productosFijos, ...productosFirestoreAdaptados];
     const productosVisibles = productosTotales.filter(p => !productosOcultos.includes(p.id));
 
     if (productosVisibles.length === 0) {
         productList.innerHTML = "<p>No hay productos agregados.</p>";
         return;
     }
-    productList.innerHTML = productosVisibles.map((p, i) =>
+    productList.innerHTML = productosVisibles.map((p) =>
        `<div class="admin-item">
             <img src="${p.imagen}" alt="Producto" width="100"><br>
             <strong>${p.nombre}</strong><br>
             <span>Categoría: ${p.categoria}</span><br>
             <span>Precio: $${p.precio.toLocaleString('es-CO')}</span><br>
             ${p.descripcion}<br>
-            
-            <button onclick="deleteProduct('${p.id}', '${p.origen}')" style="background:var(--color-corazon);color:#f20202;padding:0.2em 1em;border-radius:10px;border:none;cursor:pointer;margin-top:8px;">Eliminar</button>
+            ${p.origen === "firestore" ? `<button onclick="deleteProduct('${p.id}', '${p.origen}')" style="background:var(--color-corazon);color:#f20202;padding:0.2em 1em;border-radius:10px;border:none;cursor:pointer;margin-top:8px;">Eliminar</button>` : ""}
         </div>`
     ).join("");
 }
 renderProducts();
 
-// Eliminar producto (admin o fijo)
-window.deleteProduct = function(id, origen) {
-    products = JSON.parse(localStorage.getItem("products")) || [];
+// Eliminar producto (solo de Firestore)
+window.deleteProduct = async function(id, origen) {
     productosOcultos = JSON.parse(localStorage.getItem("productosOcultos")) || [];
     if (!confirm("¿Seguro que quieres eliminar este producto?")) return;
-    if (origen === "admin") {
-        products = products.filter(p => p.id !== id && p.name !== id);
-        localStorage.setItem("products", JSON.stringify(products));
+    if (origen === "firestore") {
+        try {
+            await deleteDoc(doc(db, "productos", id));
+            alert("Producto eliminado de Firestore");
+        } catch (e) {
+            alert("Error borrando producto: " + e.message);
+        }
+        renderProducts();
     } else if (origen === "fijo") {
         if (!productosOcultos.includes(id)) productosOcultos.push(id);
         localStorage.setItem("productosOcultos", JSON.stringify(productosOcultos));
+        renderProducts();
     }
-    renderProducts();
-}
+};
 
-// -------- NOVEDADES con producto relacionado --------
+// -------- NOVEDADES con producto relacionado (SE MANTIENE EN LOCAL) --------
 const addNewsForm = document.getElementById("addNewsForm");
 const newsList = document.getElementById("newsList");
 const newsProductSelect = document.getElementById("newsProduct");
 let news = JSON.parse(localStorage.getItem("news")) || [];
 
-// Llenar el select de productos
-function llenarSelectProductos() {
-    const products = JSON.parse(localStorage.getItem("products")) || [];
+// Llenar el select de productos desde Firestore
+async function llenarSelectProductos() {
+    const productosFirestore = await getProductosFirestore();
     newsProductSelect.innerHTML = '<option value="">Elige un producto</option>';
-    products.forEach(p => {
+    productosFirestore.forEach(p => {
         newsProductSelect.innerHTML += `<option value="${p.id}">${p.name}</option>`;
     });
 }
@@ -179,19 +218,21 @@ function renderNews() {
         return;
     }
     // Mostrar también el nombre del producto relacionado
-    const products = JSON.parse(localStorage.getItem("products")) || [];
-    newsList.innerHTML = news.map((n, i) => {
-        const prod = products.find(p => p.id === n.productId);
-        const prodName = prod ? prod.name : "Producto no encontrado";
-        return `
-        <div class="news-card" style="border-bottom:1px solid #eee;padding:8px 0;">
-            <img src="${n.image}" alt="${n.title}" style="height:80px;object-fit:cover;border-radius:8px;">
-            <strong>${n.title}</strong><br>
-            ${n.description}<br>
-            <span style="font-size:12px;color:#888;">Relacionado: ${prodName}</span><br>
-            <button onclick="deleteNews(${i})" style="background:#e74c3c;color:white;padding:2px 10px;border-radius:6px;border:none;cursor:pointer;margin-top:4px;">Eliminar</button>
-        </div>`;
-    }).join("");
+    // Usar productos de Firestore para encontrar el nombre
+    getProductosFirestore().then(products => {
+        newsList.innerHTML = news.map((n, i) => {
+            const prod = products.find(p => p.id === n.productId);
+            const prodName = prod ? prod.name : "Producto no encontrado";
+            return `
+            <div class="news-card" style="border-bottom:1px solid #eee;padding:8px 0;">
+                <img src="${n.image}" alt="${n.title}" style="height:80px;object-fit:cover;border-radius:8px;">
+                <strong>${n.title}</strong><br>
+                ${n.description}<br>
+                <span style="font-size:12px;color:#888;">Relacionado: ${prodName}</span><br>
+                <button onclick="deleteNews(${i})" style="background:#e74c3c;color:white;padding:2px 10px;border-radius:6px;border:none;cursor:pointer;margin-top:4px;">Eliminar</button>
+            </div>`;
+        }).join("");
+    });
 }
 window.deleteNews = function(index) {
     if (!confirm("¿Seguro que quieres eliminar esta novedad?")) return;
