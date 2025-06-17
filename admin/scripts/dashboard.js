@@ -132,24 +132,51 @@ let news = JSON.parse(localStorage.getItem("news")) || [];
 addNewsForm.onsubmit = function(e) {
     e.preventDefault();
     const title = document.getElementById("newsTitle").value.trim();
-    const content = document.getElementById("newsContent").value.trim();
-    if (!title || !content) {
-        alert("Completa ambos campos de novedades.");
+    const description = document.getElementById("newsDescription").value.trim();
+    const imgInput = document.getElementById("newsImage");
+    if (!title || !description) {
+        alert("Completa todos los campos.");
         return;
     }
-    news.push({ title, content });
-    localStorage.setItem("news", JSON.stringify(news));
-    renderNews();
-    addNewsForm.reset();
+    if (!imgInput.files[0]) {
+        alert("Por favor selecciona una imagen.");
+        return;
+    }
+    const reader = new FileReader();
+    reader.onload = function(event) {
+        news.push({
+            title,
+            description,
+            image: event.target.result
+        });
+        localStorage.setItem("news", JSON.stringify(news));
+        renderNews();
+        addNewsForm.reset();
+    };
+    reader.readAsDataURL(imgInput.files[0]);
 };
 
 function renderNews() {
     news = JSON.parse(localStorage.getItem("news")) || [];
+    if(news.length === 0) {
+        newsList.innerHTML = "<p>No hay novedades aún.</p>";
+        return;
+    }
     newsList.innerHTML = news.map((n, i) =>
-        `<div>
+        `<div class="news-card" style="border-bottom:1px solid #eee;padding:8px 0;">
+            <img src="${n.image}" alt="${n.title}" style="height:80px;object-fit:cover;border-radius:8px;">
             <strong>${n.title}</strong><br>
-            ${n.content}
+            ${n.description}<br>
+            <button onclick="deleteNews(${i})" style="background:#e74c3c;color:white;padding:2px 10px;border-radius:6px;border:none;cursor:pointer;margin-top:4px;">Eliminar</button>
         </div>`
     ).join("");
 }
+
+window.deleteNews = function(index) {
+    if (!confirm("¿Seguro que quieres eliminar esta novedad?")) return;
+    news.splice(index, 1);
+    localStorage.setItem("news", JSON.stringify(news));
+    renderNews();
+};
+
 renderNews();
