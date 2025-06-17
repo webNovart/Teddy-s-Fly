@@ -3897,9 +3897,7 @@ const variedades = [
    ];
     // ...agrega más productos aquí
 // 1. Unificación de productos de todas las fuentes (incluye admin/localStorage)
-const personajes = typeof window.personajes !== "undefined" ? window.personajes : [];
-const peluches = typeof window.peluches !== "undefined" ? window.peluches : [];
-const variedades = typeof window.variedades !== "undefined" ? window.variedades : [];
+
 const productosAdmin = JSON.parse(localStorage.getItem("products")) || [];
 
 // Adaptar productosAdmin a la estructura general
