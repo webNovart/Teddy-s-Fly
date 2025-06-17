@@ -9,12 +9,12 @@ const firebaseConfig = {
   apiKey: "AIzaSyBEjldlAXo7-jJqSCHO4SH6mo3w4eoleNA",
   authDomain: "teddyfly-767e1.firebaseapp.com",
   projectId: "teddyfly-767e1",
-  storageBucket: "teddyfly-767e1.appspot.com", // <--- CORREGIDO AQUÍ
+  storageBucket: "teddyfly-767e1.appspot.com",
   messagingSenderId: "951813933755",
   appId: "1:951813933755:web:9948887bd7abea96b0779e",
   measurementId: "G-2K2ZHVVYMY"
 };
-const app = initializeApp(firebaseConfig); // No pasa nada si ya está inicializado
+const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 // --- FIN IMPORTS FIREBASE ---
 
@@ -166,11 +166,10 @@ window.deleteProduct = async function(id, origen) {
     }
 };
 
-// -------- NOVEDADES con producto relacionado (SE MANTIENE EN LOCAL) --------
+// -------- NOVEDADES con producto relacionado (FIRESTORE) --------
 const addNewsForm = document.getElementById("addNewsForm");
 const newsList = document.getElementById("newsList");
 const newsProductSelect = document.getElementById("newsProduct");
-let news = JSON.parse(localStorage.getItem("news")) || [];
 
 // Llenar el select de productos desde Firestore
 async function llenarSelectProductos() {
@@ -182,7 +181,7 @@ async function llenarSelectProductos() {
 }
 llenarSelectProductos();
 
-// Agregar novedad
+// Agregar novedad a Firestore
 addNewsForm.onsubmit = function(e) {
     e.preventDefault();
     const title = document.getElementById("newsTitle").value.trim();
@@ -198,49 +197,71 @@ addNewsForm.onsubmit = function(e) {
         return;
     }
     const reader = new FileReader();
-    reader.onload = function(event) {
-        news.push({
-            title,
-            description,
-            image: event.target.result,
-            productId
-        });
-        localStorage.setItem("news", JSON.stringify(news));
-        renderNews();
-        addNewsForm.reset();
-        newsProductSelect.selectedIndex = 0;
+    reader.onload = async function(event) {
+        try {
+            await addDoc(collection(db, "novedades"), {
+                title,
+                description,
+                image: event.target.result,
+                productId
+            });
+            alert("Novedad agregada correctamente y visible en todos los dispositivos.");
+            addNewsForm.reset();
+            newsProductSelect.selectedIndex = 0;
+            renderNews();
+        } catch (error) {
+            alert("Error al agregar novedad a Firestore: " + error.message);
+        }
     };
+    reader.onerror = function() {
+        alert("Error leyendo la imagen. Prueba con otro archivo.");
+    }
     reader.readAsDataURL(imgInput.files[0]);
 };
 
-function renderNews() {
-    news = JSON.parse(localStorage.getItem("news")) || [];
-    if(news.length === 0) {
+// Renderizar novedades desde Firestore
+async function renderNews() {
+    newsList.innerHTML = "Cargando novedades...";
+    // Primero, carga los productos para mostrar el nombre relacionado
+    const productos = await getProductosFirestore();
+    const productosMap = {};
+    productos.forEach(p => productosMap[p.id] = p.name);
+
+    const novedadesSnap = await getDocs(collection(db, "novedades"));
+    const novedades = [];
+    novedadesSnap.forEach(docu => {
+        const n = docu.data();
+        novedades.push({
+            ...n,
+            id: docu.id
+        });
+    });
+
+    if(novedades.length === 0) {
         newsList.innerHTML = "<p>No hay novedades aún.</p>";
         return;
     }
-    // Mostrar también el nombre del producto relacionado
-    // Usar productos de Firestore para encontrar el nombre
-    getProductosFirestore().then(products => {
-        newsList.innerHTML = news.map((n, i) => {
-            const prod = products.find(p => p.id === n.productId);
-            const prodName = prod ? prod.name : "Producto no encontrado";
-            return `
-            <div class="news-card" style="border-bottom:1px solid #eee;padding:8px 0;">
-                <img src="${n.image}" alt="${n.title}" style="height:80px;object-fit:cover;border-radius:8px;">
-                <strong>${n.title}</strong><br>
-                ${n.description}<br>
-                <span style="font-size:12px;color:#888;">Relacionado: ${prodName}</span><br>
-                <button onclick="deleteNews(${i})" style="background:#e74c3c;color:white;padding:2px 10px;border-radius:6px;border:none;cursor:pointer;margin-top:4px;">Eliminar</button>
-            </div>`;
-        }).join("");
-    });
+
+    newsList.innerHTML = novedades.map((n) => {
+        const prodName = productosMap[n.productId] || "Producto no encontrado";
+        return `
+        <div class="news-card" style="border-bottom:1px solid #eee;padding:8px 0;">
+            <img src="${n.image}" alt="${n.title}" style="height:80px;object-fit:cover;border-radius:8px;">
+            <strong>${n.title}</strong><br>
+            ${n.description}<br>
+            <span style="font-size:12px;color:#888;">Relacionado: ${prodName}</span><br>
+            <button onclick="deleteNews('${n.id}')" style="background:#e74c3c;color:white;padding:2px 10px;border-radius:6px;border:none;cursor:pointer;margin-top:4px;">Eliminar</button>
+        </div>`;
+    }).join("");
 }
-window.deleteNews = function(index) {
+window.deleteNews = async function(id) {
     if (!confirm("¿Seguro que quieres eliminar esta novedad?")) return;
-    news.splice(index, 1);
-    localStorage.setItem("news", JSON.stringify(news));
-    renderNews();
+    try {
+        await deleteDoc(doc(db, "novedades", id));
+        renderNews();
+    } catch (e) {
+        alert("Error eliminando novedad: " + e.message);
+    }
 };
 
 renderNews();
