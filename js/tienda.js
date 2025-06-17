@@ -1528,3 +1528,36 @@ document.addEventListener("DOMContentLoaded", function() {
         renderProductos(variedadesArray, "grid-variedades");
     }
 });
+// Obtener productos de localStorage agregados por el admin
+let productosAdmin = JSON.parse(localStorage.getItem("products")) || [];
+
+// Si tus productos del admin tienen una propiedad "categoria"
+productosAdmin.forEach(p => {
+    if (p.categoria === "personajes") personajesArray.push({
+        ...p,
+        __seccion: "personajes",
+        imagen: p.image, // Asume que la propiedad es "image" y no "imagen"
+        nombre: p.name,  // Asume que la propiedad es "name" y no "nombre"
+        descripcion: p.detail || "", // Si tienes descripción larga
+        precio: p.precio || 0, // Si guardas precio
+        id: p.id || ("admin-" + Math.random().toString(36).slice(2,8)) // Un id único
+    });
+    else if (p.categoria === "peluches") peluchesArray.push({
+        ...p,
+        __seccion: "peluches",
+        imagen: p.image,
+        nombre: p.name,
+        descripcion: p.detail || "",
+        precio: p.precio || 0,
+        id: p.id || ("admin-" + Math.random().toString(36).slice(2,8))
+    });
+    else if (p.categoria === "variedades") variedadesArray.push({
+        ...p,
+        __seccion: "variedades",
+        imagen: p.image,
+        nombre: p.name,
+        descripcion: p.detail || "",
+        precio: p.precio || 0,
+        id: p.id || ("admin-" + Math.random().toString(36).slice(2,8))
+    });
+});
