@@ -1440,54 +1440,15 @@ const personajesArray = typeof personajes !== "undefined" ? personajes : [];
 const peluchesArray = typeof peluches !== "undefined" ? peluches : [];
 const variedadesArray = typeof variedades !== "undefined" ? variedades : [];
 
-// Productos globales para filtrar
-const productosTotales = [
-    ...personajesArray.map(p => ({...p, __seccion: "personajes"})),
-    ...peluchesArray.map(p => ({...p, __seccion: "peluches"})),
-    ...variedadesArray.map(p => ({...p, __seccion: "variedades"}))
-];
+// --- Filtrar productos ocultos (eliminados desde el panel admin localmente) ---
+let productosOcultos = JSON.parse(localStorage.getItem("productosOcultos")) || [];
 
-function filtrarProductos(texto) {
-    texto = texto.trim().toLowerCase();
-    // Filtra todos los productos y luego separa por sección
-    const filtrados = productosTotales.filter(producto =>
-        producto.nombre.toLowerCase().includes(texto) ||
-        (producto.descripcionCorta && producto.descripcionCorta.toLowerCase().includes(texto)) ||
-        (producto.descripcion && typeof producto.descripcion === "string" && producto.descripcion.toLowerCase().includes(texto))
-    );
-    // Separa
-    renderProductos(
-        filtrados.filter(p => p.__seccion === "personajes"), 
-        "grid-personajes"
-    );
-    renderProductos(
-        filtrados.filter(p => p.__seccion === "peluches"), 
-        "grid-peluches"
-    );
-    renderProductos(
-        filtrados.filter(p => p.__seccion === "variedades"), 
-        "grid-variedades"
-    );
+function filtraOcultos(arr) {
+    return arr.filter(p => !productosOcultos.includes(p.id));
 }
 
-if (formBusqueda && inputBusqueda) {
-    formBusqueda.addEventListener('submit', function(e) {
-        e.preventDefault();
-        filtrarProductos(inputBusqueda.value);
-    });
-
-    inputBusqueda.addEventListener('input', function() {
-        filtrarProductos(this.value);
-    });
-}
-
-// ---- Inicializar: MOSTRAR CATEGORÍA O TODO ----
-function getCategoriaURL() {
-  const params = new URLSearchParams(window.location.search);
-  return params.get('cat');
-}
-
-document.addEventListener("DOMContentLoaded", function() {
+// Función para renderizar y filtrar según la categoría
+function inicializarVista(personajesArr, peluchesArr, variedadesArr) {
     // Actualiza contador carrito al cargar
     const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
     const cartCount = document.querySelector('.cart-count');
@@ -1499,75 +1460,119 @@ document.addEventListener("DOMContentLoaded", function() {
     // Mostrar por categoría
     const cat = getCategoriaURL();
 
-    // Oculta todas las secciones y muestra solo la elegida si hay filtro
     if (cat === "personajes") {
-        renderProductos(personajesArray, "grid-personajes");
+        renderProductos(personajesArr, "grid-personajes");
         document.getElementById("seccion-personajes").style.display = "";
         document.getElementById("seccion-peluches").style.display = "none";
         document.getElementById("seccion-variedades").style.display = "none";
         document.getElementById("seccion-personajes").scrollIntoView({behavior: "smooth"});
     } else if (cat === "peluches") {
-        renderProductos(peluchesArray, "grid-peluches");
+        renderProductos(peluchesArr, "grid-peluches");
         document.getElementById("seccion-personajes").style.display = "none";
         document.getElementById("seccion-peluches").style.display = "";
         document.getElementById("seccion-variedades").style.display = "none";
         document.getElementById("seccion-peluches").scrollIntoView({behavior: "smooth"});
     } else if (cat === "variedades") {
-        renderProductos(variedadesArray, "grid-variedades");
+        renderProductos(variedadesArr, "grid-variedades");
         document.getElementById("seccion-personajes").style.display = "none";
         document.getElementById("seccion-peluches").style.display = "none";
         document.getElementById("seccion-variedades").style.display = "";
         document.getElementById("seccion-variedades").scrollIntoView({behavior: "smooth"});
     } else {
-        // Default: muestra todas las secciones
         document.getElementById("seccion-personajes").style.display = "";
         document.getElementById("seccion-peluches").style.display = "";
         document.getElementById("seccion-variedades").style.display = "";
-        renderProductos(personajesArrayFiltrados, "grid-personajes");
-        renderProductos(peluchesArrayFiltrados, "grid-peluches");
-        renderProductos(variedadesArrayFiltrados, "grid-variedades");
+        renderProductos(personajesArr, "grid-personajes");
+        renderProductos(peluchesArr, "grid-peluches");
+        renderProductos(variedadesArr, "grid-variedades");
     }
-});
-// Obtener productos de localStorage agregados por el admin
-let productosAdmin = JSON.parse(localStorage.getItem("products")) || [];
-
-// Si tus productos del admin tienen una propiedad "categoria"
-productosAdmin.forEach(p => {
-    if (p.categoria === "personajes") personajesArray.push({
-        ...p,
-        __seccion: "personajes",
-        imagen: p.image, // Asume que la propiedad es "image" y no "imagen"
-        nombre: p.name,  // Asume que la propiedad es "name" y no "nombre"
-        descripcion: p.detail || "", // Si tienes descripción larga
-        precio: p.precio || 0, // Si guardas precio
-        id: p.id || ("admin-" + Math.random().toString(36).slice(2,8)) // Un id único
-    });
-    else if (p.categoria === "peluches") peluchesArray.push({
-        ...p,
-        __seccion: "peluches",
-        imagen: p.image,
-        nombre: p.name,
-        descripcion: p.detail || "",
-        precio: p.precio || 0,
-        id: p.id || ("admin-" + Math.random().toString(36).slice(2,8))
-    });
-    else if (p.categoria === "variedades") variedadesArray.push({
-        ...p,
-        __seccion: "variedades",
-        imagen: p.image,
-        nombre: p.name,
-        descripcion: p.detail || "",
-        precio: p.precio || 0,
-        id: p.id || ("admin-" + Math.random().toString(36).slice(2,8))
-    });
-});
-// --- Filtrar productos ocultos (eliminados desde el panel admin) ---
-let productosOcultos = JSON.parse(localStorage.getItem("productosOcultos")) || [];
-
-function filtraOcultos(arr) {
-    return arr.filter(p => !productosOcultos.includes(p.id));
 }
 
-const personajesArrayFiltrados = filtraOcultos(personajesArray);
-const peluchesArrayFiltrados = filtraOcultos(peluchesArray);
-const variedadesArrayFiltrados = filtraOcultos(variedadesArray);
+// ---- Buscador adaptado ----
+function filtrarProductos(texto, personajesArr, peluchesArr, variedadesArr) {
+    texto = texto.trim().toLowerCase();
+    // Une todos los productos para filtrar
+    const productosTotales = [
+        ...personajesArr,
+        ...peluchesArr,
+        ...variedadesArr
+    ];
+    const filtrados = productosTotales.filter(producto =>
+        producto.nombre.toLowerCase().includes(texto) ||
+        (producto.descripcionCorta && producto.descripcionCorta.toLowerCase().includes(texto)) ||
+        (producto.descripcion && producto.descripcion.toLowerCase().includes(texto))
+    );
+    renderProductos(
+        filtrados.filter(p => p.__seccion === "personajes"),
+        "grid-personajes"
+    );
+    renderProductos(
+        filtrados.filter(p => p.__seccion === "peluches"),
+        "grid-peluches"
+    );
+    renderProductos(
+        filtrados.filter(p => p.__seccion === "variedades"),
+        "grid-variedades"
+    );
+}
+
+// ---- Inicializar: MOSTRAR CATEGORÍA O TODO ----
+function getCategoriaURL() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get('cat');
+}
+
+// ---- CARGAR PRODUCTOS DE FIRESTORE + FIJOS ----
+document.addEventListener("DOMContentLoaded", function() {
+    // Copias de los arrays para combinar fijos y Firestore
+    let personajesArrayFull = filtraOcultos(personajesArray.slice());
+    let peluchesArrayFull = filtraOcultos(peluchesArray.slice());
+    let variedadesArrayFull = filtraOcultos(variedadesArray.slice());
+
+    // 1. Carga productos Firestore y agrégalos según categoría
+    if (typeof db !== "undefined") {
+        db.collection("productos").get().then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                const p = doc.data();
+                const adaptado = {
+                    ...p,
+                    __seccion: p.categoria,
+                    imagen: p.image,
+                    nombre: p.name,
+                    descripcion: p.detail || "",
+                    precio: p.precio || 0,
+                    id: doc.id
+                };
+                if (p.categoria === "personajes") personajesArrayFull.push(adaptado);
+                if (p.categoria === "peluches") peluchesArrayFull.push(adaptado);
+                if (p.categoria === "variedades") variedadesArrayFull.push(adaptado);
+            });
+
+            // Ahora sí, renderiza con todos los productos (fijos + Firestore)
+            inicializarVista(personajesArrayFull, peluchesArrayFull, variedadesArrayFull);
+
+            // Buscador global con todos los productos
+            if (formBusqueda && inputBusqueda) {
+                formBusqueda.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    filtrarProductos(inputBusqueda.value, personajesArrayFull, peluchesArrayFull, variedadesArrayFull);
+                });
+                inputBusqueda.addEventListener('input', function() {
+                    filtrarProductos(this.value, personajesArrayFull, peluchesArrayFull, variedadesArrayFull);
+                });
+            }
+        });
+    } else {
+        // Si no hay db (por algún error), muestra solo los fijos
+        inicializarVista(personajesArrayFull, peluchesArrayFull, variedadesArrayFull);
+        if (formBusqueda && inputBusqueda) {
+            formBusqueda.addEventListener('submit', function(e) {
+                e.preventDefault();
+                filtrarProductos(inputBusqueda.value, personajesArrayFull, peluchesArrayFull, variedadesArrayFull);
+            });
+            inputBusqueda.addEventListener('input', function() {
+                filtrarProductos(this.value, personajesArrayFull, peluchesArrayFull, variedadesArrayFull);
+            });
+        }
+    }
+});
