@@ -27,18 +27,19 @@ if (localStorage.getItem("isAdmin") !== "true") {
 }
 
 // Hacer logout disponible globalmente
-document.getElementById('logoutBtn').addEventListener('click', logout);
-
-function logout() {
-    signOut(auth)
-        .then(() => {
-            window.location.href = "login.html";
-        })
-        .catch((error) => {
-            alert("Error al cerrar sesión");
-            console.error(error);
-        });
-}
+document.addEventListener('DOMContentLoaded', () => {
+  const logoutBtn = document.getElementById('logoutBtn');
+  if (logoutBtn) {
+    logoutBtn.addEventListener('click', () => {
+      signOut(auth).then(() => {
+        window.location.href = "login.html";
+      }).catch((error) => {
+        alert("Error al cerrar sesión");
+        console.error(error);
+      });
+    });
+  }
+});
 // Productos - Agregar
 const addProductForm = document.getElementById("addProductForm");
 const productList = document.getElementById("productList");
