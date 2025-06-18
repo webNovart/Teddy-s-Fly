@@ -24,14 +24,21 @@ if (localStorage.getItem("isAdmin") !== "true") {
 }
 
 // Hacer logout disponible globalmente
+document.getElementById('logoutBtn').addEventListener('click', logout);
+
 function logout() {
-    firebase.auth().signOut().then(function() {
-        // Redirige a login o muestra mensaje
+    if (window.firebase && firebase.auth) {
+        firebase.auth().signOut()
+            .then(() => {
+                window.location.href = "login.html";
+            })
+            .catch((error) => {
+                alert("Error al cerrar sesión");
+                console.error(error);
+            });
+    } else {
         window.location.href = "login.html";
-    }).catch(function(error) {
-        alert("Error al cerrar sesión");
-        console.error(error);
-    });
+    }
 }
 // Productos - Agregar
 const addProductForm = document.getElementById("addProductForm");
