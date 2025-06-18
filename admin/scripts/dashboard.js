@@ -25,10 +25,14 @@ if (localStorage.getItem("isAdmin") !== "true") {
 
 // Hacer logout disponible globalmente
 function logout() {
-    localStorage.removeItem("isAdmin");
-    window.location.href = "login.html";
+    firebase.auth().signOut().then(function() {
+        // Redirige a login o muestra mensaje
+        window.location.href = "login.html";
+    }).catch(function(error) {
+        alert("Error al cerrar sesión");
+        console.error(error);
+    });
 }
-
 // Productos - Agregar
 const addProductForm = document.getElementById("addProductForm");
 const productList = document.getElementById("productList");
