@@ -3,6 +3,8 @@ console.log("DASHBOARD.JS cargado");
 // --- IMPORTS FIREBASE ---
 import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-firestore.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
+
 
 // Config y app compartidos con tu HTML
 const firebaseConfig = {
@@ -16,6 +18,7 @@ const firebaseConfig = {
 };
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const auth = getAuth(app);
 // --- FIN IMPORTS FIREBASE ---
 
 // Proteger el panel
@@ -27,18 +30,14 @@ if (localStorage.getItem("isAdmin") !== "true") {
 document.getElementById('logoutBtn').addEventListener('click', logout);
 
 function logout() {
-    if (window.firebase && firebase.auth) {
-        firebase.auth().signOut()
-            .then(() => {
-                window.location.href = "login.html";
-            })
-            .catch((error) => {
-                alert("Error al cerrar sesión");
-                console.error(error);
-            });
-    } else {
-        window.location.href = "login.html";
-    }
+    signOut(auth)
+        .then(() => {
+            window.location.href = "login.html";
+        })
+        .catch((error) => {
+            alert("Error al cerrar sesión");
+            console.error(error);
+        });
 }
 // Productos - Agregar
 const addProductForm = document.getElementById("addProductForm");
