@@ -96,6 +96,7 @@ addProductForm.onsubmit = function(e) {
     reader.onload = async function(event) {
         try {
             await addDoc(collection(db, "productos"), {
+                id: name,
                 name,
                 detail,
                 descripcion,
