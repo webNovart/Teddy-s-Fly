@@ -1534,6 +1534,7 @@ document.addEventListener("DOMContentLoaded", function() {
         db.collection("productos").get().then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
                 const p = doc.data();
+                // Usa el campo p.id (slug) si existe, si no, usa doc.id (compatibilidad productos viejos)
                 const adaptado = {
                     ...p,
                     __seccion: p.categoria,
@@ -1541,7 +1542,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     nombre: p.name,
                     descripcion: p.detail || "",
                     precio: p.precio || 0,
-                    id: doc.id
+                    id: p.id ? p.id : doc.id
                 };
                 if (p.categoria === "personajes") personajesArrayFull.push(adaptado);
                 if (p.categoria === "peluches") peluchesArrayFull.push(adaptado);
