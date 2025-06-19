@@ -1,10 +1,18 @@
 console.log("DASHBOARD.JS cargado");
 
+// --- Slugify para campo id único y amigable ---
+function slugify(text) {
+  return text
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, "-")
+    .replace(/[^a-z0-9\-]/g, "");
+}
+
 // --- IMPORTS FIREBASE ---
 import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-firestore.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
 import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
-
 
 // Config y app compartidos con tu HTML
 const firebaseConfig = {
@@ -40,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
 // Productos - Agregar
 const addProductForm = document.getElementById("addProductForm");
 const productList = document.getElementById("productList");
@@ -51,7 +60,7 @@ const peluches = typeof window.peluches !== "undefined" ? window.peluches : [];
 const variedades = typeof window.variedades !== "undefined" ? window.variedades : [];
 
 // Función para cargar productos desde Firestore
-async function getProductosFirestoare() {
+async function getProductosFirestore() {
     const productos = [];
     const querySnapshot = await getDocs(collection(db, "productos"));
     querySnapshot.forEach((docu) => {
@@ -91,20 +100,12 @@ addProductForm.onsubmit = function(e) {
         alert("Por favor selecciona una imagen para el producto.");
         return;
     }
-  // --- Slugify para campo id único y amigable ---
-function slugify(text) {
-  return text
-    .trim()
-    .toLowerCase()
-    .replace(/\s+/g, "-")
-    .replace(/[^a-z0-9\-]/g, "");
-}
 
     const reader = new FileReader();
     reader.onload = async function(event) {
         try {
             await addDoc(collection(db, "productos"), {
-                id: slugify (name),
+                id: slugify(name), // <-- ¡AQUÍ EL FIX!
                 name,
                 detail,
                 descripcion,
@@ -115,6 +116,7 @@ function slugify(text) {
             alert("Producto agregado correctamente y disponible para todos.");
             addProductForm.reset();
             renderProducts();
+            llenarSelectProductos();
         } catch (error) {
             alert("Error al agregar producto a Firestore: " + error.message);
         }
@@ -179,6 +181,7 @@ window.deleteProduct = async function(id, origen) {
             alert("Error borrando producto: " + e.message);
         }
         renderProducts();
+        llenarSelectProductos();
     } else if (origen === "fijo") {
         if (!productosOcultos.includes(id)) productosOcultos.push(id);
         localStorage.setItem("productosOcultos", JSON.stringify(productosOcultos));
@@ -285,12 +288,3 @@ window.deleteNews = async function(id) {
 };
 
 renderNews();
-// --- Slugify para campo id único y amigable ---
-function slugify(text) {
-  return text
-    .trim()
-    .toLowerCase()
-    .replace(/\s+/g, "-")
-    .replace(/[^a-z0-9\-]/g, "");
-}
-
