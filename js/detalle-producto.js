@@ -3896,12 +3896,8 @@ const variedades = [
   }
    ];
     // ...agrega más productos aquí
-// 1. Unificación de productos de todas las fuentes (incluye admin/localStorage)
-
+// Unificación de productos de todas las fuentes (incluye admin/LocalStorage)
 const productosAdmin = JSON.parse(localStorage.getItem("products")) || [];
-const productosAdminAdaptados = productosAdmin.map(...);
-
-// Adaptar productosAdmin a la estructura general
 const productosAdminAdaptados = productosAdmin.map((p, idx) => ({
     ...p,
     nombre: p.name || "",
@@ -3910,23 +3906,23 @@ const productosAdminAdaptados = productosAdmin.map((p, idx) => ({
     precio: p.precio || 0,
     id: p.id || "admin-" + idx,
     categoria: p.categoria || "peluches",
-   origen: "admin"
+    origen: "admin"
 }));
-// 2. Unificación y asignación de categoría automáticamente:
 
+// Asume que tienes definidos los arrays: personajes, peluches, variedades
 const productos = [
   ...personajes.map(p => ({ ...p, categoria: "personajes" })),
   ...peluches.map(p => ({ ...p, categoria: "peluches" })),
   ...variedades.map(p => ({ ...p, categoria: "variedades" })),
-   ...productosAdminAdaptados  // <-- No lo olvides
+  ...productosAdminAdaptados // <-- No lo olvides
 ];
 
-// 3. Ahora puedes filtrar por categoría en cualquier sección:
+// Ahora puedes filtrar por categoría en cualquier sección:
 const soloPeluches = productos.filter(p => p.categoria === "peluches");
 const soloPersonajes = productos.filter(p => p.categoria === "personajes");
 const soloVariedades = productos.filter(p => p.categoria === "variedades");
 
-// 4. Ejemplo de renderizado (simplificado):
+// Ejemplo de renderizado (simplificado):
 function renderProductos(array, contenedorId) {
   const contenedor = document.getElementById(contenedorId);
   contenedor.innerHTML = array.map(p => `
@@ -3938,6 +3934,7 @@ function renderProductos(array, contenedorId) {
     </div>
   `).join('');
 }
+
 // Función para obtener el parámetro id de la URL
 function getParameterByName(name) {
     const url = window.location.search;
@@ -3945,21 +3942,37 @@ function getParameterByName(name) {
     return params.get(name);
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    const id = getParameterByName("id");
-    const producto = productos.find(p => p.id === id);
+function mostrarError() {
+    document.title = "Producto no encontrado | Teddy's Fly";
+    document.body.innerHTML = `
+      <main>
+        <h2>Producto no encontrado</h2>
+        <p>El producto solicitado no existe o no se especificó un ID válido.</p>
+        <a href="tienda.html">Volver a la tienda</a>
+      </main>`;
+}
 
-    // Manejo de error: producto no encontrado o sin id
-    if (!id || !producto) {
-        document.title = "Producto no encontrado | Teddy's Fly";
-        document.body.innerHTML = `
-          <main>
-            <h2>Producto no encontrado</h2>
-            <p>El producto solicitado no existe o no se especificó un ID válido.</p>
-            <a href="tienda.html">Volver a la tienda</a>
-          </main>`;
-        return;
+// MOSTRAR DETALLE: Busca primero en arrays/LS, si no, en Firestore
+async function mostrarDetalleProducto() {
+    const id = getParameterByName("id");
+    if (!id) return mostrarError();
+
+    // 1. Buscar en arrays/LocalStorage/unificados
+    let producto = productos.find(p => p.id === id);
+
+    // 2. Si NO está en arrays, busca en Firestore (requiere que ya esté inicializado firebase y db en el HTML)
+    if (!producto && typeof db !== "undefined") {
+        try {
+            const doc = await db.collection("productos").doc(id).get();
+            if (doc.exists) {
+                producto = doc.data();
+                producto.id = doc.id;
+            }
+        } catch (e) {
+            return mostrarError();
+        }
     }
+    if (!producto) return mostrarError();
 
     // Mostrar información del producto
     document.title = `${producto.nombre} | Teddy's Fly`;
@@ -3973,8 +3986,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Miniaturas (si tienes array de imágenes, acá lo puedes expandir)
     if (document.getElementById("miniaturas")) {
-        document.getElementById("miniaturas").innerHTML = ""; // Limpia
-        // Si quieres agregar miniaturas, aquí puedes hacerlo (por ahora solo la imagen principal)
+        document.getElementById("miniaturas").innerHTML = "";
         const mini = document.createElement("img");
         mini.src = producto.imagen;
         mini.alt = producto.nombre;
@@ -3989,7 +4001,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Botón agregar al carrito
     const btnAgregar = document.getElementById("btn-agregar-carrito");
     if (btnAgregar) {
-        btnAgregar.addEventListener("click", function() {
+        btnAgregar.onclick = function() {
             let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
             const item = carrito.find(p => p.id === producto.id);
             if (item) {
@@ -4004,10 +4016,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 });
             }
             localStorage.setItem("carrito", JSON.stringify(carrito));
-            // Actualiza el contador visual si existe
             const cartCount = document.querySelector('.cart-count');
             if (cartCount) cartCount.textContent = carrito.length;
             alert('Producto añadido al carrito');
-        });
+        };
     }
-});
+}
+
+document.addEventListener("DOMContentLoaded", mostrarDetalleProducto);
