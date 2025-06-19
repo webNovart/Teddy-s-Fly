@@ -3899,6 +3899,7 @@ const variedades = [
 // 1. Unificación de productos de todas las fuentes (incluye admin/localStorage)
 
 const productosAdmin = JSON.parse(localStorage.getItem("products")) || [];
+const productosAdminAdaptados = productosAdmin.map(...);
 
 // Adaptar productosAdmin a la estructura general
 const productosAdminAdaptados = productosAdmin.map((p, idx) => ({
