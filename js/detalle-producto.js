@@ -3963,10 +3963,10 @@ async function mostrarDetalleProducto() {
     // 2. Si NO está en arrays, busca en Firestore (requiere que ya esté inicializado firebase y db en el HTML)
     if (!producto && typeof db !== "undefined") {
         try {
-            const doc = await db.collection("productos").doc(id).get();
-            if (doc.exists) {
-                producto = doc.data();
-                producto.id = doc.id;
+            const snap = await db.collection("productos").where("id", "==", id).get();
+            if (!snap.empty) {
+                producto = snap.docs[0].data();
+                producto.id = snap.docs[0].id;
             }
         } catch (e) {
             return mostrarError();
