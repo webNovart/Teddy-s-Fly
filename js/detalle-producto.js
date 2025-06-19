@@ -3896,46 +3896,6 @@ const variedades = [
   }
    ];
     // ...agrega más productos aquí
-// Unificación de productos de todas las fuentes (incluye admin/LocalStorage)
-const productosAdmin = JSON.parse(localStorage.getItem("products")) || [];
-const productosAdminAdaptados = productosAdmin.map((p, idx) => ({
-    ...p,
-    nombre: p.name || "",
-    imagen: p.image || "",
-    descripcion: p.descripcion || p.detail || "",
-    precio: p.precio || 0,
-    id: p.id || "admin-" + idx,
-    categoria: p.categoria || "peluches",
-    origen: "admin"
-}));
-
-// Asume que tienes definidos los arrays: personajes, peluches, variedades
-const productos = [
-  ...personajes.map(p => ({ ...p, categoria: "personajes" })),
-  ...peluches.map(p => ({ ...p, categoria: "peluches" })),
-  ...variedades.map(p => ({ ...p, categoria: "variedades" })),
-  ...productosAdminAdaptados // <-- No lo olvides
-];
-
-// Ahora puedes filtrar por categoría en cualquier sección:
-const soloPeluches = productos.filter(p => p.categoria === "peluches");
-const soloPersonajes = productos.filter(p => p.categoria === "personajes");
-const soloVariedades = productos.filter(p => p.categoria === "variedades");
-
-// Ejemplo de renderizado (simplificado):
-function renderProductos(array, contenedorId) {
-  const contenedor = document.getElementById(contenedorId);
-  contenedor.innerHTML = array.map(p => `
-    <div class="producto">
-      <img src="${p.imagen}" alt="${p.nombre}">
-      <h3>${p.nombre}</h3>
-      <p>${p.descripcion}</p>
-     <span>$${p.precio.toLocaleString('es-CO')}</span>
-    </div>
-  `).join('');
-}
-
-// Función para obtener el parámetro id de la URL
 function getParameterByName(name) {
     const url = window.location.search;
     const params = new URLSearchParams(url);
@@ -3957,10 +3917,12 @@ async function mostrarDetalleProducto() {
     const id = getParameterByName("id");
     if (!id) return mostrarError();
 
-    // 1. Buscar en arrays/LocalStorage/unificados
-    let producto = productos.find(p => p.id === id);
+    // 1. Buscar en arrays/LocalStorage/unificados (si existen)
+    let producto = typeof productos !== "undefined" && Array.isArray(productos)
+        ? productos.find(p => p.id === id)
+        : undefined;
 
-    // 2. Si NO está en arrays, busca en Firestore (requiere que ya esté inicializado firebase y db en el HTML)
+    // 2. Si NO está en arrays, busca en Firestore por "id"
     if (!producto && typeof db !== "undefined") {
         try {
             const snap = await db.collection("productos").where("id", "==", id).get();
@@ -3969,39 +3931,51 @@ async function mostrarDetalleProducto() {
                 producto.id = snap.docs[0].id;
             }
         } catch (e) {
+            console.error("Error buscando por id en Firestore", e);
             return mostrarError();
         }
     }
-    // 2. Si tampoco, busca por name
+    // 3. Si tampoco, busca por "name"
     if (!producto && typeof db !== "undefined") {
-        const snap = await db.collection("productos").where("name", "==", id).get();
-        if (!snap.empty) {
-            producto = snap.docs[0].data();
-            producto.id = snap.docs[0].id;
+        try {
+            const snap = await db.collection("productos").where("name", "==", id).get();
+            if (!snap.empty) {
+                producto = snap.docs[0].data();
+                producto.id = snap.docs[0].id;
+            }
+        } catch (e) {
+            console.error("Error buscando por name en Firestore", e);
+            return mostrarError();
         }
     }
     if (!producto) return mostrarError();
 
+    // Compatibilidad de campos
+    const nombre = producto.nombre || producto.name || "(Sin nombre)";
+    const imagen = producto.imagen || producto.image || "";
+    const descripcion = producto.descripcion || producto.detail || "";
+    const precio = producto.precio || 0;
+
     // Mostrar información del producto
-    document.title = `${producto.nombre} | Teddy's Fly`;
-    if (document.getElementById("nombre-producto")) document.getElementById("nombre-producto").textContent = producto.nombre;
+    document.title = `${nombre} | Teddy's Fly`;
+    if (document.getElementById("nombre-producto")) document.getElementById("nombre-producto").textContent = nombre;
     if (document.getElementById("img-principal")) {
-        document.getElementById("img-principal").src = producto.imagen;
-        document.getElementById("img-principal").alt = producto.nombre;
+        document.getElementById("img-principal").src = imagen;
+        document.getElementById("img-principal").alt = nombre;
     }
-    if (document.getElementById("descripcion-producto")) document.getElementById("descripcion-producto").innerHTML = producto.descripcion;
-    if (document.getElementById("precio-producto")) document.getElementById("precio-producto").textContent = "$" + producto.precio.toLocaleString();
+    if (document.getElementById("descripcion-producto")) document.getElementById("descripcion-producto").innerHTML = descripcion;
+    if (document.getElementById("precio-producto")) document.getElementById("precio-producto").textContent = "$" + precio.toLocaleString();
 
     // Miniaturas (si tienes array de imágenes, acá lo puedes expandir)
     if (document.getElementById("miniaturas")) {
         document.getElementById("miniaturas").innerHTML = "";
         const mini = document.createElement("img");
-        mini.src = producto.imagen;
-        mini.alt = producto.nombre;
+        mini.src = imagen;
+        mini.alt = nombre;
         mini.width = 60;
         mini.style.margin = "4px";
         mini.onclick = () => {
-            document.getElementById("img-principal").src = producto.imagen;
+            document.getElementById("img-principal").src = imagen;
         };
         document.getElementById("miniaturas").appendChild(mini);
     }
@@ -4017,9 +3991,9 @@ async function mostrarDetalleProducto() {
             } else {
                 carrito.push({
                     id: producto.id,
-                    nombre: producto.nombre,
-                    precio: producto.precio,
-                    imagen: producto.imagen,
+                    nombre: nombre,
+                    precio: precio,
+                    imagen: imagen,
                     cantidad: 1
                 });
             }
