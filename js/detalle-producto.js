@@ -3972,6 +3972,14 @@ async function mostrarDetalleProducto() {
             return mostrarError();
         }
     }
+    // 2. Si tampoco, busca por name
+    if (!producto && typeof db !== "undefined") {
+        const snap = await db.collection("productos").where("name", "==", id).get();
+        if (!snap.empty) {
+            producto = snap.docs[0].data();
+            producto.id = snap.docs[0].id;
+        }
+    }
     if (!producto) return mostrarError();
 
     // Mostrar información del producto
