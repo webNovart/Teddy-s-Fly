@@ -51,7 +51,7 @@ const peluches = typeof window.peluches !== "undefined" ? window.peluches : [];
 const variedades = typeof window.variedades !== "undefined" ? window.variedades : [];
 
 // Función para cargar productos desde Firestore
-async function getProductosFirestore() {
+async function getProductosFirestoare() {
     const productos = [];
     const querySnapshot = await getDocs(collection(db, "productos"));
     querySnapshot.forEach((docu) => {
@@ -91,12 +91,20 @@ addProductForm.onsubmit = function(e) {
         alert("Por favor selecciona una imagen para el producto.");
         return;
     }
+  // --- Slugify para campo id único y amigable ---
+function slugify(text) {
+  return text
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, "-")
+    .replace(/[^a-z0-9\-]/g, "");
+}
 
     const reader = new FileReader();
     reader.onload = async function(event) {
         try {
             await addDoc(collection(db, "productos"), {
-                id: name,
+                id: slugify (name),
                 name,
                 detail,
                 descripcion,
@@ -277,3 +285,12 @@ window.deleteNews = async function(id) {
 };
 
 renderNews();
+// --- Slugify para campo id único y amigable ---
+function slugify(text) {
+  return text
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, "-")
+    .replace(/[^a-z0-9\-]/g, "");
+}
+
