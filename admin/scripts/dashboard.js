@@ -127,12 +127,20 @@ addProductForm.onsubmit = function(e) {
     reader.readAsDataURL(imgInput.files[0]);
 };
 
-// Renderizar productos
+// Guarda los IDs de los productos ocultos SOLO del panel admin en sessionStorage (no en localStorage)
+function getPanelHiddenIds() {
+    return JSON.parse(sessionStorage.getItem("panelHiddenProducts") || "[]");
+}
+function setPanelHiddenIds(ids) {
+    sessionStorage.setItem("panelHiddenProducts", JSON.stringify(ids));
+}
+
 async function renderProductsAdmin() {
-    let productosOcultos = JSON.parse(localStorage.getItem("productosOcultos")) || [];
+    // Tu función para traer productos, ajusta según tu app
     const productosFirestore = await getProductosFirestore();
-  
-  const personajes = window.personajes || [];
+
+    // Variables globales o vacías
+    const personajes = window.personajes || [];
     const peluches = window.peluches || [];
     const variedades = window.variedades || [];
 
@@ -140,80 +148,80 @@ async function renderProductsAdmin() {
         ...p,
         nombre: p.name || "",
         imagen: p.image || "",
-        descripcion: p.detail || "",
+        descripcion: p.detail || p.descripcion || "",
         precio: p.precio || 0,
         id: p.id,
         categoria: p.categoria || "peluches",
         origen: "firestore"
     }));
 
+    // Unifica
     const productosTotales = [
         ...personajes.map(p => ({ ...p, categoria: "personajes", origen: "fijo" })),
         ...peluches.map(p => ({ ...p, categoria: "peluches", origen: "fijo" })),
         ...variedades.map(p => ({ ...p, categoria: "variedades", origen: "fijo" })),
-      ...productosFirestoreAdaptados
+        ...productosFirestoreAdaptados
     ];
 
-  // DECLARA productosVisibles ANTES DE USARLA
-    const productosVisibles = productosTotales.filter(p => !productosOcultos.includes(p.id));
-    const productosOcultosArr = productosTotales.filter(p => productosOcultos.includes(p.id));
-  
+    // Ocultos solo en el panel admin (sessionStorage)
+    const ocultosPanel = getPanelHiddenIds();
+    const productosVisibles = productosTotales.filter(p => !ocultosPanel.includes(p.id));
+
     const productList = document.getElementById("productList");
     if (!productList) return;
-  
-    if (productosVisibles.length === 0 && productosOcultosArr.length === 0) {
+
+    if (productosTotales.length === 0) {
         productList.innerHTML = "<p>No hay productos agregados.</p>";
         return;
     }
-   
-   
 
     let html = "";
-
-    // Renderiza productos visibles con botón "Ocultar"
-    html += productosVisibles.map((p) => {
-        return `
+    html += productosVisibles.map((p) => `
         <div class="admin-item">
             <img src="${p.imagen || 'https://via.placeholder.com/68'}" alt="Producto" width="100"><br>
             <strong>${p.nombre}</strong><br>
             <span>Categoría: ${p.categoria}</span><br>
             <span>Precio: $${p.precio.toLocaleString('es-CO')}</span><br>
             ${p.descripcion}<br>
-            <button class="btn-ocultar" data-id="${p.id}">Ocultar</button>
-            ${
-              p.origen === "firestore"
+            <button class="btn-panel-ocultar" data-id="${p.id}">Ocultar</button>
+            ${p.origen === "firestore"
                 ? `<button onclick="deleteProduct('${p.id}', '${p.origen}')" style="background:var(--color-corazon);color:#f20202;padding:0.2em 1em;border-radius:10px;border:none;cursor:pointer;margin-top:8px;">Eliminar</button>`
-                : ""
-            }
+                : ""}
         </div>
-        `;
-    }).join("");
+    `).join("");
 
-    // Renderiza productos ocultos con botón "Desocultar"
-    if(productosOcultosArr.length > 0){
-        html += `<h3>Productos ocultos</h3>`;
-        html += productosOcultosArr.map((p) => {
-            return `
-            <div class="admin-item" style="opacity:0.6;">
-                <img src="${p.imagen || 'https://via.placeholder.com/68'}" alt="Producto" width="100"><br>
-                <strong>${p.nombre}</strong><br>
-                <span>Categoría: ${p.categoria}</span><br>
-                <span>Precio: $${p.precio.toLocaleString('es-CO')}</span><br>
-                ${p.descripcion}<br>
-                <button class="btn-desocultar" data-id="${p.id}">Desocultar</button>
-                ${
-                  p.origen === "firestore"
-                    ? `<button onclick="deleteProduct('${p.id}', '${p.origen}')" style="background:var(--color-corazon);color:#f20202;padding:0.2em 1em;border-radius:10px;border:none;cursor:pointer;margin-top:8px;">Eliminar</button>`
-                    : ""
-                }
-            </div>
-            `;
-        }).join("");
+    // Botón para mostrar todos los productos ocultos nuevamente
+    if (ocultosPanel.length > 0) {
+        html += `<div style="margin:1em 0"><button id="btn-mostrar-todos-panel">Mostrar todos los productos</button></div>`;
     }
 
     productList.innerHTML = html;
 }
 
+// Delegación para ocultar productos solo del panel admin
+document.addEventListener("click", function(e) {
+    const btnOcultar = e.target.closest(".btn-panel-ocultar");
+    if (btnOcultar) {
+        const id = btnOcultar.getAttribute("data-id");
+        let ocultosPanel = getPanelHiddenIds();
+        if (!ocultosPanel.includes(id)) {
+            ocultosPanel.push(id);
+            setPanelHiddenIds(ocultosPanel);
+            renderProductsAdmin();
+        }
+        return;
+    }
+    // Botón mostrar todos
+    if (e.target.id === "btn-mostrar-todos-panel") {
+        setPanelHiddenIds([]); // Resetea ocultos
+        renderProductsAdmin();
+    }
+});
+
+// Renderiza al cargar
+document.addEventListener("DOMContentLoaded", function() {
+    renderProductsAdmin();
+});
 // Delegación para botones ocultar/desocultar
 document.addEventListener("click", function(e) {
     const btnOcultar = e.target.closest(".btn-ocultar");
