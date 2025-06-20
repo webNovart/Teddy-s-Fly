@@ -205,9 +205,9 @@ document.addEventListener("click", function(e) {
     }
 });
 
-
+document.addEventListener("DOMContentLoaded", function() {
     renderProductsAdmin();
-
+});
 
 // Eliminar producto (solo de Firestore)
 window.deleteProduct = async function(id, origen) {
