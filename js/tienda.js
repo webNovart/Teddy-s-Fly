@@ -1391,6 +1391,10 @@ function renderProductos(lista, gridId) {
         </div>
         `;
     });
+  const seccion = grid.closest('.seccion-productos');
+    if (seccion) {
+        seccion.style.display = productosValidos.length > 0 ? "" : "none";
+    }
 }
 
 // ---- Carrito ----
