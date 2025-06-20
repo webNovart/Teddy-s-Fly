@@ -135,6 +135,14 @@ function setPanelHiddenIds(ids) {
     sessionStorage.setItem("panelHiddenProducts", JSON.stringify(ids));
 }
 
+// Estado para mostrar/ocultar la sección de ocultos
+function getMostrarOcultosPanel() {
+    return sessionStorage.getItem("mostrarOcultosPanel") === "true";
+}
+function setMostrarOcultosPanel(value) {
+    sessionStorage.setItem("mostrarOcultosPanel", value ? "true" : "false");
+}
+
 async function renderProductsAdmin() {
     // Trae productos
     const productosFirestore = await getProductosFirestore();
@@ -165,6 +173,7 @@ async function renderProductsAdmin() {
     const ocultosPanel = getPanelHiddenIds();
     const productosVisibles = productosTotales.filter(p => !ocultosPanel.includes(p.id));
     const productosOcultos = productosTotales.filter(p => ocultosPanel.includes(p.id));
+    const mostrarOcultos = getMostrarOcultosPanel();
 
     const productList = document.getElementById("productList");
     if (!productList) return;
@@ -184,31 +193,40 @@ async function renderProductsAdmin() {
     html += productosVisibles.map((p) => `
         <div class="admin-item">
             <img src="${p.imagen || 'https://via.placeholder.com/68'}" alt="Producto" width="100"><br>
-            <strong>${p.nombre}</strong><br>
-            <span>Categoría: ${p.categoria}</span><br>
-            <span>Precio: $${p.precio.toLocaleString('es-CO')}</span><br>
-            ${p.descripcion}<br>
-            <button class="btn-panel-ocultar" data-id="${p.id}">Ocultar</button>
-            ${p.origen === "firestore"
-                ? `<button onclick="deleteProduct('${p.id}', '${p.origen}')" style="background:var(--color-corazon);color:#f20202;padding:0.2em 1em;border-radius:10px;border:none;cursor:pointer;margin-top:8px;">Eliminar</button>`
-                : ""}
-        </div>
-    `).join("");
-
-    // Lista de productos ocultos con botón para desocultar
-    if (productosOcultos.length > 0) {
-        html += `<h3 style="margin-top:2em;">Productos ocultos en el panel</h3>`;
-        html += productosOcultos.map((p) => `
-            <div class="admin-item" style="opacity:0.6;">
-                <img src="${p.imagen || 'https://via.placeholder.com/68'}" alt="Producto" width="100"><br>
-                <strong>${p.nombre}</strong><br>
+            <div class="admin-item-details">
+                <strong class="admin-item-title">${p.nombre}</strong><br>
                 <span>Categoría: ${p.categoria}</span><br>
                 <span>Precio: $${p.precio.toLocaleString('es-CO')}</span><br>
-                ${p.descripcion}<br>
-                <button class="btn-panel-desocultar" data-id="${p.id}">Quitar de ocultos</button>
+                <div class="admin-item-detail">${p.descripcion}</div>
+                <button class="btn-panel-ocultar" data-id="${p.id}">Ocultar</button>
                 ${p.origen === "firestore"
                     ? `<button onclick="deleteProduct('${p.id}', '${p.origen}')" style="background:var(--color-corazon);color:#f20202;padding:0.2em 1em;border-radius:10px;border:none;cursor:pointer;margin-top:8px;">Eliminar</button>`
                     : ""}
+            </div>
+        </div>
+    `).join("");
+
+    // Botón para desplegar/ocultar la lista de productos ocultos
+    if (productosOcultos.length > 0) {
+        html += `<button id="btn-toggle-ocultos">${mostrarOcultos ? "Ocultar" : "Mostrar"} productos ocultos (${productosOcultos.length})</button>`;
+    }
+
+    // Lista de productos ocultos con botón para desocultar - solo si mostrarOcultosPanel está true
+    if (productosOcultos.length > 0 && mostrarOcultos) {
+        html += `<h3 style="margin-top:2em;">Productos ocultos en el panel</h3>`;
+        html += productosOcultos.map((p) => `
+            <div class="admin-item oculto-panel">
+                <img src="${p.imagen || 'https://via.placeholder.com/68'}" alt="Producto" width="100"><br>
+                <div class="admin-item-details">
+                    <strong class="admin-item-title">${p.nombre}</strong><br>
+                    <span>Categoría: ${p.categoria}</span><br>
+                    <span>Precio: $${p.precio.toLocaleString('es-CO')}</span><br>
+                    <div class="admin-item-detail">${p.descripcion}</div>
+                    <button class="btn-panel-desocultar" data-id="${p.id}">Quitar de ocultos</button>
+                    ${p.origen === "firestore"
+                        ? `<button onclick="deleteProduct('${p.id}', '${p.origen}')" style="background:var(--color-corazon);color:#f20202;padding:0.2em 1em;border-radius:10px;border:none;cursor:pointer;margin-top:8px;">Eliminar</button>`
+                        : ""}
+                </div>
             </div>
         `).join("");
         // Botón para mostrar todos los productos ocultos nuevamente
@@ -275,11 +293,20 @@ document.addEventListener("click", function(e) {
         renderProductsAdmin();
         return;
     }
+    // Botón para desplegar/ocultar la lista de productos ocultos
+    if (e.target.id === "btn-toggle-ocultos") {
+        const mostrar = !getMostrarOcultosPanel();
+        setMostrarOcultosPanel(mostrar);
+        renderProductsAdmin();
+        return;
+    }
 });
 
 // Renderiza al cargar y cachea productosFirestore (para ocultar todos)
 document.addEventListener("DOMContentLoaded", async function() {
     window.__cachedProductosFirestore = await getProductosFirestore();
+    // Estado inicial: no mostrar ocultos
+    if (sessionStorage.getItem("mostrarOcultosPanel") === null) setMostrarOcultosPanel(false);
     renderProductsAdmin();
 });
 
