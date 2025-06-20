@@ -154,26 +154,30 @@ async function renderProductsAdmin() {
       ...productosFirestoreAdaptados
     ];
 
-   // ¡Aquí está el filtro!
-    const productosVisibles = productosTotales.filter(p => !productosOcultos.includes(p.id));
-    
-  const productList = document.getElementById("productList");
+    const productList = document.getElementById("productList");
+    if (!productList) return;
+  
     if (productosVisibles.length === 0) {
         productList.innerHTML = "<p>No hay productos agregados.</p>";
         return;
     }
-    productList.innerHTML = productosVisibles.map((p) => {
-        
+   
+    // Panel admin: sólo muestra los que NO están ocultos, pero ofrece un botón para mostrar los ocultos
+    const productosVisibles = productosTotales.filter(p => !productosOcultos.includes(p.id));
+    const productosOcultosArr = productosTotales.filter(p => productosOcultos.includes(p.id));
+
+    let html = "";
+
+    // Renderiza productos visibles con botón "Ocultar"
+    html += productosVisibles.map((p) => {
         return `
         <div class="admin-item">
-            <img src="${p.imagen}" alt="Producto" width="100"><br>
+            <img src="${p.imagen || 'https://via.placeholder.com/68'}" alt="Producto" width="100"><br>
             <strong>${p.nombre}</strong><br>
             <span>Categoría: ${p.categoria}</span><br>
             <span>Precio: $${p.precio.toLocaleString('es-CO')}</span><br>
             ${p.descripcion}<br>
-            
-               <button class="btn-ocultar" data-id="${p.id}">Ocultar</button>
-            
+            <button class="btn-ocultar" data-id="${p.id}">Ocultar</button>
             ${
               p.origen === "firestore"
                 ? `<button onclick="deleteProduct('${p.id}', '${p.origen}')" style="background:var(--color-corazon);color:#f20202;padding:0.2em 1em;border-radius:10px;border:none;cursor:pointer;margin-top:8px;">Eliminar</button>`
@@ -182,11 +186,34 @@ async function renderProductsAdmin() {
         </div>
         `;
     }).join("");
+
+    // Renderiza productos ocultos con botón "Desocultar"
+    if(productosOcultosArr.length > 0){
+        html += `<h3>Productos ocultos</h3>`;
+        html += productosOcultosArr.map((p) => {
+            return `
+            <div class="admin-item" style="opacity:0.6;">
+                <img src="${p.imagen || 'https://via.placeholder.com/68'}" alt="Producto" width="100"><br>
+                <strong>${p.nombre}</strong><br>
+                <span>Categoría: ${p.categoria}</span><br>
+                <span>Precio: $${p.precio.toLocaleString('es-CO')}</span><br>
+                ${p.descripcion}<br>
+                <button class="btn-desocultar" data-id="${p.id}">Desocultar</button>
+                ${
+                  p.origen === "firestore"
+                    ? `<button onclick="deleteProduct('${p.id}', '${p.origen}')" style="background:var(--color-corazon);color:#f20202;padding:0.2em 1em;border-radius:10px;border:none;cursor:pointer;margin-top:8px;">Eliminar</button>`
+                    : ""
+                }
+            </div>
+            `;
+        }).join("");
+    }
+
+    productList.innerHTML = html;
 }
 
-// Evento para ocultar/desocultar producto (delegación)
+// Delegación para botones ocultar/desocultar
 document.addEventListener("click", function(e) {
-    // Ocultar
     const btnOcultar = e.target.closest(".btn-ocultar");
     if (btnOcultar) {
         const id = btnOcultar.getAttribute("data-id");
@@ -198,7 +225,6 @@ document.addEventListener("click", function(e) {
         }
         return;
     }
-    // Desocultar
     const btnDesocultar = e.target.closest(".btn-desocultar");
     if (btnDesocultar) {
         const id = btnDesocultar.getAttribute("data-id");
@@ -209,6 +235,7 @@ document.addEventListener("click", function(e) {
     }
 });
 
+// Llama a la función al cargar
 document.addEventListener("DOMContentLoaded", function() {
     renderProductsAdmin();
 });
