@@ -1365,11 +1365,15 @@ const variedades = [
 function renderProductos(lista, gridId) {
     const grid = document.getElementById(gridId);
     grid.innerHTML = "";
-    if (!lista.length) {
+    // Filtra productos válidos: deben tener nombre, imagen y precio
+    const productosValidos = lista.filter(
+        p => p && p.nombre && p.imagen && typeof p.precio !== "undefined"
+    );
+    if (!productosValidos.length) {
         grid.innerHTML = "<p>No se encontraron productos.</p>";
         return;
     }
-    lista.forEach(producto => {
+    productosValidos.forEach(producto => {
         grid.innerHTML += `
         <div class="producto-card">
             <img src="${producto.imagen}" alt="${producto.nombre}">
