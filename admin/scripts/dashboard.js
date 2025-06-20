@@ -172,11 +172,11 @@ renderProducts();
 // Eliminar producto (solo de Firestore)
 window.deleteProduct = async function(id, origen) {
     productosOcultos = JSON.parse(localStorage.getItem("productosOcultos")) || [];
-    if (!confirm("¿Seguro que quieres eliminar este producto?")) return;
+    // if (!confirm("¿Seguro que quieres eliminar este producto?")) return;
     if (origen === "firestore") {
         try {
             await deleteDoc(doc(db, "productos", id));
-            alert("Producto eliminado de Firestore");
+            // alert("Producto eliminado de Firestore");
         } catch (e) {
             alert("Error borrando producto: " + e.message);
         }
