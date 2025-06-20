@@ -47,11 +47,12 @@
       </div>
     </div>
   </main>
-  <!-- Firebase App (siempre primero) -->
-  <script src="https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/11.9.1/firebase-firestore.js"></script>
+  <!-- Firebase App (core SDK) -->
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+<!-- Firebase Firestore -->
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
 
-  <script>
+<script>
     // Tu config debe ser igual a la del dashboard
     const firebaseConfig = {
       apiKey: "AIzaSyBEjldlAXo7-jJqSCHO4SH6mo3w4eoleNA",
@@ -62,10 +63,9 @@
       appId: "1:951813933755:web:9948887bd7abea96b0779e",
       measurementId: "G-2K2ZHVVYMY"
     };
-    // Inicializa Firebase solo si no está ya inicializado
-    if (!firebase.apps?.length) {
+   
       firebase.initializeApp(firebaseConfig);
-    }
+   
     var db = firebase.firestore();
   </script>
   <script src="js/detalle-producto.js"></script>
