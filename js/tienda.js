@@ -1,276 +1,276 @@
-// }
-// {
-//   id: "233pm-15.4-minions-guitarra",
-//   nombre: "Minions guitarra 25 cm",
-//   precio: 26000,
-//   imagen: "imagenes/personajes/minions-guitarra.jpg",
-//   descripcionCorta: "Peluche Minion guitarra de 25 cm. Un personaje en versión musical y divertida.",
-//   categoria: "personajes"
-// },
-// {
-//   id: "233pm-15.4-minions-oso",
-//   nombre: "Minions guitarra OSO 25 cm",
-//   precio: 26000,
-//   imagen: "imagenes/personajes/minions-oso.jpg",
-//   descripcionCorta: "Peluche Minion guitarra con oso de 25 cm. Un diseño tierno y original.",
-//   categoria: "personajes"
-// },
-// {
-//   id: "Cj-1455-15.6-carl",
-//   nombre: "Viejitos ancheta Carl 20 cm",
-//   precio: 26500,
-//   imagen: "imagenes/personajes/viejitos-carl.jpg",
-//   descripcionCorta: "Peluche Viejitos ancheta Carl de 20 cm, inspirado en personajes entrañables.",
-//   categoria: "personajes"
-// },
-// {
-//   id: "Mt03-3-15.9-unicornio-rosa",
-//   nombre: "Unicornio Corazon 25cm ROSA",
-//   precio: 27000,
-//   imagen: "imagenes/personajes/unicornio-corazon-rosa.jpg",
-//   descripcionCorta: "Peluche unicornio con corazón, color rosa, de 25cm. Un regalo mágico.",
-//   categoria: "personajes"
-// },
-// {
-//   id: "Mt03-3-15.9-unicornio-blanco",
-//   nombre: "Unicornio Corazon 25cm BLANCO",
-//   precio: 27000,
-//   imagen: "imagenes/personajes/unicornio-corazon-blanco.jpg",
-//   descripcionCorta: "Peluche unicornio con corazón, color blanco, de 25cm. Perfecto para regalar.",
-//   categoria: "personajes"
-// },
-// {
-//   id: "JE-18-16.2-garfieldbebe",
-//   nombre: "Garfield Bebe 20cm",
-//   precio: 27500,
-//   imagen: "imagenes/personajes/garfield-bebe.jpg",
-//   descripcionCorta: "Peluche Garfield bebé de 20 cm, ideal para fans del gato más famoso.",
-//   categoria: "personajes"
-// },
-// {
-//   id: "22-57-17.9-cojin-mario",
-//   nombre: "Cojin cara de MARIO 30x30 cm",
-//   precio: 30000,
-//   imagen: "imagenes/personajes/cojin-mario.jpg",
-//   descripcionCorta: "Cojín de peluche con la cara de Mario Bros, tamaño 30x30 cm. Ideal para gamers.",
-//   categoria: "personajes"
-// },
-// {
-//   id: "Sur05-30-18.9-buzz",
-//   nombre: "Peluche elástico mediano 30cm BUZZ",
-//   precio: 32000,
-//   imagen: "imagenes/personajes/buzz.jpg",
-//   descripcionCorta: "Peluche elástico de Buzz Lightyear, tamaño mediano de 30cm. ¡Hasta el infinito y más allá!",
-//   categoria: "personajes"
-// },
-// {
-//   id: "Sur05-30-18.9-marciano",
-//   nombre: "Peluche elástico mediano 30cm MARCIANO",
-//   precio: 32000,
-//   imagen: "imagenes/personajes/marciano.jpg",
-//   descripcionCorta: "Peluche elástico de Marciano, tamaño mediano de 30cm, divertido y suave. Inspirado en Toy Story.",
-//   categoria: "personajes"
-// },
-// {
-//   id: "JE-03-20.2-circo-conejo",
-//   nombre: "Circo Digital 28cm CONEJO",
-//   precio: 34000,
-//   imagen: "imagenes/personajes/circo-conejo.jpg",
-//   descripcionCorta: "Peluche conejo del Circo Digital, tamaño 28 cm. Un personaje tierno.",
-//   categoria: "personajes"
-// },
-// {
-//   id: "JE-03-20.2-circo-payasos",
-//   nombre: "Circo Digital 28cm PAYASO",
-//   precio: 34000,
-//   imagen: "imagenes/personajes/circo-payasos.jpg",
-//   descripcionCorta: "Peluche payaso del Circo Digital, tamaño 28 cm. Colores vivos y diseño alegre.",
-//   categoria: "personajes"
-// },
-// {
-//   id: "1879-20.8-virgencita-blanca",
-//   nombre: "Virgencita 30 cm BLANCA",
-//   precio: 35000,
-//   imagen: "imagenes/personajes/virgencita-blanca.jpg",
-//   descripcionCorta: "Peluche Virgencita color blanco, tamaño 30 cm. Un regalo espiritual y tierno.",
-//   categoria: "personajes"
-// },
-// {
-//   id: "1879-20.8-virgencita-azul",
-//   nombre: "Virgencita 30 cm AZUL",
-//   precio: 35000,
-//   imagen: "imagenes/personajes/virgencita-azul.jpg",
-//   descripcionCorta: "Peluche Virgencita color azul, tamaño 30 cm. Suave y especial.",
-//   categoria: "personajes"
-// },
-// {
-//   id: "Cj-3918-21-sonic-rosa",
-//   nombre: "Sonic mediano y amigos 25 cm ROSA",
-//   precio: 35500,
-//   imagen: "imagenes/personajes/sonic-rosa.jpg",
-//   descripcionCorta: "Peluche Sonic mediano y amigos, versión rosa, 25 cm. Ideal para coleccionistas.",
-//   categoria: "personajes"
-// },
-// {
-//   id: "je-02-21.5-smiling-rosado",
-//   nombre: "Smiling colores 25 cm ROSADO",
-//   precio: 36000,
-//   imagen: "imagenes/personajes/smiling-rosado.jpg",
-//   descripcionCorta: "Peluche Smiling color rosado de 25 cm, diseño alegre y suave.",
-//   categoria: "personajes"
-// },
-// {
-//   id: "je-02-21.5-smiling-amarillo",
-//   nombre: "Smiling colores 25 cm AMARILLO",
-//   precio: 36000,
-//   imagen: "imagenes/personajes/smiling-amarillo.jpg",
-//   descripcionCorta: "Peluche Smiling color amarillo de 25 cm, brilla con alegría.",
-//   categoria: "personajes"
-// },
-// {
-//   id: "10-11-21.5-sullivan",
-//   nombre: "Sullivan Camisa 30 cm",
-//   precio: 36000,
-//   imagen: "imagenes/personajes/sullivan.jpg",
-//   descripcionCorta: "Peluche Sullivan con camisa, tamaño 30 cm. Inspirado en Monsters Inc.",
-//   categoria: "personajes"
-// },
-// {
-//   id: "JE-49-22.5-babyyoda",
-//   nombre: "Baby Yoda 35 cm",
-//   precio: 38000,
-//   imagen: "imagenes/personajes/babyyoda.jpg",
-//   descripcionCorta: "Peluche Baby Yoda de 35 cm, tierno y adorable. Fans de Star Wars.",
-//   categoria: "personajes"
-// },
-// {
-//   id: "1881-22.9-raton2",
-//   nombre: "Raton #2 30 cm",
-//   precio: 38500,
-//   imagen: "imagenes/personajes/raton2.jpg",
-//   descripcionCorta: "Peluche Raton #2 de 30 cm, para niños o decorar su espacio favorito.",
-//   categoria: "personajes"
-// },
-// {
-//   id: "1934-25.9-kuromi-grande",
-//   nombre: "Kuromi 20 cm",
-//   precio: 44000,
-//   imagen: "imagenes/personajes/kuromi-grande.jpg",
-//   descripcionCorta: "Peluche Kuromi de 20 cm, la traviesa amiga de My Melody. Fans de Sanrio.",
-//   categoria: "personajes"
-// },
-// {
-//   id: "1864-26.9-bob33",
-//   nombre: "Bob Esponja 33 cm",
-//   precio: 45500,
-//   imagen: "imagenes/personajes/bob33.jpg",
-//   descripcionCorta: "Peluche Bob Esponja de 33 cm, el personaje más divertido de Fondo de Bikini. Abrazable y suave.",
-//   categoria: "personajes"
-// },
-// {
-//   id: "2019p-26.9-mascota-nacional",
-//   nombre: "Mascota Nacional 30 cm",
-//   precio: 45500,
-//   imagen: "imagenes/personajes/mascota-nacional.jpg",
-//   descripcionCorta: "Peluche Mascota Nacional de 30 cm, símbolo de alegría y unión. Perfecto para regalar a cualquier edad.",
-//   categoria: "personajes"
-// },
-// {
-//   id: "1864-26.9-patricio33",
-//   nombre: "Patricio 33 cm",
-//   precio: 45500,
-//   imagen: "imagenes/personajes/patricio33.jpg",
-//   descripcionCorta: "Peluche Patricio estrella de mar, amigo de Bob Esponja, tamaño 33 cm. Suave y divertido para todos.",
-//   categoria: "personajes"
-// },
-// {
-//   id: "JE-56-28-zootopia-zorro",
-//   nombre: "Zootopia 35cm ZORRO",
-//   precio: 47000,
-//   imagen: "imagenes/personajes/zootopia-zorro.jpg",
-//   descripcionCorta: "Peluche Zorro de Zootopia, tamaño 35 cm. Ideal para aventuras y juegos imaginativos.",
-//   categoria: "personajes"
-// },
-// {
-//   id: "JE-56-28-zootopia-conejo",
-//   nombre: "Zootopia 35cm CONEJO",
-//   precio: 47000,
-//   imagen: "imagenes/personajes/zootopia-conejo.jpg",
-//   descripcionCorta: "Peluche Conejo de Zootopia, tamaño 35 cm. Suave, tierno y con detalles de gran calidad.",
-//   categoria: "personajes"
-// },
-// {
-//   id: "xh-35-29.5-ratones-rosa",
-//   nombre: "Ratones pijama 35cm ROSA",
-//   precio: 50000,
-//   imagen: "imagenes/personajes/ratones-pijama-rosa.jpg",
-//   descripcionCorta: "Peluche ratón con pijama color rosa, tamaño 35 cm. Detalles adorables y perfecto para dormir acompañado.",
-//   categoria: "personajes"
-// },
-// {
-//   id: "1839-31.9-viejita-mediana",
-//   nombre: "Viejita Cuerpo entero Mediana 28 cms",
-//   precio: 54000,
-//   imagen: "imagenes/personajes/viejita-mediana.jpg",
-//   descripcionCorta: "Peluche Viejita cuerpo entero, tamaño mediana de 28 cm. Un personaje dulce y especial para regalar.",
-//   categoria: "personajes"
-// },
-// {
-//   id: "1940-31.9-luigi",
-//   nombre: "Personajes LUIGI 30 Cms",
-//   precio: 54000,
-//   imagen: "imagenes/personajes/luigi.jpg",
-//   descripcionCorta: "Peluche Luigi de 30 cm, el inseparable hermano de Mario Bros. Un clásico para gamers y coleccionistas.",
-//   categoria: "personajes"
-// },
-// {
-//   id: "1940-31.9-peach",
-//   nombre: "Personajes PRINCESA PEACH 30 Cms",
-//   precio: 54000,
-//   imagen: "imagenes/personajes/peach.jpg",
-//   descripcionCorta: "Peluche Princesa Peach de 30 cm, la princesa favorita de los videojuegos. Suave y elegante.",
-//   categoria: "personajes"
-// },
-// {
-//   id: "1940-31.9-toad",
-//   nombre: "Personajes TOAD 30 Cms",
-//   precio: 54000,
-//   imagen: "imagenes/personajes/toad.jpg",
-//   descripcionCorta: "Peluche Toad de 30 cm, el amigo fiel de Mario y Luigi. Ideal para decorar o jugar.",
-//   categoria: "personajes"
-// },
-// {
-//   id: "1882-32.5-raton3",
-//   nombre: "Raton #3 40 cm",
-//   precio: 55000,
-//   imagen: "imagenes/personajes/raton3.jpg",
-//   descripcionCorta: "Peluche Raton #3 de 40 cm, tamaño grande y suave. Ideal para abrazar y acompañar en el descanso.",
-//   categoria: "personajes"
-// },
-// {
-//   id: "JE-25-34.9-stitch-panda",
-//   nombre: "Stitch disfraz panda 35cm",
-//   precio: 59000,
-//   imagen: "imagenes/personajes/stitch-panda.jpg",
-//   descripcionCorta: "Peluche Stitch disfrazado de panda, tamaño 35 cm. Diseño adorable y divertido para fans de Disney.",
-//   categoria: "personajes"
-// },
-// {
-//   id: "1964-39.9-envidia",
-//   nombre: "Personajes Intensamente ENVIDIA 30 cm",
-//   precio: 62500,
-//   imagen: "imagenes/personajes/envidia.jpg",
-//   descripcionCorta: "Peluche Envidia de Intensamente, tamaño 30 cm. Completa tu colección de emociones.",
-//   categoria: "personajes"
-// },
-// {
-//   id: "1840-37.9-viejito-mediano",
-//   nombre: "Viejito Cuerpo entero Mediano 30 cm",
-//   precio: 64000,
-//   imagen: "imagenes/personajes/viejito-mediano.jpg",
-//   descripcionCorta: "Peluche Viejito cuerpo entero mediano, tamaño 30 cm. Un personaje simpático y entrañable.",
-//   categoria: "personajes"
-// },
+}
+{
+  id: "233pm-15.4-minions-guitarra",
+  nombre: "Minions guitarra 25 cm",
+  precio: 26000,
+  imagen: "imagenes/personajes/minions-guitarra.jpg",
+  descripcionCorta: "Peluche Minion guitarra de 25 cm. Un personaje en versión musical y divertida.",
+  categoria: "personajes"
+},
+{
+  id: "233pm-15.4-minions-oso",
+  nombre: "Minions guitarra OSO 25 cm",
+  precio: 26000,
+  imagen: "imagenes/personajes/minions-oso.jpg",
+  descripcionCorta: "Peluche Minion guitarra con oso de 25 cm. Un diseño tierno y original.",
+  categoria: "personajes"
+},
+{
+  id: "Cj-1455-15.6-carl",
+  nombre: "Viejitos ancheta Carl 20 cm",
+  precio: 26500,
+  imagen: "imagenes/personajes/viejitos-carl.jpg",
+  descripcionCorta: "Peluche Viejitos ancheta Carl de 20 cm, inspirado en personajes entrañables.",
+  categoria: "personajes"
+},
+{
+  id: "Mt03-3-15.9-unicornio-rosa",
+  nombre: "Unicornio Corazon 25cm ROSA",
+  precio: 27000,
+  imagen: "imagenes/personajes/unicornio-corazon-rosa.jpg",
+  descripcionCorta: "Peluche unicornio con corazón, color rosa, de 25cm. Un regalo mágico.",
+  categoria: "personajes"
+},
+{
+  id: "Mt03-3-15.9-unicornio-blanco",
+  nombre: "Unicornio Corazon 25cm BLANCO",
+  precio: 27000,
+  imagen: "imagenes/personajes/unicornio-corazon-blanco.jpg",
+  descripcionCorta: "Peluche unicornio con corazón, color blanco, de 25cm. Perfecto para regalar.",
+  categoria: "personajes"
+},
+{
+  id: "JE-18-16.2-garfieldbebe",
+  nombre: "Garfield Bebe 20cm",
+  precio: 27500,
+  imagen: "imagenes/personajes/garfield-bebe.jpg",
+  descripcionCorta: "Peluche Garfield bebé de 20 cm, ideal para fans del gato más famoso.",
+  categoria: "personajes"
+},
+{
+  id: "22-57-17.9-cojin-mario",
+  nombre: "Cojin cara de MARIO 30x30 cm",
+  precio: 30000,
+  imagen: "imagenes/personajes/cojin-mario.jpg",
+  descripcionCorta: "Cojín de peluche con la cara de Mario Bros, tamaño 30x30 cm. Ideal para gamers.",
+  categoria: "personajes"
+},
+{
+  id: "Sur05-30-18.9-buzz",
+  nombre: "Peluche elástico mediano 30cm BUZZ",
+  precio: 32000,
+  imagen: "imagenes/personajes/buzz.jpg",
+  descripcionCorta: "Peluche elástico de Buzz Lightyear, tamaño mediano de 30cm. ¡Hasta el infinito y más allá!",
+  categoria: "personajes"
+},
+{
+  id: "Sur05-30-18.9-marciano",
+  nombre: "Peluche elástico mediano 30cm MARCIANO",
+  precio: 32000,
+  imagen: "imagenes/personajes/marciano.jpg",
+  descripcionCorta: "Peluche elástico de Marciano, tamaño mediano de 30cm, divertido y suave. Inspirado en Toy Story.",
+  categoria: "personajes"
+},
+{
+  id: "JE-03-20.2-circo-conejo",
+  nombre: "Circo Digital 28cm CONEJO",
+  precio: 34000,
+  imagen: "imagenes/personajes/circo-conejo.jpg",
+  descripcionCorta: "Peluche conejo del Circo Digital, tamaño 28 cm. Un personaje tierno.",
+  categoria: "personajes"
+},
+{
+  id: "JE-03-20.2-circo-payasos",
+  nombre: "Circo Digital 28cm PAYASO",
+  precio: 34000,
+  imagen: "imagenes/personajes/circo-payasos.jpg",
+  descripcionCorta: "Peluche payaso del Circo Digital, tamaño 28 cm. Colores vivos y diseño alegre.",
+  categoria: "personajes"
+},
+{
+  id: "1879-20.8-virgencita-blanca",
+  nombre: "Virgencita 30 cm BLANCA",
+  precio: 35000,
+  imagen: "imagenes/personajes/virgencita-blanca.jpg",
+  descripcionCorta: "Peluche Virgencita color blanco, tamaño 30 cm. Un regalo espiritual y tierno.",
+  categoria: "personajes"
+},
+{
+  id: "1879-20.8-virgencita-azul",
+  nombre: "Virgencita 30 cm AZUL",
+  precio: 35000,
+  imagen: "imagenes/personajes/virgencita-azul.jpg",
+  descripcionCorta: "Peluche Virgencita color azul, tamaño 30 cm. Suave y especial.",
+  categoria: "personajes"
+},
+{
+  id: "Cj-3918-21-sonic-rosa",
+  nombre: "Sonic mediano y amigos 25 cm ROSA",
+  precio: 35500,
+  imagen: "imagenes/personajes/sonic-rosa.jpg",
+  descripcionCorta: "Peluche Sonic mediano y amigos, versión rosa, 25 cm. Ideal para coleccionistas.",
+  categoria: "personajes"
+},
+{
+  id: "je-02-21.5-smiling-rosado",
+  nombre: "Smiling colores 25 cm ROSADO",
+  precio: 36000,
+  imagen: "imagenes/personajes/smiling-rosado.jpg",
+  descripcionCorta: "Peluche Smiling color rosado de 25 cm, diseño alegre y suave.",
+  categoria: "personajes"
+},
+{
+  id: "je-02-21.5-smiling-amarillo",
+  nombre: "Smiling colores 25 cm AMARILLO",
+  precio: 36000,
+  imagen: "imagenes/personajes/smiling-amarillo.jpg",
+  descripcionCorta: "Peluche Smiling color amarillo de 25 cm, brilla con alegría.",
+  categoria: "personajes"
+},
+{
+  id: "10-11-21.5-sullivan",
+  nombre: "Sullivan Camisa 30 cm",
+  precio: 36000,
+  imagen: "imagenes/personajes/sullivan.jpg",
+  descripcionCorta: "Peluche Sullivan con camisa, tamaño 30 cm. Inspirado en Monsters Inc.",
+  categoria: "personajes"
+},
+{
+  id: "JE-49-22.5-babyyoda",
+  nombre: "Baby Yoda 35 cm",
+  precio: 38000,
+  imagen: "imagenes/personajes/babyyoda.jpg",
+  descripcionCorta: "Peluche Baby Yoda de 35 cm, tierno y adorable. Fans de Star Wars.",
+  categoria: "personajes"
+},
+{
+  id: "1881-22.9-raton2",
+  nombre: "Raton #2 30 cm",
+  precio: 38500,
+  imagen: "imagenes/personajes/raton2.jpg",
+  descripcionCorta: "Peluche Raton #2 de 30 cm, para niños o decorar su espacio favorito.",
+  categoria: "personajes"
+},
+{
+  id: "1934-25.9-kuromi-grande",
+  nombre: "Kuromi 20 cm",
+  precio: 44000,
+  imagen: "imagenes/personajes/kuromi-grande.jpg",
+  descripcionCorta: "Peluche Kuromi de 20 cm, la traviesa amiga de My Melody. Fans de Sanrio.",
+  categoria: "personajes"
+},
+{
+  id: "1864-26.9-bob33",
+  nombre: "Bob Esponja 33 cm",
+  precio: 45500,
+  imagen: "imagenes/personajes/bob33.jpg",
+  descripcionCorta: "Peluche Bob Esponja de 33 cm, el personaje más divertido de Fondo de Bikini. Abrazable y suave.",
+  categoria: "personajes"
+},
+{
+  id: "2019p-26.9-mascota-nacional",
+  nombre: "Mascota Nacional 30 cm",
+  precio: 45500,
+  imagen: "imagenes/personajes/mascota-nacional.jpg",
+  descripcionCorta: "Peluche Mascota Nacional de 30 cm, símbolo de alegría y unión. Perfecto para regalar a cualquier edad.",
+  categoria: "personajes"
+},
+{
+  id: "1864-26.9-patricio33",
+  nombre: "Patricio 33 cm",
+  precio: 45500,
+  imagen: "imagenes/personajes/patricio33.jpg",
+  descripcionCorta: "Peluche Patricio estrella de mar, amigo de Bob Esponja, tamaño 33 cm. Suave y divertido para todos.",
+  categoria: "personajes"
+},
+{
+  id: "JE-56-28-zootopia-zorro",
+  nombre: "Zootopia 35cm ZORRO",
+  precio: 47000,
+  imagen: "imagenes/personajes/zootopia-zorro.jpg",
+  descripcionCorta: "Peluche Zorro de Zootopia, tamaño 35 cm. Ideal para aventuras y juegos imaginativos.",
+  categoria: "personajes"
+},
+{
+  id: "JE-56-28-zootopia-conejo",
+  nombre: "Zootopia 35cm CONEJO",
+  precio: 47000,
+  imagen: "imagenes/personajes/zootopia-conejo.jpg",
+  descripcionCorta: "Peluche Conejo de Zootopia, tamaño 35 cm. Suave, tierno y con detalles de gran calidad.",
+  categoria: "personajes"
+},
+{
+  id: "xh-35-29.5-ratones-rosa",
+  nombre: "Ratones pijama 35cm ROSA",
+  precio: 50000,
+  imagen: "imagenes/personajes/ratones-pijama-rosa.jpg",
+  descripcionCorta: "Peluche ratón con pijama color rosa, tamaño 35 cm. Detalles adorables y perfecto para dormir acompañado.",
+  categoria: "personajes"
+},
+{
+  id: "1839-31.9-viejita-mediana",
+  nombre: "Viejita Cuerpo entero Mediana 28 cms",
+  precio: 54000,
+  imagen: "imagenes/personajes/viejita-mediana.jpg",
+  descripcionCorta: "Peluche Viejita cuerpo entero, tamaño mediana de 28 cm. Un personaje dulce y especial para regalar.",
+  categoria: "personajes"
+},
+{
+  id: "1940-31.9-luigi",
+  nombre: "Personajes LUIGI 30 Cms",
+  precio: 54000,
+  imagen: "imagenes/personajes/luigi.jpg",
+  descripcionCorta: "Peluche Luigi de 30 cm, el inseparable hermano de Mario Bros. Un clásico para gamers y coleccionistas.",
+  categoria: "personajes"
+},
+{
+  id: "1940-31.9-peach",
+  nombre: "Personajes PRINCESA PEACH 30 Cms",
+  precio: 54000,
+  imagen: "imagenes/personajes/peach.jpg",
+  descripcionCorta: "Peluche Princesa Peach de 30 cm, la princesa favorita de los videojuegos. Suave y elegante.",
+  categoria: "personajes"
+},
+{
+  id: "1940-31.9-toad",
+  nombre: "Personajes TOAD 30 Cms",
+  precio: 54000,
+  imagen: "imagenes/personajes/toad.jpg",
+  descripcionCorta: "Peluche Toad de 30 cm, el amigo fiel de Mario y Luigi. Ideal para decorar o jugar.",
+  categoria: "personajes"
+},
+{
+  id: "1882-32.5-raton3",
+  nombre: "Raton #3 40 cm",
+  precio: 55000,
+  imagen: "imagenes/personajes/raton3.jpg",
+  descripcionCorta: "Peluche Raton #3 de 40 cm, tamaño grande y suave. Ideal para abrazar y acompañar en el descanso.",
+  categoria: "personajes"
+},
+{
+  id: "JE-25-34.9-stitch-panda",
+  nombre: "Stitch disfraz panda 35cm",
+  precio: 59000,
+  imagen: "imagenes/personajes/stitch-panda.jpg",
+  descripcionCorta: "Peluche Stitch disfrazado de panda, tamaño 35 cm. Diseño adorable y divertido para fans de Disney.",
+  categoria: "personajes"
+},
+{
+  id: "1964-39.9-envidia",
+  nombre: "Personajes Intensamente ENVIDIA 30 cm",
+  precio: 62500,
+  imagen: "imagenes/personajes/envidia.jpg",
+  descripcionCorta: "Peluche Envidia de Intensamente, tamaño 30 cm. Completa tu colección de emociones.",
+  categoria: "personajes"
+},
+{
+  id: "1840-37.9-viejito-mediano",
+  nombre: "Viejito Cuerpo entero Mediano 30 cm",
+  precio: 64000,
+  imagen: "imagenes/personajes/viejito-mediano.jpg",
+  descripcionCorta: "Peluche Viejito cuerpo entero mediano, tamaño 30 cm. Un personaje simpático y entrañable.",
+  categoria: "personajes"
+},
 {
   id: "1980-39.8-lilo-stitch",
   nombre: "Lilo Y Stitch 40cm",
