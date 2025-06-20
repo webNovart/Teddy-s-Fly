@@ -3895,12 +3895,14 @@ const variedades = [
     categoria: "variedades"
   }
    ];
-   function getParameterByName(name) {
+   // Busca el parámetro ?id=... en la URL
+function getParameterByName(name) {
     const url = window.location.search;
     const params = new URLSearchParams(url);
     return params.get(name);
 }
 
+// Muestra un mensaje de error si no se encuentra el producto
 function mostrarError() {
     document.title = "Producto no encontrado | Teddy's Fly";
     document.body.innerHTML = `
@@ -3911,55 +3913,47 @@ function mostrarError() {
       </main>`;
 }
 
-// MOSTRAR DETALLE: Busca primero en arrays/LS, si no, en Firestore
+// Busca el producto en arrays locales y Firestore (por id slug y por doc.id)
 async function mostrarDetalleProducto() {
     const id = getParameterByName("id");
     if (!id) return mostrarError();
 
-    // 1. Buscar en arrays/LocalStorage/unificados (si existen)
-    let producto = typeof productos !== "undefined" && Array.isArray(productos)
-        ? productos.find(p => p.id === id)
-        : undefined;
+    let producto = undefined;
 
-    // 2. Si NO está en arrays, busca en Firestore por "id" (slug)
+    // 1. Buscar en array global "productos" si existe (compatibilidad local)
+    if (typeof productos !== "undefined" && Array.isArray(productos)) {
+        producto = productos.find(p => p.id === id);
+    }
+
+    // 2. Buscar en Firestore por campo 'id' (slug)
     if (!producto && typeof db !== "undefined") {
         try {
             const snap = await db.collection("productos").where("id", "==", id).get();
             if (!snap.empty) {
                 producto = snap.docs[0].data();
-                producto.id = snap.docs[0].data().id || snap.docs[0].id;
+                producto.id = producto.id || snap.docs[0].id;
             }
         } catch (e) {
-            console.error("Error buscando por id en Firestore", e);
+            console.error("Error buscando por id (slug) en Firestore", e);
             return mostrarError();
         }
     }
-    // 3. Si tampoco, busca por el ID automático de documento (compatibilidad)
+
+    // 3. Buscar en Firestore por doc.id (ID automático, productos viejos)
     if (!producto && typeof db !== "undefined") {
         try {
-            const snap = await db.collection("productos").doc(id).get();
-            if (snap.exists) {
-                producto = snap.data();
-                producto.id = snap.id;
+            const docSnap = await db.collection("productos").doc(id).get();
+            if (docSnap.exists) {
+                producto = docSnap.data();
+                producto.id = docSnap.id;
             }
         } catch (e) {
             console.error("Error buscando por doc.id en Firestore", e);
             return mostrarError();
         }
     }
-    // 4. Si tampoco, busca por "name" (opcional, para máxima compatibilidad)
-    if (!producto && typeof db !== "undefined") {
-        try {
-            const snap = await db.collection("productos").where("name", "==", id).get();
-            if (!snap.empty) {
-                producto = snap.docs[0].data();
-                producto.id = snap.docs[0].id;
-            }
-        } catch (e) {
-            console.error("Error buscando por name en Firestore", e);
-            return mostrarError();
-        }
-    }
+
+    // Si después de todos los métodos NO encontró el producto, muestra error
     if (!producto) return mostrarError();
 
     // Compatibilidad de campos
@@ -3968,7 +3962,7 @@ async function mostrarDetalleProducto() {
     const descripcion = producto.descripcion || producto.detail || "";
     const precio = producto.precio || 0;
 
-    // Mostrar información del producto
+    // Mostrar la información del producto en la página
     document.title = `${nombre} | Teddy's Fly`;
     if (document.getElementById("nombre-producto")) document.getElementById("nombre-producto").textContent = nombre;
     if (document.getElementById("img-principal")) {
@@ -3978,7 +3972,7 @@ async function mostrarDetalleProducto() {
     if (document.getElementById("descripcion-producto")) document.getElementById("descripcion-producto").innerHTML = descripcion;
     if (document.getElementById("precio-producto")) document.getElementById("precio-producto").textContent = "$" + precio.toLocaleString();
 
-    // Miniaturas (si tienes array de imágenes, acá lo puedes expandir)
+    // Miniatura de imagen (si hay más imágenes, aquí puedes expandir)
     if (document.getElementById("miniaturas")) {
         document.getElementById("miniaturas").innerHTML = "";
         const mini = document.createElement("img");
@@ -3992,7 +3986,7 @@ async function mostrarDetalleProducto() {
         document.getElementById("miniaturas").appendChild(mini);
     }
 
-    // Botón agregar al carrito
+    // Botón "Agregar al carrito"
     const btnAgregar = document.getElementById("btn-agregar-carrito");
     if (btnAgregar) {
         btnAgregar.onclick = function() {
@@ -4011,10 +4005,14 @@ async function mostrarDetalleProducto() {
             }
             localStorage.setItem("carrito", JSON.stringify(carrito));
             const cartCount = document.querySelector('.cart-count');
-            if (cartCount) cartCount.textContent = carrito.length;
+            if (cartCount) {
+                let totalUnidades = carrito.reduce((sum, prod) => sum + prod.cantidad, 0);
+                cartCount.textContent = totalUnidades;
+            }
             alert('Producto añadido al carrito');
         };
     }
 }
 
+// Ejecuta la función cuando la página termine de cargar
 document.addEventListener("DOMContentLoaded", mostrarDetalleProducto);
