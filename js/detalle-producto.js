@@ -3895,6 +3895,13 @@ const variedades = [
     categoria: "variedades"
   }
    ];
+// 1. Array unificado con todos los productos locales
+const todosLosProductos = [
+  ...(typeof personajes !== "undefined" ? personajes : []),
+  ...(typeof peluches !== "undefined" ? peluches : []),
+  ...(typeof variedades !== "undefined" ? variedades : [])
+];
+
    // Busca el parámetro ?id=... en la URL
 function getParameterByName(name) {
     const url = window.location.search;
