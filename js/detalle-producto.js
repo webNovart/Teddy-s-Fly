@@ -3895,8 +3895,7 @@ const variedades = [
     categoria: "variedades"
   }
    ];
-    // ...agrega más productos aquí
-function getParameterByName(name) {
+   function getParameterByName(name) {
     const url = window.location.search;
     const params = new URLSearchParams(url);
     return params.get(name);
