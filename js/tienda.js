@@ -1517,10 +1517,9 @@ function getCategoriaURL() {
 // ---- CARGAR PRODUCTOS DE FIRESTORE + FIJOS ----
 document.addEventListener("DOMContentLoaded", function() {
     // Copias de los arrays para combinar fijos y Firestore
-    let personajesArrayFull = filtraOcultos(personajesArray.slice());
-    let peluchesArrayFull = filtraOcultos(peluchesArray.slice());
-    let variedadesArrayFull = filtraOcultos(variedadesArray.slice());
-
+   let personajesArrayFull = filtraOcultos(personajesArray.slice()).map(p => ({...p, __seccion: "personajes"}));
+    let peluchesArrayFull = filtraOcultos(peluchesArray.slice()).map(p => ({...p, __seccion: "peluches"}));
+    let variedadesArrayFull = filtraOcultos(variedadesArray.slice()).map(p => ({...p, __seccion: "variedades"}));
     // 1. Carga productos Firestore y agrégalos según categoría
     if (typeof db !== "undefined") {
         db.collection("productos").get().then((querySnapshot) => {
