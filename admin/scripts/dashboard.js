@@ -150,7 +150,7 @@ async function renderProducts() {
     ];
 
     const productosTotales = [...productosFijos, ...productosFirestoreAdaptados];
-    const productosVisibles = productosTotales.filter(p => !productosOcultos.includes(p.id));
+    
 
     if (productosVisibles.length === 0) {
         productList.innerHTML = "<p>No hay productos agregados.</p>";
@@ -165,30 +165,42 @@ async function renderProducts() {
             ${p.descripcion}<br>
             ${
               oculto
-                ? `<button class="btn-ocultar" data-id="${p.id}" disabled style="opacity:0.6;">Ocultado</button>`
+                ? `<button class="btn-desocultar" data-id="${p.id}">Desocultar</button>`
                 : `<button class="btn-ocultar" data-id="${p.id}">Ocultar</button>`
             }
             ${p.origen === "firestore" ? `<button onclick="deleteProduct('${p.id}', '${p.origen}')" style="background:var(--color-corazon);color:#f20202;padding:0.2em 1em;border-radius:10px;border:none;cursor:pointer;margin-top:8px;">Eliminar</button>` : ""}
         </div>`
     ).join("");
 }
-// Evento para ocultar producto (delegación)
+// Evento para ocultar/desocultar producto (delegación)
 document.addEventListener("click", function(e) {
-    const btn = e.target.closest(".btn-ocultar");
-    if (btn && !btn.disabled) {
-        const id = btn.getAttribute("data-id");
+    // Ocultar
+    const btnOcultar = e.target.closest(".btn-ocultar");
+    if (btnOcultar) {
+        const id = btnOcultar.getAttribute("data-id");
         let productosOcultos = JSON.parse(localStorage.getItem("productosOcultos")) || [];
         if (!productosOcultos.includes(id)) {
             productosOcultos.push(id);
             localStorage.setItem("productosOcultos", JSON.stringify(productosOcultos));
-            btn.textContent = "Ocultado";
-            btn.disabled = true;
-            btn.style.opacity = 0.6;
-            alert("Producto ocultado correctamente.");
+            renderProductsAdmin();
         }
+        return;
+    }
+    // Desocultar
+    const btnDesocultar = e.target.closest(".btn-desocultar");
+    if (btnDesocultar) {
+        const id = btnDesocultar.getAttribute("data-id");
+        let productosOcultos = JSON.parse(localStorage.getItem("productosOcultos")) || [];
+        productosOcultos = productosOcultos.filter(pid => pid !== id);
+        localStorage.setItem("productosOcultos", JSON.stringify(productosOcultos));
+        renderProductsAdmin();
     }
 });
-renderProducts();
+
+// Llama a renderProductsAdmin después de agregar, eliminar, ocultar o desocultar productos
+document.addEventListener("DOMContentLoaded", function() {
+    renderProductsAdmin();
+});
 
 // Eliminar producto (solo de Firestore)
 window.deleteProduct = async function(id, origen) {
