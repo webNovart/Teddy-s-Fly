@@ -3922,20 +3922,33 @@ async function mostrarDetalleProducto() {
         ? productos.find(p => p.id === id)
         : undefined;
 
-    // 2. Si NO está en arrays, busca en Firestore por "id"
+    // 2. Si NO está en arrays, busca en Firestore por "id" (slug)
     if (!producto && typeof db !== "undefined") {
         try {
             const snap = await db.collection("productos").where("id", "==", id).get();
             if (!snap.empty) {
                 producto = snap.docs[0].data();
-                producto.id = snap.docs[0].id;
+                producto.id = snap.docs[0].data().id || snap.docs[0].id;
             }
         } catch (e) {
             console.error("Error buscando por id en Firestore", e);
             return mostrarError();
         }
     }
-    // 3. Si tampoco, busca por "name"
+    // 3. Si tampoco, busca por el ID automático de documento (compatibilidad)
+    if (!producto && typeof db !== "undefined") {
+        try {
+            const snap = await db.collection("productos").doc(id).get();
+            if (snap.exists) {
+                producto = snap.data();
+                producto.id = snap.id;
+            }
+        } catch (e) {
+            console.error("Error buscando por doc.id en Firestore", e);
+            return mostrarError();
+        }
+    }
+    // 4. Si tampoco, busca por "name" (opcional, para máxima compatibilidad)
     if (!producto && typeof db !== "undefined") {
         try {
             const snap = await db.collection("productos").where("name", "==", id).get();
