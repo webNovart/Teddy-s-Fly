@@ -1479,17 +1479,18 @@ function inicializarVista(personajesArr, peluchesArr, variedadesArr) {
 // ---- Buscador adaptado ----
 function filtrarProductos(texto, personajesArr, peluchesArr, variedadesArr) {
     texto = texto.trim().toLowerCase();
-    // Une todos los productos para filtrar
     const productosTotales = [
         ...personajesArr,
         ...peluchesArr,
         ...variedadesArr
-    ];
+    ].filter(producto => producto && producto.nombre); // Evita productos vacíos
+
     const filtrados = productosTotales.filter(producto =>
         producto.nombre.toLowerCase().includes(texto) ||
         (producto.descripcionCorta && producto.descripcionCorta.toLowerCase().includes(texto)) ||
         (producto.descripcion && producto.descripcion.toLowerCase().includes(texto))
     );
+
     renderProductos(
         filtrados.filter(p => p.__seccion === "personajes"),
         "grid-personajes"
@@ -1503,7 +1504,6 @@ function filtrarProductos(texto, personajesArr, peluchesArr, variedadesArr) {
         "grid-variedades"
     );
 }
-
 // ---- Inicializar: MOSTRAR CATEGORÍA O TODO ----
 function getCategoriaURL() {
   const params = new URLSearchParams(window.location.search);
