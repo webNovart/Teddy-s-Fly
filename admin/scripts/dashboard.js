@@ -163,10 +163,31 @@ async function renderProducts() {
             <span>Categoría: ${p.categoria}</span><br>
             <span>Precio: $${p.precio.toLocaleString('es-CO')}</span><br>
             ${p.descripcion}<br>
+            ${
+              oculto
+                ? `<button class="btn-ocultar" data-id="${p.id}" disabled style="opacity:0.6;">Ocultado</button>`
+                : `<button class="btn-ocultar" data-id="${p.id}">Ocultar</button>`
+            }
             ${p.origen === "firestore" ? `<button onclick="deleteProduct('${p.id}', '${p.origen}')" style="background:var(--color-corazon);color:#f20202;padding:0.2em 1em;border-radius:10px;border:none;cursor:pointer;margin-top:8px;">Eliminar</button>` : ""}
         </div>`
     ).join("");
 }
+// Evento para ocultar producto (delegación)
+document.addEventListener("click", function(e) {
+    const btn = e.target.closest(".btn-ocultar");
+    if (btn && !btn.disabled) {
+        const id = btn.getAttribute("data-id");
+        let productosOcultos = JSON.parse(localStorage.getItem("productosOcultos")) || [];
+        if (!productosOcultos.includes(id)) {
+            productosOcultos.push(id);
+            localStorage.setItem("productosOcultos", JSON.stringify(productosOcultos));
+            btn.textContent = "Ocultado";
+            btn.disabled = true;
+            btn.style.opacity = 0.6;
+            alert("Producto ocultado correctamente.");
+        }
+    }
+});
 renderProducts();
 
 // Eliminar producto (solo de Firestore)
@@ -288,37 +309,7 @@ window.deleteNews = async function(id) {
 };
 
 renderNews();
-// ...tu código actual...
 
-// Función para renderizar productos en el panel admin (agrega botón "Ocultar")
-function renderProductosAdmin(lista) {
-    const productList = document.getElementById("productList");
-    productList.innerHTML = "";
-    if (!lista.length) {
-        productList.innerHTML = "<p style='text-align:center;color:#888;'>No hay productos aún.</p>";
-        return;
-    }
-    let productosOcultos = JSON.parse(localStorage.getItem("productosOcultos")) || [];
-    lista.forEach(producto => {
-        const div = document.createElement("div");
-        div.className = "admin-item";
-        div.innerHTML = `
-            <img src="${producto.imagen || producto.image || 'https://via.placeholder.com/68'}" alt="${producto.nombre}">
-            <div class="admin-item-details">
-                <div class="admin-item-title">${producto.nombre}</div>
-                <div class="admin-item-detail">${producto.detalle || producto.descripcion || ""}</div>
-                <div class="admin-item-detail"><b>Categoría:</b> ${producto.categoria}</div>
-                <div class="admin-item-detail"><b>Precio:</b> $${producto.precio}</div>
-            </div>
-            <div>
-                <button class="btn-ocultar" data-id="${producto.id}" ${productosOcultos.includes(producto.id) ? 'disabled style="opacity:0.6;"' : ''}>
-                    ${productosOcultos.includes(producto.id) ? 'Ocultado' : 'Ocultar'}
-                </button>
-            </div>
-        `;
-        productList.appendChild(div);
-    });
-}
 
 // Evento delegador para botón "Ocultar"
 document.addEventListener("click", function(e) {
@@ -338,28 +329,5 @@ document.addEventListener("click", function(e) {
         }
     }
 });
+renderProducts();
 
-// Ejemplo: cargar productos de Firestore y renderizarlos en admin
-function cargarProductosAdmin() {
-    // Si usas Firestore:
-    // db.collection("productos").get().then((querySnapshot) => {
-    //     const productos = [];
-    //     querySnapshot.forEach((doc) => {
-    //         productos.push({ ...doc.data(), id: doc.id });
-    //     });
-    //     renderProductosAdmin(productos);
-    // });
-
-    // Si usas productos de prueba:
-    // const productos = [
-    //     { id:"1", nombre:"Stitch", categoria:"personajes", precio:19000, imagen:"stitch.jpg", detalle:"Peluche Stitch" },
-    //     // ...
-    // ];
-    // renderProductosAdmin(productos);
-}
-
-// Llama a cargarProductosAdmin() después de agregar, eliminar o modificar productos,
-// o al cargar el dashboard.
-cargarProductosAdmin();
-
-// ...tu código actual para agregar productos, cerrar sesión, etc...
