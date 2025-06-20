@@ -128,7 +128,7 @@ addProductForm.onsubmit = function(e) {
 };
 
 // Renderizar productos
-async function renderProducts() {
+async function renderProductsAdmin() {
     productosOcultos = JSON.parse(localStorage.getItem("productosOcultos")) || [];
     const productosFirestore = await getProductosFirestore();
 
@@ -146,7 +146,8 @@ async function renderProducts() {
     const productosFijos = [
         ...personajes.map(p => ({ ...p, categoria: "personajes", origen: "fijo" })),
         ...peluches.map(p => ({ ...p, categoria: "peluches", origen: "fijo" })),
-        ...variedades.map(p => ({ ...p, categoria: "variedades", origen: "fijo" }))
+        ...variedades.map(p => ({ ...p, categoria: "variedades", origen: "fijo" })),
+      ...productosFirestoreAdaptados
     ];
 
     const productosTotales = [...productosFijos, ...productosFirestoreAdaptados];
