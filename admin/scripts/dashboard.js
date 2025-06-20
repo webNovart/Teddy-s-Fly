@@ -321,12 +321,12 @@ window.deleteProduct = async function(id, origen) {
         } catch (e) {
             alert("Error borrando producto: " + e.message);
         }
-        renderProducts();
+        renderProductsAdmin();
         llenarSelectProductos();
     } else if (origen === "fijo") {
         if (!productosOcultos.includes(id)) productosOcultos.push(id);
         localStorage.setItem("productosOcultos", JSON.stringify(productosOcultos));
-        renderProducts();
+        renderProductsAdmin();
     }
 };
 
