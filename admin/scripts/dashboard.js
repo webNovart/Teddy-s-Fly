@@ -115,7 +115,7 @@ addProductForm.onsubmit = function(e) {
             });
             alert("Producto agregado correctamente y disponible para todos.");
             addProductForm.reset();
-            renderProducts();
+            renderProductsAdmin();
             llenarSelectProductos();
         } catch (error) {
             alert("Error al agregar producto a Firestore: " + error.message);
