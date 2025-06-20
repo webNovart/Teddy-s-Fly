@@ -127,7 +127,7 @@ addProductForm.onsubmit = function(e) {
     reader.readAsDataURL(imgInput.files[0]);
 };
 
-// Guarda los IDs de los productos ocultos SOLO del panel admin en sessionStorage (no en localStorage)
+// Guarda los IDs de los productos ocultos SOLO del panel admin en sessionStorage
 function getPanelHiddenIds() {
     return JSON.parse(sessionStorage.getItem("panelHiddenProducts") || "[]");
 }
@@ -136,10 +136,8 @@ function setPanelHiddenIds(ids) {
 }
 
 async function renderProductsAdmin() {
-    // Tu función para traer productos, ajusta según tu app
+    // Trae productos
     const productosFirestore = await getProductosFirestore();
-
-    // Variables globales o vacías
     const personajes = window.personajes || [];
     const peluches = window.peluches || [];
     const variedades = window.variedades || [];
@@ -163,7 +161,7 @@ async function renderProductsAdmin() {
         ...productosFirestoreAdaptados
     ];
 
-    // Ocultos solo en el panel admin (sessionStorage)
+    // Ocultos solo en el panel admin
     const ocultosPanel = getPanelHiddenIds();
     const productosVisibles = productosTotales.filter(p => !ocultosPanel.includes(p.id));
 
@@ -176,6 +174,10 @@ async function renderProductsAdmin() {
     }
 
     let html = "";
+    // Botón para ocultar todos
+    if (productosVisibles.length > 0) {
+        html += `<div style="margin-bottom:1em"><button id="btn-ocultar-todos-panel">Ocultar todos</button></div>`;
+    }
     html += productosVisibles.map((p) => `
         <div class="admin-item">
             <img src="${p.imagen || 'https://via.placeholder.com/68'}" alt="Producto" width="100"><br>
@@ -190,63 +192,67 @@ async function renderProductsAdmin() {
         </div>
     `).join("");
 
-    // // Botón para mostrar todos los productos ocultos nuevamente
-    // if (ocultosPanel.length > 0) {
-    //     html += `<div style="margin:1em 0"><button id="btn-mostrar-todos-panel">Mostrar todos los productos</button></div>`;
-    // }
+    // Botón para mostrar todos los productos ocultos nuevamente
+    if (ocultosPanel.length > 0) {
+        html += `<div style="margin:1em 0"><button id="btn-mostrar-todos-panel">Mostrar todos los productos</button></div>`;
+    }
 
     productList.innerHTML = html;
 }
 
-// // Delegación para ocultar productos solo del panel admin
-// document.addEventListener("click", function(e) {
-//     const btnOcultar = e.target.closest(".btn-panel-ocultar");
-//     if (btnOcultar) {
-//         const id = btnOcultar.getAttribute("data-id");
-//         let ocultosPanel = getPanelHiddenIds();
-//         if (!ocultosPanel.includes(id)) {
-//             ocultosPanel.push(id);
-//             setPanelHiddenIds(ocultosPanel);
-//             renderProductsAdmin();
-//         }
-//         return;
-//     }
-//     // // Botón mostrar todos
-//     // if (e.target.id === "btn-mostrar-todos-panel") {
-//     //     setPanelHiddenIds([]); // Resetea ocultos
-//     //     renderProductsAdmin();
-//     // }
-// });
-
-// Renderiza al cargar
-document.addEventListener("DOMContentLoaded", function() {
-    renderProductsAdmin();
-});
-// Delegación para botones ocultar/desocultar
+// Delegación de eventos (solo para panel)
 document.addEventListener("click", function(e) {
-    const btnOcultar = e.target.closest(".btn-ocultar");
+    // Botón ocultar individual
+    const btnOcultar = e.target.closest(".btn-panel-ocultar");
     if (btnOcultar) {
         const id = btnOcultar.getAttribute("data-id");
-        let productosOcultos = JSON.parse(localStorage.getItem("productosOcultos")) || [];
-        if (!productosOcultos.includes(id)) {
-            productosOcultos.push(id);
-            localStorage.setItem("productosOcultos", JSON.stringify(productosOcultos));
+        let ocultosPanel = getPanelHiddenIds();
+        if (!ocultosPanel.includes(id)) {
+            ocultosPanel.push(id);
+            setPanelHiddenIds(ocultosPanel);
             renderProductsAdmin();
         }
         return;
     }
-    const btnDesocultar = e.target.closest(".btn-desocultar");
-    if (btnDesocultar) {
-        const id = btnDesocultar.getAttribute("data-id");
-        let productosOcultos = JSON.parse(localStorage.getItem("productosOcultos")) || [];
-        productosOcultos = productosOcultos.filter(pid => pid !== id);
-        localStorage.setItem("productosOcultos", JSON.stringify(productosOcultos));
+    // Botón ocultar todos
+    if (e.target.id === "btn-ocultar-todos-panel") {
+        // Oculta todos los productos actualmente visibles
+        const productosFirestore = window.__cachedProductosFirestore || [];
+        const personajes = window.personajes || [];
+        const peluches = window.peluches || [];
+        const variedades = window.variedades || [];
+        const productosFirestoreAdaptados = productosFirestore.map((p) => ({
+            ...p,
+            nombre: p.name || "",
+            imagen: p.image || "",
+            descripcion: p.detail || p.descripcion || "",
+            precio: p.precio || 0,
+            id: p.id,
+            categoria: p.categoria || "peluches",
+            origen: "firestore"
+        }));
+        const productosTotales = [
+            ...personajes.map(p => ({ ...p, categoria: "personajes", origen: "fijo" })),
+            ...peluches.map(p => ({ ...p, categoria: "peluches", origen: "fijo" })),
+            ...variedades.map(p => ({ ...p, categoria: "variedades", origen: "fijo" })),
+            ...productosFirestoreAdaptados
+        ];
+        const todosIds = productosTotales.map(p => p.id);
+        setPanelHiddenIds(todosIds);
         renderProductsAdmin();
+        return;
+    }
+    // Botón mostrar todos
+    if (e.target.id === "btn-mostrar-todos-panel") {
+        setPanelHiddenIds([]); // Resetea ocultos
+        renderProductsAdmin();
+        return;
     }
 });
 
-// Llama a la función al cargar
-document.addEventListener("DOMContentLoaded", function() {
+// Renderiza al cargar y cachea productosFirestore (para ocultar todos)
+document.addEventListener("DOMContentLoaded", async function() {
+    window.__cachedProductosFirestore = await getProductosFirestore();
     renderProductsAdmin();
 });
 
