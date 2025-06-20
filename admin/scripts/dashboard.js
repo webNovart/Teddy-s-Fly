@@ -152,7 +152,7 @@ async function renderProducts() {
     const productosTotales = [...productosFijos, ...productosFirestoreAdaptados];
     
 
-    if (productosVisibles.length === 0) {
+    if (productosTotales.length === 0) {
         productList.innerHTML = "<p>No hay productos agregados.</p>";
         return;
     }
