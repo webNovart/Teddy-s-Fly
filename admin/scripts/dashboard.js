@@ -154,14 +154,14 @@ async function renderProductsAdmin() {
       ...productosFirestoreAdaptados
     ];
 
-  / DECLARA productosVisibles ANTES DE USARLA
+  // DECLARA productosVisibles ANTES DE USARLA
     const productosVisibles = productosTotales.filter(p => !productosOcultos.includes(p.id));
     const productosOcultosArr = productosTotales.filter(p => productosOcultos.includes(p.id));
   
     const productList = document.getElementById("productList");
     if (!productList) return;
   
-    if (productosVisibles.length === 0) {
+    if (productosVisibles.length === 0 && productosOcultosArr.length === 0) {
         productList.innerHTML = "<p>No hay productos agregados.</p>";
         return;
     }
