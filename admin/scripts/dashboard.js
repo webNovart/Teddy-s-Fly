@@ -190,33 +190,33 @@ async function renderProductsAdmin() {
         </div>
     `).join("");
 
-    // Botón para mostrar todos los productos ocultos nuevamente
-    if (ocultosPanel.length > 0) {
-        html += `<div style="margin:1em 0"><button id="btn-mostrar-todos-panel">Mostrar todos los productos</button></div>`;
-    }
+    // // Botón para mostrar todos los productos ocultos nuevamente
+    // if (ocultosPanel.length > 0) {
+    //     html += `<div style="margin:1em 0"><button id="btn-mostrar-todos-panel">Mostrar todos los productos</button></div>`;
+    // }
 
     productList.innerHTML = html;
 }
 
-// Delegación para ocultar productos solo del panel admin
-document.addEventListener("click", function(e) {
-    const btnOcultar = e.target.closest(".btn-panel-ocultar");
-    if (btnOcultar) {
-        const id = btnOcultar.getAttribute("data-id");
-        let ocultosPanel = getPanelHiddenIds();
-        if (!ocultosPanel.includes(id)) {
-            ocultosPanel.push(id);
-            setPanelHiddenIds(ocultosPanel);
-            renderProductsAdmin();
-        }
-        return;
-    }
-    // Botón mostrar todos
-    if (e.target.id === "btn-mostrar-todos-panel") {
-        setPanelHiddenIds([]); // Resetea ocultos
-        renderProductsAdmin();
-    }
-});
+// // Delegación para ocultar productos solo del panel admin
+// document.addEventListener("click", function(e) {
+//     const btnOcultar = e.target.closest(".btn-panel-ocultar");
+//     if (btnOcultar) {
+//         const id = btnOcultar.getAttribute("data-id");
+//         let ocultosPanel = getPanelHiddenIds();
+//         if (!ocultosPanel.includes(id)) {
+//             ocultosPanel.push(id);
+//             setPanelHiddenIds(ocultosPanel);
+//             renderProductsAdmin();
+//         }
+//         return;
+//     }
+//     // // Botón mostrar todos
+//     // if (e.target.id === "btn-mostrar-todos-panel") {
+//     //     setPanelHiddenIds([]); // Resetea ocultos
+//     //     renderProductsAdmin();
+//     // }
+// });
 
 // Renderiza al cargar
 document.addEventListener("DOMContentLoaded", function() {
