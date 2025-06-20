@@ -156,8 +156,10 @@ async function renderProducts() {
         productList.innerHTML = "<p>No hay productos agregados.</p>";
         return;
     }
-    productList.innerHTML = productosVisibles.map((p) =>
-       `<div class="admin-item">
+    productList.innerHTML = productosTotales.map((p) => {
+        const oculto = productosOcultos.includes(p.id);
+        return `
+        <div class="admin-item">
             <img src="${p.imagen}" alt="Producto" width="100"><br>
             <strong>${p.nombre}</strong><br>
             <span>Categoría: ${p.categoria}</span><br>
@@ -168,10 +170,16 @@ async function renderProducts() {
                 ? `<button class="btn-desocultar" data-id="${p.id}">Desocultar</button>`
                 : `<button class="btn-ocultar" data-id="${p.id}">Ocultar</button>`
             }
-            ${p.origen === "firestore" ? `<button onclick="deleteProduct('${p.id}', '${p.origen}')" style="background:var(--color-corazon);color:#f20202;padding:0.2em 1em;border-radius:10px;border:none;cursor:pointer;margin-top:8px;">Eliminar</button>` : ""}
-        </div>`
-    ).join("");
+            ${
+              p.origen === "firestore"
+                ? `<button onclick="deleteProduct('${p.id}', '${p.origen}')" style="background:var(--color-corazon);color:#f20202;padding:0.2em 1em;border-radius:10px;border:none;cursor:pointer;margin-top:8px;">Eliminar</button>`
+                : ""
+            }
+        </div>
+        `;
+    }).join("");
 }
+
 // Evento para ocultar/desocultar producto (delegación)
 document.addEventListener("click", function(e) {
     // Ocultar
@@ -197,10 +205,9 @@ document.addEventListener("click", function(e) {
     }
 });
 
-// Llama a renderProductsAdmin después de agregar, eliminar, ocultar o desocultar productos
-document.addEventListener("DOMContentLoaded", function() {
+
     renderProductsAdmin();
-});
+
 
 // Eliminar producto (solo de Firestore)
 window.deleteProduct = async function(id, origen) {
