@@ -166,9 +166,7 @@ async function renderProductsAdmin() {
         return;
     }
    
-    // Panel admin: sólo muestra los que NO están ocultos, pero ofrece un botón para mostrar los ocultos
-    const productosVisibles = productosTotales.filter(p => !productosOcultos.includes(p.id));
-    const productosOcultosArr = productosTotales.filter(p => productosOcultos.includes(p.id));
+   
 
     let html = "";
 
