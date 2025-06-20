@@ -164,6 +164,7 @@ async function renderProductsAdmin() {
     // Ocultos solo en el panel admin
     const ocultosPanel = getPanelHiddenIds();
     const productosVisibles = productosTotales.filter(p => !ocultosPanel.includes(p.id));
+    const productosOcultos = productosTotales.filter(p => ocultosPanel.includes(p.id));
 
     const productList = document.getElementById("productList");
     if (!productList) return;
@@ -174,10 +175,12 @@ async function renderProductsAdmin() {
     }
 
     let html = "";
-    // Botón para ocultar todos
+    // Botón para ocultar todos los productos visibles
     if (productosVisibles.length > 0) {
         html += `<div style="margin-bottom:1em"><button id="btn-ocultar-todos-panel">Ocultar todos</button></div>`;
     }
+
+    // Lista de productos visibles con botón para ocultar
     html += productosVisibles.map((p) => `
         <div class="admin-item">
             <img src="${p.imagen || 'https://via.placeholder.com/68'}" alt="Producto" width="100"><br>
@@ -192,15 +195,30 @@ async function renderProductsAdmin() {
         </div>
     `).join("");
 
-    // Botón para mostrar todos los productos ocultos nuevamente
-    if (ocultosPanel.length > 0) {
+    // Lista de productos ocultos con botón para desocultar
+    if (productosOcultos.length > 0) {
+        html += `<h3 style="margin-top:2em;">Productos ocultos en el panel</h3>`;
+        html += productosOcultos.map((p) => `
+            <div class="admin-item" style="opacity:0.6;">
+                <img src="${p.imagen || 'https://via.placeholder.com/68'}" alt="Producto" width="100"><br>
+                <strong>${p.nombre}</strong><br>
+                <span>Categoría: ${p.categoria}</span><br>
+                <span>Precio: $${p.precio.toLocaleString('es-CO')}</span><br>
+                ${p.descripcion}<br>
+                <button class="btn-panel-desocultar" data-id="${p.id}">Quitar de ocultos</button>
+                ${p.origen === "firestore"
+                    ? `<button onclick="deleteProduct('${p.id}', '${p.origen}')" style="background:var(--color-corazon);color:#f20202;padding:0.2em 1em;border-radius:10px;border:none;cursor:pointer;margin-top:8px;">Eliminar</button>`
+                    : ""}
+            </div>
+        `).join("");
+        // Botón para mostrar todos los productos ocultos nuevamente
         html += `<div style="margin:1em 0"><button id="btn-mostrar-todos-panel">Mostrar todos los productos</button></div>`;
     }
 
     productList.innerHTML = html;
 }
 
-// Delegación de eventos (solo para panel)
+// Delegación de eventos
 document.addEventListener("click", function(e) {
     // Botón ocultar individual
     const btnOcultar = e.target.closest(".btn-panel-ocultar");
@@ -214,9 +232,18 @@ document.addEventListener("click", function(e) {
         }
         return;
     }
+    // Botón desocultar individual
+    const btnDesocultar = e.target.closest(".btn-panel-desocultar");
+    if (btnDesocultar) {
+        const id = btnDesocultar.getAttribute("data-id");
+        let ocultosPanel = getPanelHiddenIds();
+        ocultosPanel = ocultosPanel.filter(pid => pid !== id);
+        setPanelHiddenIds(ocultosPanel);
+        renderProductsAdmin();
+        return;
+    }
     // Botón ocultar todos
     if (e.target.id === "btn-ocultar-todos-panel") {
-        // Oculta todos los productos actualmente visibles
         const productosFirestore = window.__cachedProductosFirestore || [];
         const personajes = window.personajes || [];
         const peluches = window.peluches || [];
