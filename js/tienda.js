@@ -1163,7 +1163,7 @@ const personajes = [
   descripcionCorta: "Peluche Stitch sonriente de 40 cm. Perfecto para abrazar y sonreír junto a él.",
   categoria: "personajes"
 },
-// {
+{
   id: "JE-16-45.0-gata-fresa",
   nombre: "Gata con fresa 30cm",
   precio: 76500,
@@ -1186,7 +1186,7 @@ const personajes = [
   imagen: "imagenes/personajes/stitch-audifonos.jpg",
   descripcionCorta: "Peluche Stitch con audífonos, tamaño 40 cm. Para los fans de la música.",
   categoria: "personajes"
-}
+},
 {
   id: "1837-66.5-viejita-grande",
   nombre: "Viejita cuerpo entero Grande 50 cms",
