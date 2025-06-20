@@ -330,23 +330,5 @@ window.deleteNews = async function(id) {
 renderNews();
 
 
-// Evento delegador para botón "Ocultar"
-document.addEventListener("click", function(e) {
-    const btn = e.target.closest(".btn-ocultar");
-    if (btn) {
-        const id = btn.getAttribute("data-id");
-        let productosOcultos = JSON.parse(localStorage.getItem("productosOcultos")) || [];
-        if (!productosOcultos.includes(id)) {
-            productosOcultos.push(id);
-            localStorage.setItem("productosOcultos", JSON.stringify(productosOcultos));
-            btn.textContent = "Ocultado";
-            btn.disabled = true;
-            btn.style.opacity = 0.6;
-            alert("Producto ocultado correctamente.");
-        } else {
-            alert("Este producto ya está oculto.");
-        }
-    }
-});
-renderProducts();
+
 
