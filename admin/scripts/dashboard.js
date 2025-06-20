@@ -147,7 +147,7 @@ async function renderProductsAdmin() {
         origen: "firestore"
     }));
 
-    const productosFijos = [
+    const productosTotales = [
         ...personajes.map(p => ({ ...p, categoria: "personajes", origen: "fijo" })),
         ...peluches.map(p => ({ ...p, categoria: "peluches", origen: "fijo" })),
         ...variedades.map(p => ({ ...p, categoria: "variedades", origen: "fijo" })),
@@ -157,13 +157,13 @@ async function renderProductsAdmin() {
    // ¡Aquí está el filtro!
     const productosVisibles = productosTotales.filter(p => !productosOcultos.includes(p.id));
     
-
-    if (productosTotales.length === 0) {
+  const productList = document.getElementById("productList");
+    if (productosVisibles.length === 0) {
         productList.innerHTML = "<p>No hay productos agregados.</p>";
         return;
     }
-    productList.innerHTML = productosTotales.map((p) => {
-        const oculto = productosOcultos.includes(p.id);
+    productList.innerHTML = productosVisibles.map((p) => {
+        
         return `
         <div class="admin-item">
             <img src="${p.imagen}" alt="Producto" width="100"><br>
