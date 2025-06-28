@@ -713,7 +713,7 @@ const personajes = [
     descripcionCorta: "Llavero peluche de Patricio, el mejor amigo de Bob Esponja. Súper suave y adorable.",
     categoria: "personajes"
   },
-  {
+  /*{
     id: "JE-38-9.5-rosa",
     nombre: "Llavero Patrulla Canina Sentada ROSA 9.5 cm",
     precio: 15500,
@@ -752,7 +752,7 @@ const personajes = [
     imagen: "imagenes/personajes/llavero-patrulla-azul.jpg",
     descripcionCorta: "Llavero peluche de Patrulla Canina, versión sentada color azul. Tamaño especial para fans.",
     categoria: "personajes"
-  },
+  },*/
   {
     id: "BOBI-04-9.2-kirby",
     nombre: "Llavero Kirby 10 cm",
