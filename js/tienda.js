@@ -1155,14 +1155,14 @@ const personajes = [
 //   descripcionCorta: "Peluche unicornio estrellas de 45 cm, bordado y brillante. Un regalo mágico para cualquier edad.",
 //   categoria: "personajes"
 // },
-{
+/*{
   id: "MT-111-44.5-stitch-sonriente",
   nombre: "Stitch Sonriente 40cm",
   precio: 75500,
   imagen: "imagenes/personajes/stitch-sonriente.jpg",
   descripcionCorta: "Peluche Stitch sonriente de 40 cm. Perfecto para abrazar y sonreír junto a él.",
   categoria: "personajes"
-},
+},*/
 // {
 //   id: "JE-16-45.0-gata-fresa",
 //   nombre: "Gata con fresa 30cm",
