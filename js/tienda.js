@@ -104,13 +104,13 @@ const peluches = [
     imagen: "imagenes/flos-1523-2.jpeg",
     descripcion: "Oso de peluche con corazón y rosa en color café."
   },
-  {
+  /*{
     id: "uni-2023-ROSA",
     nombre: "Unicornio Estrellitas 22cm Rosa",
     precio: 19000,
     imagen: "imagenes/uni-2023-1.jpeg",
     descripcion: "Unicornio de peluche rosa con estrellitas."
-  },
+  },*/
   {
     id: "uni-2023-BLANCO",
     nombre: "Unicornio Estrellitas 22cm Blanco",
