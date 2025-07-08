@@ -294,7 +294,7 @@ const peluches = [
     imagen: "imagenes/2301-40.jpeg",
     descripcion: "Panda de peluche con overol, tamaño 40cm, divertido y tierno."
   },
-    {
+    /*{
   id: "JE-59-GRIS",
   nombre: "Animalito que respira (No incluye pilas) 26cm GRIS",
   precio: 65000,
@@ -321,7 +321,7 @@ const peluches = [
   precio: 65000,
   imagen: "imagenes/JE-59-2.jpeg",
   descripcion: "Peluche animalito que respira color café de 26cm (no incluye pilas). Realista, suave y adorable para acompañar a los más pequeños. Material: Felpa antialérgica. Función: Respira (pila no incluida)."
-},
+},*/
 {
   id: "2587",
   nombre: "Vaca con Bolso 40cm",
