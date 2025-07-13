@@ -560,7 +560,7 @@ const personajes = [
     descripcionCorta: "Llavero peluche de Jerry, el ratón travieso de las caricaturas. Tamaño 7.3 cm.",
     categoria: "personajes"
   },
-  {
+  /*{
     id: "5606-8.3-spiderman",
     nombre: "Llavero Superhéroes SPIDERMAN 10 cms",
     precio: 12500,
@@ -584,7 +584,7 @@ const personajes = [
     imagen: "imagenes/personajes/llavero-batman.jpg",
     descripcionCorta: "Llavero peluche de Batman, el caballero oscuro. Un toque de héroe para tus llaves o mochila.",
     categoria: "personajes"
-  },
+  },*/
   {
     id: "5606-8.3-hulk",
     nombre: "Llavero Superhéroes HULK 10 cms",
@@ -697,14 +697,14 @@ const personajes = [
     descripcionCorta: "Llavero peluche de Arenita, la ardilla aventurera de Fondo de Bikini. Adorno divertido para llaves o mochila.",
     categoria: "personajes"
   },
-  {
+  /*{
     id: "je-32-9-gary",
     nombre: "Llavero Bob Esponja GARY 9 cm",
     precio: 15000,
     imagen: "imagenes/personajes/llavero-gary.jpg",
     descripcionCorta: "Llavero peluche de Gary, la mascota de Bob Esponja. Perfecto para fans y coleccionistas.",
     categoria: "personajes"
-  },
+  },*/
   {
     id: "je-32-9-patricio",
     nombre: "Llavero Bob Esponja PATRICIO 9 cm",
@@ -769,7 +769,7 @@ const personajes = [
     descripcionCorta: "Llavero peluche de Bob Esponja, favorito de Fondo de Bikini. Ideal para niños y adultos.",
     categoria: "personajes"
   },
-  {
+  /*{
     id: "je-33-9.5-garfield",
     nombre: "Llavero Garfield 9.5 cm",
     precio: 15500,
@@ -784,7 +784,7 @@ const personajes = [
     imagen: "imagenes/personajes/llavero-kuromi.jpg",
     descripcionCorta: "Llavero peluche de Kuromi, personaje icónico. Ideal para fans de Sanrio y coleccionistas.",
     categoria: "personajes"
-  },
+  },*/
   {
     id: "je-37-9.5-gata",
     nombre: "Llavero GATA 9.5 cm",
