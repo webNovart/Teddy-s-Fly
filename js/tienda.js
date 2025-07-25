@@ -251,6 +251,7 @@ const peluches = [
     imagen: "imagenes/1881-23-2.jpeg",
     descripcion: "Gorila de peluche pequeño, color oscuro, tamaño 25cm."
   },
+  /*
   {
     id: "ele-30-MORADO",
     nombre: "Elefante Ojos Bordados 25cm MORADO",
@@ -265,6 +266,7 @@ const peluches = [
     imagen: "imagenes/yf1-40.jpg",
     descripcion: "Elefante de peluche azul, ojos bordados, tamaño 25cm."
   },
+
   {
     id: "YF1-40-ROSA",
     nombre: "Elefante Ojos Bordados 25cm ROSA",
@@ -272,6 +274,7 @@ const peluches = [
     imagen: "imagenes/yf1-40-5.jpg",
     descripcion: "Elefante de peluche rosa, ojos bordados, tamaño 25cm."
   },
+
   {
     id: "ele-30-GRIS",
     nombre: "Elefante Ojos Bordados 25cm GRIS",
@@ -279,7 +282,7 @@ const peluches = [
     imagen: "imagenes/ELE0003-5.jpg",
     descripcion: "Elefante de peluche GRIS, ojos bordados, tamaño 25cm."
   },
- 
+ */
   {
     id: "1043-40",
     nombre: "Panda Vestido 40cm",
@@ -357,13 +360,14 @@ const peluches = [
   imagen: "imagenes/GS377-40 (1).jpeg",
   descripcion: "Peluche de mono con bolso en forma de banana, tamaño mediano. Divertido, suave y perfecto para regalar o decorar. Material: Felpa antialérgica. Tamaño: 45 cm."
 },
+/*
 {
   id: "821-l",
   nombre: "Elefante Luminosa con Cobija 60cm",
   precio: 98000,
   imagen: "imagenes/821-1.jpg",
   descripcion: "Peluche de elefante luminosa, incluye cobija. Brilla en la oscuridad y aporta calidez y ternura a cualquier espacio. Material: Felpa antialérgica. Tamaño: 60 cm."
-},
+}*/
 {
   id: "JE-68",
   nombre: "Oso Bufanda Love 75cm",
