@@ -1111,6 +1111,7 @@ const personajes = [
 //   descripcionCorta: "Peluche Raton #3 de 40 cm, tamaño grande y suave. Ideal para abrazar y acompañar en el descanso.",
 //   categoria: "personajes"
 // },
+/*
 {
   id: "JE-25-34.9-stitch-panda",
   nombre: "Stitch disfraz panda 35cm",
@@ -1119,6 +1120,7 @@ const personajes = [
   descripcionCorta: "Peluche Stitch disfrazado de panda, tamaño 35 cm. Diseño adorable y divertido para fans de Disney.",
   categoria: "personajes"
 },
+*/
 // {
 //   id: "1964-39.9-envidia",
 //   nombre: "Personajes Intensamente ENVIDIA 30 cm",
@@ -1183,6 +1185,7 @@ const personajes = [
 //   descripcionCorta: "Peluche Raton #4 tamaño gigante de 50 cm. Súper suave y abrazable.",
 //   categoria: "personajes"
 // },
+/*
 {
   id: "2502-53.9-stitch-audifonos",
   nombre: "Stitch con audifonos 40cm",
@@ -1190,7 +1193,7 @@ const personajes = [
   imagen: "imagenes/personajes/stitch-audifonos.jpg",
   descripcionCorta: "Peluche Stitch con audífonos, tamaño 40 cm. Para los fans de la música.",
   categoria: "personajes"
-},
+},*/
 // {
 //   id: "1837-66.5-viejita-grande",
 //   nombre: "Viejita cuerpo entero Grande 50 cms",
