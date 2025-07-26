@@ -125,13 +125,14 @@ const peluches = [
     imagen: "imagenes/uni-2023-2.jpeg",
     descripcion: "Unicornio morado con estrellitas, perfecto para decorar."
   },
+  /*
   {
     id: "Leon-p",
     nombre: "León Pequeño 15cm",
     precio: 20000,
     imagen: "imagenes/leon-p-1536x1536.jpeg",
     descripcion: "Peluche de leoncito pequeño, suave y adorable."
-  },
+  },*/
   {
     id: "A019-COCODRILO",
     nombre: "Zoológico Cabezón 20cm Cocodrilo",
@@ -424,6 +425,7 @@ const peluches = [
   imagen: "imagenes/BLM-098.jpeg",
   descripcion: "Oso de peluche con bordado, tamaño grande 55cm. Suave, elegante y especial para regalos importantes o decoración destacada."
 },
+/*
 {
   id: "J192-32-NARANJA",
   nombre: "Leon Despeluque 35cm NARANJA",
@@ -437,7 +439,7 @@ const peluches = [
   precio: 68500,
   imagen: "imagenes/j192-32-3 (2).jpeg",
   descripcion: "León despelucado rosa de 35cm. Muy suave, llamativo y con peinado alocado. Perfecto para regalar o decorar el cuarto."
-},
+},*/
 {
   id: "J192-32-CAFE",
   nombre: "León Despeluque 35cm CAFE",
@@ -1015,6 +1017,7 @@ const personajes = [
 //   descripcionCorta: "Peluche Raton #2 de 30 cm, para niños o decorar su espacio favorito.",
 //   categoria: "personajes"
 // },
+/*
 {
   id: "1934-25.9-kuromi-grande",
   nombre: "Kuromi 20 cm",
@@ -1022,7 +1025,7 @@ const personajes = [
   imagen: "imagenes/personajes/kuromi-grande.jpg",
   descripcionCorta: "Peluche Kuromi de 20 cm, la traviesa amiga de My Melody. Fans de Sanrio.",
   categoria: "personajes"
-},
+},*/
 // {
 //   id: "1864-26.9-bob33",
 //   nombre: "Bob Esponja 33 cm",
