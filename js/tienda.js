@@ -69,20 +69,20 @@ const peluches = [
     imagen: "imagenes/WhatsApp-Image-2025-05-16-at-5.13.13-PM.jpeg",
     descripcion: "Peluche panda económico, pequeño y adorable."
   },
-  {
-    id: "1030-17-MEL",
-    nombre: "Perro Pets Mel 25cm",
-    precio: 15000,
-    imagen: "imagenes/1030-17.jpeg",
-    descripcion: "Peluche de perro 'Pets Mel' de 25cm, suave y amigable."
-  },
-  {
-    id: "j300-21-OSO",
-    nombre: "Osos Peludos Pequeños 20cm",
-    precio: 16500,
-    imagen: "imagenes/WhatsApp-Image-2025-05-08-at-5.29.43-PM.jpeg",
-    descripcion: "Peluche de oso peludo pequeño, ideal para regalar."
-  },
+  // {
+  //   id: "1030-17-MEL",
+  //   nombre: "Perro Pets Mel 25cm",
+  //   precio: 15000,
+  //   imagen: "imagenes/1030-17.jpeg",
+  //   descripcion: "Peluche de perro 'Pets Mel' de 25cm, suave y amigable."
+  // },
+  // {
+  //   id: "j300-21-OSO",
+  //   nombre: "Osos Peludos Pequeños 20cm",
+  //   precio: 16500,
+  //   imagen: "imagenes/WhatsApp-Image-2025-05-08-at-5.29.43-PM.jpeg",
+  //   descripcion: "Peluche de oso peludo pequeño, ideal para regalar."
+  // },
   {
     id: "FLOS-1523-GRIS",
     nombre: "Oso Corazón y Rosa 20cm Gris",
@@ -111,20 +111,20 @@ const peluches = [
     imagen: "imagenes/uni-2023-1.jpeg",
     descripcion: "Unicornio de peluche rosa con estrellitas."
   },*/
-  {
-    id: "uni-2023-BLANCO",
-    nombre: "Unicornio Estrellitas 22cm Blanco",
-    precio: 19000,
-    imagen: "imagenes/uni-2023-3.jpeg",
-    descripcion: "Unicornio blanco con estrellitas, suave y tierno."
-  },
-  {
-    id: "uni-2023-MORADO",
-    nombre: "Unicornio Estrellitas 22cm Morado",
-    precio: 19000,
-    imagen: "imagenes/uni-2023-2.jpeg",
-    descripcion: "Unicornio morado con estrellitas, perfecto para decorar."
-  },
+  // {
+  //   id: "uni-2023-BLANCO",
+  //   nombre: "Unicornio Estrellitas 22cm Blanco",
+  //   precio: 19000,
+  //   imagen: "imagenes/uni-2023-3.jpeg",
+  //   descripcion: "Unicornio blanco con estrellitas, suave y tierno."
+  // },
+  // {
+  //   id: "uni-2023-MORADO",
+  //   nombre: "Unicornio Estrellitas 22cm Morado",
+  //   precio: 19000,
+  //   imagen: "imagenes/uni-2023-2.jpeg",
+  //   descripcion: "Unicornio morado con estrellitas, perfecto para decorar."
+  // },
   /*
   {
     id: "Leon-p",
@@ -133,20 +133,20 @@ const peluches = [
     imagen: "imagenes/leon-p-1536x1536.jpeg",
     descripcion: "Peluche de leoncito pequeño, suave y adorable."
   },*/
-  {
-    id: "A019-COCODRILO",
-    nombre: "Zoológico Cabezón 20cm Cocodrilo",
-    precio: 20500,
-    imagen: "imagenes/A019-2.jpeg",
-    descripcion: "Peluche cocodrilo cabezón de 20cm, divertido y coleccionable."
-  },
-  {
-    id: "A019-OVEJA",
-    nombre: "Zoológico Cabezón 20cm Oveja",
-    precio: 20500,
-    imagen: "imagenes/A019-3.jpeg",
-    descripcion: "Peluche oveja cabezona, tierna y esponjosa."
-  },
+  // {
+  //   id: "A019-COCODRILO",
+  //   nombre: "Zoológico Cabezón 20cm Cocodrilo",
+  //   precio: 20500,
+  //   imagen: "imagenes/A019-2.jpeg",
+  //   descripcion: "Peluche cocodrilo cabezón de 20cm, divertido y coleccionable."
+  // },
+  // {
+  //   id: "A019-OVEJA",
+  //   nombre: "Zoológico Cabezón 20cm Oveja",
+  //   precio: 20500,
+  //   imagen: "imagenes/A019-3.jpeg",
+  //   descripcion: "Peluche oveja cabezona, tierna y esponjosa."
+  // },
   {
     id: "2591-ROSA",
     nombre: "Cerdo Disfrazado ROSA 25cm",
@@ -154,48 +154,48 @@ const peluches = [
     imagen: "imagenes/2591-1.jpeg",
     descripcion: "Cerdito disfrazado rosa de 25cm, divertido y suave."
   },
-    {
-    id: "bg9-20-BLANCO",
-    nombre: "Gato Corazón 25cm Blanco",
-    precio: 27000,
-    imagen: "imagenes/WhatsApp-Image-2025-04-21-at-4.31.41-PM.jpeg",
-    descripcion: "Gato de peluche con corazón, color blanco, tamaño 25cm."
-  },
-  {
-    id: "1896-CAFE",
-    nombre: "León Pequeño Melena CAFÉ 19cm",
-    precio: 28000,
-    imagen: "imagenes/1896-peque.jpg",
-    descripcion: "León de peluche pequeño con melena café, suave y tierno."
-  },
-  {
-    id: "BDHSQ-20-AMARILLO",
-    nombre: "Siberiano Camisa 25cm AMARILLO",
-    precio: 28000,
-    imagen: "imagenes/BDHSQ-20-2.jpeg",
-    descripcion: "Peluche siberiano con camisa amarilla, tamaño 25cm."
-  },
-  {
-    id: "BDHSQ-20-ROSA",
-    nombre: "Siberiano Camisa 25cm ROSA",
-    precio: 28000,
-    imagen: "imagenes/BDHSQ-20-1.jpeg",
-    descripcion: "Peluche siberiano con camisa rosa, tamaño 25cm."
-  },
-  {
-    id: "BDHSQ-20-VERDE",
-    nombre: "Siberiano Camisa 25cm VERDE",
-    precio: 28000,
-    imagen: "imagenes/BDHSQ-20.jpeg",
-    descripcion: "Peluche siberiano con camisa verde, tamaño 25cm."
-  },
-  {
-    id: "1289-30",
-    nombre: "Panda Acostado 30cm",
-    precio: 28000,
-    imagen: "imagenes/1289-30.jpeg",
-    descripcion: "Panda de peluche acostado, tamaño 30cm, suave y adorable."
-  },
+  //   {
+  //   id: "bg9-20-BLANCO",
+  //   nombre: "Gato Corazón 25cm Blanco",
+  //   precio: 27000,
+  //   imagen: "imagenes/WhatsApp-Image-2025-04-21-at-4.31.41-PM.jpeg",
+  //   descripcion: "Gato de peluche con corazón, color blanco, tamaño 25cm."
+  // },
+  // {
+  //   id: "1896-CAFE",
+  //   nombre: "León Pequeño Melena CAFÉ 19cm",
+  //   precio: 28000,
+  //   imagen: "imagenes/1896-peque.jpg",
+  //   descripcion: "León de peluche pequeño con melena café, suave y tierno."
+  // },
+  // {
+  //   id: "BDHSQ-20-AMARILLO",
+  //   nombre: "Siberiano Camisa 25cm AMARILLO",
+  //   precio: 28000,
+  //   imagen: "imagenes/BDHSQ-20-2.jpeg",
+  //   descripcion: "Peluche siberiano con camisa amarilla, tamaño 25cm."
+  // },
+  // {
+  //   id: "BDHSQ-20-ROSA",
+  //   nombre: "Siberiano Camisa 25cm ROSA",
+  //   precio: 28000,
+  //   imagen: "imagenes/BDHSQ-20-1.jpeg",
+  //   descripcion: "Peluche siberiano con camisa rosa, tamaño 25cm."
+  // },
+  // {
+  //   id: "BDHSQ-20-VERDE",
+  //   nombre: "Siberiano Camisa 25cm VERDE",
+  //   precio: 28000,
+  //   imagen: "imagenes/BDHSQ-20.jpeg",
+  //   descripcion: "Peluche siberiano con camisa verde, tamaño 25cm."
+  // },
+  // {
+  //   id: "1289-30",
+  //   nombre: "Panda Acostado 30cm",
+  //   precio: 28000,
+  //   imagen: "imagenes/1289-30.jpeg",
+  //   descripcion: "Panda de peluche acostado, tamaño 30cm, suave y adorable."
+  // },
   {
     id: "lx-20",
     nombre: "Oso Arlequín 25cm",
@@ -326,20 +326,20 @@ const peluches = [
   imagen: "imagenes/JE-59-2.jpeg",
   descripcion: "Peluche animalito que respira color café de 26cm (no incluye pilas). Realista, suave y adorable para acompañar a los más pequeños. Material: Felpa antialérgica. Función: Respira (pila no incluida)."
 },*/
-{
-  id: "2587",
-  nombre: "Vaca con Bolso 40cm",
-  precio: 46000,
-  imagen: "imagenes/2587.jpeg",
-  descripcion: "Peluche de vaca con bolso, de gran tamaño y detalles encantadores. Ideal para abrazar, decorar o regalar en ocasiones especiales. Material: Felpa antialérgica. Tamaño: 40 cm."
-},
-{
-  id: "2332-40",
-  nombre: "Panda Camisa Roja 45cm",
-  precio: 61000,
-  imagen: "imagenes/2332-40.jpeg",
-  descripcion: "Peluche de panda con camisa roja, adorable y esponjoso. Un detalle especial para decorar o regalar a los amantes de los pandas. Material: Felpa antialérgica. Tamaño: 45 cm."
-},
+// {
+//   id: "2587",
+//   nombre: "Vaca con Bolso 40cm",
+//   precio: 46000,
+//   imagen: "imagenes/2587.jpeg",
+//   descripcion: "Peluche de vaca con bolso, de gran tamaño y detalles encantadores. Ideal para abrazar, decorar o regalar en ocasiones especiales. Material: Felpa antialérgica. Tamaño: 40 cm."
+// },
+// {
+//   id: "2332-40",
+//   nombre: "Panda Camisa Roja 45cm",
+//   precio: 61000,
+//   imagen: "imagenes/2332-40.jpeg",
+//   descripcion: "Peluche de panda con camisa roja, adorable y esponjoso. Un detalle especial para decorar o regalar a los amantes de los pandas. Material: Felpa antialérgica. Tamaño: 45 cm."
+// },
 {
   id: "HUO-30-ROSA",
   nombre: "Dino Huevo 33cm Rosa",
@@ -369,20 +369,20 @@ const peluches = [
   imagen: "imagenes/821-1.jpg",
   descripcion: "Peluche de elefante luminosa, incluye cobija. Brilla en la oscuridad y aporta calidez y ternura a cualquier espacio. Material: Felpa antialérgica. Tamaño: 60 cm."
 }*/
-{
-  id: "JE-68",
-  nombre: "Oso Bufanda Love 75cm",
-  precio: 148000,
-  imagen: "imagenes/je-68.jpeg",
-  descripcion: "Peluche de oso gigante con bufanda 'Love', tierno y espectacular para regalar en ocasiones especiales. Tamaño: 75 cm."
-},
-{
-  id: "JE-73-ROSA",
-  nombre: "Oso Gigantísimo 135cm Rosa",
-  precio: 416500,
-  imagen: "imagenes/Je-73-2.jpeg",
-  descripcion: "Peluche de oso gigante en color rosa, el más grande y espectacular de todos. Sorprende con este regalo inolvidable, ideal para ocasiones especiales. Tamaño: 135 cm."
-},
+// {
+//   id: "JE-68",
+//   nombre: "Oso Bufanda Love 75cm",
+//   precio: 148000,
+//   imagen: "imagenes/je-68.jpeg",
+//   descripcion: "Peluche de oso gigante con bufanda 'Love', tierno y espectacular para regalar en ocasiones especiales. Tamaño: 75 cm."
+// },
+// {
+//   id: "JE-73-ROSA",
+//   nombre: "Oso Gigantísimo 135cm Rosa",
+//   precio: 416500,
+//   imagen: "imagenes/Je-73-2.jpeg",
+//   descripcion: "Peluche de oso gigante en color rosa, el más grande y espectacular de todos. Sorprende con este regalo inolvidable, ideal para ocasiones especiales. Tamaño: 135 cm."
+// },
 {
   id: "BL-389-43-MORADO",
   nombre: "Unicornio Ojitos 40cm MORADO",
@@ -397,20 +397,20 @@ const peluches = [
   imagen: "imagenes/bl-398-43-2.jpeg",
   descripcion: "Peluche unicornio de 40cm color rosa, con ojitos grandes y brillantes. Perfecto para regalar o coleccionar."
 },
-{
-  id: "Sur05-30-GANZO",
-  nombre: "Peluche elástico mediano GANZO 30cm",
-  precio: 32000,
-  imagen: "imagenes/sur05-30-9.jpeg",
-  descripcion: "Peluche elástico mediano en forma de ganzo, divertido y suave. Ideal para juegos y decoración. Tamaño: 30 cm."
-},
-{
-  id: "Sur05-30-UNICORNIO",
-  nombre: "Peluche elástico mediano 30cm UNICORNIO",
-  precio: 32000,
-  imagen: "imagenes/sur05-30-19.jpeg",
-  descripcion: "Peluche elástico mediano de unicornio de 30cm, colorido y suave, perfecto para inspirar la imaginación de los niños."
-},
+// {
+//   id: "Sur05-30-GANZO",
+//   nombre: "Peluche elástico mediano GANZO 30cm",
+//   precio: 32000,
+//   imagen: "imagenes/sur05-30-9.jpeg",
+//   descripcion: "Peluche elástico mediano en forma de ganzo, divertido y suave. Ideal para juegos y decoración. Tamaño: 30 cm."
+// },
+// {
+//   id: "Sur05-30-UNICORNIO",
+//   nombre: "Peluche elástico mediano 30cm UNICORNIO",
+//   precio: 32000,
+//   imagen: "imagenes/sur05-30-19.jpeg",
+//   descripcion: "Peluche elástico mediano de unicornio de 30cm, colorido y suave, perfecto para inspirar la imaginación de los niños."
+// },
 {
   id: "Sur05-30-OJITOS",
   nombre: "Peluche elástico mediano 30cm Cojín OJITOS",
@@ -418,13 +418,13 @@ const peluches = [
   imagen: "imagenes/sur05-30-8.jpeg",
   descripcion: "Peluche elástico mediano en forma de cojín con ojitos de 30cm. Suave y perfecto para descansar o decorar la cama."
 },
-{
-  id: "BLM-098",
-  nombre: "Oso con bordado 55cm",
-  precio: 68000,
-  imagen: "imagenes/BLM-098.jpeg",
-  descripcion: "Oso de peluche con bordado, tamaño grande 55cm. Suave, elegante y especial para regalos importantes o decoración destacada."
-},
+// {
+//   id: "BLM-098",
+//   nombre: "Oso con bordado 55cm",
+//   precio: 68000,
+//   imagen: "imagenes/BLM-098.jpeg",
+//   descripcion: "Oso de peluche con bordado, tamaño grande 55cm. Suave, elegante y especial para regalos importantes o decoración destacada."
+// },
 /*
 {
   id: "J192-32-NARANJA",
@@ -440,13 +440,13 @@ const peluches = [
   imagen: "imagenes/j192-32-3 (2).jpeg",
   descripcion: "León despelucado rosa de 35cm. Muy suave, llamativo y con peinado alocado. Perfecto para regalar o decorar el cuarto."
 },*/
-{
-  id: "J192-32-CAFE",
-  nombre: "León Despeluque 35cm CAFE",
-  precio: 68500,
-  imagen: "imagenes/j192-32-1.jpeg",
-  descripcion: "León despelucado café de 35cm. Pelo esponjoso, muy suave y divertido. Perfecto para decorar y regalar."
-},
+// {
+//   id: "J192-32-CAFE",
+//   nombre: "León Despeluque 35cm CAFE",
+//   precio: 68500,
+//   imagen: "imagenes/j192-32-1.jpeg",
+//   descripcion: "León despelucado café de 35cm. Pelo esponjoso, muy suave y divertido. Perfecto para decorar y regalar."
+// },
 {
   id: "XTIG-50-LEONBLANCO",
   nombre: "Tigre Acostado 50cm LEON BLANCO",
@@ -495,49 +495,49 @@ const peluches = [
   precio: 89500,
   imagen: "imagenes/cj-3179.jpeg",
   descripcion: "Peluche King Kong gigante de 60cm. Impactante, divertido y para los que aman los animales icónicos de gran tamaño."
-},
-{
-  id: "BLM-099",
-  nombre: "Oso con Moño Grande 100cm",
-  precio: 261000,
-  imagen: "imagenes/BLM-099.jpeg",
-  descripcion: "Oso gigante de 1 metro con moño grande, el regalo perfecto para ocasiones inolvidables y decoración impactante."
-},
-{
-  id: "BLL-016",
-  nombre: "Oso con Corazon Grande 110cm",
-  precio: 261000,
-  imagen: "imagenes/BLL-016.jpeg",
-  descripcion: "Oso gigante con corazón de 110cm. Muy suave, tierno y perfecto para sorprender en fechas especiales como aniversarios y San Valentín."
-},
-{
-  id: "2967-CAFE",
-  nombre: "Oso Carmel con Flor 100cm CAFE",
-  precio: 261000,
-  imagen: "imagenes/2967-2.jpeg",
-  descripcion: "Oso carmel gigante de 1 metro, color café, con flor. Un detalle romántico, grande y memorable para regalar."
-},
-{
-  id: "2967-BLANCO",
-  nombre: "Oso Carmel con Flor 100cm BLANCO",
-  precio: 261000,
-  imagen: "imagenes/2967.jpeg",
-  descripcion: "Oso carmel gigante de 1 metro, color blanco, con flor. Tierno, elegante y perfecto para sorprender a lo grande."
-},
-{
-  id: "BL22-01",
-  nombre: "Oso con Bufanda grande 120cm",
-  precio: 272000,
-  imagen: "imagenes/bl22-01.jpeg",
-  descripcion: "Oso gigante de 120cm con bufanda. Súper suave, abrigador y perfecto para ser el centro de atención en cualquier regalo o celebración especial."
-},
-{
-  id: "2535",
-  nombre: "Oso moño Sonriente grande 110cm",
-  precio: 272000,
-  imagen: "imagenes/2535.jpeg",
-  descripcion: "Oso gigante de 110cm con moño y sonrisa. Ideal para regalar, sorprender y llenar de alegría cualquier ambiente."
 }
+// {
+//   id: "BLM-099",
+//   nombre: "Oso con Moño Grande 100cm",
+//   precio: 261000,
+//   imagen: "imagenes/BLM-099.jpeg",
+//   descripcion: "Oso gigante de 1 metro con moño grande, el regalo perfecto para ocasiones inolvidables y decoración impactante."
+// },
+// {
+//   id: "BLL-016",
+//   nombre: "Oso con Corazon Grande 110cm",
+//   precio: 261000,
+//   imagen: "imagenes/BLL-016.jpeg",
+//   descripcion: "Oso gigante con corazón de 110cm. Muy suave, tierno y perfecto para sorprender en fechas especiales como aniversarios y San Valentín."
+// },
+// {
+//   id: "2967-CAFE",
+//   nombre: "Oso Carmel con Flor 100cm CAFE",
+//   precio: 261000,
+//   imagen: "imagenes/2967-2.jpeg",
+//   descripcion: "Oso carmel gigante de 1 metro, color café, con flor. Un detalle romántico, grande y memorable para regalar."
+// },
+// {
+//   id: "2967-BLANCO",
+//   nombre: "Oso Carmel con Flor 100cm BLANCO",
+//   precio: 261000,
+//   imagen: "imagenes/2967.jpeg",
+//   descripcion: "Oso carmel gigante de 1 metro, color blanco, con flor. Tierno, elegante y perfecto para sorprender a lo grande."
+// },
+// {
+//   id: "BL22-01",
+//   nombre: "Oso con Bufanda grande 120cm",
+//   precio: 272000,
+//   imagen: "imagenes/bl22-01.jpeg",
+//   descripcion: "Oso gigante de 120cm con bufanda. Súper suave, abrigador y perfecto para ser el centro de atención en cualquier regalo o celebración especial."
+// },
+// {
+//   id: "2535",
+//   nombre: "Oso moño Sonriente grande 110cm",
+//   precio: 272000,
+//   imagen: "imagenes/2535.jpeg",
+//   descripcion: "Oso gigante de 110cm con moño y sonrisa. Ideal para regalar, sorprender y llenar de alegría cualquier ambiente."
+// }
   
 ];
 
@@ -791,46 +791,46 @@ const personajes = [
     descripcionCorta: "Llavero peluche de Kuromi, personaje icónico. Ideal para fans de Sanrio y coleccionistas.",
     categoria: "personajes"
   },*/
-  {
-    id: "je-37-9.5-gata",
-    nombre: "Llavero GATA 9.5 cm",
-    precio: 15500,
-    imagen: "imagenes/personajes/llavero-gata.jpg",
-    descripcionCorta: "Llavero peluche de Gata, diseño dulce y clásico para tus llaves.",
-    categoria: "personajes"
-  },
-  {
-    id: "24043-9.5-cinnamaroll",
-    nombre: "Llavero Monedero CINNAMAROLL 20 cm",
-    precio: 16000,
-    imagen: "imagenes/personajes/llavero-cinnamaroll.jpg",
-    descripcionCorta: "Llavero monedero de Cinnamaroll de 20 cm. Funcional y adorable.",
-    categoria: "personajes"
-  },
-  {
-    id: "8811-20-12.8-hongo-verde",
-    nombre: "Hongo de Mario VERDE 25 cm",
-    precio: 21500,
-    imagen: "imagenes/personajes/hongo-mario-verde.jpg",
-    descripcionCorta: "Peluche hongo verde de Mario Bros de 25 cm. Un clásico para coleccionistas.",
-    categoria: "personajes"
-  },
-  {
-    id: "jo-144s-12.8-yoshi",
-    nombre: "Yoshi pequeño 23 cm",
-    precio: 21500,
-    imagen: "imagenes/personajes/yoshi.jpg",
-    descripcionCorta: "Peluche de Yoshi pequeño de 23 cm, famoso dinosaurio de Nintendo.",
-    categoria: "personajes"
-  },
-  {
-    id: "XZ1-25-12.8-ojo-verde",
-    nombre: "Ojo Verde pequeño 25 cm",
-    precio: 21500,
-    imagen: "imagenes/personajes/ojo-verde.jpg",
-    descripcionCorta: "Peluche Ojo Verde de 25 cm. Diseño divertido y original.",
-    categoria: "personajes"
-  },
+  // {
+  //   id: "je-37-9.5-gata",
+  //   nombre: "Llavero GATA 9.5 cm",
+  //   precio: 15500,
+  //   imagen: "imagenes/personajes/llavero-gata.jpg",
+  //   descripcionCorta: "Llavero peluche de Gata, diseño dulce y clásico para tus llaves.",
+  //   categoria: "personajes"
+  // },
+  // {
+  //   id: "24043-9.5-cinnamaroll",
+  //   nombre: "Llavero Monedero CINNAMAROLL 20 cm",
+  //   precio: 16000,
+  //   imagen: "imagenes/personajes/llavero-cinnamaroll.jpg",
+  //   descripcionCorta: "Llavero monedero de Cinnamaroll de 20 cm. Funcional y adorable.",
+  //   categoria: "personajes"
+  // },
+  // {
+  //   id: "8811-20-12.8-hongo-verde",
+  //   nombre: "Hongo de Mario VERDE 25 cm",
+  //   precio: 21500,
+  //   imagen: "imagenes/personajes/hongo-mario-verde.jpg",
+  //   descripcionCorta: "Peluche hongo verde de Mario Bros de 25 cm. Un clásico para coleccionistas.",
+  //   categoria: "personajes"
+  // },
+  // {
+  //   id: "jo-144s-12.8-yoshi",
+  //   nombre: "Yoshi pequeño 23 cm",
+  //   precio: 21500,
+  //   imagen: "imagenes/personajes/yoshi.jpg",
+  //   descripcionCorta: "Peluche de Yoshi pequeño de 23 cm, famoso dinosaurio de Nintendo.",
+  //   categoria: "personajes"
+  // },
+  // {
+  //   id: "XZ1-25-12.8-ojo-verde",
+  //   nombre: "Ojo Verde pequeño 25 cm",
+  //   precio: 21500,
+  //   imagen: "imagenes/personajes/ojo-verde.jpg",
+  //   descripcionCorta: "Peluche Ojo Verde de 25 cm. Diseño divertido y original.",
+  //   categoria: "personajes"
+  // },
   /*
 {
     id: "AD474-20-14.87-huevito",
