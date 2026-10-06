@@ -14,7 +14,9 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-const loginForm = document.getElementById('login-form');
+// Coincide con id="loginForm" de tu HTML
+const loginForm = document.getElementById('loginForm');
+const errorMsg = document.getElementById('errorMsg');
 
 if (loginForm) {
   loginForm.addEventListener('submit', async (e) => {
@@ -23,15 +25,19 @@ if (loginForm) {
     const userInput = document.getElementById('username').value.trim();
     const passwordInput = document.getElementById('password').value;
 
-    // Traduce "admin" al correo interno configurado en Firebase Authentication
+    // Traduce "admin" al correo interno que creaste en Firebase
     const emailToUse = userInput.toLowerCase() === 'admin' ? 'admin@teddysfly.com' : userInput;
 
     try {
       await signInWithEmailAndPassword(auth, emailToUse, passwordInput);
+      // Si el login es exitoso, redirige al panel
       window.location.href = 'dashboard.html';
     } catch (error) {
       console.error("Error de acceso:", error.message);
-      alert("Usuario o contraseña incorrectos.");
+      // Muestra el mensaje de error oculto en tu HTML
+      if (errorMsg) {
+        errorMsg.style.display = 'block';
+      }
     }
   });
 }
