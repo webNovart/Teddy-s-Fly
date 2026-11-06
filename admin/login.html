@@ -4,63 +4,179 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Administrador - Teddy's Fly</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
+        :root {
+            --tf-cielo: #33ccff;
+            --tf-cielo-claro: #e8f9ff;
+            --tf-cielo-profundo: #0b7fa8;
+            --tf-miel: #ffba08;
+            --tf-miel-oscuro: #d99a00;
+            --tf-tinta: #1d3b4a;
+            --tf-error: #db2777;
+        }
+
+        * { box-sizing: border-box; }
+
         body {
             min-height: 100vh;
-            background: linear-gradient(135deg, var(--color-primario, #33ccff) 0%, var(--color-terciario, #fff) 100%);
+            margin: 0;
+            padding: 1.5em;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-family: 'Nunito', system-ui, sans-serif;
+            color: var(--tf-tinta);
+            background:
+                radial-gradient(ellipse 120px 36px at 12% 22%, rgba(255,255,255,.75) 98%, transparent),
+                radial-gradient(ellipse 180px 48px at 86% 16%, rgba(255,255,255,.65) 98%, transparent),
+                radial-gradient(ellipse 150px 40px at 80% 82%, rgba(255,255,255,.7) 98%, transparent),
+                radial-gradient(ellipse 200px 52px at 8% 78%, rgba(255,255,255,.6) 98%, transparent),
+                linear-gradient(180deg, #5fd8ff 0%, #b9eeff 100%);
         }
+
         .login-card {
-            background: var(--color-blanco, #fff);
-            border-radius: 18px;
-            box-shadow: 0 6px 32px rgba(51,204,255,0.14);
-            padding: 2.5em 2em 2em 2em;
-            width: 350px;
-            transition: box-shadow 0.25s;
-            animation: popIn 0.7s cubic-bezier(.23,1.27,.42,1.01);
+            position: relative;
+            width: 100%;
+            max-width: 380px;
+            margin-top: 70px;
+            padding: 100px 2em 2em;
+            background: #fff;
+            border-radius: 28px;
+            box-shadow: 0 18px 40px rgba(11,127,168,.22);
         }
-        @keyframes popIn {
-            0% {transform: scale(0.95) translateY(40px); opacity:0;}
-            100% {transform: scale(1) translateY(0); opacity:1;}
-        }
+
         .login-logo {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 1.5em;
+            position: absolute;
+            top: -80px;
+            left: 50%;
+            transform: translateX(-50%);
+            margin: 0;
+            display: block;
         }
+
         .login-logo img {
-            height: 160px;
+            display: block;
             width: 160px;
+            height: 160px;
             border-radius: 50%;
-            box-shadow: 0 2px 12px rgba(51,204,255,0.15);
+            background: #fff;
+            border: 6px solid #fff;
+            box-shadow: 0 10px 24px rgba(11,127,168,.25);
+            animation: vuelo 3.2s ease-in-out infinite;
         }
+
+        @keyframes vuelo {
+            0%, 100% { transform: translateY(0) rotate(-1.5deg); }
+            50%      { transform: translateY(-8px) rotate(1.5deg); }
+        }
+
         .login-card h2 {
+            margin: 0 0 1.4em;
             text-align: center;
-            color: var(--color-primario, #33ccff);
-            font-size: 1.5em;
-            margin-bottom: 1em;
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 600;
+            font-size: 1.7em;
+            color: var(--tf-cielo-profundo);
         }
+
         #loginForm label {
-            margin-top: 1.2em;
-            color: var(--color-primario, #33ccff);
+            display: block;
+            margin: 1.1em 0 .4em .3em;
+            font-weight: 700;
+            font-size: .95em;
+            color: var(--tf-tinta);
         }
+
         #loginForm input[type="text"],
         #loginForm input[type="password"] {
-            border: 1.5px solid var(--color-primario, #33ccff);
-            background: var(--color-blanco, #fff);
-            font-size: 1.11em;
-        }
-        #loginForm button[type="submit"] {
+            display: block;
             width: 100%;
+            padding: .8em 1.1em;
+            font: inherit;
+            font-weight: 600;
+            color: var(--tf-tinta);
+            background: var(--tf-cielo-claro);
+            border: 2px solid transparent;
+            border-radius: 999px;
+            outline: none;
+            transition: border-color .15s, background .15s, box-shadow .15s;
         }
+
+        #loginForm input[type="text"]:focus,
+        #loginForm input[type="password"]:focus {
+            background: #fff;
+            border-color: var(--tf-cielo);
+            box-shadow: 0 0 0 4px rgba(51,204,255,.25);
+        }
+
+        #loginForm button[type="submit"] {
+            display: block;
+            width: 100%;
+            margin-top: 1.8em;
+            padding: .85em 1em;
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 600;
+            font-size: 1.1em;
+            color: var(--tf-tinta);
+            background: var(--tf-miel);
+            border: none;
+            border-radius: 999px;
+            box-shadow: 0 5px 0 var(--tf-miel-oscuro);
+            cursor: pointer;
+            transition: transform .1s, box-shadow .1s;
+        }
+
+        #loginForm button[type="submit"]:hover {
+            transform: translateY(2px);
+            box-shadow: 0 3px 0 var(--tf-miel-oscuro);
+        }
+
+        #loginForm button[type="submit"]:active {
+            transform: translateY(5px);
+            box-shadow: 0 0 0 var(--tf-miel-oscuro);
+        }
+
+        #loginForm button[type="submit"]:focus-visible,
+        .volver-tienda-btn:focus-visible {
+            outline: 3px solid var(--tf-cielo-profundo);
+            outline-offset: 3px;
+        }
+
+        .volver-tienda-btn {
+            display: block;
+            margin-top: 1.3em;
+            text-align: center;
+            font-weight: 700;
+            color: var(--tf-cielo-profundo);
+            text-decoration: none;
+        }
+
+        .volver-tienda-btn:hover {
+            text-decoration: underline;
+        }
+
         #errorMsg {
-            margin-top: 0.8em;
+            margin: 1em 0 0;
+            padding: .7em 1em;
+            text-align: center;
+            font-weight: 700;
+            font-size: .95em;
+            color: var(--tf-error);
+            background: #fdeaf3;
+            border-radius: 14px;
         }
-        @media (max-width:480px) {
-            .login-card { width: 97vw; padding: 1.3em 0.5em;}
+
+        @media (max-width: 480px) {
+            body { padding: 1em; }
+            .login-card { padding: 100px 1.3em 1.6em; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .login-logo img { animation: none; }
         }
     </style>
 </head>
@@ -69,15 +185,15 @@
         <div class="login-logo">
             <img src="../image-removebg-preview (2).png" alt="Logo Teddy's Fly" loading="lazy">
         </div>
-        <h2>Acceso Administrador</h2>
+        <h2>Acceso administrador</h2>
         <form id="loginForm" autocomplete="off">
             <label for="username">Usuario</label>
             <input type="text" id="username" required autocomplete="username">
             <label for="password">Contraseña</label>
             <input type="password" id="password" required autocomplete="current-password">
             <button type="submit">Ingresar</button>
-            <a href="../tienda.html" class="volver-tienda-btn">Volver a la pagina</a>
-            <p id="errorMsg" class="error" style="display:none;">Usuario o contraseña incorrectos</p>
+            <a href="../tienda.html" class="volver-tienda-btn">Volver a la tienda</a>
+            <p id="errorMsg" class="error" role="alert" style="display:none;">Usuario o contraseña incorrectos</p>
         </form>
     </div>
     <script src="scripts/auth.js" type="module"></script>
