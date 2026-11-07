@@ -1455,6 +1455,9 @@ select:focus {
     .filtros,
     .tienda-header,
     .novedades-header { flex-direction: column; align-items: flex-start; gap: 10px; width: 100%; }
+
+    .compra-form { flex-wrap: wrap; }
+    .compra-form button { flex: 1 1 100%; }
 }
 
 @media (max-width: 700px) {
