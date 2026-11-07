@@ -196,7 +196,7 @@ header::after {
 
 .logo {
     display: block;
-    height: 110px;
+    height: 210px;
     width: auto;
     margin: 0 auto;
 }
@@ -1432,14 +1432,13 @@ select:focus {
     .header-icons { position: absolute; top: 0.6em; right: 0.8em; justify-content: flex-end; gap: 0.7em; }
     .header-icons:has(.search-form) { position: static; width: 100%; justify-content: center; }
     .search-form { flex: 1; margin-right: 0; }
-    .navbar { position: relative; flex-direction: column; align-items: stretch; gap: 0; padding: 0 0.8em 0.5em; }
+    .navbar { flex-direction: column; align-items: stretch; gap: 0; padding: 0; }
     .navbar-menu { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.25em; width: 100%; }
     .navbar-menu > * { grid-column: span 2; margin: 0; padding: 0; }
     .navbar-menu > :nth-child(n+4) { grid-column: span 3; }
     .navbar-menu a { display: block; padding: 0.3em 0.4em; text-align: center; font-size: 0.95rem; }
-    .navbar-actions { position: absolute; top: 0.6em; right: 0.8em; gap: 0.7em; }
+    .navbar-actions { position: absolute; top: 0.5em; right: 3.6em; gap: 0.7em; }
     nav li { margin: 0; padding: 0; width: auto; }
-    .user-bolita { position: absolute; top: 0.5em; right: 3.8em; }
 
     .hero-content { padding: 1.2em; }
     .categorias-grid,
