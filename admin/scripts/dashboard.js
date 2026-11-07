@@ -12,7 +12,7 @@ function slugify(text) {
 // --- IMPORTS FIREBASE ---
 import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-firestore.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
-import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
+import { getAuth, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
 
 // Config y app compartidos con tu HTML
 const firebaseConfig = {
@@ -30,9 +30,13 @@ const auth = getAuth(app);
 // --- FIN IMPORTS FIREBASE ---
 
 // Proteger el panel
-if (localStorage.getItem("isAdmin") !== "true") {
+onAuthStateChanged(auth, (user) => {
+  if (!user) {
     window.location.href = "login.html";
-}
+  } else {
+    document.body.style.visibility = "visible";
+  }
+});
 
 // Hacer logout disponible globalmente
 document.addEventListener('DOMContentLoaded', () => {
