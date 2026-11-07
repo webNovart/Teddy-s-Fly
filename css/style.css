@@ -1270,7 +1270,7 @@ select:focus {
 
 .slider-caption {
     position: absolute;
-    bottom: 26px;
+    bottom: 46px;
     left: 40px;
     padding: 1em 2em;
     background: rgba(255, 255, 255, 0.88);
@@ -1306,7 +1306,7 @@ select:focus {
 
 .slider-dots {
     position: absolute;
-    bottom: 20px;
+    bottom: 14px;
     left: 50%;
     z-index: 4;
     display: flex;
@@ -1484,8 +1484,9 @@ select:focus {
     .carrito-resumen { flex-direction: column; align-items: flex-end; gap: 0.7em; }
 
     .slider-container { height: 180px; }
-    .slider-caption { left: 10px; bottom: 12px; padding: 0.5em 1em; font-size: 0.95em; }
-    .slider-btn { width: 30px; height: 30px; font-size: 1.2rem; }
+    .slider-caption { left: 10px; bottom: 36px; padding: 0.5em 1em; font-size: 0.95em; }
+    .slider-btn { top: 34%; width: 30px; height: 30px; font-size: 1.2rem; }
+    .slider-dots { bottom: 10px; }
 
     .user-bolita { width: 36px; height: 36px; }
     .user-bolita svg { width: 22px; height: 22px; }
