@@ -33,6 +33,10 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Quicksand', Arial, sans-serif;
     color: var(--color-texto);
@@ -41,8 +45,20 @@ body {
     overflow-x: clip;
 }
 
-img {
+img,
+table,
+iframe,
+video {
     max-width: 100%;
+}
+
+.producto-info,
+.detalle-info,
+.descripcion,
+.detalle-descripcion,
+.detalle-nombre {
+    min-width: 0;
+    overflow-wrap: anywhere;
 }
 
 h1, h2, h3 {
@@ -196,7 +212,7 @@ header::after {
 
 .logo {
     display: block;
-    height: 210px;
+    height: 110px;
     width: auto;
     margin: 0 auto;
 }
@@ -1448,7 +1464,7 @@ select:focus {
     .detalle-container { flex-direction: column; padding: 1em; }
     .detalle-container { padding: 0; }
     .detalle-imagen,
-    .detalle-info { padding: 20px; }
+    .detalle-info { min-width: 0; padding: 20px; }
     .galeria,
     .producto-info { max-width: 100%; flex: 1 1 100%; }
 
@@ -1461,7 +1477,8 @@ select:focus {
 }
 
 @media (max-width: 700px) {
-    .carrito-container { padding: 1.2em 0.6em; }
+    .carrito-container { padding: 1.2em 0.6em; overflow-x: auto; }
+    #tabla-carrito img { width: 56px; height: 56px; object-fit: cover; }
     #tabla-carrito th,
     #tabla-carrito td { padding: 0.3em; font-size: 0.92em; }
     .carrito-resumen { flex-direction: column; align-items: flex-end; gap: 0.7em; }
